@@ -1,0 +1,119 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: oci-crossplane-test-
+spec:
+  serviceAccountName: argo-workflow
+  entrypoint: crossplane-workflow
+  volumes:
+    - name: git-repo
+      persistentVolumeClaim:
+        claimName: git-repo-pvc
+  arguments:
+    parameters:
+    # Required to clone the Crossplane OCI provider repo
+    - name: git_repo
+      value: https://github.com/oracle/crossplane-provider-oci.git
+    - name: git_ref
+      value: main
+    
+    # Required by scripts/setup-crossplane.sh
+    - name: namespace
+      value: crossplane-system
+    - name: region
+      value: us-phoenix-1
+    - name: providers
+      value: "provider-family-oci,provider-oci-certificatesmanagement,provider-oci-containerengine,provider-oci-identity,provider-oci-kms,provider-oci-loadbalancer,provider-oci-networking,provider-oci-networkloadbalancer,provider-oci-objectstorage"
+    - name: family-provider-version
+      value: v0.0.2
+  templates:
+    - name: crossplane-workflow
+      dag:
+        tasks:
+        - name: clone-repo
+          template: clone-repo
+          arguments: 
+            parameters: 
+              - name: git_repo
+                value: "{{workflow.parameters.git_repo}}"
+              - name: git_ref
+                value: "{{workflow.parameters.git_ref}}"
+        - name: check-contents
+          template: check-contents
+          dependencies: [clone-repo]
+        - name: setup-crossplane
+          template: setup-crossplane
+          dependencies: [clone-repo]
+          arguments:
+            parameters:
+              - name: namespace
+                value: "{{workflow.parameters.namespace}}"
+              - name: region
+                value: "{{workflow.parameters.region}}"
+              - name: providers
+                value: "{{workflow.parameters.providers}}"
+              - name: family-provider-version
+                value: "{{workflow.parameters.family-provider-version}}"
+        
+    - name: check-contents
+      container:
+        image: docker.io/alpine:3.23
+        command: [sh, -c]
+        args:
+          - |
+            echo "Listing repo contents:"
+            ls -la /git-repo
+        volumeMounts:
+          - name: git-repo
+            mountPath: /git-repo
+    
+    - name: clone-repo
+      inputs:
+        parameters:
+        - name: git_repo
+        - name: git_ref
+      container:
+        image: docker.io/alpine/git:latest
+        command: [sh, -c]
+        args:
+        - |
+          git clone --single-branch --branch {{inputs.parameters.git_ref}} {{inputs.parameters.git_repo}} /src && \
+          echo "Listing src contents:"
+          ls -la /src
+          cp -r /src/. /git-repo/
+          echo "Listing git-repo contents:"
+          ls -la /git-repo
+        volumeMounts:
+        - name: git-repo
+          mountPath: /git-repo
+    
+    - name: setup-crossplane
+      inputs:
+        parameters:
+        - name: namespace
+        - name: region
+        - name: providers
+        - name: family-provider-version
+      container:
+        image: docker.io/bitnami/kubectl:latest
+        command: [bash, -c]
+        args:
+        - |
+          echo "Setting up Crossplane with the following parameters:"
+          echo "Namespace: {{inputs.parameters.namespace}}"
+          echo "Region: {{inputs.parameters.region}}"
+          echo "Providers: {{inputs.parameters.providers}}"
+          echo "Family Provider Version: {{inputs.parameters.family-provider-version}}"
+          /git-repo/argo/scripts/setup-crossplane.sh
+        env:
+        - name: NAMESPACE
+          value: "{{inputs.parameters.namespace}}"
+        - name: REGION
+          value: "{{inputs.parameters.region}}"
+        - name: PROVIDERS
+          value: "{{inputs.parameters.providers}}"
+        - name: FAMILY_PROVIDER_VERSION
+          value: "{{inputs.parameters.family-provider-version}}"  
+      volumeMounts:
+      - name: git-repo
+        mountPath: /git-repo
