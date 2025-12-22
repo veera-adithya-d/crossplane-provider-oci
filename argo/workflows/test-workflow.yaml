@@ -1,3 +1,10 @@
+#   argo submit argo/workflows/test-workflow.yaml \
+#     -p clone_repo=true \
+#     -p delete_crossplane=true \
+#     -p setup_crossplane=true \
+#     -p setup_uptest=false \
+#     -p git_ref=argo-workflow \
+#     -p git_repo=https://github.com/endurthiabhilash/crossplane-provider-oci.git
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
@@ -11,6 +18,14 @@ spec:
         claimName: git-repo-pvc
   arguments:
     parameters:
+    - name: clone_repo
+      value: "false"
+    - name: delete_crossplane
+      value: "false"
+    - name: setup_crossplane
+      value: "false"
+    - name: setup_uptest
+      value: "false"
     # Required to clone the Crossplane OCI provider repo
     - name: git_repo
       value: https://github.com/oracle/crossplane-provider-oci.git
@@ -30,8 +45,16 @@ spec:
     - name: crossplane-workflow
       dag:
         tasks:
+        - name: delete-crossplane
+          template: delete-crossplane
+          when: "{{workflow.parameters.delete_crossplane}} == true"
+          arguments: 
+            parameters: 
+              - name: namespace
+                value: "{{workflow.parameters.namespace}}"
         - name: clone-repo
           template: clone-repo
+          when: "{{workflow.parameters.clone_repo}} == true"
           arguments: 
             parameters: 
               - name: git_repo
@@ -43,7 +66,8 @@ spec:
           dependencies: [clone-repo]
         - name: setup-crossplane
           template: setup-crossplane
-          dependencies: [clone-repo]
+          dependencies: [clone-repo, delete-crossplane]
+          when: "{{workflow.parameters.setup_crossplane}} == true"
           arguments:
             parameters:
               - name: namespace
@@ -63,6 +87,8 @@ spec:
           - |
             echo "Listing repo contents:"
             ls -la /git-repo
+            echo "Checking uname:"
+            uname | tr '[:upper:]' '[:lower:]'
         volumeMounts:
           - name: git-repo
             mountPath: /git-repo
@@ -77,7 +103,8 @@ spec:
         command: [sh, -c]
         args:
         - |
-          git clone --single-branch --branch {{inputs.parameters.git_ref}} {{inputs.parameters.git_repo}} /src && \
+          git clone --single-branch --branch {{inputs.parameters.git_ref}} {{inputs.parameters.git_repo}} /src 
+          cd /src && git status
           echo "Listing src contents:"
           ls -la /src
           cp -r /src/. /git-repo/
@@ -95,7 +122,7 @@ spec:
         - name: providers
         - name: family-provider-version
       container:
-        image: docker.io/bitnami/kubectl:latest
+        image: docker.io/alpine/k8s:1.31.13
         command: [bash, -c]
         args:
         - |
@@ -104,7 +131,10 @@ spec:
           echo "Region: {{inputs.parameters.region}}"
           echo "Providers: {{inputs.parameters.providers}}"
           echo "Family Provider Version: {{inputs.parameters.family-provider-version}}"
-          /git-repo/argo/scripts/setup-crossplane.sh
+          /git-repo/argo/scripts/setup_crossplane.sh
+        volumeMounts:
+        - name: git-repo
+          mountPath: /git-repo
         env:
         - name: NAMESPACE
           value: "{{inputs.parameters.namespace}}"
@@ -114,6 +144,19 @@ spec:
           value: "{{inputs.parameters.providers}}"
         - name: FAMILY_PROVIDER_VERSION
           value: "{{inputs.parameters.family-provider-version}}"  
-      volumeMounts:
-      - name: git-repo
-        mountPath: /git-repo
+    - name: delete-crossplane
+      inputs:
+        parameters:
+        - name: namespace
+      container:
+        image: docker.io/alpine/k8s:1.31.13
+        command: [bash, -c]
+        args:
+        - |
+          echo "Deleting Crossplane in namespace {{inputs.parameters.namespace}}"
+          kubectl delete providers --all -n {{inputs.parameters.namespace}} --ignore-not-found
+          helm uninstall crossplane -n {{inputs.parameters.namespace}} --ignore-not-found
+          kubectl delete namespace {{inputs.parameters.namespace}} --ignore-not-found
+        env:
+        - name: NAMESPACE
+          value: "{{inputs.parameters.namespace}}"
