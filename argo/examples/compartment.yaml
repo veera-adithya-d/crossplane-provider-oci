@@ -13,4 +13,5 @@ spec:
   forProvider:
     compartmentId: "${COMPARTMENT_ID}"
     name: "compartment-via-crossplane-argo"
-    enableDelete : True
+    description: "Compartment created via argo workflow, crossplane."
+    enableDelete: True
