@@ -13,7 +13,7 @@ spec:
     nodeShape: VM.Standard.E3.Flex
     nodeConfigDetails:
     - placementConfigs:
-      - availabilityDomain: "qqZb:US-ASHBURN-AD-1"
+      - availabilityDomain: "qqZb:US-ASHBURN-AD-2"
         subnetIdRef:
           name: subnet2-via-crossplane-argo
       size: 3
