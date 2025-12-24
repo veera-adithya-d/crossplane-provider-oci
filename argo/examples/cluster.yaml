@@ -4,7 +4,8 @@ metadata:
   name: cluster-via-crossplane-argo
 spec:
   forProvider:
-    compartmentIdRef: compartment-via-crossplane-argo
+    compartmentIdRef: 
+      name: compartment-via-crossplane-argo
     name: cluster-via-crossplane-argo
     vcnIdRef:
       name: vcn-via-crossplane-argo

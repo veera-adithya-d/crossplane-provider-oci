@@ -4,7 +4,8 @@ metadata:
   name: route-table-via-crossplane-argo
 spec:
   forProvider:
-    compartmentIdRef: compartment-via-crossplane-argo
+    compartmentIdRef: 
+      name: compartment-via-crossplane-argo
     displayName: route-table-via-crossplane-argo
     vcnIdRef:
       name: vcn-via-crossplane-argo

@@ -4,7 +4,8 @@ metadata:
   name: subnet1-via-crossplane-argo
 spec:
   forProvider:
-    compartmentIdRef: compartment-via-crossplane-argo
+    compartmentIdRef: 
+      name: compartment-via-crossplane-argo
     vcnIdRef:
       name: vcn-via-crossplane-argo
     displayName: subnet1-via-crossplane-argo

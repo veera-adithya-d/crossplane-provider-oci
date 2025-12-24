@@ -4,7 +4,8 @@ metadata:
   name: nodepool-via-crossplane-argo
 spec:
   forProvider:
-    compartmentIdRef: compartment-via-crossplane-argo
+    compartmentIdRef: 
+      name: compartment-via-crossplane-argo
     clusterIdRef:
       name: cluster-via-crossplane-argo
     kubernetesVersion: v1.34.1
