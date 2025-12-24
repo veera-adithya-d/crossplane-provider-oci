@@ -9,6 +9,7 @@ spec:
     vcnIdRef:
       name: vcn-via-crossplane-argo
     displayName: subnet2-via-crossplane-argo
-    cidrBlock: "10.0.22.0/24"           
+    cidrBlock: "10.0.22.0/24"    
+    availabilityDomain: "us-ashburn-1-AD-2"       
   providerConfigRef:
     name: default
