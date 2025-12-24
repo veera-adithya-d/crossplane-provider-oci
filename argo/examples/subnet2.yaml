@@ -1,0 +1,13 @@
+apiVersion: networking.oci.upbound.io/v1alpha1
+kind: Subnet
+metadata:
+  name: subnet2-via-crossplane-argo
+spec:
+  forProvider:
+    compartmentIdRef: compartment-via-crossplane-argo
+    vcnIdRef:
+      name: vcn-via-crossplane-argo
+    displayName: subnet2-via-crossplane-argo
+    cidrBlock: "10.0.22.0/24"           
+  providerConfigRef:
+    name: default

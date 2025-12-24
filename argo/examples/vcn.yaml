@@ -1,0 +1,12 @@
+apiVersion: networking.oci.upbound.io/v1alpha1
+kind: Vcn
+metadata:
+  name: vcn-via-crossplane-argo
+spec:
+  forProvider:
+    compartmentIdRef: compartment-via-crossplane-argo
+    displayName: vcn-via-crossplane-argo
+    cidrBlocks:
+      - "10.0.0.0/16"
+  providerConfigRef:
+    name: default

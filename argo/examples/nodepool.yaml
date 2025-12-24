@@ -1,0 +1,23 @@
+apiVersion: containerengine.oci.upbound.io/v1alpha1
+kind: NodePool
+metadata:
+  name: nodepool-via-crossplane-argo
+spec:
+  forProvider:
+    compartmentIdRef: compartment-via-crossplane-argo
+    clusterIdRef:
+      name: cluster-via-crossplane-argo
+    kubernetesVersion: v1.34.1
+    name: tfPool
+    nodeShape: VM.Standard.E3.Flex
+    nodeConfigDetails:
+    - placementConfigs:
+      - availabilityDomain: "qqZb:US-ASHBURN-AD-1"
+        subnetIdRef:
+          name: subnet2-via-crossplane-argo
+      size: 3
+    nodeSourceDetails:
+    - sourceType: IMAGE
+      imageId: "${IMAGE_ID}"
+  providerConfigRef:
+    name: default

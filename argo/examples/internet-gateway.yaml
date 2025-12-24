@@ -1,0 +1,12 @@
+apiVersion: networking.oci.upbound.io/v1alpha1
+kind: InternetGateway
+metadata:
+  name: internet-gw-via-crossplane-argo
+spec:
+  forProvider:
+    compartmentIdRef: compartment-via-crossplane-argo
+    displayName: internet-gw-via-crossplane-argo
+    vcnIdRef:
+      name: vcn-via-crossplane-argo
+  providerConfigRef:
+    name: default

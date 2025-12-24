@@ -1,0 +1,17 @@
+apiVersion: containerengine.oci.upbound.io/v1alpha1
+kind: Cluster
+metadata:
+  name: cluster-via-crossplane-argo
+spec:
+  forProvider:
+    compartmentIdRef: compartment-via-crossplane-argo
+    name: cluster-via-crossplane-argo
+    vcnIdRef:
+      name: vcn-via-crossplane-argo
+    kubernetesVersion: v1.34.1
+    options:
+      - serviceLbSubnetIdsRef:
+          - name: subnet2-via-crossplane-argo
+          - name: subnet1-via-crossplane-argo 
+  providerConfigRef:
+    name: default
