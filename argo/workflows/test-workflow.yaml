@@ -6,7 +6,8 @@
 #     -p create_compartment=true \
 #     -p git_ref=argo-workflow \
 #     -p git_repo=https://github.com/endurthiabhilash/crossplane-provider-oci.git
-#     -p compartment_id=ocid1.compartment.oc1.xxx
+#     -p tenancy=ocid1.tenancy.oc1.xxx \
+#     -p compartment_id=ocid1.compartment.oc1.xxx \
 #     -p image_id=ocid1.image.oc1.xxx
 
 apiVersion: argoproj.io/v1alpha1
@@ -47,6 +48,7 @@ spec:
       value: "provider-family-oci,provider-oci-certificatesmanagement,provider-oci-containerengine,provider-oci-identity,provider-oci-kms,provider-oci-loadbalancer,provider-oci-networking,provider-oci-networkloadbalancer,provider-oci-objectstorage"
     - name: family-provider-version
       value: v0.0.2
+    - name: tenancy
     
     # Required by create-compartment task
     - name: compartment_id
@@ -91,6 +93,8 @@ spec:
                 value: "{{workflow.parameters.providers}}"
               - name: family-provider-version
                 value: "{{workflow.parameters.family-provider-version}}"
+              - name: tenancy
+                value: "{{workflow.parameters.tenancy}}"
         - name: create-compartment
           template: create-resource
           dependencies: [setup-crossplane]
@@ -195,6 +199,7 @@ spec:
         - name: region
         - name: providers
         - name: family-provider-version
+        - name: tenancy
       container:
         image: docker.io/alpine/k8s:1.31.13
         command: [bash, -c]
@@ -218,6 +223,8 @@ spec:
           value: "{{inputs.parameters.providers}}"
         - name: FAMILY_PROVIDER_VERSION
           value: "{{inputs.parameters.family-provider-version}}"  
+        - name: TENANCY
+          value: "{{inputs.parameters.tenancy}}"
     - name: delete-crossplane
       inputs:
         parameters:
