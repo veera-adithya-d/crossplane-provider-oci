@@ -12,6 +12,6 @@ spec:
   #   name: oci-home-region
   forProvider:
     compartmentId: "${COMPARTMENT_ID}"
-    name: "compartment-via-crossplane-argo"
+    name: "compartment-via-crossplane-argo-1"
     description: "Compartment created via argo workflow, crossplane."
     enableDelete: True
