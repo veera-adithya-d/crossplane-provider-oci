@@ -9,6 +9,8 @@ set -euo pipefail
 : "${CONTEXT:=}"  # Context name for target cluster
 : "${FAMILY_PROVIDER_VERSION:=v0.0.2}"  # Version of OCI provider family
 : "${SUB_PROVIDERS_VERSION:=${FAMILY_PROVIDER_VERSION}}"  # Version of sub-providers (defaults to FAMILY_PROVIDER_VERSION)
+: "${TENANCY_OCID:=ocid1.tenancy.oc1.xxx}"
+
 
 # kubectl wrapper for multi-cluster support
 kctl() {
@@ -83,8 +85,15 @@ done
 
 # Step 3: Create InstancePrincipal secret
 echo "Creating InstancePrincipal secret..."
-# TODO
+kctl create secret generic oci-creds \
+  --namespace="${NAMESPACE}" \
+  --from-literal=credentials="{
+    \"tenancy_ocid\": \"${TENANCY_OCID}\",
+    \"auth\": \"InstancePrincipal\",
+    \"region\": \"${REGION}\"
+  }" --dry-run=client -o yaml | kctl apply -f -
 
 # Step 4: Create ProviderConfig
-# TODO
+echo "Creating ProviderConfig..."
+kctl apply -f /git-repo/argo/setup/providerconfig.yaml
 echo "Crossplane setup with OCI providers completed successfully."
