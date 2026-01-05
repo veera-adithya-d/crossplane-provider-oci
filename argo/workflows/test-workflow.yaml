@@ -5,7 +5,7 @@
 #     -p setup_uptest=false \
 #     -p create_compartment=true \
 #     -p git_ref=argo-workflow \
-#     -p git_repo=https://github.com/endurthiabhilash/crossplane-provider-oci.git
+#     -p git_repo=https://github.com/endurthiabhilash/crossplane-provider-oci.git \
 #     -p tenancy=ocid1.tenancy.oc1.xxx \
 #     -p compartment_id=ocid1.compartment.oc1.xxx \
 #     -p image_id=ocid1.image.oc1.xxx
@@ -49,7 +49,7 @@ spec:
     - name: family-provider-version
       value: v0.0.2
     - name: tenancy
-    
+
     # Required by create-compartment task
     - name: compartment_id
 
@@ -261,7 +261,7 @@ spec:
           fi
           envsubst < /git-repo/{{inputs.parameters.resourceFile}} | kubectl apply -f - 
           echo "Validating ${resourceKind,,} ${resourceName,,} creation..."
-          kubectl wait --for=condition=Ready=True ${resourceKind,,}/${resourceName,,} --timeout=300s
+          kubectl wait --for=condition=Ready=True ${resourceKind,,}/${resourceName,,} --timeout=900s
           echo "Resource created successfully. Description:"
           kubectl describe ${resourceKind,,}/${resourceName,,} > /tmp/resource-description.txt
           cat /tmp/resource-description.txt
