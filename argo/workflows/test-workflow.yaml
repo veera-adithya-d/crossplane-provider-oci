@@ -202,6 +202,7 @@ spec:
         - name: namespace
         - name: region
         - name: providers
+        - name: provider-image-repo-name
         - name: family-provider-version
         - name: tenancy
       container:
@@ -229,6 +230,8 @@ spec:
           value: "{{inputs.parameters.family-provider-version}}"  
         - name: TENANCY
           value: "{{inputs.parameters.tenancy}}"
+        - name: PROVIDER_IMAGE_REPO_NAME
+          value: "{{inputs.parameters.provider-image-repo-name}}"
     - name: delete-crossplane
       inputs:
         parameters:
