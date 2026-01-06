@@ -41,9 +41,11 @@ for provider in ${PROVIDERS//,/ }; do
     # Derive provider name from PROVIDER_IMAGE_REPO_NAME. E.g., for ghcr.io/oracle, it becomes oracle-provider-family-oci, for iad.ocir.io/<compartment>/<user>, it becomes <compartment>-<user>-provider-family-oci
     family_provider_prefix=$(echo "${PROVIDER_IMAGE_REPO_NAME}" | awk -F/ '{if (NF>1) print $(NF-1) "-" $NF; else print $NF}')
     provider_name="${family_provider_prefix}-${provider}"
+    echo "Using family provider name: ${provider_name}"
     VERSION="${FAMILY_PROVIDER_VERSION}"
   else
     provider_name="${provider}"
+    echo "Using sub-provider name: ${provider_name}"
     VERSION="${SUB_PROVIDERS_VERSION}"
   fi
   cat <<EOF | kctl apply -f -
