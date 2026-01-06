@@ -46,7 +46,7 @@ spec:
       value: us-phoenix-1
     - name: providers
       value: "provider-family-oci,provider-oci-certificatesmanagement,provider-oci-containerengine,provider-oci-identity,provider-oci-kms,provider-oci-loadbalancer,provider-oci-networking,provider-oci-networkloadbalancer,provider-oci-objectstorage"
-    - name: image-repo-name
+    - name: provider-image-repo-name
       value: ghcr.io/oracle
     - name: family-provider-version
       value: v0.0.2
@@ -93,8 +93,8 @@ spec:
                 value: "{{workflow.parameters.region}}"
               - name: providers
                 value: "{{workflow.parameters.providers}}"
-              - name: image-repo-name
-                value: "{{workflow.parameters.image-repo-name}}"
+              - name: provider-image-repo-name
+                value: "{{workflow.parameters.provider-image-repo-name}}"
               - name: family-provider-version
                 value: "{{workflow.parameters.family-provider-version}}"
               - name: tenancy
