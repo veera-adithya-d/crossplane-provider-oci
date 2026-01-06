@@ -3,10 +3,11 @@ set -euo pipefail
 
 # Environment variables for customization
 : "${NAMESPACE:=crossplane-system}"
-: "${PROVIDERS:=provider-oci-objectstorage}"  # Comma-separated list of providers
+: "${PROVIDERS:=provider-family-oci}"  # Comma-separated list of providers
 : "${REGION:=us-ashburn-1}"
 : "${KUBECONFIG:=}"  # Path to kubeconfig for target cluster
 : "${CONTEXT:=}"  # Context name for target cluster
+: "${IMAGE_REPO_NAME:=ghcr.io/oracle}"  # OCI provider image repository
 : "${FAMILY_PROVIDER_VERSION:=v0.0.2}"  # Version of OCI provider family
 : "${SUB_PROVIDERS_VERSION:=${FAMILY_PROVIDER_VERSION}}"  # Version of sub-providers (defaults to FAMILY_PROVIDER_VERSION)
 : "${TENANCY_OCID:=ocid1.tenancy.oc1.xxx}"
@@ -38,7 +39,9 @@ echo "Deploying OCI providers..."
 for provider in ${PROVIDERS//,/ }; do
   provider_name=""
   if [[ "${provider}" == "provider-family-oci" ]]; then
-    provider_name="oracle-${provider}"
+    # Derive provider name from IMAGE_REPO_NAME. E.g., for ghcr.io/oracle, it becomes oracle-provider-family-oci, for iad.ocir.io/<compartment>/<user>, it becomes <compartment>-<user>-provider-family-oci
+    family_provider_prefix=$(echo "${IMAGE_REPO_NAME}" | awk -F/ '{if (NF>1) print $(NF-1) "-" $NF; else print $NF}')
+    provider_name="${family_provider_prefix}-${provider}"
     VERSION="${FAMILY_PROVIDER_VERSION}"
   else
     provider_name="${provider}"
@@ -50,7 +53,7 @@ kind: Provider
 metadata:
   name: ${provider_name}
 spec:
-  package: ghcr.io/oracle/${provider}:${VERSION}
+  package: ${IMAGE_REPO_NAME}/${provider}:${VERSION}
 EOF
 done
 
