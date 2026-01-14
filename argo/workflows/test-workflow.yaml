@@ -33,6 +33,9 @@ spec:
       value: "false"
     - name: create_compartment
       value: "false"
+    - name: run_tests
+      value: "false"
+
     # Required to clone the Crossplane OCI provider repo
     - name: git_repo
       value: https://github.com/oracle/crossplane-provider-oci.git
@@ -43,7 +46,7 @@ spec:
     - name: namespace
       value: crossplane-system
     - name: region
-      value: us-phoenix-1
+      value: us-ashburn-1
     - name: providers
       value: "provider-family-oci,provider-oci-certificatesmanagement,provider-oci-containerengine,provider-oci-identity,provider-oci-kms,provider-oci-loadbalancer,provider-oci-networking,provider-oci-networkloadbalancer,provider-oci-objectstorage"
     - name: provider-image-repo-name
@@ -63,14 +66,18 @@ spec:
       dag:
         tasks:
         - name: delete-crossplane
-          template: delete-crossplane
+          templateRef: 
+            name: crossplane-template
+            template: delete-crossplane
           when: "{{workflow.parameters.delete_crossplane}} == true"
           arguments: 
             parameters: 
               - name: namespace
                 value: "{{workflow.parameters.namespace}}"
         - name: clone-repo
-          template: clone-repo
+          templateRef: 
+            name: clone-repo-template
+            template: clone-repo
           when: "{{workflow.parameters.clone_repo}} == true"
           arguments: 
             parameters: 
@@ -79,10 +86,14 @@ spec:
               - name: git_ref
                 value: "{{workflow.parameters.git_ref}}"
         - name: check-contents
-          template: check-contents
+          templateRef: 
+            name: clone-repo-template
+            template: check-contents
           dependencies: [clone-repo]
         - name: setup-crossplane
-          template: setup-crossplane
+          templateRef: 
+            name: crossplane-template
+            template: setup-crossplane
           dependencies: [clone-repo, delete-crossplane]
           when: "{{workflow.parameters.setup_crossplane}} == true"
           arguments:
@@ -99,179 +110,3 @@ spec:
                 value: "{{workflow.parameters.family-provider-version}}"
               - name: tenancy
                 value: "{{workflow.parameters.tenancy}}"
-        - name: create-compartment
-          template: create-resource
-          dependencies: [setup-crossplane]
-          when: "{{workflow.parameters.create_compartment}} == true"
-          arguments:
-            parameters:
-              - name: resourceFile
-                value: "argo/examples/compartment.yaml"
-              - name: envVars
-                value: "COMPARTMENT_ID={{workflow.parameters.compartment_id}}"
-        - name: create-vcn
-          template: create-resource
-          dependencies: [create-compartment]
-          arguments:
-            parameters:
-              - name: resourceFile
-                value: "argo/examples/vcn.yaml"
-        - name: create-subnet-1
-          template: create-resource
-          dependencies: [create-vcn]
-          arguments:
-            parameters:
-              - name: resourceFile
-                value: "argo/examples/subnet1.yaml"
-        - name: create-subnet-2
-          template: create-resource
-          dependencies: [create-vcn]
-          arguments:
-            parameters:
-              - name: resourceFile
-                value: "argo/examples/subnet2.yaml"
-        - name: create-internet-gateway
-          template: create-resource
-          dependencies: [create-vcn]
-          arguments:
-            parameters:
-              - name: resourceFile
-                value: "argo/examples/internet-gateway.yaml"
-        - name: create-route-table
-          template: create-resource
-          dependencies: [create-vcn, create-internet-gateway]
-          arguments:
-            parameters:
-              - name: resourceFile
-                value: "argo/examples/route-table.yaml"
-        - name: create-cluster
-          template: create-resource
-          dependencies: [create-subnet-1, create-subnet-2]
-          arguments:
-            parameters:
-              - name: resourceFile
-                value: "argo/examples/cluster.yaml"
-        - name: create-node-pool
-          template: create-resource
-          dependencies: [create-cluster]
-          arguments:
-            parameters:
-              - name: resourceFile
-                value: "argo/examples/nodepool.yaml"
-              - name: envVars
-                value: "IMAGE_ID={{workflow.parameters.image_id}}"
-        
-    - name: check-contents
-      container:
-        image: docker.io/alpine:3.23
-        command: [sh, -c]
-        args:
-          - |
-            echo "Listing repo contents:"
-            ls -la /git-repo
-            echo "Checking uname:"
-            uname | tr '[:upper:]' '[:lower:]'
-        volumeMounts:
-          - name: git-repo
-            mountPath: /git-repo
-    
-    - name: clone-repo
-      inputs:
-        parameters:
-        - name: git_repo
-        - name: git_ref
-      container:
-        image: docker.io/alpine/git:latest
-        command: [sh, -c]
-        args:
-        - |
-          git clone --single-branch --branch {{inputs.parameters.git_ref}} {{inputs.parameters.git_repo}} /src 
-          cd /src && git status
-          echo "Listing src contents:"
-          ls -la /src
-          cp -r /src/. /git-repo/
-          echo "Listing git-repo contents:"
-          ls -la /git-repo
-        volumeMounts:
-        - name: git-repo
-          mountPath: /git-repo
-    
-    - name: setup-crossplane
-      inputs:
-        parameters:
-        - name: namespace
-        - name: region
-        - name: providers
-        - name: provider-image-repo-name
-        - name: family-provider-version
-        - name: tenancy
-      container:
-        image: docker.io/alpine/k8s:1.31.13
-        command: [bash, -c]
-        args:
-        - |
-          echo "Setting up Crossplane with the following parameters:"
-          echo "Namespace: {{inputs.parameters.namespace}}"
-          echo "Region: {{inputs.parameters.region}}"
-          echo "Providers: {{inputs.parameters.providers}}"
-          echo "Family Provider Version: {{inputs.parameters.family-provider-version}}"
-          /git-repo/argo/scripts/setup_crossplane.sh
-        volumeMounts:
-        - name: git-repo
-          mountPath: /git-repo
-        env:
-        - name: NAMESPACE
-          value: "{{inputs.parameters.namespace}}"
-        - name: REGION
-          value: "{{inputs.parameters.region}}"
-        - name: PROVIDERS
-          value: "{{inputs.parameters.providers}}"
-        - name: FAMILY_PROVIDER_VERSION
-          value: "{{inputs.parameters.family-provider-version}}"  
-        - name: TENANCY
-          value: "{{inputs.parameters.tenancy}}"
-        - name: PROVIDER_IMAGE_REPO_NAME
-          value: "{{inputs.parameters.provider-image-repo-name}}"
-    - name: delete-crossplane
-      inputs:
-        parameters:
-        - name: namespace
-      container:
-        image: docker.io/alpine/k8s:1.31.13
-        command: [bash, -c]
-        args:
-        - |
-          echo "Deleting Crossplane in namespace {{inputs.parameters.namespace}}"
-          kubectl delete providers --all -n {{inputs.parameters.namespace}} --ignore-not-found
-          helm uninstall crossplane -n {{inputs.parameters.namespace}} --ignore-not-found
-          kubectl delete namespace {{inputs.parameters.namespace}} --ignore-not-found
-    - name: create-resource
-      inputs:
-        parameters:
-        - name: resourceFile
-        - name: envVars
-          value: "" # Default value, can be overridden
-      container:
-        image: docker.io/alpine/k8s:1.31.13
-        command: [bash, -c]
-        args:
-        - |
-          set -e
-          echo "Creating resource from file: {{inputs.parameters.resourceFile}}"
-          resourceKind=$(yq e '.kind' /git-repo/{{inputs.parameters.resourceFile}})
-          resourceName=$(yq e '.metadata.name' /git-repo/{{inputs.parameters.resourceFile}})
-          echo "Creating ${resourceKind,,} ${resourceName,,}"
-          if [ -n "{{inputs.parameters.envVars}}" ]; then
-            for envVar in $(echo "{{inputs.parameters.envVars}}" | tr ',' '\n'); do
-              export $envVar
-            done
-          fi
-          envsubst < /git-repo/{{inputs.parameters.resourceFile}} | kubectl apply -f - 
-          echo "Validating ${resourceKind,,} ${resourceName,,} creation..."
-          kubectl wait --for=condition=Ready=True ${resourceKind,,}/${resourceName,,} --timeout=900s
-          echo "Resource created successfully. Description:"
-          kubectl describe ${resourceKind,,}/${resourceName,,} > /tmp/resource-description.txt
-          cat /tmp/resource-description.txt
-        volumeMounts:
-        - name: git-repo
-          mountPath: /git-repo

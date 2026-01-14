@@ -1,0 +1,96 @@
+#   argo submit argo/workflows/network-tests.yaml \
+#     -p create_compartment=true \
+#     -p compartment_id=ocid1.compartment.oc1.xxx
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: oci-network-test-
+spec:
+  serviceAccountName: argo-workflow
+  entrypoint: network-tests-workflow
+  volumes:
+    - name: git-repo
+      persistentVolumeClaim:
+        claimName: git-repo-pvc
+  arguments:
+    parameters:
+    - name: create_compartment
+      value: "false"
+
+    
+    # Required by create-compartment task
+    - name: compartment_id
+
+  templates:
+    - name: network-tests-workflow
+      dag:
+        tasks:
+        - name: check-contents
+          templateRef: 
+            name: clone-repo-template
+            template: check-contents
+        - name: create-compartment
+          templateRef: 
+            name: test-template
+            template: create-resource
+          when: "{{workflow.parameters.create_compartment}} == true"
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/identity/v1alpha1/compartment.yaml"
+              - name: envVars
+                value: "COMPARTMENT_OCID={{workflow.parameters.compartment_id}}"
+        - name: create-vcn
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-compartment]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/networking/v1alpha1/vcn.yaml"
+        - name: create-dhcp-options
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-vcn]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/networking/v1alpha1/dhcpoptions.yaml"
+        - name: create-internet-gateway
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-vcn]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/networking/v1alpha1/internetgateway.yaml" 
+        - name: create-route-table
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-vcn, create-internet-gateway]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/networking/v1alpha1/routetable.yaml"
+        - name: create-security-list
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-vcn]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/networking/v1alpha1/securitylist.yaml"
+        - name: create-service-gateway
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-vcn]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/networking/v1alpha1/servicegateway.yaml"

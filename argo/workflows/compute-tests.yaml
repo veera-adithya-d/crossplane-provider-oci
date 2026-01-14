@@ -1,0 +1,281 @@
+#   argo submit argo/workflows/compute-tests.yaml \
+#     -p create_compartment=true \
+#     -p compartment_id=ocid1.compartment.oc1.xxx \
+#     -p tenancy_id=ocid1.tenancy.oc1.xxx
+
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: oci-compute-test-
+spec:
+  serviceAccountName: argo-workflow
+  entrypoint: compute-tests-workflow
+  volumes:
+    - name: git-repo
+      persistentVolumeClaim:
+        claimName: git-repo-pvc
+  arguments:
+    parameters:
+    - name: create_compartment
+      value: "false"
+
+    # Required by create-compartment task
+    - name: compartment_ocid
+
+    # Required by create-image task
+    - name: image_id
+
+    # Required by create-dedicated-vm-host task
+    - name: dedicated_vm_host_shape
+
+  templates:
+    - name: compute-tests-workflow
+      dag:
+        tasks:
+        - name: check-contents
+          templateRef: 
+            name: clone-repo-template
+            template: check-contents
+        - name: create-compartment
+          templateRef: 
+            name: test-template
+            template: create-resource
+          when: "{{workflow.parameters.create_compartment}} == true"
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/identity/v1alpha1/compartment.yaml"
+              - name: envVars
+                value: "COMPARTMENT_OCID={{workflow.parameters.compartment_ocid}}"
+        - name: create-appcataloglistingresourceversionagreement
+          templateRef: 
+            name: test-template
+            template: create-resource
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/appcataloglistingresourceversionagreement.yaml"
+        - name: create-appcatalogsubscription
+          templateRef: 
+            name: test-template
+            template: create-resource
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/appcatalogsubscription.yaml"
+        - name: create-clusternetwork
+          templateRef: 
+            name: test-template
+            template: create-resource
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/clusternetwork.yaml"
+        - name: create-computegpumemoryfabric
+          templateRef: 
+            name: test-template
+            template: create-resource
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/computegpumemoryfabric.yaml"
+        - name: create-computehost
+          templateRef: 
+            name: test-template
+            template: create-resource
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/computehost.yaml"
+        - name: create-instancemaintenanceevent
+          templateRef: 
+            name: test-template
+            template: create-resource
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/instancemaintenanceevent.yaml"
+        - name: create-vcn
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-compartment]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/networking/v1alpha1/vcn.yaml"
+        - name: create-image
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-compartment]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/image.yaml"
+              - name: envVars
+                value: "INSTANCE_OCID={{workflow.parameters.instance_ocid}}"
+        - name: create-subnet
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-vcn]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/networking/v1alpha1/subnet.yaml"
+        - name: create-network-security-group
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-vcn]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/networking/v1alpha1/networksecuritygroup.yaml"
+        - name: create-vlan
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-vcn]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/networking/v1alpha1/vlan.yaml"
+        - name: create-dedicated-vm-host
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-compartment]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/dedicatedvmhost.yaml"
+              - name: envVars
+                value: "DEDICATED_VM_HOST_SHAPE={{workflow.parameters.dedicated_vm_host_shape}}"
+        - name: create-computecapacityreport
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-compartment]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/computecapacityreport.yaml"
+        - name: create-computecapacityreservation
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-compartment]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/computecapacityreservation.yaml"
+        - name: create-computecapacitytopology
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-compartment]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/computecapacitytopology.yaml"
+        - name: create-computecluster
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-compartment]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/computecluster.yaml"
+        - name: create-computehostgroup
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-compartment]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/computehostgroup.yaml"
+        - name: create-instanceconfiguration
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-compartment]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/instanceconfiguration.yaml"
+        - name: create-computegpumemorycluster
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-compartment, create-computecluster, create-instanceconfiguration]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/computegpumemorycluster.yaml"
+        - name: create-imagecapabilityschema
+          templateRef: 
+            name: test-template
+            template: create-createAndDelete
+          dependencies: [create-compartment, create-image]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/imagecapabilityschema.yaml"
+        - name: create-instance
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-compartment, create-subnet, create-network-security-group, create-vlan, create-dedicated-vm-host, create-image]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/instance.yaml"
+        - name: create-instancepool
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-compartment, create-instanceconfiguration]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/instancepool.yaml"
+        - name: create-consolehistory
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-instance]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/consolehistory.yaml"
+        - name: create-instanceconsoleconnection
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-instance]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/instanceconsoleconnection.yaml"
+        - name: create-instancepoolinstance
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-instancepool, create-instance]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/instancepoolinstance.yaml"
+        - name: create-shapemanagement
+          templateRef: 
+            name: test-template
+            template: create-resource
+          dependencies: [create-compartment, create-image]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/shapemanagement.yaml"
