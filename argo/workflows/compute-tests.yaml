@@ -23,7 +23,7 @@ spec:
     - name: compartment_ocid
 
     # Required by create-image task
-    - name: image_id
+    - name: instance_id
 
     # Required by create-dedicated-vm-host task
     - name: dedicated_vm_host_shape
