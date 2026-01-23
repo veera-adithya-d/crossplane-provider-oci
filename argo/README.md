@@ -121,6 +121,20 @@ The `argo/workflows/templates` directory contains reusable workflow templates th
      - `create_vcn`: Whether to create a new VCN.
      - `create_subnet`: Whether to create a new subnet.
 
+7. **redis-tests-template**: Tests OCI Redis resources.
+   - Parameters:
+     - `create_compartment`: Whether to create a new compartment.
+     - `compartment_ocid`: OCID of the compartment.
+     - `create_vcn`: Whether to create a new VCN.
+     - `create_subnet`: Whether to create a new subnet.
+
+8. **mysql-tests-template**: Tests OCI MySQL resources.
+   - Parameters:
+     - `create_compartment`: Whether to create a new compartment.
+     - `compartment_ocid`: OCID of the compartment.
+     - `create_vcn`: Whether to create a new VCN.
+     - `create_subnet`: Whether to create a new subnet.
+
 ## Using Templates in Workflows
 
 To use these templates in your workflows, first apply them to your Argo instance using:
@@ -132,6 +146,8 @@ kubectl apply -f argo/workflows/templates/test.yaml
 kubectl apply -f argo/workflows/templates/identity-tests.yaml
 kubectl apply -f argo/workflows/templates/network-tests.yaml
 kubectl apply -f argo/workflows/templates/loadbalancer-tests.yaml
+kubectl apply -f argo/workflows/templates/redis-tests.yaml
+kubectl apply -f argo/workflows/templates/mysql-tests.yaml
 ```
 
 Then, reference them in your workflow definition using `templateRef`. For example:

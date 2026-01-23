@@ -34,6 +34,10 @@ spec:
       value: "false"
     - name: run_loadbalancer_tests
       value: "false"
+    - name: run_redis_tests
+      value: "false"
+    - name: run_mysql_tests
+      value: "false"
     # - name: run_compute_tests
     #   value: "false"
     # - name: run_mysql_tests
@@ -152,6 +156,38 @@ spec:
             template: loadbalancer-tests-workflow
           dependencies: [setup-crossplane]
           when: "{{workflow.parameters.run_loadbalancer_tests}} == true"
+          arguments:
+            parameters:
+              - name: create_compartment
+                value: "false"
+              - name: create_vcn
+                value: "{{workflow.parameters.create_vcn}}"
+              - name: create_subnet
+                value: "{{workflow.parameters.create_subnet}}"
+              - name: compartment_ocid
+                value: "{{workflow.parameters.compartment_ocid}}"
+        - name: redis-tests
+          templateRef: 
+            name: oci-redis-tests-template
+            template: redis-tests-workflow
+          dependencies: [setup-crossplane]
+          when: "{{workflow.parameters.run_redis_tests}} == true"
+          arguments:
+            parameters:
+              - name: create_compartment
+                value: "false"
+              - name: create_vcn
+                value: "{{workflow.parameters.create_vcn}}"
+              - name: create_subnet
+                value: "{{workflow.parameters.create_subnet}}"
+              - name: compartment_ocid
+                value: "{{workflow.parameters.compartment_ocid}}"
+        - name: mysql-tests
+          templateRef: 
+            name: oci-mysql-tests-template
+            template: mysql-tests-workflow
+          dependencies: [setup-crossplane]
+          when: "{{workflow.parameters.run_mysql_tests}} == true"
           arguments:
             parameters:
               - name: create_compartment
