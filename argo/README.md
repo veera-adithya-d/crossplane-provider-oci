@@ -114,6 +114,12 @@ The `argo/workflows/templates` directory contains reusable workflow templates th
      - `compartment_ocid`: OCID of the compartment.
      - `service_ocid`: OCID of the service.
 
+6. **loadbalancer-tests-template**: Tests OCI load balancer resources.
+   - Parameters:
+     - `create_compartment`: Whether to create a new compartment.
+     - `compartment_ocid`: OCID of the compartment.
+     - `create_vcn`: Whether to create a new VCN.
+     - `create_subnet`: Whether to create a new subnet.
 
 ## Using Templates in Workflows
 
@@ -125,6 +131,7 @@ kubectl apply -f argo/workflows/templates/crossplane.yaml
 kubectl apply -f argo/workflows/templates/test.yaml
 kubectl apply -f argo/workflows/templates/identity-tests.yaml
 kubectl apply -f argo/workflows/templates/network-tests.yaml
+kubectl apply -f argo/workflows/templates/loadbalancer-tests.yaml
 ```
 
 Then, reference them in your workflow definition using `templateRef`. For example:

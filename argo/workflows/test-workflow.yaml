@@ -32,6 +32,8 @@ spec:
       value: "false"
     - name: run_networking_tests
       value: "false"
+    - name: run_loadbalancer_tests
+      value: "false"
     # - name: run_compute_tests
     #   value: "false"
     # - name: run_mysql_tests
@@ -56,7 +58,13 @@ spec:
       value: v0.0.2
     - name: tenancy_ocid
 
+    # Flag to create compartment in identity tests
     - name: create_compartment
+      value: "false"
+    # Flags to create VCN and Subnet in loadbalancer tests 
+    - name: create_vcn
+      value: "false"
+    - name: create_subnet
       value: "false"
     # Required by create-compartment task
     - name: compartment_ocid
@@ -138,3 +146,19 @@ spec:
                 value: "{{workflow.parameters.compartment_ocid}}"
               - name: service_ocid
                 value: "{{workflow.parameters.service_ocid}}"
+        - name: loadbalancer-tests
+          templateRef: 
+            name: oci-loadbalancer-tests-template
+            template: loadbalancer-tests-workflow
+          dependencies: [setup-crossplane]
+          when: "{{workflow.parameters.run_loadbalancer_tests}} == true"
+          arguments:
+            parameters:
+              - name: create_compartment
+                value: "false"
+              - name: create_vcn
+                value: "{{workflow.parameters.create_vcn}}"
+              - name: create_subnet
+                value: "{{workflow.parameters.create_subnet}}"
+              - name: compartment_ocid
+                value: "{{workflow.parameters.compartment_ocid}}"
