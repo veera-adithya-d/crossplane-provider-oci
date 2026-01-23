@@ -111,15 +111,15 @@ spec:
               parameters:
                 - name: resourceFile
                   value: "examples/loadbalancer/v1alpha1/sslciphersuite.yaml"
-          - name: create-backend
-            templateRef: 
-              name: test-template
-              template: create-resource
-            dependencies: [create-loadbalancer, create-backendset]
-            arguments:
-              parameters:
-                - name: resourceFile
-                  value: "examples/loadbalancer/v1alpha1/backend.yaml"
+          # - name: create-backend
+          #   templateRef: 
+          #     name: test-template
+          #     template: create-resource
+          #   dependencies: [create-loadbalancer, create-backendset]
+          #   arguments:
+          #     parameters:
+          #       - name: resourceFile
+          #         value: "examples/loadbalancer/v1alpha1/backend.yaml"
           - name: create-listener
             templateRef: 
               name: test-template
