@@ -57,17 +57,20 @@ To start the workflow, run:
 ```bash
 argo submit argo/workflows/test-workflow.yaml \
 -p clone_repo=true \
--p delete_crossplane=true \
 -p setup_crossplane=true \
--p setup_uptest=false \
--p create_compartment=true \
+-p delete_crossplane=true \
+-p region=us-ashburn-1 \
+-p providers="provider-family-oci,provider-oci-identity,provider-oci-networking" \
+-p provider-image-repo-name=iad.ocir.io/iddevjmhjw0n/aendurth \
+-p family-provider-version=v0.0.3-dev \
 -p git_ref=argo-workflow \
 -p git_repo=https://github.com/endurthiabhilash/crossplane-provider-oci.git \
--p provider-image-repo-name=iad.ocir.io/iddevjmhjw0n/kousalyak \
--p family-provider-version=v0.0.1-alpha \
--p tenancy=ocid1.tenancy.oc1.xxx \
--p compartment_id=ocid1.compartment.oc1.xxx \
--p image_id=ocid1.image.oc1.xxx
+-p tenancy_ocid=ocid1.tenancy.oc1..xxx \
+-p run_identity_tests=true \
+-p run_network_tests=true \
+-p create_compartment=true \
+-p compartment_ocid=ocid1.compartment.oc1..xxx \
+-p service_ocid=ocid1.service.oc1.iad.xxx
 ```
 
 ## Notes
@@ -100,6 +103,18 @@ The `argo/workflows/templates` directory contains reusable workflow templates th
      - `resourceFile`: Path to the YAML file defining the resource.
      - `envVars`: Environment variables to substitute in the YAML file.
 
+4. **identity-tests-template**: Tests OCI identity resources.
+   - Parameters:
+     - `create_compartment`: Whether to create a new compartment.
+     - `compartment_ocid`: OCID of the compartment.
+
+5. **network-tests-template**: Tests OCI network resources.
+   - Parameters:
+     - `create_compartment`: Whether to create a new compartment.
+     - `compartment_ocid`: OCID of the compartment.
+     - `service_ocid`: OCID of the service.
+
+
 ## Using Templates in Workflows
 
 To use these templates in your workflows, first apply them to your Argo instance using:
@@ -108,6 +123,8 @@ To use these templates in your workflows, first apply them to your Argo instance
 kubectl apply -f argo/workflows/templates/clone-repo.yaml
 kubectl apply -f argo/workflows/templates/crossplane.yaml
 kubectl apply -f argo/workflows/templates/test.yaml
+kubectl apply -f argo/workflows/templates/identity-tests.yaml
+kubectl apply -f argo/workflows/templates/network-tests.yaml
 ```
 
 Then, reference them in your workflow definition using `templateRef`. For example:

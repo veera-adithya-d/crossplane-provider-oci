@@ -2,21 +2,20 @@
 #     -p clone_repo=true \
 #     -p delete_crossplane=true \
 #     -p setup_crossplane=true \
-#     -p setup_uptest=false \
-#     -p create_compartment=true \
 #     -p git_ref=argo-workflow \
 #     -p git_repo=https://github.com/endurthiabhilash/crossplane-provider-oci.git \
-#     -p tenancy=ocid1.tenancy.oc1.xxx \
-#     -p compartment_id=ocid1.compartment.oc1.xxx \
-#     -p image_id=ocid1.image.oc1.xxx
-
+#     -p run_identity_tests=true \
+#     -p run_network_tests=true \
+#     -p create_compartment=true \
+#     -p compartment_ocid=ocid1.compartment.oc1..aaaaaaaahblyv5rr7chh3kb5utyh6c4vsvs75wg35taovjjnlftvjzgjt4qa \
+#     -p service_ocid=ocid1.service.oc1.iad.aaaaaaaam4zfmy2rjue6fmglumm3czgisxzrnvrwqeodtztg7hwa272mlfna
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
   generateName: oci-crossplane-test-
 spec:
   serviceAccountName: argo-workflow
-  entrypoint: crossplane-workflow
+  entrypoint: crossplane-provider-oci-test-workflow
   volumes:
     - name: git-repo
       persistentVolumeClaim:
@@ -29,12 +28,14 @@ spec:
       value: "false"
     - name: setup_crossplane
       value: "false"
-    - name: setup_uptest
+    - name: run_identity_tests
       value: "false"
-    - name: create_compartment
+    - name: run_networking_tests
       value: "false"
-    - name: run_tests
-      value: "false"
+    # - name: run_compute_tests
+    #   value: "false"
+    # - name: run_mysql_tests
+    #   value: "false"
 
     # Required to clone the Crossplane OCI provider repo
     - name: git_repo
@@ -53,16 +54,17 @@ spec:
       value: ghcr.io/oracle
     - name: family-provider-version
       value: v0.0.2
-    - name: tenancy
+    - name: tenancy_ocid
 
+    - name: create_compartment
+      value: "false"
     # Required by create-compartment task
-    - name: compartment_id
-
-    # Required by create-node-pool task
-    - name: image_id
+    - name: compartment_ocid
+    # Required by create-service-gateway task in network tests
+    - name: service_ocid
 
   templates:
-    - name: crossplane-workflow
+    - name: crossplane-provider-oci-test-workflow
       dag:
         tasks:
         - name: delete-crossplane
@@ -109,4 +111,30 @@ spec:
               - name: family-provider-version
                 value: "{{workflow.parameters.family-provider-version}}"
               - name: tenancy
-                value: "{{workflow.parameters.tenancy}}"
+                value: "{{workflow.parameters.tenancy_ocid}}"
+        - name: identity-tests
+          templateRef: 
+            name: oci-identity-tests-template
+            template: identity-tests-workflow
+          dependencies: [setup-crossplane]
+          when: "{{workflow.parameters.run_identity_tests}} == true"
+          arguments:
+            parameters:
+              - name: create_compartment
+                value: "{{workflow.parameters.create_compartment}}"
+              - name: compartment_ocid
+                value: "{{workflow.parameters.compartment_ocid}}"
+        - name: networking-tests
+          templateRef: 
+            name: oci-network-tests-template
+            template: network-tests-workflow
+          dependencies: [setup-crossplane]
+          when: "{{workflow.parameters.run_networking_tests}} == true"
+          arguments:
+            parameters:
+              - name: create_compartment
+                value: "false"
+              - name: compartment_ocid
+                value: "{{workflow.parameters.compartment_ocid}}"
+              - name: service_ocid
+                value: "{{workflow.parameters.service_ocid}}"
