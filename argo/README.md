@@ -141,3 +141,13 @@ Then, reference them in your workflow definition using `templateRef`. For exampl
       - name: git_ref
         value: "main"
 ```
+
+## Using Templates as Standalone Workflows
+
+To trigger workflows directly from templates, you can use below command after applying the templates to your Argo instance:
+
+```bash
+argo submit --from workflowtemplate/<template_name> \
+-p <parameter_1>=<value_1> \
+-p <parameter_2>=<value_2>
+```
