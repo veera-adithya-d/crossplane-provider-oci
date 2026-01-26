@@ -38,9 +38,17 @@ spec:
       value: "false"
     - name: run_mysql_tests
       value: "false"
-    # - name: run_compute_tests
+    - name: run_kms_tests
+      value: "false"
+    - name: run_networkloadbalancer_tests
+      value: "false"
+    - name: run_objectstorage_tests
+      value: "false"
+    - name: run_psql_tests
+      value: "false"
+    # - name: run_certificatesmanagement_tests
     #   value: "false"
-    # - name: run_mysql_tests
+    # - name: run_compute_tests
     #   value: "false"
 
     # Required to clone the Crossplane OCI provider repo
@@ -188,6 +196,62 @@ spec:
             template: mysql-tests-workflow
           dependencies: [setup-crossplane]
           when: "{{workflow.parameters.run_mysql_tests}} == true"
+          arguments:
+            parameters:
+              - name: create_compartment
+                value: "false"
+              - name: create_vcn
+                value: "{{workflow.parameters.create_vcn}}"
+              - name: create_subnet
+                value: "{{workflow.parameters.create_subnet}}"
+              - name: compartment_ocid
+                value: "{{workflow.parameters.compartment_ocid}}"
+        - name: kms-tests
+          templateRef: 
+            name: oci-kms-tests-template
+            template: kms-tests-workflow
+          dependencies: [setup-crossplane]
+          when: "{{workflow.parameters.run_kms_tests}} == true"
+          arguments:
+            parameters:
+              - name: create_compartment
+                value: "false"
+              - name: compartment_ocid
+                value: "{{workflow.parameters.compartment_ocid}}"
+        - name: networkloadbalancer-tests
+          templateRef: 
+            name: oci-networkloadbalancer-tests-template
+            template: networkloadbalancer-tests-workflow
+          dependencies: [setup-crossplane]
+          when: "{{workflow.parameters.run_networkloadbalancer_tests}} == true"
+          arguments:
+            parameters:
+              - name: create_compartment
+                value: "false"
+              - name: create_vcn
+                value: "{{workflow.parameters.create_vcn}}"
+              - name: create_subnet
+                value: "{{workflow.parameters.create_subnet}}"
+              - name: compartment_ocid
+                value: "{{workflow.parameters.compartment_ocid}}"
+        - name: objectstorage-tests
+          templateRef: 
+            name: oci-objectstorage-tests-template
+            template: objectstorage-tests-workflow
+          dependencies: [setup-crossplane]
+          when: "{{workflow.parameters.run_objectstorage_tests}} == true"
+          arguments:
+            parameters:
+              - name: create_compartment
+                value: "false"
+              - name: compartment_ocid
+                value: "{{workflow.parameters.compartment_ocid}}"
+        - name: psql-tests
+          templateRef:
+            name: oci-psql-tests-template
+            template: psql-tests-workflow
+          dependencies: [setup-crossplane]
+          when: "{{workflow.parameters.run_psql_tests}} == true"
           arguments:
             parameters:
               - name: create_compartment
