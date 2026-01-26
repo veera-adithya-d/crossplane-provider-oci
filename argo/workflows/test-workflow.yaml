@@ -87,6 +87,8 @@ spec:
     - name: vault_management_endpoint
     # Required by create-encrypteddata, create-generatedkey, create-sign tasks in kms tests
     - name: vault_crypto_endpoint
+    # Required by create-bucket, create-bucketwithretentionrule, create-object, create-objectlifecyclepolicy, create-preauthrequest, create-replicationpolicy tasks in objectstorage tests
+    - name: objectstorage_namespace
 
   templates:
     - name: crossplane-provider-oci-test-workflow
@@ -255,6 +257,8 @@ spec:
                 value: "false"
               - name: compartment_ocid
                 value: "{{workflow.parameters.compartment_ocid}}"
+              - name: objectstorage_namespace
+                value: "{{workflow.parameters.objectstorage_namespace}}"
         - name: psql-tests
           templateRef:
             name: oci-psql-tests-template
