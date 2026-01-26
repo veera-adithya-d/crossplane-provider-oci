@@ -78,10 +78,15 @@ spec:
       value: "false"
     - name: create_subnet
       value: "false"
+
     # Required by create-compartment task
     - name: compartment_ocid
     # Required by create-service-gateway task in network tests
     - name: service_ocid
+    # Required by create-key, create-keyversion, create-symmetrickey tasks in kms tests
+    - name: vault_management_endpoint
+    # Required by create-encrypteddata, create-generatedkey, create-sign tasks in kms tests
+    - name: vault_crypto_endpoint
 
   templates:
     - name: crossplane-provider-oci-test-workflow
@@ -218,6 +223,10 @@ spec:
                 value: "false"
               - name: compartment_ocid
                 value: "{{workflow.parameters.compartment_ocid}}"
+              - name: vault_management_endpoint
+                value: "{{workflow.parameters.vault_management_endpoint}}"
+              - name: vault_crypto_endpoint
+                value: "{{workflow.parameters.vault_crypto_endpoint}}"
         - name: networkloadbalancer-tests
           templateRef: 
             name: oci-networkloadbalancer-tests-template

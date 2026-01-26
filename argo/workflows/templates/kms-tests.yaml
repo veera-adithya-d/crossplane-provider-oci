@@ -17,6 +17,10 @@ spec:
 
     # Required by create-compartment task
     - name: compartment_ocid
+    # Required by create-encrypteddata, create-generatedkey, create-sign tasks
+    - name: vault_crypto_endpoint
+    # Required by create-key, create-keyversion, create-symmetrickey tasks
+    - name: vault_management_endpoint
 
   templates:
     - name: kms-tests-workflow
@@ -51,6 +55,8 @@ spec:
               parameters:
                 - name: resourceFile
                   value: "examples/kms/v1alpha1/key.yaml"
+                - name: envVars
+                  value: "VAULT_MANAGEMENT_ENDPOINT={{workflow.parameters.vault_management_endpoint}}"
           - name: create-symmetrickey
             templateRef:
               name: test-template
@@ -60,6 +66,8 @@ spec:
               parameters:
                 - name: resourceFile
                   value: "examples/kms/v1alpha1/symmetrickey.yaml"
+                - name: envVars
+                  value: "VAULT_MANAGEMENT_ENDPOINT={{workflow.parameters.vault_management_endpoint}}"
           - name: create-keyversion
             templateRef:
               name: test-template
@@ -69,6 +77,8 @@ spec:
               parameters:
                 - name: resourceFile
                   value: "examples/kms/v1alpha1/keyversion.yaml"
+                - name: envVars
+                  value: "VAULT_MANAGEMENT_ENDPOINT={{workflow.parameters.vault_management_endpoint}}"
           - name: create-generatedkey
             templateRef:
               name: test-template
@@ -78,6 +88,8 @@ spec:
               parameters:
                 - name: resourceFile
                   value: "examples/kms/v1alpha1/generatedkey.yaml"
+                - name: envVars
+                  value: "VAULT_CRYPTO_ENDPOINT={{workflow.parameters.vault_crypto_endpoint}}"
           - name: create-encrypteddata
             templateRef:
               name: test-template
@@ -87,6 +99,8 @@ spec:
               parameters:
                 - name: resourceFile
                   value: "examples/kms/v1alpha1/encrypteddata.yaml"
+                - name: envVars
+                  value: "VAULT_CRYPTO_ENDPOINT={{workflow.parameters.vault_crypto_endpoint}}"
           - name: create-sign
             templateRef:
               name: test-template
@@ -96,3 +110,5 @@ spec:
               parameters:
                 - name: resourceFile
                   value: "examples/kms/v1alpha1/sign.yaml"
+                - name: envVars
+                  value: "VAULT_CRYPTO_ENDPOINT={{workflow.parameters.vault_crypto_endpoint}}"
