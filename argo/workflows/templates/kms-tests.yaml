@@ -57,7 +57,7 @@ spec:
                   value: "examples/kms/v1alpha1/key.yaml"
                 - name: envVars
                   value: "VAULT_MANAGEMENT_ENDPOINT={{workflow.parameters.vault_management_endpoint}}"
-          - name: create-symmetrickey
+          - name: create-assymmetrickey
             templateRef:
               name: test-template
               template: create-resource
@@ -65,7 +65,7 @@ spec:
             arguments:
               parameters:
                 - name: resourceFile
-                  value: "examples/kms/v1alpha1/symmetrickey.yaml"
+                  value: "examples/kms/v1alpha1/assymmetrickey.yaml"
                 - name: envVars
                   value: "VAULT_MANAGEMENT_ENDPOINT={{workflow.parameters.vault_management_endpoint}}"
           - name: create-keyversion
@@ -105,7 +105,7 @@ spec:
             templateRef:
               name: test-template
               template: create-resource
-            dependencies: [create-symmetrickey]
+            dependencies: [create-assymmetrickey]
             arguments:
               parameters:
                 - name: resourceFile
