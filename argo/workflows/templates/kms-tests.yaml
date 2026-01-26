@@ -1,0 +1,98 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: oci-kms-tests-template
+spec:
+  serviceAccountName: argo-workflow
+  entrypoint: kms-tests-workflow
+  volumes:
+    - name: git-repo
+      persistentVolumeClaim:
+        claimName: git-repo-pvc
+  arguments:
+    parameters:
+    - name: create_compartment
+      value: "false"
+
+
+    # Required by create-compartment task
+    - name: compartment_ocid
+
+  templates:
+    - name: kms-tests-workflow
+      dag:
+        tasks:
+          - name: create-compartment
+            templateRef:
+              name: test-template
+              template: create-resource
+            when: "{{workflow.parameters.create_compartment}} == true"
+            arguments:
+              parameters:
+                - name: resourceFile
+                  value: "examples/identity/v1alpha1/compartment.yaml"
+                - name: envVars
+                  value: "COMPARTMENT_OCID={{workflow.parameters.compartment_ocid}}"
+          - name: create-vault
+            templateRef:
+              name: test-template
+              template: create-resource
+            dependencies: [create-compartment]
+            arguments:
+              parameters:
+                - name: resourceFile
+                  value: "examples/kms/v1alpha1/vault.yaml"
+          - name: create-key
+            templateRef:
+              name: test-template
+              template: create-resource
+            dependencies: [create-vault]
+            arguments:
+              parameters:
+                - name: resourceFile
+                  value: "examples/kms/v1alpha1/key.yaml"
+          - name: create-symmetrickey
+            templateRef:
+              name: test-template
+              template: create-resource
+            dependencies: [create-vault]
+            arguments:
+              parameters:
+                - name: resourceFile
+                  value: "examples/kms/v1alpha1/symmetrickey.yaml"
+          - name: create-keyversion
+            templateRef:
+              name: test-template
+              template: create-resource
+            dependencies: [create-key]
+            arguments:
+              parameters:
+                - name: resourceFile
+                  value: "examples/kms/v1alpha1/keyversion.yaml"
+          - name: create-generatedkey
+            templateRef:
+              name: test-template
+              template: create-resource
+            dependencies: [create-key]
+            arguments:
+              parameters:
+                - name: resourceFile
+                  value: "examples/kms/v1alpha1/generatedkey.yaml"
+          - name: create-encrypteddata
+            templateRef:
+              name: test-template
+              template: create-resource
+            dependencies: [create-key]
+            arguments:
+              parameters:
+                - name: resourceFile
+                  value: "examples/kms/v1alpha1/encrypteddata.yaml"
+          - name: create-sign
+            templateRef:
+              name: test-template
+              template: create-resource
+            dependencies: [create-symmetrickey]
+            arguments:
+              parameters:
+                - name: resourceFile
+                  value: "examples/kms/v1alpha1/sign.yaml"
