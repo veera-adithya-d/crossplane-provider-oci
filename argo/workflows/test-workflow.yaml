@@ -46,11 +46,11 @@ spec:
       value: "false"
     - name: run_psql_tests
       value: "false"
+    - name: run_compute_tests
+      value: "false"
     # - name: run_certificatesmanagement_tests
     #   value: "false"
-    # - name: run_compute_tests
-    #   value: "false"
-
+    
     # Required to clone the Crossplane OCI provider repo
     - name: git_repo
       value: https://github.com/oracle/crossplane-provider-oci.git
@@ -81,14 +81,24 @@ spec:
 
     # Required by create-compartment task
     - name: compartment_ocid
-    # Required by create-service-gateway task in network tests
+    # Required by network tests
     - name: service_ocid
-    # Required by create-key, create-keyversion, create-symmetrickey tasks in kms tests
+    # Required by kms tests
     - name: vault_management_endpoint
-    # Required by create-encrypteddata, create-generatedkey, create-sign tasks in kms tests
     - name: vault_crypto_endpoint
-    # Required by create-bucket, create-bucketwithretentionrule, create-object, create-objectlifecyclepolicy, create-preauthrequest, create-replicationpolicy tasks in objectstorage tests
+    # Required by objectstorage tests
     - name: objectstorage_namespace
+    # Required by compute tests
+    - name: availability_domain
+    - name: computecapacityreport_instanceshape
+    - name: computehost_id
+    - name: computeimagecapabilityschema_version_name
+    - name: computeimagecapabilityschema_descriptortype
+    - name: computeimagecapabilityschema_source
+    - name: image_instance_ocid
+    - name: instanceconsoleconnection_publickey
+    - name: instancemaintenanceevent_id
+
 
   templates:
     - name: crossplane-provider-oci-test-workflow
@@ -275,3 +285,33 @@ spec:
                 value: "{{workflow.parameters.create_subnet}}"
               - name: compartment_ocid
                 value: "{{workflow.parameters.compartment_ocid}}"
+        - name: compute-tests
+          templateRef:
+            name: oci-compute-tests-template
+            template: compute-tests-workflow
+          dependencies: [setup-crossplane]
+          when: "{{workflow.parameters.run_compute_tests}} == true"
+          arguments:
+            parameters:
+              - name: create_compartment
+                value: "false"
+              - name: compartment_ocid
+                value: "{{workflow.parameters.compartment_ocid}}"
+              - name: availability_domain
+                value: "{{workflow.parameters.availability_domain}}"
+              - name: computecapacityreport_instanceshape
+                value: "{{workflow.parameters.computecapacityreport_instanceshape}}"
+              - name: computehost_id
+                value: "{{workflow.parameters.computehost_id}}"
+              - name: computeimagecapabilityschema_version_name
+                value: "{{workflow.parameters.computeimagecapabilityschema_version_name}}"
+              - name: computeimagecapabilityschema_descriptortype
+                value: "{{workflow.parameters.computeimagecapabilityschema_descriptortype}}"
+              - name: computeimagecapabilityschema_source
+                value: "{{workflow.parameters.computeimagecapabilityschema_source}}"
+              - name: image_instance_ocid
+                value: "{{workflow.parameters.image_instance_ocid}}"
+              - name: instanceconsoleconnection_publickey
+                value: "{{workflow.parameters.instanceconsoleconnection_publickey}}"
+              - name: instancemaintenanceevent_id
+                value: "{{workflow.parameters.instancemaintenanceevent_id}}"
