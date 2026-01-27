@@ -163,8 +163,8 @@ spec:
                 value: "{{workflow.parameters.compartment_ocid}}"
         - name: networking-tests
           templateRef: 
-            name: oci-network-tests-template
-            template: network-tests-workflow
+            name: oci-networking-tests-template
+            template: networking-tests-workflow
           dependencies: [setup-crossplane]
           when: "{{workflow.parameters.run_networking_tests}} == true"
           arguments:
