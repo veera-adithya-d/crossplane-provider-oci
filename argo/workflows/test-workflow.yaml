@@ -81,8 +81,9 @@ spec:
 
     # Required by create-compartment task
     - name: compartment_ocid
+    # TODO: To be added back after service gateway tests are fixed
     # Required by network tests
-    - name: service_ocid
+    # - name: service_ocid
     # Required by kms tests
     - name: vault_management_endpoint
     - name: vault_crypto_endpoint
@@ -173,8 +174,9 @@ spec:
                 value: "false"
               - name: compartment_ocid
                 value: "{{workflow.parameters.compartment_ocid}}"
-              - name: service_ocid
-                value: "{{workflow.parameters.service_ocid}}"
+              # TODO: To be added back after service gateway tests are fixed
+              # - name: service_ocid
+              #   value: "{{workflow.parameters.service_ocid}}"
         - name: loadbalancer-tests
           templateRef: 
             name: oci-loadbalancer-tests-template

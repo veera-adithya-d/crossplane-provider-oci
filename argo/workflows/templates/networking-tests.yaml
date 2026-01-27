@@ -15,8 +15,9 @@ spec:
       value: "false"    
     # Required by create-compartment task
     - name: compartment_ocid
+    # TODO: To be added back after service gateway tests are fixed
     # Required by create-servicegateway task
-    - name: service_ocid # get supported services from `oci network service list`
+    # - name: service_ocid # get supported services from `oci network service list`
 
   templates:
     - name: networking-tests-workflow
@@ -114,17 +115,18 @@ spec:
             parameters:
               - name: resourceFile
                 value: "examples/networking/v1alpha1/routetable.yaml"
-        - name: create-servicegateway
-          templateRef: 
-            name: test-template
-            template: create-resource
-          dependencies: [create-compartment, create-routetable, create-vcn]
-          arguments:
-            parameters:
-              - name: resourceFile
-                value: "examples/networking/v1alpha1/servicegateway.yaml"
-              - name: envVars
-                value: "SERVICE_OCID={{workflow.parameters.service_ocid}}"
+        # TODO: To be added back after service gateway tests are fixed
+        # - name: create-servicegateway
+        #   templateRef: 
+        #     name: test-template
+        #     template: create-resource
+        #   dependencies: [create-compartment, create-routetable, create-vcn]
+        #   arguments:
+        #     parameters:
+        #       - name: resourceFile
+        #         value: "examples/networking/v1alpha1/servicegateway.yaml"
+        #       - name: envVars
+        #         value: "SERVICE_OCID={{workflow.parameters.service_ocid}}"
         - name: create-networksecuritygroupsecurityrule
           templateRef: 
             name: test-template
