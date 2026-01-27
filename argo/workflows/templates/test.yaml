@@ -29,7 +29,7 @@ spec:
           echo "Validating ${resourceKind,,} ${resourceName,,} creation..."
           kubectl wait --for=condition=Ready=True ${resourceKind,,}/${resourceName,,} --timeout=900s
           kubectl describe ${resourceKind,,}/${resourceName,,} > /tmp/resource-description.txt
-          cat /tmp/resource-description.txtpwd
+          cat /tmp/resource-description.txt
           echo "Resource created successfully."
         volumeMounts:
         - name: git-repo
