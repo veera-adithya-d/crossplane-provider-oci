@@ -11,23 +11,22 @@ spec:
         claimName: git-repo-pvc
   arguments:
     parameters:
-    - name: create_compartment
-      value: "false"
+      - name: create_compartment
+        value: "false"
+      - name: create_vcn
+        value: "false"
+      - name: create_subnet
+        value: "false"
 
+      # Required by create-compartment task
+      - name: compartment_ocid
 
-    # Required by create-compartment task
-    - name: compartment_ocid
-
-    # Required by compute tasks
-    - name: availability_domain
-    - name: computecapacityreport_instanceshape
-    - name: computehost_id
-    - name: computeimagecapabilityschema_version_name
-    - name: computeimagecapabilityschema_descriptortype
-    - name: computeimagecapabilityschema_source
-    - name: image_instance_ocid
-    - name: instanceconsoleconnection_publickey
-    - name: instancemaintenanceevent_id
+      # Required by compute tasks
+      - name: availability_domain
+      - name: computecapacityreport_instanceshape
+      - name: computeimagecapabilityschema_version_name
+      - name: image_instance_ocid
+      - name: instanceconsoleconnection_publickey
 
   templates:
     - name: compute-tests-workflow
@@ -48,39 +47,26 @@ spec:
                   value: "examples/identity/v1alpha1/compartment.yaml"
                 - name: envVars
                   value: "COMPARTMENT_OCID={{workflow.parameters.compartment_ocid}}"
-          - name: create-instancemaintenanceevent
+          - name: create-vcn
             templateRef:
               name: test-template
               template: create-resource
+            when: "{{workflow.parameters.create_vcn}} == true"
             dependencies: [create-compartment]
             arguments:
               parameters:
                 - name: resourceFile
-                  value: "examples/compute/v1alpha1/instancemaintenanceevent.yaml"
-                - name: envVars
-                  value: "INSTANCEMAINTENANCEEVENT_ID={{workflow.parameters.instancemaintenanceevent_id}}"
-          - name: create-computecapacityreservation
+                  value: "examples/networking/v1alpha1/vcn.yaml"
+          - name: create-subnet
             templateRef:
               name: test-template
               template: create-resource
-            dependencies: [create-compartment]
+            when: "{{workflow.parameters.create_subnet}} == true"
+            dependencies: [create-compartment, create-vcn]
             arguments:
               parameters:
                 - name: resourceFile
-                  value: "examples/compute/v1alpha1/computecapacityreservation.yaml"
-                - name: envVars
-                  value: "AVAILABILITY_DOMAIN={{workflow.parameters.availability_domain}}"
-          - name: create-computecapacitytopology
-            templateRef:
-              name: test-template
-              template: create-resource
-            dependencies: [create-compartment]
-            arguments:
-              parameters:
-                - name: resourceFile
-                  value: "examples/compute/v1alpha1/computecapacitytopology.yaml"
-                - name: envVars
-                  value: "AVAILABILITY_DOMAIN={{workflow.parameters.availability_domain}}"
+                  value: "examples/networking/v1alpha1/subnet.yaml"
           - name: create-computecapacityreport
             templateRef:
               name: test-template
@@ -92,39 +78,17 @@ spec:
                   value: "examples/compute/v1alpha1/computecapacityreport.yaml"
                 - name: envVars
                   value: "AVAILABILITY_DOMAIN={{workflow.parameters.availability_domain}},COMPUTECAPACITYREPORT_INSTANCESHAPE={{workflow.parameters.computecapacityreport_instanceshape}}"
-          - name: create-computehostgroup
-            templateRef:
-              name: test-template
-              template: create-resource
-            dependencies: [create-compartment]
-            arguments:
-              parameters:
-                - name: resourceFile
-                  value: "examples/compute/v1alpha1/computehostgroup.yaml"
-                - name: envVars
-                  value: "AVAILABILITY_DOMAIN={{workflow.parameters.availability_domain}}"
-          - name: create-computehost
-            templateRef:
-              name: test-template
-              template: create-resource
-            dependencies: [create-computehostgroup]
-            arguments:
-              parameters:
-                - name: resourceFile
-                  value: "examples/compute/v1alpha1/computehost.yaml"
-                - name: envVars
-                  value: "COMPUTEHOST_ID={{workflow.parameters.computehost_id}}"
-          - name: create-computeimagecapabilityschema
-            templateRef:
-              name: test-template
-              template: create-resource
-            dependencies: [create-compartment]
-            arguments:
-              parameters:
-                - name: resourceFile
-                  value: "examples/compute/v1alpha1/computeimagecapabilityschema.yaml"
-                - name: envVars
-                  value: "COMPUTEIMAGECAPABILITYSCHEMA_VERSION_NAME={{workflow.parameters.computeimagecapabilityschema_version_name}},COMPUTEIMAGECAPABILITYSCHEMA_DESCRIPTORTYPE={{workflow.parameters.computeimagecapabilityschema_descriptortype}},COMPUTEIMAGECAPABILITYSCHEMA_SOURCE={{workflow.parameters.computeimagecapabilityschema_source}}"
+#          - name: create-computeimagecapabilityschema
+#            templateRef:
+#              name: test-template
+#              template: create-resource
+#            dependencies: [create-compartment]
+#            arguments:
+#              parameters:
+#                - name: resourceFile
+#                  value: "examples/compute/v1alpha1/computeimagecapabilityschema.yaml"
+#                - name: envVars
+#                  value: "COMPUTEIMAGECAPABILITYSCHEMA_VERSION_NAME={{workflow.parameters.computeimagecapabilityschema_version_name}}"
           - name: create-image
             templateRef:
               name: test-template
@@ -149,7 +113,7 @@ spec:
             templateRef:
               name: test-template
               template: create-resource
-            dependencies: [create-compartment]
+            dependencies: [create-compartment, create-subnet, create-image]
             arguments:
               parameters:
                 - name: resourceFile
@@ -167,14 +131,3 @@ spec:
                   value: "examples/compute/v1alpha1/instanceconsoleconnection.yaml"
                 - name: envVars
                   value: "INSTANCECONSOLECONNECTION_PUBLICKEY={{workflow.parameters.instanceconsoleconnection_publickey}}"
-          - name: create-instancepool
-            templateRef:
-              name: test-template
-              template: create-resource
-            dependencies: [create-instanceconfiguration]
-            arguments:
-              parameters:
-                - name: resourceFile
-                  value: "examples/compute/v1alpha1/instancepool.yaml"
-                - name: envVars
-                  value: "AVAILABILITY_DOMAIN={{workflow.parameters.availability_domain}}"
