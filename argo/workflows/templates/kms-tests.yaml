@@ -50,7 +50,6 @@ spec:
             templateRef:
               name: test-template
               template: create-resource
-            dependencies: [create-vault]
             arguments:
               parameters:
                 - name: resourceFile
@@ -61,7 +60,6 @@ spec:
             templateRef:
               name: test-template
               template: create-resource
-            dependencies: [create-vault]
             arguments:
               parameters:
                 - name: resourceFile
