@@ -48,6 +48,8 @@ spec:
       value: "false"
     - name: run_compute_tests
       value: "false"
+    - name: run_containerengine_tests
+      value: "false"
     # - name: run_certificatesmanagement_tests
     #   value: "false"
     
@@ -310,3 +312,17 @@ spec:
                 value: "{{workflow.parameters.image_instance_ocid}}"
               - name: instanceconsoleconnection_publickey
                 value: "{{workflow.parameters.instanceconsoleconnection_publickey}}"
+        - name: containerengine-tests
+          templateRef:
+            name: oci-containerengine-tests-template
+            template: containerengine-tests-workflow
+          dependencies: [setup-crossplane]
+          when: "{{workflow.parameters.run_containerengine_tests}} == true"
+          arguments:
+            - parameters:
+                - name: create_compartment
+                  value: "false"
+                - name: create_vcn
+                  value: "{{workflow.parameters.create_vcn}}"
+                - name: compartment_ocid
+                  value: "{{workflow.parameters.compartment_ocid}}"
