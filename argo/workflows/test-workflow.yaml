@@ -92,13 +92,10 @@ spec:
     # Required by compute tests
     - name: availability_domain
     - name: computecapacityreport_instanceshape
-    - name: computehost_id
-    - name: computeimagecapabilityschema_version_name
-    - name: computeimagecapabilityschema_descriptortype
-    - name: computeimagecapabilityschema_source
+    # TODO: Will add back when testing multiple workflow branches (with multiple configurations) for compute service.
+    # - name: computeimagecapabilityschema_version_name
     - name: image_instance_ocid
     - name: instanceconsoleconnection_publickey
-    - name: instancemaintenanceevent_id
 
 
   templates:
@@ -297,23 +294,19 @@ spec:
             parameters:
               - name: create_compartment
                 value: "false"
+              - name: create_vcn
+                value: "{{workflow.parameters.create_vcn}}"
+              - name: create_subnet
+                value: "{{workflow.parameters.create_subnet}}"
               - name: compartment_ocid
                 value: "{{workflow.parameters.compartment_ocid}}"
               - name: availability_domain
                 value: "{{workflow.parameters.availability_domain}}"
               - name: computecapacityreport_instanceshape
                 value: "{{workflow.parameters.computecapacityreport_instanceshape}}"
-              - name: computehost_id
-                value: "{{workflow.parameters.computehost_id}}"
-              - name: computeimagecapabilityschema_version_name
-                value: "{{workflow.parameters.computeimagecapabilityschema_version_name}}"
-              - name: computeimagecapabilityschema_descriptortype
-                value: "{{workflow.parameters.computeimagecapabilityschema_descriptortype}}"
-              - name: computeimagecapabilityschema_source
-                value: "{{workflow.parameters.computeimagecapabilityschema_source}}"
+              #- name: computeimagecapabilityschema_version_name
+              #  value: "{{workflow.parameters.computeimagecapabilityschema_version_name}}"
               - name: image_instance_ocid
                 value: "{{workflow.parameters.image_instance_ocid}}"
               - name: instanceconsoleconnection_publickey
                 value: "{{workflow.parameters.instanceconsoleconnection_publickey}}"
-              - name: instancemaintenanceevent_id
-                value: "{{workflow.parameters.instancemaintenanceevent_id}}"
