@@ -7,18 +7,10 @@ Install Argo workflow using the following command:
 <!-- TODO: Update instructions to install argo -->
 ```bash
 kubectl create namespace argo
-kubectl apply -n argo -f https://github.com/argoproj/argo-workflows/releases/download/v3.7.6/quick-start-minimal.yaml
+kubectl apply -n argo -f https://github.com/argoproj/argo-workflows/releases/download/v3.7.6/install.yaml
 ```
 
-## Step 2: Port-forward Argo Server
-
-Port-forward the Argo server using the following command:
-
-```bash
-kubectl -n argo port-forward deployment/argo-server 2746:2746
-```
-
-## Step 3: Clone the Repository
+## Step 2: Clone the Repository
 
 Clone the repository using the following command:
 <!-- Replace with oracle repo-->
@@ -26,7 +18,7 @@ Clone the repository using the following command:
 git clone https://github.com/endurthiabhilash/crossplane-provider-oci.git -b argo-workflow
 ```
 
-## Step 4: Create Argo Workflow Service Account
+## Step 3: Create Argo Workflow Service Account
 
 Create the Argo workflow service account by running:
 
@@ -34,20 +26,46 @@ Create the Argo workflow service account by running:
 kubectl apply -f argo/setup/workflow-serviceaccount.yaml
 ```
 
-## Step 5: Create PVC for Workflow
-
-Create a PVC to store the cloned repository in the workflow by running:
-
-```bash
-kubectl apply -f argo/setup/git-repo-pvc.yaml
-```
-
-## Step 6: Create Cluster Admin Role Binding
+## Step 4: Create Cluster Admin Role Binding
 
 Create the cluster admin role binding by running:
 
 ```bash
 kubectl apply -f argo/setup/workflow-admin-clusterrolebinding.yaml
+```
+
+## Step 5: Create Secret for Argo Workflow Service Account
+
+Create the token by running:
+```bash
+kubectl apply -f argo/setup/workflow-token-secret.yaml
+```
+
+## Step 6: Port-forward Argo Server
+
+Port-forward the Argo server using the following command:
+
+```bash
+kubectl -n argo port-forward deployment/argo-server 2746:2746
+```
+
+## Step 7: Login to Argo Workflow UI
+
+Run below command to get ARGO_TOKEN
+
+```bash
+ARGO_TOKEN="Bearer $(kubectl get secret argo-workflow.service-account-token -o=jsonpath='{.data.token}' | base64 --decode)"
+echo $ARGO_TOKEN
+```
+
+Login to https://localhost:2746 by using the ARGO_TOKEN from above.
+
+## Step 6: Create PVC for Workflow
+
+Create a PVC to store the cloned repository in the workflow by running:
+
+```bash
+kubectl apply -f argo/setup/git-repo-pvc.yaml
 ```
 
 ## Step 7: Submit the Workflow
