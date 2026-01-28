@@ -319,10 +319,10 @@ spec:
           dependencies: [setup-crossplane]
           when: "{{workflow.parameters.run_containerengine_tests}} == true"
           arguments:
-            - parameters:
-                - name: create_compartment
-                  value: "false"
-                - name: create_vcn
-                  value: "{{workflow.parameters.create_vcn}}"
-                - name: compartment_ocid
-                  value: "{{workflow.parameters.compartment_ocid}}"
+            parameters:
+              - name: create_compartment
+                value: "false"
+              - name: create_vcn
+                value: "{{workflow.parameters.create_vcn}}"
+              - name: compartment_ocid
+                value: "{{workflow.parameters.compartment_ocid}}"
