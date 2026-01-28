@@ -47,7 +47,7 @@ spec:
               parameters:
                 - name: resourceFile
                   value: "examples/networking/v1alpha1/vcn.yaml"
-          - name: create-subnet
+          - name: create-privatesubnet
             templateRef: 
               name: test-template
               template: create-resource
@@ -56,12 +56,12 @@ spec:
             arguments:
               parameters:
                 - name: resourceFile
-                  value: "examples/networking/v1alpha1/subnet.yaml"
+                  value: "examples/networking/v1alpha1/privatesubnet.yaml"
           - name: create-psqldbsystem
             templateRef:
               name: test-template
               template: create-resource
-            dependencies: [create-compartment, create-subnet]
+            dependencies: [create-compartment, create-privatesubnet]
             arguments:
               parameters:
                 - name: resourceFile

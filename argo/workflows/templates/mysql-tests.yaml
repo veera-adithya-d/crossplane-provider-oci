@@ -21,6 +21,8 @@ spec:
     
     # Required by create-compartment task
     - name: compartment_ocid
+    # Required by create-mysqldbsystem task
+    - name: availability_domain
 
   templates:
     - name: mysql-tests-workflow
@@ -75,6 +77,8 @@ spec:
               parameters:
                 - name: resourceFile
                   value: "examples/mysql/v1alpha1/mysqldbsystem.yaml"
+                - name: envVars
+                  value: "AVAILABILITY_DOMAIN={{workflow.parameters.availability_domain}}"
           - name: create-mysqlbackup
             templateRef:
               name: test-template
