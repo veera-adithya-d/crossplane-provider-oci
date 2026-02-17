@@ -140,6 +140,9 @@ func processExamples() error {
 		"resolveWhenDelete": func() string {
 			return "{{workflow.parameters.delete_resources}}"
 		},
+		"resolveResourceFile": func(path string) string {
+			return fmt.Sprintf("examples/%s", path)
+		},
 		"reverse": func(list interface{}) interface{} {
 			switch l := list.(type) {
 			case []ResourceFile:
@@ -166,21 +169,22 @@ func processExamples() error {
 			}
 			return strings.Join(createDependencies, ", ")
 		},
-		"joinDeleteDependencies": func(dependentKinds []string) string {
+		"joinDeleteDependencies": func(kind string, dependentKinds []string) string {
 			deleteDependencies := make([]string, 0)
+			deleteDependencies = append(deleteDependencies, fmt.Sprintf("create-%s", strings.ReplaceAll(kind, "_", "-")))
 			for _, dependentKind := range dependentKinds {
 				dependentTaskName := fmt.Sprintf("delete-%s", strings.ReplaceAll(dependentKind, "_", "-"))
 				deleteDependencies = append(deleteDependencies, dependentTaskName)
 			}
+			// Add quotes around each dependency
+			for i, dep := range deleteDependencies {
+				deleteDependencies[i] = fmt.Sprintf("\"%s\"", dep)
+			}
 			return strings.Join(deleteDependencies, ", ")
 		},
-		"resolveResourceKind": func(kind string) string {
-			resourceKind := fmt.Sprintf("{{tasks.create-%s.outputs.parameters.resourceKind}}", kind)
-			return resourceKind
-		},
-		"resolveResourceName": func(kind string) string {
-			resourceKind := fmt.Sprintf("{{tasks.create-%s.outputs.parameters.resourceName}}", kind)
-			return resourceKind
+		"resolveResource": func(kind string, resourceType string) string {
+			resource := fmt.Sprintf("{{tasks.create-%s.outputs.parameters.resource%s}}", kind, resourceType)
+			return resource
 		},
 	}).ParseFiles(WorkflowTemplateFilePath)
 	if err != nil {
@@ -309,6 +313,7 @@ func processResourceFile(versionPath string, fileName string) (ResourceFile, err
 	var yamlData map[string]interface{}
 	err = yaml.Unmarshal(data, &yamlData)
 	if err != nil {
+		fmt.Printf("Failed to process resource file: %s\n", filePath)
 		return ResourceFile{}, err
 	}
 

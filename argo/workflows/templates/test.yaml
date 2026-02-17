@@ -38,9 +38,14 @@ spec:
           # Create the main resource
           echo "Creating resource from file: {{inputs.parameters.resourceFile}}"
           apiVersion=$(yq e '.apiVersion' /git-repo/{{inputs.parameters.resourceFile}})
+          group="${apiVersion%%/*}"
           kind=$(yq e '.kind' /git-repo/{{inputs.parameters.resourceFile}})
           name=$(yq e '.metadata.name' /git-repo/{{inputs.parameters.resourceFile}})
-          jq -n --arg kind "${kind,,}" --arg name "${name,,}" --arg apiVersion "${apiVersion}" '{kind: $kind, name: $name, apiVersion: $apiVersion}' > /tmp/resource-info.json
+
+          echo -n "${name,,}"       > /tmp/resourceName.txt
+          echo -n "${kind,,}"       > /tmp/resourceKind.txt
+          echo -n "${group}"        > /tmp/resourceGroup.txt
+
           echo "Creating ${kind,,} ${name,,}"
           if [ -n "{{inputs.parameters.envVars}}" ]; then
             for envVar in $(echo "{{inputs.parameters.envVars}}" | tr ',' '\n'); do
@@ -49,8 +54,8 @@ spec:
           fi
           envsubst < /git-repo/{{inputs.parameters.resourceFile}} | kubectl apply -f - 
           echo "Validating ${kind,,} ${name,,} creation..."
-          echo "kubectl wait --for=condition=Ready=True ${kind,,}.${apiVersion}/${name,,} --timeout=900s"
-          kubectl wait --for=condition=Ready=True ${kind,,}.${apiVersion}/${name,,} --timeout=900s
+          echo "kubectl wait --for=condition=Ready=True ${kind,,}.${group}/${name,,} --timeout=900s"
+          kubectl wait --for=condition=Ready=True ${kind,,}.${group}/${name,,} --timeout=900s
           echo "Resource created successfully."
         volumeMounts:
         - name: git-repo
@@ -59,22 +64,19 @@ spec:
         parameters:
         - name: resourceName
           valueFrom:
-            path: /tmp/resource-info.json
-            jqFilter: .name
+            path: /tmp/resourceName.txt
         - name: resourceKind
           valueFrom:
-            path: /tmp/resource-info.json
-            jqFilter: .kind
-        - name: resourceAPIVersion
+            path: /tmp/resourceKind.txt
+        - name: resourceGroup
           valueFrom:
-            path: /tmp/resource-info.json
-            jqFilter: .apiVersion
+            path: /tmp/resourceGroup.txt
     - name: delete-resource
       inputs:
         parameters:
         - name: resourceKind
         - name: resourceName
-        - name: resourceAPIVersion
+        - name: resourceGroup
         - name: teardownFile
           value: "" # Default value, can be overridden
         - name: teardownEnvVars
@@ -98,10 +100,10 @@ spec:
           fi
 
           # Delete the main resource
-          echo "Deleting {{inputs.parameters.resourceKind}} {{inputs.parameters.resourceName}}"
-          kubectl delete {{inputs.parameters.resourceKind}}/{{inputs.parameters.resourceName}}
+          echo "Deleting {{inputs.parameters.resourceKind}}.{{inputs.parameters.resourceGroup}} {{inputs.parameters.resourceName}}"
+          kubectl delete {{inputs.parameters.resourceKind}}.{{inputs.parameters.resourceGroup}}/{{inputs.parameters.resourceName}}
           echo "Waiting for {{inputs.parameters.resourceKind}} {{inputs.parameters.resourceName}} deletion..."
-          kubectl wait --for=delete {{inputs.parameters.resourceKind}}/{{inputs.parameters.resourceName}} --timeout=900s
+          kubectl wait --for=delete {{inputs.parameters.resourceKind}}.{{inputs.parameters.resourceGroup}}/{{inputs.parameters.resourceName}} --timeout=900s
           echo "Resource deleted successfully."
         volumeMounts:
         - name: git-repo

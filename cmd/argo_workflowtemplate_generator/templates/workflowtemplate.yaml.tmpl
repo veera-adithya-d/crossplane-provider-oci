@@ -39,7 +39,7 @@ spec:
           arguments:
             parameters:
               - name: resourceFile
-                value: "{{ .Path }}"
+                value: "{{ .Path | resolveResourceFile }}"
               {{- if .EnvVars }}
               - name: envVars
                 value: "{{ .EnvVars | resolveEnvVars }}"
@@ -61,7 +61,7 @@ spec:
           arguments:
             parameters:
               - name: resourceFile
-                value: "{{ .Path }}"
+                value: "{{ .Path | resolveResourceFile }}"
               {{- if .EnvVars }}
               - name: envVars
                 value: "{{ .EnvVars | resolveEnvVars }}"
@@ -77,15 +77,15 @@ spec:
             name: test-template
             template: delete-resource
             when: "{{ resolveWhenDelete }} == true"
-          {{- if .DependentKinds }}
-          dependencies: [{{ .DependentKinds | joinDeleteDependencies }}]
-          {{- end }}
+          dependencies: [{{ joinDeleteDependencies .Kind .DependentKinds }}]
           arguments:
             parameters:
               - name: resourceKind
-                value: "{{ .Kind | resolveResourceKind }}"
+                value: "{{ resolveResource .Kind "Kind" }}"
               - name: resourceName
-                value: "{{ .Kind | resolveResourceName }}"
+                value: "{{ resolveResource .Kind "Name" }}"
+              - name: resourceGroup
+                value: "{{ resolveResource .Kind "Group" }}"
               {{- if .TeardownFilePath }}
               - name: teardownFile
                 value: "{{ .TeardownFilePath }}"
