@@ -32,7 +32,7 @@ spec:
           templateRef:
             name: test-template
             template: create-resource
-            when: "{{ .Kind | resolveWhenPrerequisites }} == true"
+          when: "{{ .Kind | resolveWhenPrerequisites }} == true"
           {{- if .PrerequisiteKinds }}
           dependencies: [{{ .PrerequisiteKinds | joinCreateDependencies }}]
           {{- end }}
@@ -54,7 +54,7 @@ spec:
           templateRef:
             name: test-template
             template: create-resource
-            when: "{{ resolveWhenCreate }} == true"
+          when: "{{ resolveWhenCreate }} == true"
           {{- if .PrerequisiteKinds }}
           dependencies: [{{ .PrerequisiteKinds | joinCreateDependencies }}]
           {{- end }}
@@ -76,7 +76,7 @@ spec:
           templateRef:
             name: test-template
             template: delete-resource
-            when: "{{ resolveWhenDelete }} == true"
+          when: "{{ resolveWhenDelete }} == true"
           dependencies: [{{ joinDeleteDependencies .Kind .DependentKinds }}]
           arguments:
             parameters:
