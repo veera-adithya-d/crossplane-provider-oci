@@ -32,7 +32,7 @@ spec:
           templateRef:
             name: test-template
             template: create-resource
-          when: "{{ .Kind | resolveWhenPrerequisites }} == true"
+          when: "{{ resolveWhen "prerequisites" .Kind }} == true"
           {{- if .PrerequisiteKinds }}
           dependencies: [{{ .PrerequisiteKinds | joinCreateDependencies }}]
           {{- end }}
@@ -54,7 +54,7 @@ spec:
           templateRef:
             name: test-template
             template: create-resource
-          when: "{{ resolveWhenCreate }} == true"
+          when: "{{ resolveWhen "create" }} == true"
           {{- if .PrerequisiteKinds }}
           dependencies: [{{ .PrerequisiteKinds | joinCreateDependencies }}]
           {{- end }}
@@ -76,16 +76,16 @@ spec:
           templateRef:
             name: test-template
             template: delete-resource
-          when: "{{ resolveWhenDelete }} == true"
+          when: "{{ resolveWhen "delete" }} == true"
           dependencies: [{{ joinDeleteDependencies .Kind .DependentKinds }}]
           arguments:
             parameters:
               - name: resourceKind
-                value: "{{ resolveResource .Kind "Kind" }}"
+                value: "{{ resolveDeleteParameters .Kind "Kind" }}"
               - name: resourceName
-                value: "{{ resolveResource .Kind "Name" }}"
+                value: "{{ resolveDeleteParameters .Kind "Name" }}"
               - name: resourceGroup
-                value: "{{ resolveResource .Kind "Group" }}"
+                value: "{{ resolveDeleteParameters .Kind "Group" }}"
               {{- if .TeardownFilePath }}
               - name: teardownFile
                 value: "{{ .TeardownFilePath }}"

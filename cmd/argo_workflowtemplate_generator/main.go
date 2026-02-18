@@ -130,15 +130,20 @@ func processExamples() error {
 			envVarStr = strings.ReplaceAll(envVarStr, "${", "{{workflow.parameters.")
 			return strings.ReplaceAll(envVarStr, "}", "}}")
 		},
-		"resolveWhenPrerequisites": func(kind string) string {
-			whenCondition := fmt.Sprintf("{{workflow.parameters.create_%s}}", strings.ToLower(kind))
-			return whenCondition
-		},
-		"resolveWhenCreate": func() string {
-			return "{{workflow.parameters.create_resources}}"
-		},
-		"resolveWhenDelete": func() string {
-			return "{{workflow.parameters.delete_resources}}"
+		"resolveWhen": func(mode string, kind ...string) string {
+			switch mode {
+			case "prerequisites":
+				if len(kind) == 0 {
+					return ""
+				}
+				return fmt.Sprintf("{{workflow.parameters.create_%s}}", strings.ToLower(kind[0]))
+			case "create":
+				return "{{workflow.parameters.create_resources}}"
+			case "delete":
+				return "{{workflow.parameters.delete_resources}}"
+			default:
+				return ""
+			}
 		},
 		"resolveResourceFile": func(path string) string {
 			return fmt.Sprintf("examples/%s", path)
@@ -182,7 +187,7 @@ func processExamples() error {
 			}
 			return strings.Join(deleteDependencies, ", ")
 		},
-		"resolveResource": func(kind string, resourceType string) string {
+		"resolveDeleteParameters": func(kind string, resourceType string) string {
 			resource := fmt.Sprintf("{{tasks.create-%s.outputs.parameters.resource%s}}", kind, resourceType)
 			return resource
 		},
