@@ -72,12 +72,12 @@ spec:
               {{- end }}
         {{- end }}
         {{- range .ResourceFiles }}
-        - name: delete-{{ .Kind }}
+        - name: delete-{{ .Name }}
           templateRef:
             name: test-template
             template: delete-resource
           when: "{{ resolveWhen "delete" }} == true"
-          dependencies: [{{ joinDeleteDependencies .Kind .DependentKinds }}]
+          dependencies: [{{ joinDeleteDependencies .Name .DependentKinds }}]
           arguments:
             parameters:
               - name: resourceKind
