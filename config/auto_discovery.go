@@ -100,6 +100,33 @@ func ServiceGroupDetector(resourceName string) (group string, kind string) {
 		}
 		return "networking", generateKindName(resourceName)
 
+	case "data":
+		if len(parts) > 2 {
+			switch parts[2] {
+			case "labeling":
+				return "datalabelingservice", generateKindName(resourceName)
+			default:
+				return "datasafe", generateKindName(resourceName)
+			}
+		}
+		return "datasafe", generateKindName(resourceName)
+
+	case "cloud":
+		if len(parts) > 2 {
+			switch parts[2] {
+			case "bridge":
+				return "cloudbridge", generateKindName(resourceName)
+			case "migrations":
+				return "cloudmigrations", generateKindName(resourceName)
+			default:
+				return "cloudguard", generateKindName(resourceName)
+			}
+		}
+		return "cloudguard", generateKindName(resourceName)
+
+	case "os":
+		return "osmanagement", generateKindName(resourceName)
+
 	case "load":
 		return "loadbalancer", generateKindName(resourceName)
 
