@@ -10,14 +10,18 @@ package apis
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	v1alpha1 "github.com/oracle/provider-oci/apis/artifacts/v1alpha1"
+	v1alpha1 "github.com/oracle/provider-oci/apis/apigateway/v1alpha1"
+	v1alpha1artifacts "github.com/oracle/provider-oci/apis/artifacts/v1alpha1"
+	v1alpha1autoscaling "github.com/oracle/provider-oci/apis/autoscaling/v1alpha1"
 	v1alpha1blockstorage "github.com/oracle/provider-oci/apis/blockstorage/v1alpha1"
 	v1alpha1certificatesmanagement "github.com/oracle/provider-oci/apis/certificatesmanagement/v1alpha1"
+	v1alpha1cloudguard "github.com/oracle/provider-oci/apis/cloudguard/v1alpha1"
 	v1alpha1compute "github.com/oracle/provider-oci/apis/compute/v1alpha1"
 	v1alpha1containerengine "github.com/oracle/provider-oci/apis/containerengine/v1alpha1"
 	v1alpha1core "github.com/oracle/provider-oci/apis/core/v1alpha1"
 	v1alpha1database "github.com/oracle/provider-oci/apis/database/v1alpha1"
 	v1alpha1dns "github.com/oracle/provider-oci/apis/dns/v1alpha1"
+	v1alpha1email "github.com/oracle/provider-oci/apis/email/v1alpha1"
 	v1alpha1events "github.com/oracle/provider-oci/apis/events/v1alpha1"
 	v1alpha1filestorage "github.com/oracle/provider-oci/apis/filestorage/v1alpha1"
 	v1alpha1functions "github.com/oracle/provider-oci/apis/functions/v1alpha1"
@@ -32,27 +36,36 @@ import (
 	v1alpha1networkfirewall "github.com/oracle/provider-oci/apis/networkfirewall/v1alpha1"
 	v1alpha1networking "github.com/oracle/provider-oci/apis/networking/v1alpha1"
 	v1alpha1networkloadbalancer "github.com/oracle/provider-oci/apis/networkloadbalancer/v1alpha1"
+	v1alpha1nosql "github.com/oracle/provider-oci/apis/nosql/v1alpha1"
 	v1alpha1objectstorage "github.com/oracle/provider-oci/apis/objectstorage/v1alpha1"
 	v1alpha1ons "github.com/oracle/provider-oci/apis/ons/v1alpha1"
+	v1alpha1osmanagement "github.com/oracle/provider-oci/apis/osmanagement/v1alpha1"
 	v1alpha1psql "github.com/oracle/provider-oci/apis/psql/v1alpha1"
+	v1alpha1queue "github.com/oracle/provider-oci/apis/queue/v1alpha1"
 	v1alpha1redis "github.com/oracle/provider-oci/apis/redis/v1alpha1"
+	v1alpha1resourcemanager "github.com/oracle/provider-oci/apis/resourcemanager/v1alpha1"
 	v1alpha1streaming "github.com/oracle/provider-oci/apis/streaming/v1alpha1"
 	v1alpha1apis "github.com/oracle/provider-oci/apis/v1alpha1"
 	v1beta1 "github.com/oracle/provider-oci/apis/v1beta1"
 	v1alpha1vault "github.com/oracle/provider-oci/apis/vault/v1alpha1"
+	v1alpha1waf "github.com/oracle/provider-oci/apis/waf/v1alpha1"
 )
 
 func init() {
 	// Register the types with the Scheme so the components can map objects to GroupVersionKinds and back
 	AddToSchemes = append(AddToSchemes,
 		v1alpha1.SchemeBuilder.AddToScheme,
+		v1alpha1artifacts.SchemeBuilder.AddToScheme,
+		v1alpha1autoscaling.SchemeBuilder.AddToScheme,
 		v1alpha1blockstorage.SchemeBuilder.AddToScheme,
 		v1alpha1certificatesmanagement.SchemeBuilder.AddToScheme,
+		v1alpha1cloudguard.SchemeBuilder.AddToScheme,
 		v1alpha1compute.SchemeBuilder.AddToScheme,
 		v1alpha1containerengine.SchemeBuilder.AddToScheme,
 		v1alpha1core.SchemeBuilder.AddToScheme,
 		v1alpha1database.SchemeBuilder.AddToScheme,
 		v1alpha1dns.SchemeBuilder.AddToScheme,
+		v1alpha1email.SchemeBuilder.AddToScheme,
 		v1alpha1events.SchemeBuilder.AddToScheme,
 		v1alpha1filestorage.SchemeBuilder.AddToScheme,
 		v1alpha1functions.SchemeBuilder.AddToScheme,
@@ -67,14 +80,19 @@ func init() {
 		v1alpha1networkfirewall.SchemeBuilder.AddToScheme,
 		v1alpha1networking.SchemeBuilder.AddToScheme,
 		v1alpha1networkloadbalancer.SchemeBuilder.AddToScheme,
+		v1alpha1nosql.SchemeBuilder.AddToScheme,
 		v1alpha1objectstorage.SchemeBuilder.AddToScheme,
 		v1alpha1ons.SchemeBuilder.AddToScheme,
+		v1alpha1osmanagement.SchemeBuilder.AddToScheme,
 		v1alpha1psql.SchemeBuilder.AddToScheme,
+		v1alpha1queue.SchemeBuilder.AddToScheme,
 		v1alpha1redis.SchemeBuilder.AddToScheme,
+		v1alpha1resourcemanager.SchemeBuilder.AddToScheme,
 		v1alpha1streaming.SchemeBuilder.AddToScheme,
 		v1alpha1apis.SchemeBuilder.AddToScheme,
 		v1beta1.SchemeBuilder.AddToScheme,
 		v1alpha1vault.SchemeBuilder.AddToScheme,
+		v1alpha1waf.SchemeBuilder.AddToScheme,
 	)
 }
 

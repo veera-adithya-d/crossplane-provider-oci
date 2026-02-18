@@ -1,0 +1,13 @@
+apiVersion: osmanagement.oci.upbound.io/v1alpha1
+kind: ManagementHubSoftwareSourceGenerateMetadataManagement
+metadata:
+  annotations:
+    meta.upbound.io/example-id: osmanagement/v1alpha1/managementhubsoftwaresourcegeneratemetadatamanagement
+  labels:
+    testing.upbound.io/example-name: test_software_source_generate_metadata_management
+  name: test-software-source-generate-metadata-management
+spec:
+  forProvider:
+    softwareSourceIdSelector:
+      matchLabels:
+        testing.upbound.io/example-name: test_software_source

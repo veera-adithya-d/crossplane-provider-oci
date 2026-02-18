@@ -9,10 +9,18 @@ import (
 
 	"github.com/crossplane/upjet/pkg/controller"
 
+	api "github.com/oracle/provider-oci/internal/controller/apigateway/api"
+	certificate "github.com/oracle/provider-oci/internal/controller/apigateway/certificate"
+	deployment "github.com/oracle/provider-oci/internal/controller/apigateway/deployment"
+	gateway "github.com/oracle/provider-oci/internal/controller/apigateway/gateway"
+	subscriber "github.com/oracle/provider-oci/internal/controller/apigateway/subscriber"
+	usageplan "github.com/oracle/provider-oci/internal/controller/apigateway/usageplan"
 	containerconfiguration "github.com/oracle/provider-oci/internal/controller/artifacts/containerconfiguration"
+	containerimagesignature "github.com/oracle/provider-oci/internal/controller/artifacts/containerimagesignature"
 	containerrepository "github.com/oracle/provider-oci/internal/controller/artifacts/containerrepository"
 	genericartifact "github.com/oracle/provider-oci/internal/controller/artifacts/genericartifact"
 	repository "github.com/oracle/provider-oci/internal/controller/artifacts/repository"
+	autoscalingconfiguration "github.com/oracle/provider-oci/internal/controller/autoscaling/autoscalingconfiguration"
 	bootvolume "github.com/oracle/provider-oci/internal/controller/blockstorage/bootvolume"
 	bootvolumebackup "github.com/oracle/provider-oci/internal/controller/blockstorage/bootvolumebackup"
 	volume "github.com/oracle/provider-oci/internal/controller/blockstorage/volume"
@@ -23,6 +31,20 @@ import (
 	volumegroup "github.com/oracle/provider-oci/internal/controller/blockstorage/volumegroup"
 	volumegroupbackup "github.com/oracle/provider-oci/internal/controller/blockstorage/volumegroupbackup"
 	certificateauthority "github.com/oracle/provider-oci/internal/controller/certificatesmanagement/certificateauthority"
+	managementcabundle "github.com/oracle/provider-oci/internal/controller/certificatesmanagement/managementcabundle"
+	managementcertificate "github.com/oracle/provider-oci/internal/controller/certificatesmanagement/managementcertificate"
+	guardadhocquery "github.com/oracle/provider-oci/internal/controller/cloudguard/guardadhocquery"
+	guardcloudguardconfiguration "github.com/oracle/provider-oci/internal/controller/cloudguard/guardcloudguardconfiguration"
+	guarddatamaskrule "github.com/oracle/provider-oci/internal/controller/cloudguard/guarddatamaskrule"
+	guarddatasource "github.com/oracle/provider-oci/internal/controller/cloudguard/guarddatasource"
+	guarddetectorrecipe "github.com/oracle/provider-oci/internal/controller/cloudguard/guarddetectorrecipe"
+	guardmanagedlist "github.com/oracle/provider-oci/internal/controller/cloudguard/guardmanagedlist"
+	guardresponderrecipe "github.com/oracle/provider-oci/internal/controller/cloudguard/guardresponderrecipe"
+	guardsavedquery "github.com/oracle/provider-oci/internal/controller/cloudguard/guardsavedquery"
+	guardsecurityrecipe "github.com/oracle/provider-oci/internal/controller/cloudguard/guardsecurityrecipe"
+	guardsecurityzone "github.com/oracle/provider-oci/internal/controller/cloudguard/guardsecurityzone"
+	guardtarget "github.com/oracle/provider-oci/internal/controller/cloudguard/guardtarget"
+	guardwlpagent "github.com/oracle/provider-oci/internal/controller/cloudguard/guardwlpagent"
 	appcataloglistingresourceversionagreement "github.com/oracle/provider-oci/internal/controller/compute/appcataloglistingresourceversionagreement"
 	appcatalogsubscription "github.com/oracle/provider-oci/internal/controller/compute/appcatalogsubscription"
 	clusternetwork "github.com/oracle/provider-oci/internal/controller/compute/clusternetwork"
@@ -183,6 +205,7 @@ import (
 	vmclusteraddvirtualmachine "github.com/oracle/provider-oci/internal/controller/database/vmclusteraddvirtualmachine"
 	vmclusternetwork "github.com/oracle/provider-oci/internal/controller/database/vmclusternetwork"
 	vmclusterremovevirtualmachine "github.com/oracle/provider-oci/internal/controller/database/vmclusterremovevirtualmachine"
+	actioncreatezonefromzonefile "github.com/oracle/provider-oci/internal/controller/dns/actioncreatezonefromzonefile"
 	record "github.com/oracle/provider-oci/internal/controller/dns/record"
 	resolver "github.com/oracle/provider-oci/internal/controller/dns/resolver"
 	resolverendpoint "github.com/oracle/provider-oci/internal/controller/dns/resolverendpoint"
@@ -192,6 +215,13 @@ import (
 	tsigkey "github.com/oracle/provider-oci/internal/controller/dns/tsigkey"
 	view "github.com/oracle/provider-oci/internal/controller/dns/view"
 	zone "github.com/oracle/provider-oci/internal/controller/dns/zone"
+	zonepromotednsseckeyversion "github.com/oracle/provider-oci/internal/controller/dns/zonepromotednsseckeyversion"
+	zonestagednsseckeyversion "github.com/oracle/provider-oci/internal/controller/dns/zonestagednsseckeyversion"
+	dkim "github.com/oracle/provider-oci/internal/controller/email/dkim"
+	emaildomain "github.com/oracle/provider-oci/internal/controller/email/emaildomain"
+	emailreturnpath "github.com/oracle/provider-oci/internal/controller/email/emailreturnpath"
+	sender "github.com/oracle/provider-oci/internal/controller/email/sender"
+	suppression "github.com/oracle/provider-oci/internal/controller/email/suppression"
 	rule "github.com/oracle/provider-oci/internal/controller/events/rule"
 	export "github.com/oracle/provider-oci/internal/controller/filestorage/export"
 	exportset "github.com/oracle/provider-oci/internal/controller/filestorage/exportset"
@@ -199,6 +229,9 @@ import (
 	mounttarget "github.com/oracle/provider-oci/internal/controller/filestorage/mounttarget"
 	replication "github.com/oracle/provider-oci/internal/controller/filestorage/replication"
 	snapshot "github.com/oracle/provider-oci/internal/controller/filestorage/snapshot"
+	storagefilesystemquotarule "github.com/oracle/provider-oci/internal/controller/filestorage/storagefilesystemquotarule"
+	storagefilesystemsnapshotpolicy "github.com/oracle/provider-oci/internal/controller/filestorage/storagefilesystemsnapshotpolicy"
+	storageoutboundconnector "github.com/oracle/provider-oci/internal/controller/filestorage/storageoutboundconnector"
 	application "github.com/oracle/provider-oci/internal/controller/functions/application"
 	function "github.com/oracle/provider-oci/internal/controller/functions/function"
 	invokefunction "github.com/oracle/provider-oci/internal/controller/functions/invokefunction"
@@ -284,7 +317,7 @@ import (
 	verify "github.com/oracle/provider-oci/internal/controller/kms/verify"
 	backend "github.com/oracle/provider-oci/internal/controller/loadbalancer/backend"
 	backendset "github.com/oracle/provider-oci/internal/controller/loadbalancer/backendset"
-	certificate "github.com/oracle/provider-oci/internal/controller/loadbalancer/certificate"
+	certificateloadbalancer "github.com/oracle/provider-oci/internal/controller/loadbalancer/certificate"
 	lbhostname "github.com/oracle/provider-oci/internal/controller/loadbalancer/lbhostname"
 	listener "github.com/oracle/provider-oci/internal/controller/loadbalancer/listener"
 	loadbalancer "github.com/oracle/provider-oci/internal/controller/loadbalancer/loadbalancer"
@@ -297,6 +330,7 @@ import (
 	logsavedsearch "github.com/oracle/provider-oci/internal/controller/logging/logsavedsearch"
 	unifiedagentconfiguration "github.com/oracle/provider-oci/internal/controller/logging/unifiedagentconfiguration"
 	alarm "github.com/oracle/provider-oci/internal/controller/monitoring/alarm"
+	alarmsuppression "github.com/oracle/provider-oci/internal/controller/monitoring/alarmsuppression"
 	capturefilter "github.com/oracle/provider-oci/internal/controller/monitoring/capturefilter"
 	vtap "github.com/oracle/provider-oci/internal/controller/monitoring/vtap"
 	mysqlbackup "github.com/oracle/provider-oci/internal/controller/mysql/mysqlbackup"
@@ -349,6 +383,10 @@ import (
 	listenernetworkloadbalancer "github.com/oracle/provider-oci/internal/controller/networkloadbalancer/listener"
 	networkloadbalancer "github.com/oracle/provider-oci/internal/controller/networkloadbalancer/networkloadbalancer"
 	networkloadbalancersbackendsetsunified "github.com/oracle/provider-oci/internal/controller/networkloadbalancer/networkloadbalancersbackendsetsunified"
+	configuration "github.com/oracle/provider-oci/internal/controller/nosql/configuration"
+	index "github.com/oracle/provider-oci/internal/controller/nosql/index"
+	table "github.com/oracle/provider-oci/internal/controller/nosql/table"
+	tablereplica "github.com/oracle/provider-oci/internal/controller/nosql/tablereplica"
 	bucket "github.com/oracle/provider-oci/internal/controller/objectstorage/bucket"
 	namespacemetadata "github.com/oracle/provider-oci/internal/controller/objectstorage/namespacemetadata"
 	object "github.com/oracle/provider-oci/internal/controller/objectstorage/object"
@@ -358,10 +396,54 @@ import (
 	replicationpolicy "github.com/oracle/provider-oci/internal/controller/objectstorage/replicationpolicy"
 	notificationtopic "github.com/oracle/provider-oci/internal/controller/ons/notificationtopic"
 	subscription "github.com/oracle/provider-oci/internal/controller/ons/subscription"
+	managementhubevent "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubevent"
+	managementhublifecycleenvironment "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhublifecycleenvironment"
+	managementhublifecyclestageattachmanagedinstancesmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhublifecyclestageattachmanagedinstancesmanagement"
+	managementhublifecyclestagedetachmanagedinstancesmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhublifecyclestagedetachmanagedinstancesmanagement"
+	managementhublifecyclestagepromotesoftwaresourcemanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhublifecyclestagepromotesoftwaresourcemanagement"
+	managementhublifecyclestagerebootmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhublifecyclestagerebootmanagement"
+	managementhubmanagedinstance "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubmanagedinstance"
+	managementhubmanagedinstanceattachprofilemanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubmanagedinstanceattachprofilemanagement"
+	managementhubmanagedinstancedetachprofilemanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubmanagedinstancedetachprofilemanagement"
+	managementhubmanagedinstancegroup "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubmanagedinstancegroup"
+	managementhubmanagedinstancegroupattachmanagedinstancesmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubmanagedinstancegroupattachmanagedinstancesmanagement"
+	managementhubmanagedinstancegroupattachsoftwaresourcesmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubmanagedinstancegroupattachsoftwaresourcesmanagement"
+	managementhubmanagedinstancegroupdetachmanagedinstancesmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubmanagedinstancegroupdetachmanagedinstancesmanagement"
+	managementhubmanagedinstancegroupdetachsoftwaresourcesmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubmanagedinstancegroupdetachsoftwaresourcesmanagement"
+	managementhubmanagedinstancegroupinstallpackagesmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubmanagedinstancegroupinstallpackagesmanagement"
+	managementhubmanagedinstancegroupinstallwindowsupdatesmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubmanagedinstancegroupinstallwindowsupdatesmanagement"
+	managementhubmanagedinstancegroupmanagemodulestreamsmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubmanagedinstancegroupmanagemodulestreamsmanagement"
+	managementhubmanagedinstancegrouprebootmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubmanagedinstancegrouprebootmanagement"
+	managementhubmanagedinstancegroupremovepackagesmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubmanagedinstancegroupremovepackagesmanagement"
+	managementhubmanagedinstancegroupupdateallpackagesmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubmanagedinstancegroupupdateallpackagesmanagement"
+	managementhubmanagedinstanceinstallwindowsupdatesmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubmanagedinstanceinstallwindowsupdatesmanagement"
+	managementhubmanagedinstancerebootmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubmanagedinstancerebootmanagement"
+	managementhubmanagedinstanceupdatepackagesmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubmanagedinstanceupdatepackagesmanagement"
+	managementhubmanagementstation "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubmanagementstation"
+	managementhubmanagementstationassociatemanagedinstancesmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubmanagementstationassociatemanagedinstancesmanagement"
+	managementhubmanagementstationmirrorsynchronizemanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubmanagementstationmirrorsynchronizemanagement"
+	managementhubmanagementstationrefreshmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubmanagementstationrefreshmanagement"
+	managementhubmanagementstationsynchronizemirrorsmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubmanagementstationsynchronizemirrorsmanagement"
+	managementhubprofile "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubprofile"
+	managementhubprofileattachlifecyclestagemanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubprofileattachlifecyclestagemanagement"
+	managementhubprofileattachmanagedinstancegroupmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubprofileattachmanagedinstancegroupmanagement"
+	managementhubprofileattachmanagementstationmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubprofileattachmanagementstationmanagement"
+	managementhubprofileattachsoftwaresourcesmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubprofileattachsoftwaresourcesmanagement"
+	managementhubprofiledetachsoftwaresourcesmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubprofiledetachsoftwaresourcesmanagement"
+	managementhubscheduledjob "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubscheduledjob"
+	managementhubsoftwaresource "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubsoftwaresource"
+	managementhubsoftwaresourceaddpackagesmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubsoftwaresourceaddpackagesmanagement"
+	managementhubsoftwaresourcechangeavailabilitymanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubsoftwaresourcechangeavailabilitymanagement"
+	managementhubsoftwaresourcegeneratemetadatamanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubsoftwaresourcegeneratemetadatamanagement"
+	managementhubsoftwaresourcemanifest "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubsoftwaresourcemanifest"
+	managementhubsoftwaresourceremovepackagesmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubsoftwaresourceremovepackagesmanagement"
+	managementhubsoftwaresourcereplacepackagesmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubsoftwaresourcereplacepackagesmanagement"
+	managementhubworkrequestrerunmanagement "github.com/oracle/provider-oci/internal/controller/osmanagement/managementhubworkrequestrerunmanagement"
 	providerconfig "github.com/oracle/provider-oci/internal/controller/providerconfig"
 	psqlbackup "github.com/oracle/provider-oci/internal/controller/psql/psqlbackup"
 	psqlconfiguration "github.com/oracle/provider-oci/internal/controller/psql/psqlconfiguration"
 	psqldbsystem "github.com/oracle/provider-oci/internal/controller/psql/psqldbsystem"
+	queue "github.com/oracle/provider-oci/internal/controller/queue/queue"
 	ocicacheconfigset "github.com/oracle/provider-oci/internal/controller/redis/ocicacheconfigset"
 	ocicacheconfigsetlistassociatedocicachecluster "github.com/oracle/provider-oci/internal/controller/redis/ocicacheconfigsetlistassociatedocicachecluster"
 	ocicacheuser "github.com/oracle/provider-oci/internal/controller/redis/ocicacheuser"
@@ -371,20 +453,32 @@ import (
 	redisclustercreateidentitytoken "github.com/oracle/provider-oci/internal/controller/redis/redisclustercreateidentitytoken"
 	redisclusterdetachocicacheuser "github.com/oracle/provider-oci/internal/controller/redis/redisclusterdetachocicacheuser"
 	redisclustergetocicacheuser "github.com/oracle/provider-oci/internal/controller/redis/redisclustergetocicacheuser"
+	privateendpointresourcemanager "github.com/oracle/provider-oci/internal/controller/resourcemanager/privateendpoint"
 	connectharness "github.com/oracle/provider-oci/internal/controller/streaming/connectharness"
 	stream "github.com/oracle/provider-oci/internal/controller/streaming/stream"
 	streampool "github.com/oracle/provider-oci/internal/controller/streaming/streampool"
 	secret "github.com/oracle/provider-oci/internal/controller/vault/secret"
+	networkaddresslist "github.com/oracle/provider-oci/internal/controller/waf/networkaddresslist"
+	webappfirewall "github.com/oracle/provider-oci/internal/controller/waf/webappfirewall"
+	webappfirewallpolicy "github.com/oracle/provider-oci/internal/controller/waf/webappfirewallpolicy"
 )
 
 // Setup_monolith creates all controllers with the supplied logger and adds them to
 // the supplied manager.
 func Setup_monolith(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
+		api.Setup,
+		certificate.Setup,
+		deployment.Setup,
+		gateway.Setup,
+		subscriber.Setup,
+		usageplan.Setup,
 		containerconfiguration.Setup,
+		containerimagesignature.Setup,
 		containerrepository.Setup,
 		genericartifact.Setup,
 		repository.Setup,
+		autoscalingconfiguration.Setup,
 		bootvolume.Setup,
 		bootvolumebackup.Setup,
 		volume.Setup,
@@ -395,6 +489,20 @@ func Setup_monolith(mgr ctrl.Manager, o controller.Options) error {
 		volumegroup.Setup,
 		volumegroupbackup.Setup,
 		certificateauthority.Setup,
+		managementcabundle.Setup,
+		managementcertificate.Setup,
+		guardadhocquery.Setup,
+		guardcloudguardconfiguration.Setup,
+		guarddatamaskrule.Setup,
+		guarddatasource.Setup,
+		guarddetectorrecipe.Setup,
+		guardmanagedlist.Setup,
+		guardresponderrecipe.Setup,
+		guardsavedquery.Setup,
+		guardsecurityrecipe.Setup,
+		guardsecurityzone.Setup,
+		guardtarget.Setup,
+		guardwlpagent.Setup,
 		appcataloglistingresourceversionagreement.Setup,
 		appcatalogsubscription.Setup,
 		clusternetwork.Setup,
@@ -555,6 +663,7 @@ func Setup_monolith(mgr ctrl.Manager, o controller.Options) error {
 		vmclusteraddvirtualmachine.Setup,
 		vmclusternetwork.Setup,
 		vmclusterremovevirtualmachine.Setup,
+		actioncreatezonefromzonefile.Setup,
 		record.Setup,
 		resolver.Setup,
 		resolverendpoint.Setup,
@@ -564,6 +673,13 @@ func Setup_monolith(mgr ctrl.Manager, o controller.Options) error {
 		tsigkey.Setup,
 		view.Setup,
 		zone.Setup,
+		zonepromotednsseckeyversion.Setup,
+		zonestagednsseckeyversion.Setup,
+		dkim.Setup,
+		emaildomain.Setup,
+		emailreturnpath.Setup,
+		sender.Setup,
+		suppression.Setup,
 		rule.Setup,
 		export.Setup,
 		exportset.Setup,
@@ -571,6 +687,9 @@ func Setup_monolith(mgr ctrl.Manager, o controller.Options) error {
 		mounttarget.Setup,
 		replication.Setup,
 		snapshot.Setup,
+		storagefilesystemquotarule.Setup,
+		storagefilesystemsnapshotpolicy.Setup,
+		storageoutboundconnector.Setup,
 		application.Setup,
 		function.Setup,
 		invokefunction.Setup,
@@ -656,7 +775,7 @@ func Setup_monolith(mgr ctrl.Manager, o controller.Options) error {
 		verify.Setup,
 		backend.Setup,
 		backendset.Setup,
-		certificate.Setup,
+		certificateloadbalancer.Setup,
 		lbhostname.Setup,
 		listener.Setup,
 		loadbalancer.Setup,
@@ -669,6 +788,7 @@ func Setup_monolith(mgr ctrl.Manager, o controller.Options) error {
 		logsavedsearch.Setup,
 		unifiedagentconfiguration.Setup,
 		alarm.Setup,
+		alarmsuppression.Setup,
 		capturefilter.Setup,
 		vtap.Setup,
 		mysqlbackup.Setup,
@@ -721,6 +841,10 @@ func Setup_monolith(mgr ctrl.Manager, o controller.Options) error {
 		listenernetworkloadbalancer.Setup,
 		networkloadbalancer.Setup,
 		networkloadbalancersbackendsetsunified.Setup,
+		configuration.Setup,
+		index.Setup,
+		table.Setup,
+		tablereplica.Setup,
 		bucket.Setup,
 		namespacemetadata.Setup,
 		object.Setup,
@@ -730,10 +854,54 @@ func Setup_monolith(mgr ctrl.Manager, o controller.Options) error {
 		replicationpolicy.Setup,
 		notificationtopic.Setup,
 		subscription.Setup,
+		managementhubevent.Setup,
+		managementhublifecycleenvironment.Setup,
+		managementhublifecyclestageattachmanagedinstancesmanagement.Setup,
+		managementhublifecyclestagedetachmanagedinstancesmanagement.Setup,
+		managementhublifecyclestagepromotesoftwaresourcemanagement.Setup,
+		managementhublifecyclestagerebootmanagement.Setup,
+		managementhubmanagedinstance.Setup,
+		managementhubmanagedinstanceattachprofilemanagement.Setup,
+		managementhubmanagedinstancedetachprofilemanagement.Setup,
+		managementhubmanagedinstancegroup.Setup,
+		managementhubmanagedinstancegroupattachmanagedinstancesmanagement.Setup,
+		managementhubmanagedinstancegroupattachsoftwaresourcesmanagement.Setup,
+		managementhubmanagedinstancegroupdetachmanagedinstancesmanagement.Setup,
+		managementhubmanagedinstancegroupdetachsoftwaresourcesmanagement.Setup,
+		managementhubmanagedinstancegroupinstallpackagesmanagement.Setup,
+		managementhubmanagedinstancegroupinstallwindowsupdatesmanagement.Setup,
+		managementhubmanagedinstancegroupmanagemodulestreamsmanagement.Setup,
+		managementhubmanagedinstancegrouprebootmanagement.Setup,
+		managementhubmanagedinstancegroupremovepackagesmanagement.Setup,
+		managementhubmanagedinstancegroupupdateallpackagesmanagement.Setup,
+		managementhubmanagedinstanceinstallwindowsupdatesmanagement.Setup,
+		managementhubmanagedinstancerebootmanagement.Setup,
+		managementhubmanagedinstanceupdatepackagesmanagement.Setup,
+		managementhubmanagementstation.Setup,
+		managementhubmanagementstationassociatemanagedinstancesmanagement.Setup,
+		managementhubmanagementstationmirrorsynchronizemanagement.Setup,
+		managementhubmanagementstationrefreshmanagement.Setup,
+		managementhubmanagementstationsynchronizemirrorsmanagement.Setup,
+		managementhubprofile.Setup,
+		managementhubprofileattachlifecyclestagemanagement.Setup,
+		managementhubprofileattachmanagedinstancegroupmanagement.Setup,
+		managementhubprofileattachmanagementstationmanagement.Setup,
+		managementhubprofileattachsoftwaresourcesmanagement.Setup,
+		managementhubprofiledetachsoftwaresourcesmanagement.Setup,
+		managementhubscheduledjob.Setup,
+		managementhubsoftwaresource.Setup,
+		managementhubsoftwaresourceaddpackagesmanagement.Setup,
+		managementhubsoftwaresourcechangeavailabilitymanagement.Setup,
+		managementhubsoftwaresourcegeneratemetadatamanagement.Setup,
+		managementhubsoftwaresourcemanifest.Setup,
+		managementhubsoftwaresourceremovepackagesmanagement.Setup,
+		managementhubsoftwaresourcereplacepackagesmanagement.Setup,
+		managementhubworkrequestrerunmanagement.Setup,
 		providerconfig.Setup,
 		psqlbackup.Setup,
 		psqlconfiguration.Setup,
 		psqldbsystem.Setup,
+		queue.Setup,
 		ocicacheconfigset.Setup,
 		ocicacheconfigsetlistassociatedocicachecluster.Setup,
 		ocicacheuser.Setup,
@@ -743,10 +911,14 @@ func Setup_monolith(mgr ctrl.Manager, o controller.Options) error {
 		redisclustercreateidentitytoken.Setup,
 		redisclusterdetachocicacheuser.Setup,
 		redisclustergetocicacheuser.Setup,
+		privateendpointresourcemanager.Setup,
 		connectharness.Setup,
 		stream.Setup,
 		streampool.Setup,
 		secret.Setup,
+		networkaddresslist.Setup,
+		webappfirewall.Setup,
+		webappfirewallpolicy.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {
 			return err

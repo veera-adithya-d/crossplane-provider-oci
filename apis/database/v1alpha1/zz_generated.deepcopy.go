@@ -523,10 +523,30 @@ func (in *ApplicationVipInitParameters) DeepCopyInto(out *ApplicationVipInitPara
 		*out = new(string)
 		**out = **in
 	}
+	if in.CloudVMClusterIDRef != nil {
+		in, out := &in.CloudVMClusterIDRef, &out.CloudVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudVMClusterIDSelector != nil {
+		in, out := &in.CloudVMClusterIDSelector, &out.CloudVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DBNodeID != nil {
 		in, out := &in.DBNodeID, &out.DBNodeID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DBNodeIDRef != nil {
+		in, out := &in.DBNodeIDRef, &out.DBNodeIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DBNodeIDSelector != nil {
+		in, out := &in.DBNodeIDSelector, &out.DBNodeIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.HostnameLabel != nil {
 		in, out := &in.HostnameLabel, &out.HostnameLabel
@@ -547,6 +567,16 @@ func (in *ApplicationVipInitParameters) DeepCopyInto(out *ApplicationVipInitPara
 		in, out := &in.SubnetID, &out.SubnetID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SubnetIDRef != nil {
+		in, out := &in.SubnetIDRef, &out.SubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SubnetIDSelector != nil {
+		in, out := &in.SubnetIDSelector, &out.SubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -702,10 +732,30 @@ func (in *ApplicationVipParameters) DeepCopyInto(out *ApplicationVipParameters) 
 		*out = new(string)
 		**out = **in
 	}
+	if in.CloudVMClusterIDRef != nil {
+		in, out := &in.CloudVMClusterIDRef, &out.CloudVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudVMClusterIDSelector != nil {
+		in, out := &in.CloudVMClusterIDSelector, &out.CloudVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DBNodeID != nil {
 		in, out := &in.DBNodeID, &out.DBNodeID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DBNodeIDRef != nil {
+		in, out := &in.DBNodeIDRef, &out.DBNodeIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DBNodeIDSelector != nil {
+		in, out := &in.DBNodeIDSelector, &out.DBNodeIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.HostnameLabel != nil {
 		in, out := &in.HostnameLabel, &out.HostnameLabel
@@ -726,6 +776,16 @@ func (in *ApplicationVipParameters) DeepCopyInto(out *ApplicationVipParameters) 
 		in, out := &in.SubnetID, &out.SubnetID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SubnetIDRef != nil {
+		in, out := &in.SubnetIDRef, &out.SubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SubnetIDSelector != nil {
+		in, out := &in.SubnetIDSelector, &out.SubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -1569,6 +1629,16 @@ func (in *AutonomousContainerDatabaseAddStandbyInitParameters) DeepCopyInto(out 
 		*out = new(string)
 		**out = **in
 	}
+	if in.AutonomousContainerDatabaseIDRef != nil {
+		in, out := &in.AutonomousContainerDatabaseIDRef, &out.AutonomousContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AutonomousContainerDatabaseIDSelector != nil {
+		in, out := &in.AutonomousContainerDatabaseIDSelector, &out.AutonomousContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.FastStartFailOverLagLimitInSeconds != nil {
 		in, out := &in.FastStartFailOverLagLimitInSeconds, &out.FastStartFailOverLagLimitInSeconds
 		*out = new(float64)
@@ -1591,6 +1661,16 @@ func (in *AutonomousContainerDatabaseAddStandbyInitParameters) DeepCopyInto(out 
 		*out = new(string)
 		**out = **in
 	}
+	if in.PeerAutonomousContainerDatabaseCompartmentIDRef != nil {
+		in, out := &in.PeerAutonomousContainerDatabaseCompartmentIDRef, &out.PeerAutonomousContainerDatabaseCompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerAutonomousContainerDatabaseCompartmentIDSelector != nil {
+		in, out := &in.PeerAutonomousContainerDatabaseCompartmentIDSelector, &out.PeerAutonomousContainerDatabaseCompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PeerAutonomousContainerDatabaseDisplayName != nil {
 		in, out := &in.PeerAutonomousContainerDatabaseDisplayName, &out.PeerAutonomousContainerDatabaseDisplayName
 		*out = new(string)
@@ -1601,10 +1681,30 @@ func (in *AutonomousContainerDatabaseAddStandbyInitParameters) DeepCopyInto(out 
 		*out = new(string)
 		**out = **in
 	}
+	if in.PeerAutonomousVMClusterIDRef != nil {
+		in, out := &in.PeerAutonomousVMClusterIDRef, &out.PeerAutonomousVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerAutonomousVMClusterIDSelector != nil {
+		in, out := &in.PeerAutonomousVMClusterIDSelector, &out.PeerAutonomousVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PeerCloudAutonomousVMClusterID != nil {
 		in, out := &in.PeerCloudAutonomousVMClusterID, &out.PeerCloudAutonomousVMClusterID
 		*out = new(string)
 		**out = **in
+	}
+	if in.PeerCloudAutonomousVMClusterIDRef != nil {
+		in, out := &in.PeerCloudAutonomousVMClusterIDRef, &out.PeerCloudAutonomousVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerCloudAutonomousVMClusterIDSelector != nil {
+		in, out := &in.PeerCloudAutonomousVMClusterIDSelector, &out.PeerCloudAutonomousVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.PeerDBUniqueName != nil {
 		in, out := &in.PeerDBUniqueName, &out.PeerDBUniqueName
@@ -2251,6 +2351,16 @@ func (in *AutonomousContainerDatabaseAddStandbyParameters) DeepCopyInto(out *Aut
 		*out = new(string)
 		**out = **in
 	}
+	if in.AutonomousContainerDatabaseIDRef != nil {
+		in, out := &in.AutonomousContainerDatabaseIDRef, &out.AutonomousContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AutonomousContainerDatabaseIDSelector != nil {
+		in, out := &in.AutonomousContainerDatabaseIDSelector, &out.AutonomousContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.FastStartFailOverLagLimitInSeconds != nil {
 		in, out := &in.FastStartFailOverLagLimitInSeconds, &out.FastStartFailOverLagLimitInSeconds
 		*out = new(float64)
@@ -2273,6 +2383,16 @@ func (in *AutonomousContainerDatabaseAddStandbyParameters) DeepCopyInto(out *Aut
 		*out = new(string)
 		**out = **in
 	}
+	if in.PeerAutonomousContainerDatabaseCompartmentIDRef != nil {
+		in, out := &in.PeerAutonomousContainerDatabaseCompartmentIDRef, &out.PeerAutonomousContainerDatabaseCompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerAutonomousContainerDatabaseCompartmentIDSelector != nil {
+		in, out := &in.PeerAutonomousContainerDatabaseCompartmentIDSelector, &out.PeerAutonomousContainerDatabaseCompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PeerAutonomousContainerDatabaseDisplayName != nil {
 		in, out := &in.PeerAutonomousContainerDatabaseDisplayName, &out.PeerAutonomousContainerDatabaseDisplayName
 		*out = new(string)
@@ -2283,10 +2403,30 @@ func (in *AutonomousContainerDatabaseAddStandbyParameters) DeepCopyInto(out *Aut
 		*out = new(string)
 		**out = **in
 	}
+	if in.PeerAutonomousVMClusterIDRef != nil {
+		in, out := &in.PeerAutonomousVMClusterIDRef, &out.PeerAutonomousVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerAutonomousVMClusterIDSelector != nil {
+		in, out := &in.PeerAutonomousVMClusterIDSelector, &out.PeerAutonomousVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PeerCloudAutonomousVMClusterID != nil {
 		in, out := &in.PeerCloudAutonomousVMClusterID, &out.PeerCloudAutonomousVMClusterID
 		*out = new(string)
 		**out = **in
+	}
+	if in.PeerCloudAutonomousVMClusterIDRef != nil {
+		in, out := &in.PeerCloudAutonomousVMClusterIDRef, &out.PeerCloudAutonomousVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerCloudAutonomousVMClusterIDSelector != nil {
+		in, out := &in.PeerCloudAutonomousVMClusterIDSelector, &out.PeerCloudAutonomousVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.PeerDBUniqueName != nil {
 		in, out := &in.PeerDBUniqueName, &out.PeerDBUniqueName
@@ -2327,6 +2467,16 @@ func (in *AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBa
 		in, out := &in.DbrsPolicyID, &out.DbrsPolicyID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DbrsPolicyIDRef != nil {
+		in, out := &in.DbrsPolicyIDRef, &out.DbrsPolicyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DbrsPolicyIDSelector != nil {
+		in, out := &in.DbrsPolicyIDSelector, &out.DbrsPolicyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
@@ -2432,6 +2582,16 @@ func (in *AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBa
 		in, out := &in.DbrsPolicyID, &out.DbrsPolicyID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DbrsPolicyIDRef != nil {
+		in, out := &in.DbrsPolicyIDRef, &out.DbrsPolicyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DbrsPolicyIDSelector != nil {
+		in, out := &in.DbrsPolicyIDSelector, &out.DbrsPolicyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
@@ -2681,6 +2841,16 @@ func (in *AutonomousContainerDatabaseDataguardAssociationInitParameters) DeepCop
 		*out = new(string)
 		**out = **in
 	}
+	if in.AutonomousContainerDatabaseIDRef != nil {
+		in, out := &in.AutonomousContainerDatabaseIDRef, &out.AutonomousContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AutonomousContainerDatabaseIDSelector != nil {
+		in, out := &in.AutonomousContainerDatabaseIDSelector, &out.AutonomousContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.FastStartFailOverLagLimitInSeconds != nil {
 		in, out := &in.FastStartFailOverLagLimitInSeconds, &out.FastStartFailOverLagLimitInSeconds
 		*out = new(float64)
@@ -2708,6 +2878,16 @@ func (in *AutonomousContainerDatabaseDataguardAssociationInitParameters) DeepCop
 		*out = new(string)
 		**out = **in
 	}
+	if in.PeerAutonomousContainerDatabaseCompartmentIDRef != nil {
+		in, out := &in.PeerAutonomousContainerDatabaseCompartmentIDRef, &out.PeerAutonomousContainerDatabaseCompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerAutonomousContainerDatabaseCompartmentIDSelector != nil {
+		in, out := &in.PeerAutonomousContainerDatabaseCompartmentIDSelector, &out.PeerAutonomousContainerDatabaseCompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PeerAutonomousContainerDatabaseDisplayName != nil {
 		in, out := &in.PeerAutonomousContainerDatabaseDisplayName, &out.PeerAutonomousContainerDatabaseDisplayName
 		*out = new(string)
@@ -2718,10 +2898,30 @@ func (in *AutonomousContainerDatabaseDataguardAssociationInitParameters) DeepCop
 		*out = new(string)
 		**out = **in
 	}
+	if in.PeerAutonomousVMClusterIDRef != nil {
+		in, out := &in.PeerAutonomousVMClusterIDRef, &out.PeerAutonomousVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerAutonomousVMClusterIDSelector != nil {
+		in, out := &in.PeerAutonomousVMClusterIDSelector, &out.PeerAutonomousVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PeerCloudAutonomousVMClusterID != nil {
 		in, out := &in.PeerCloudAutonomousVMClusterID, &out.PeerCloudAutonomousVMClusterID
 		*out = new(string)
 		**out = **in
+	}
+	if in.PeerCloudAutonomousVMClusterIDRef != nil {
+		in, out := &in.PeerCloudAutonomousVMClusterIDRef, &out.PeerCloudAutonomousVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerCloudAutonomousVMClusterIDSelector != nil {
+		in, out := &in.PeerCloudAutonomousVMClusterIDSelector, &out.PeerCloudAutonomousVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.PeerDBUniqueName != nil {
 		in, out := &in.PeerDBUniqueName, &out.PeerDBUniqueName
@@ -3136,6 +3336,16 @@ func (in *AutonomousContainerDatabaseDataguardAssociationParameters) DeepCopyInt
 		*out = new(string)
 		**out = **in
 	}
+	if in.AutonomousContainerDatabaseIDRef != nil {
+		in, out := &in.AutonomousContainerDatabaseIDRef, &out.AutonomousContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AutonomousContainerDatabaseIDSelector != nil {
+		in, out := &in.AutonomousContainerDatabaseIDSelector, &out.AutonomousContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.FastStartFailOverLagLimitInSeconds != nil {
 		in, out := &in.FastStartFailOverLagLimitInSeconds, &out.FastStartFailOverLagLimitInSeconds
 		*out = new(float64)
@@ -3163,6 +3373,16 @@ func (in *AutonomousContainerDatabaseDataguardAssociationParameters) DeepCopyInt
 		*out = new(string)
 		**out = **in
 	}
+	if in.PeerAutonomousContainerDatabaseCompartmentIDRef != nil {
+		in, out := &in.PeerAutonomousContainerDatabaseCompartmentIDRef, &out.PeerAutonomousContainerDatabaseCompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerAutonomousContainerDatabaseCompartmentIDSelector != nil {
+		in, out := &in.PeerAutonomousContainerDatabaseCompartmentIDSelector, &out.PeerAutonomousContainerDatabaseCompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PeerAutonomousContainerDatabaseDisplayName != nil {
 		in, out := &in.PeerAutonomousContainerDatabaseDisplayName, &out.PeerAutonomousContainerDatabaseDisplayName
 		*out = new(string)
@@ -3173,10 +3393,30 @@ func (in *AutonomousContainerDatabaseDataguardAssociationParameters) DeepCopyInt
 		*out = new(string)
 		**out = **in
 	}
+	if in.PeerAutonomousVMClusterIDRef != nil {
+		in, out := &in.PeerAutonomousVMClusterIDRef, &out.PeerAutonomousVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerAutonomousVMClusterIDSelector != nil {
+		in, out := &in.PeerAutonomousVMClusterIDSelector, &out.PeerAutonomousVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PeerCloudAutonomousVMClusterID != nil {
 		in, out := &in.PeerCloudAutonomousVMClusterID, &out.PeerCloudAutonomousVMClusterID
 		*out = new(string)
 		**out = **in
+	}
+	if in.PeerCloudAutonomousVMClusterIDRef != nil {
+		in, out := &in.PeerCloudAutonomousVMClusterIDRef, &out.PeerCloudAutonomousVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerCloudAutonomousVMClusterIDSelector != nil {
+		in, out := &in.PeerCloudAutonomousVMClusterIDSelector, &out.PeerCloudAutonomousVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.PeerDBUniqueName != nil {
 		in, out := &in.PeerDBUniqueName, &out.PeerDBUniqueName
@@ -3217,6 +3457,16 @@ func (in *AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainer
 		in, out := &in.DbrsPolicyID, &out.DbrsPolicyID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DbrsPolicyIDRef != nil {
+		in, out := &in.DbrsPolicyIDRef, &out.DbrsPolicyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DbrsPolicyIDSelector != nil {
+		in, out := &in.DbrsPolicyIDSelector, &out.DbrsPolicyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
@@ -3342,6 +3592,16 @@ func (in *AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainer
 		in, out := &in.DbrsPolicyID, &out.DbrsPolicyID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DbrsPolicyIDRef != nil {
+		in, out := &in.DbrsPolicyIDRef, &out.DbrsPolicyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DbrsPolicyIDSelector != nil {
+		in, out := &in.DbrsPolicyIDSelector, &out.DbrsPolicyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
@@ -3728,10 +3988,30 @@ func (in *AutonomousContainerDatabaseInitParameters) DeepCopyInto(out *Autonomou
 		*out = new(string)
 		**out = **in
 	}
+	if in.AutonomousExadataInfrastructureIDRef != nil {
+		in, out := &in.AutonomousExadataInfrastructureIDRef, &out.AutonomousExadataInfrastructureIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AutonomousExadataInfrastructureIDSelector != nil {
+		in, out := &in.AutonomousExadataInfrastructureIDSelector, &out.AutonomousExadataInfrastructureIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.AutonomousVMClusterID != nil {
 		in, out := &in.AutonomousVMClusterID, &out.AutonomousVMClusterID
 		*out = new(string)
 		**out = **in
+	}
+	if in.AutonomousVMClusterIDRef != nil {
+		in, out := &in.AutonomousVMClusterIDRef, &out.AutonomousVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AutonomousVMClusterIDSelector != nil {
+		in, out := &in.AutonomousVMClusterIDSelector, &out.AutonomousVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.BackupConfig != nil {
 		in, out := &in.BackupConfig, &out.BackupConfig
@@ -3745,10 +4025,30 @@ func (in *AutonomousContainerDatabaseInitParameters) DeepCopyInto(out *Autonomou
 		*out = new(string)
 		**out = **in
 	}
+	if in.CloudAutonomousVMClusterIDRef != nil {
+		in, out := &in.CloudAutonomousVMClusterIDRef, &out.CloudAutonomousVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudAutonomousVMClusterIDSelector != nil {
+		in, out := &in.CloudAutonomousVMClusterIDSelector, &out.CloudAutonomousVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.CompartmentID != nil {
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.CustomerContacts != nil {
 		in, out := &in.CustomerContacts, &out.CustomerContacts
@@ -3781,6 +4081,16 @@ func (in *AutonomousContainerDatabaseInitParameters) DeepCopyInto(out *Autonomou
 		in, out := &in.DatabaseSoftwareImageID, &out.DatabaseSoftwareImageID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseSoftwareImageIDRef != nil {
+		in, out := &in.DatabaseSoftwareImageIDRef, &out.DatabaseSoftwareImageIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseSoftwareImageIDSelector != nil {
+		in, out := &in.DatabaseSoftwareImageIDSelector, &out.DatabaseSoftwareImageIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -3849,10 +4159,30 @@ func (in *AutonomousContainerDatabaseInitParameters) DeepCopyInto(out *Autonomou
 		*out = new(string)
 		**out = **in
 	}
+	if in.KMSKeyIDRef != nil {
+		in, out := &in.KMSKeyIDRef, &out.KMSKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyIDSelector != nil {
+		in, out := &in.KMSKeyIDSelector, &out.KMSKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.KeyStoreID != nil {
 		in, out := &in.KeyStoreID, &out.KeyStoreID
 		*out = new(string)
 		**out = **in
+	}
+	if in.KeyStoreIDRef != nil {
+		in, out := &in.KeyStoreIDRef, &out.KeyStoreIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KeyStoreIDSelector != nil {
+		in, out := &in.KeyStoreIDSelector, &out.KeyStoreIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.KeyVersionID != nil {
 		in, out := &in.KeyVersionID, &out.KeyVersionID
@@ -3876,6 +4206,16 @@ func (in *AutonomousContainerDatabaseInitParameters) DeepCopyInto(out *Autonomou
 		*out = new(string)
 		**out = **in
 	}
+	if in.OkvEndPointGroupNameRef != nil {
+		in, out := &in.OkvEndPointGroupNameRef, &out.OkvEndPointGroupNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.OkvEndPointGroupNameSelector != nil {
+		in, out := &in.OkvEndPointGroupNameSelector, &out.OkvEndPointGroupNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PatchModel != nil {
 		in, out := &in.PatchModel, &out.PatchModel
 		*out = new(string)
@@ -3893,6 +4233,16 @@ func (in *AutonomousContainerDatabaseInitParameters) DeepCopyInto(out *Autonomou
 		*out = new(string)
 		**out = **in
 	}
+	if in.PeerAutonomousContainerDatabaseCompartmentIDRef != nil {
+		in, out := &in.PeerAutonomousContainerDatabaseCompartmentIDRef, &out.PeerAutonomousContainerDatabaseCompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerAutonomousContainerDatabaseCompartmentIDSelector != nil {
+		in, out := &in.PeerAutonomousContainerDatabaseCompartmentIDSelector, &out.PeerAutonomousContainerDatabaseCompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PeerAutonomousContainerDatabaseDisplayName != nil {
 		in, out := &in.PeerAutonomousContainerDatabaseDisplayName, &out.PeerAutonomousContainerDatabaseDisplayName
 		*out = new(string)
@@ -3903,15 +4253,45 @@ func (in *AutonomousContainerDatabaseInitParameters) DeepCopyInto(out *Autonomou
 		*out = new(string)
 		**out = **in
 	}
+	if in.PeerAutonomousExadataInfrastructureIDRef != nil {
+		in, out := &in.PeerAutonomousExadataInfrastructureIDRef, &out.PeerAutonomousExadataInfrastructureIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerAutonomousExadataInfrastructureIDSelector != nil {
+		in, out := &in.PeerAutonomousExadataInfrastructureIDSelector, &out.PeerAutonomousExadataInfrastructureIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PeerAutonomousVMClusterID != nil {
 		in, out := &in.PeerAutonomousVMClusterID, &out.PeerAutonomousVMClusterID
 		*out = new(string)
 		**out = **in
 	}
+	if in.PeerAutonomousVMClusterIDRef != nil {
+		in, out := &in.PeerAutonomousVMClusterIDRef, &out.PeerAutonomousVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerAutonomousVMClusterIDSelector != nil {
+		in, out := &in.PeerAutonomousVMClusterIDSelector, &out.PeerAutonomousVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PeerCloudAutonomousVMClusterID != nil {
 		in, out := &in.PeerCloudAutonomousVMClusterID, &out.PeerCloudAutonomousVMClusterID
 		*out = new(string)
 		**out = **in
+	}
+	if in.PeerCloudAutonomousVMClusterIDRef != nil {
+		in, out := &in.PeerCloudAutonomousVMClusterIDRef, &out.PeerCloudAutonomousVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerCloudAutonomousVMClusterIDSelector != nil {
+		in, out := &in.PeerCloudAutonomousVMClusterIDSelector, &out.PeerCloudAutonomousVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.PeerDBUniqueName != nil {
 		in, out := &in.PeerDBUniqueName, &out.PeerDBUniqueName
@@ -3962,6 +4342,16 @@ func (in *AutonomousContainerDatabaseInitParameters) DeepCopyInto(out *Autonomou
 		in, out := &in.VaultID, &out.VaultID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VaultIDRef != nil {
+		in, out := &in.VaultIDRef, &out.VaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VaultIDSelector != nil {
+		in, out := &in.VaultIDSelector, &out.VaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.VersionPreference != nil {
 		in, out := &in.VersionPreference, &out.VersionPreference
@@ -4507,10 +4897,30 @@ func (in *AutonomousContainerDatabaseParameters) DeepCopyInto(out *AutonomousCon
 		*out = new(string)
 		**out = **in
 	}
+	if in.AutonomousExadataInfrastructureIDRef != nil {
+		in, out := &in.AutonomousExadataInfrastructureIDRef, &out.AutonomousExadataInfrastructureIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AutonomousExadataInfrastructureIDSelector != nil {
+		in, out := &in.AutonomousExadataInfrastructureIDSelector, &out.AutonomousExadataInfrastructureIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.AutonomousVMClusterID != nil {
 		in, out := &in.AutonomousVMClusterID, &out.AutonomousVMClusterID
 		*out = new(string)
 		**out = **in
+	}
+	if in.AutonomousVMClusterIDRef != nil {
+		in, out := &in.AutonomousVMClusterIDRef, &out.AutonomousVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AutonomousVMClusterIDSelector != nil {
+		in, out := &in.AutonomousVMClusterIDSelector, &out.AutonomousVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.BackupConfig != nil {
 		in, out := &in.BackupConfig, &out.BackupConfig
@@ -4524,10 +4934,30 @@ func (in *AutonomousContainerDatabaseParameters) DeepCopyInto(out *AutonomousCon
 		*out = new(string)
 		**out = **in
 	}
+	if in.CloudAutonomousVMClusterIDRef != nil {
+		in, out := &in.CloudAutonomousVMClusterIDRef, &out.CloudAutonomousVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudAutonomousVMClusterIDSelector != nil {
+		in, out := &in.CloudAutonomousVMClusterIDSelector, &out.CloudAutonomousVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.CompartmentID != nil {
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.CustomerContacts != nil {
 		in, out := &in.CustomerContacts, &out.CustomerContacts
@@ -4560,6 +4990,16 @@ func (in *AutonomousContainerDatabaseParameters) DeepCopyInto(out *AutonomousCon
 		in, out := &in.DatabaseSoftwareImageID, &out.DatabaseSoftwareImageID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseSoftwareImageIDRef != nil {
+		in, out := &in.DatabaseSoftwareImageIDRef, &out.DatabaseSoftwareImageIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseSoftwareImageIDSelector != nil {
+		in, out := &in.DatabaseSoftwareImageIDSelector, &out.DatabaseSoftwareImageIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -4628,10 +5068,30 @@ func (in *AutonomousContainerDatabaseParameters) DeepCopyInto(out *AutonomousCon
 		*out = new(string)
 		**out = **in
 	}
+	if in.KMSKeyIDRef != nil {
+		in, out := &in.KMSKeyIDRef, &out.KMSKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyIDSelector != nil {
+		in, out := &in.KMSKeyIDSelector, &out.KMSKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.KeyStoreID != nil {
 		in, out := &in.KeyStoreID, &out.KeyStoreID
 		*out = new(string)
 		**out = **in
+	}
+	if in.KeyStoreIDRef != nil {
+		in, out := &in.KeyStoreIDRef, &out.KeyStoreIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KeyStoreIDSelector != nil {
+		in, out := &in.KeyStoreIDSelector, &out.KeyStoreIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.KeyVersionID != nil {
 		in, out := &in.KeyVersionID, &out.KeyVersionID
@@ -4655,6 +5115,16 @@ func (in *AutonomousContainerDatabaseParameters) DeepCopyInto(out *AutonomousCon
 		*out = new(string)
 		**out = **in
 	}
+	if in.OkvEndPointGroupNameRef != nil {
+		in, out := &in.OkvEndPointGroupNameRef, &out.OkvEndPointGroupNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.OkvEndPointGroupNameSelector != nil {
+		in, out := &in.OkvEndPointGroupNameSelector, &out.OkvEndPointGroupNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PatchModel != nil {
 		in, out := &in.PatchModel, &out.PatchModel
 		*out = new(string)
@@ -4672,6 +5142,16 @@ func (in *AutonomousContainerDatabaseParameters) DeepCopyInto(out *AutonomousCon
 		*out = new(string)
 		**out = **in
 	}
+	if in.PeerAutonomousContainerDatabaseCompartmentIDRef != nil {
+		in, out := &in.PeerAutonomousContainerDatabaseCompartmentIDRef, &out.PeerAutonomousContainerDatabaseCompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerAutonomousContainerDatabaseCompartmentIDSelector != nil {
+		in, out := &in.PeerAutonomousContainerDatabaseCompartmentIDSelector, &out.PeerAutonomousContainerDatabaseCompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PeerAutonomousContainerDatabaseDisplayName != nil {
 		in, out := &in.PeerAutonomousContainerDatabaseDisplayName, &out.PeerAutonomousContainerDatabaseDisplayName
 		*out = new(string)
@@ -4682,15 +5162,45 @@ func (in *AutonomousContainerDatabaseParameters) DeepCopyInto(out *AutonomousCon
 		*out = new(string)
 		**out = **in
 	}
+	if in.PeerAutonomousExadataInfrastructureIDRef != nil {
+		in, out := &in.PeerAutonomousExadataInfrastructureIDRef, &out.PeerAutonomousExadataInfrastructureIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerAutonomousExadataInfrastructureIDSelector != nil {
+		in, out := &in.PeerAutonomousExadataInfrastructureIDSelector, &out.PeerAutonomousExadataInfrastructureIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PeerAutonomousVMClusterID != nil {
 		in, out := &in.PeerAutonomousVMClusterID, &out.PeerAutonomousVMClusterID
 		*out = new(string)
 		**out = **in
 	}
+	if in.PeerAutonomousVMClusterIDRef != nil {
+		in, out := &in.PeerAutonomousVMClusterIDRef, &out.PeerAutonomousVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerAutonomousVMClusterIDSelector != nil {
+		in, out := &in.PeerAutonomousVMClusterIDSelector, &out.PeerAutonomousVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PeerCloudAutonomousVMClusterID != nil {
 		in, out := &in.PeerCloudAutonomousVMClusterID, &out.PeerCloudAutonomousVMClusterID
 		*out = new(string)
 		**out = **in
+	}
+	if in.PeerCloudAutonomousVMClusterIDRef != nil {
+		in, out := &in.PeerCloudAutonomousVMClusterIDRef, &out.PeerCloudAutonomousVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerCloudAutonomousVMClusterIDSelector != nil {
+		in, out := &in.PeerCloudAutonomousVMClusterIDSelector, &out.PeerCloudAutonomousVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.PeerDBUniqueName != nil {
 		in, out := &in.PeerDBUniqueName, &out.PeerDBUniqueName
@@ -4741,6 +5251,16 @@ func (in *AutonomousContainerDatabaseParameters) DeepCopyInto(out *AutonomousCon
 		in, out := &in.VaultID, &out.VaultID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VaultIDRef != nil {
+		in, out := &in.VaultIDRef, &out.VaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VaultIDSelector != nil {
+		in, out := &in.VaultIDSelector, &out.VaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.VersionPreference != nil {
 		in, out := &in.VersionPreference, &out.VersionPreference
@@ -4793,6 +5313,16 @@ func (in *AutonomousContainerDatabaseSnapshotStandbyInitParameters) DeepCopyInto
 		in, out := &in.AutonomousContainerDatabaseID, &out.AutonomousContainerDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.AutonomousContainerDatabaseIDRef != nil {
+		in, out := &in.AutonomousContainerDatabaseIDRef, &out.AutonomousContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AutonomousContainerDatabaseIDSelector != nil {
+		in, out := &in.AutonomousContainerDatabaseIDSelector, &out.AutonomousContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ConnectionStringsType != nil {
 		in, out := &in.ConnectionStringsType, &out.ConnectionStringsType
@@ -4890,6 +5420,16 @@ func (in *AutonomousContainerDatabaseSnapshotStandbyParameters) DeepCopyInto(out
 		in, out := &in.AutonomousContainerDatabaseID, &out.AutonomousContainerDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.AutonomousContainerDatabaseIDRef != nil {
+		in, out := &in.AutonomousContainerDatabaseIDRef, &out.AutonomousContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AutonomousContainerDatabaseIDSelector != nil {
+		in, out := &in.AutonomousContainerDatabaseIDSelector, &out.AutonomousContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ConnectionStringsType != nil {
 		in, out := &in.ConnectionStringsType, &out.ConnectionStringsType
@@ -5675,15 +6215,45 @@ func (in *AutonomousDatabaseInitParameters) DeepCopyInto(out *AutonomousDatabase
 		*out = new(string)
 		**out = **in
 	}
+	if in.AutonomousContainerDatabaseIDRef != nil {
+		in, out := &in.AutonomousContainerDatabaseIDRef, &out.AutonomousContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AutonomousContainerDatabaseIDSelector != nil {
+		in, out := &in.AutonomousContainerDatabaseIDSelector, &out.AutonomousContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.AutonomousDatabaseBackupID != nil {
 		in, out := &in.AutonomousDatabaseBackupID, &out.AutonomousDatabaseBackupID
 		*out = new(string)
 		**out = **in
 	}
+	if in.AutonomousDatabaseBackupIDRef != nil {
+		in, out := &in.AutonomousDatabaseBackupIDRef, &out.AutonomousDatabaseBackupIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AutonomousDatabaseBackupIDSelector != nil {
+		in, out := &in.AutonomousDatabaseBackupIDSelector, &out.AutonomousDatabaseBackupIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.AutonomousDatabaseID != nil {
 		in, out := &in.AutonomousDatabaseID, &out.AutonomousDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.AutonomousDatabaseIDRef != nil {
+		in, out := &in.AutonomousDatabaseIDRef, &out.AutonomousDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AutonomousDatabaseIDSelector != nil {
+		in, out := &in.AutonomousDatabaseIDSelector, &out.AutonomousDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.AutonomousMaintenanceScheduleType != nil {
 		in, out := &in.AutonomousMaintenanceScheduleType, &out.AutonomousMaintenanceScheduleType
@@ -5954,6 +6524,16 @@ func (in *AutonomousDatabaseInitParameters) DeepCopyInto(out *AutonomousDatabase
 		*out = new(string)
 		**out = **in
 	}
+	if in.KMSKeyIDRef != nil {
+		in, out := &in.KMSKeyIDRef, &out.KMSKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyIDSelector != nil {
+		in, out := &in.KMSKeyIDSelector, &out.KMSKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.KeyVersionID != nil {
 		in, out := &in.KeyVersionID, &out.KeyVersionID
 		*out = new(string)
@@ -6071,6 +6651,16 @@ func (in *AutonomousDatabaseInitParameters) DeepCopyInto(out *AutonomousDatabase
 		*out = new(string)
 		**out = **in
 	}
+	if in.SecretIDRef != nil {
+		in, out := &in.SecretIDRef, &out.SecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SecretIDSelector != nil {
+		in, out := &in.SecretIDSelector, &out.SecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.SecretVersionNumber != nil {
 		in, out := &in.SecretVersionNumber, &out.SecretVersionNumber
 		*out = new(float64)
@@ -6128,6 +6718,16 @@ func (in *AutonomousDatabaseInitParameters) DeepCopyInto(out *AutonomousDatabase
 		*out = new(string)
 		**out = **in
 	}
+	if in.SubnetIDRef != nil {
+		in, out := &in.SubnetIDRef, &out.SubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SubnetIDSelector != nil {
+		in, out := &in.SubnetIDSelector, &out.SubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.SubscriptionID != nil {
 		in, out := &in.SubscriptionID, &out.SubscriptionID
 		*out = new(string)
@@ -6174,6 +6774,16 @@ func (in *AutonomousDatabaseInitParameters) DeepCopyInto(out *AutonomousDatabase
 		in, out := &in.VaultID, &out.VaultID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VaultIDRef != nil {
+		in, out := &in.VaultIDRef, &out.VaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VaultIDSelector != nil {
+		in, out := &in.VaultIDSelector, &out.VaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.WhitelistedIps != nil {
 		in, out := &in.WhitelistedIps, &out.WhitelistedIps
@@ -7481,15 +8091,45 @@ func (in *AutonomousDatabaseParameters) DeepCopyInto(out *AutonomousDatabasePara
 		*out = new(string)
 		**out = **in
 	}
+	if in.AutonomousContainerDatabaseIDRef != nil {
+		in, out := &in.AutonomousContainerDatabaseIDRef, &out.AutonomousContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AutonomousContainerDatabaseIDSelector != nil {
+		in, out := &in.AutonomousContainerDatabaseIDSelector, &out.AutonomousContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.AutonomousDatabaseBackupID != nil {
 		in, out := &in.AutonomousDatabaseBackupID, &out.AutonomousDatabaseBackupID
 		*out = new(string)
 		**out = **in
 	}
+	if in.AutonomousDatabaseBackupIDRef != nil {
+		in, out := &in.AutonomousDatabaseBackupIDRef, &out.AutonomousDatabaseBackupIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AutonomousDatabaseBackupIDSelector != nil {
+		in, out := &in.AutonomousDatabaseBackupIDSelector, &out.AutonomousDatabaseBackupIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.AutonomousDatabaseID != nil {
 		in, out := &in.AutonomousDatabaseID, &out.AutonomousDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.AutonomousDatabaseIDRef != nil {
+		in, out := &in.AutonomousDatabaseIDRef, &out.AutonomousDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AutonomousDatabaseIDSelector != nil {
+		in, out := &in.AutonomousDatabaseIDSelector, &out.AutonomousDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.AutonomousMaintenanceScheduleType != nil {
 		in, out := &in.AutonomousMaintenanceScheduleType, &out.AutonomousMaintenanceScheduleType
@@ -7760,6 +8400,16 @@ func (in *AutonomousDatabaseParameters) DeepCopyInto(out *AutonomousDatabasePara
 		*out = new(string)
 		**out = **in
 	}
+	if in.KMSKeyIDRef != nil {
+		in, out := &in.KMSKeyIDRef, &out.KMSKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyIDSelector != nil {
+		in, out := &in.KMSKeyIDSelector, &out.KMSKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.KeyVersionID != nil {
 		in, out := &in.KeyVersionID, &out.KeyVersionID
 		*out = new(string)
@@ -7877,6 +8527,16 @@ func (in *AutonomousDatabaseParameters) DeepCopyInto(out *AutonomousDatabasePara
 		*out = new(string)
 		**out = **in
 	}
+	if in.SecretIDRef != nil {
+		in, out := &in.SecretIDRef, &out.SecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SecretIDSelector != nil {
+		in, out := &in.SecretIDSelector, &out.SecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.SecretVersionNumber != nil {
 		in, out := &in.SecretVersionNumber, &out.SecretVersionNumber
 		*out = new(float64)
@@ -7934,6 +8594,16 @@ func (in *AutonomousDatabaseParameters) DeepCopyInto(out *AutonomousDatabasePara
 		*out = new(string)
 		**out = **in
 	}
+	if in.SubnetIDRef != nil {
+		in, out := &in.SubnetIDRef, &out.SubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SubnetIDSelector != nil {
+		in, out := &in.SubnetIDSelector, &out.SubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.SubscriptionID != nil {
 		in, out := &in.SubscriptionID, &out.SubscriptionID
 		*out = new(string)
@@ -7980,6 +8650,16 @@ func (in *AutonomousDatabaseParameters) DeepCopyInto(out *AutonomousDatabasePara
 		in, out := &in.VaultID, &out.VaultID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VaultIDRef != nil {
+		in, out := &in.VaultIDRef, &out.VaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VaultIDSelector != nil {
+		in, out := &in.VaultIDSelector, &out.VaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.WhitelistedIps != nil {
 		in, out := &in.WhitelistedIps, &out.WhitelistedIps
@@ -10254,6 +10934,16 @@ func (in *AutonomousVmClusterInitParameters) DeepCopyInto(out *AutonomousVmClust
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ComputeModel != nil {
 		in, out := &in.ComputeModel, &out.ComputeModel
 		*out = new(string)
@@ -10295,6 +10985,16 @@ func (in *AutonomousVmClusterInitParameters) DeepCopyInto(out *AutonomousVmClust
 		in, out := &in.ExadataInfrastructureID, &out.ExadataInfrastructureID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExadataInfrastructureIDRef != nil {
+		in, out := &in.ExadataInfrastructureIDRef, &out.ExadataInfrastructureIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExadataInfrastructureIDSelector != nil {
+		in, out := &in.ExadataInfrastructureIDSelector, &out.ExadataInfrastructureIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
@@ -10363,6 +11063,16 @@ func (in *AutonomousVmClusterInitParameters) DeepCopyInto(out *AutonomousVmClust
 		in, out := &in.VMClusterNetworkID, &out.VMClusterNetworkID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VMClusterNetworkIDRef != nil {
+		in, out := &in.VMClusterNetworkIDRef, &out.VMClusterNetworkIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VMClusterNetworkIDSelector != nil {
+		in, out := &in.VMClusterNetworkIDSelector, &out.VMClusterNetworkIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -11384,15 +12094,45 @@ func (in *AutonomousVmClusterOrdsCertificateManagementInitParameters) DeepCopyIn
 		*out = new(string)
 		**out = **in
 	}
+	if in.AutonomousVMClusterIDRef != nil {
+		in, out := &in.AutonomousVMClusterIDRef, &out.AutonomousVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AutonomousVMClusterIDSelector != nil {
+		in, out := &in.AutonomousVMClusterIDSelector, &out.AutonomousVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.CABundleID != nil {
 		in, out := &in.CABundleID, &out.CABundleID
 		*out = new(string)
 		**out = **in
 	}
+	if in.CABundleIDRef != nil {
+		in, out := &in.CABundleIDRef, &out.CABundleIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CABundleIDSelector != nil {
+		in, out := &in.CABundleIDSelector, &out.CABundleIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.CertificateAuthorityID != nil {
 		in, out := &in.CertificateAuthorityID, &out.CertificateAuthorityID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CertificateAuthorityIDRef != nil {
+		in, out := &in.CertificateAuthorityIDRef, &out.CertificateAuthorityIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CertificateAuthorityIDSelector != nil {
+		in, out := &in.CertificateAuthorityIDSelector, &out.CertificateAuthorityIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.CertificateGenerationType != nil {
 		in, out := &in.CertificateGenerationType, &out.CertificateGenerationType
@@ -11403,6 +12143,16 @@ func (in *AutonomousVmClusterOrdsCertificateManagementInitParameters) DeepCopyIn
 		in, out := &in.CertificateID, &out.CertificateID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CertificateIDRef != nil {
+		in, out := &in.CertificateIDRef, &out.CertificateIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CertificateIDSelector != nil {
+		in, out := &in.CertificateIDSelector, &out.CertificateIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -11501,15 +12251,45 @@ func (in *AutonomousVmClusterOrdsCertificateManagementParameters) DeepCopyInto(o
 		*out = new(string)
 		**out = **in
 	}
+	if in.AutonomousVMClusterIDRef != nil {
+		in, out := &in.AutonomousVMClusterIDRef, &out.AutonomousVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AutonomousVMClusterIDSelector != nil {
+		in, out := &in.AutonomousVMClusterIDSelector, &out.AutonomousVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.CABundleID != nil {
 		in, out := &in.CABundleID, &out.CABundleID
 		*out = new(string)
 		**out = **in
 	}
+	if in.CABundleIDRef != nil {
+		in, out := &in.CABundleIDRef, &out.CABundleIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CABundleIDSelector != nil {
+		in, out := &in.CABundleIDSelector, &out.CABundleIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.CertificateAuthorityID != nil {
 		in, out := &in.CertificateAuthorityID, &out.CertificateAuthorityID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CertificateAuthorityIDRef != nil {
+		in, out := &in.CertificateAuthorityIDRef, &out.CertificateAuthorityIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CertificateAuthorityIDSelector != nil {
+		in, out := &in.CertificateAuthorityIDSelector, &out.CertificateAuthorityIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.CertificateGenerationType != nil {
 		in, out := &in.CertificateGenerationType, &out.CertificateGenerationType
@@ -11520,6 +12300,16 @@ func (in *AutonomousVmClusterOrdsCertificateManagementParameters) DeepCopyInto(o
 		in, out := &in.CertificateID, &out.CertificateID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CertificateIDRef != nil {
+		in, out := &in.CertificateIDRef, &out.CertificateIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CertificateIDSelector != nil {
+		in, out := &in.CertificateIDSelector, &out.CertificateIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -11586,6 +12376,16 @@ func (in *AutonomousVmClusterParameters) DeepCopyInto(out *AutonomousVmClusterPa
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ComputeModel != nil {
 		in, out := &in.ComputeModel, &out.ComputeModel
 		*out = new(string)
@@ -11627,6 +12427,16 @@ func (in *AutonomousVmClusterParameters) DeepCopyInto(out *AutonomousVmClusterPa
 		in, out := &in.ExadataInfrastructureID, &out.ExadataInfrastructureID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExadataInfrastructureIDRef != nil {
+		in, out := &in.ExadataInfrastructureIDRef, &out.ExadataInfrastructureIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExadataInfrastructureIDSelector != nil {
+		in, out := &in.ExadataInfrastructureIDSelector, &out.ExadataInfrastructureIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
@@ -11696,6 +12506,16 @@ func (in *AutonomousVmClusterParameters) DeepCopyInto(out *AutonomousVmClusterPa
 		*out = new(string)
 		**out = **in
 	}
+	if in.VMClusterNetworkIDRef != nil {
+		in, out := &in.VMClusterNetworkIDRef, &out.VMClusterNetworkIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VMClusterNetworkIDSelector != nil {
+		in, out := &in.VMClusterNetworkIDSelector, &out.VMClusterNetworkIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new AutonomousVmClusterParameters.
@@ -11761,15 +12581,45 @@ func (in *AutonomousVmClusterSslCertificateManagementInitParameters) DeepCopyInt
 		*out = new(string)
 		**out = **in
 	}
+	if in.AutonomousVMClusterIDRef != nil {
+		in, out := &in.AutonomousVMClusterIDRef, &out.AutonomousVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AutonomousVMClusterIDSelector != nil {
+		in, out := &in.AutonomousVMClusterIDSelector, &out.AutonomousVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.CABundleID != nil {
 		in, out := &in.CABundleID, &out.CABundleID
 		*out = new(string)
 		**out = **in
 	}
+	if in.CABundleIDRef != nil {
+		in, out := &in.CABundleIDRef, &out.CABundleIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CABundleIDSelector != nil {
+		in, out := &in.CABundleIDSelector, &out.CABundleIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.CertificateAuthorityID != nil {
 		in, out := &in.CertificateAuthorityID, &out.CertificateAuthorityID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CertificateAuthorityIDRef != nil {
+		in, out := &in.CertificateAuthorityIDRef, &out.CertificateAuthorityIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CertificateAuthorityIDSelector != nil {
+		in, out := &in.CertificateAuthorityIDSelector, &out.CertificateAuthorityIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.CertificateGenerationType != nil {
 		in, out := &in.CertificateGenerationType, &out.CertificateGenerationType
@@ -11780,6 +12630,16 @@ func (in *AutonomousVmClusterSslCertificateManagementInitParameters) DeepCopyInt
 		in, out := &in.CertificateID, &out.CertificateID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CertificateIDRef != nil {
+		in, out := &in.CertificateIDRef, &out.CertificateIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CertificateIDSelector != nil {
+		in, out := &in.CertificateIDSelector, &out.CertificateIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -11878,15 +12738,45 @@ func (in *AutonomousVmClusterSslCertificateManagementParameters) DeepCopyInto(ou
 		*out = new(string)
 		**out = **in
 	}
+	if in.AutonomousVMClusterIDRef != nil {
+		in, out := &in.AutonomousVMClusterIDRef, &out.AutonomousVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AutonomousVMClusterIDSelector != nil {
+		in, out := &in.AutonomousVMClusterIDSelector, &out.AutonomousVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.CABundleID != nil {
 		in, out := &in.CABundleID, &out.CABundleID
 		*out = new(string)
 		**out = **in
 	}
+	if in.CABundleIDRef != nil {
+		in, out := &in.CABundleIDRef, &out.CABundleIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CABundleIDSelector != nil {
+		in, out := &in.CABundleIDSelector, &out.CABundleIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.CertificateAuthorityID != nil {
 		in, out := &in.CertificateAuthorityID, &out.CertificateAuthorityID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CertificateAuthorityIDRef != nil {
+		in, out := &in.CertificateAuthorityIDRef, &out.CertificateAuthorityIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CertificateAuthorityIDSelector != nil {
+		in, out := &in.CertificateAuthorityIDSelector, &out.CertificateAuthorityIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.CertificateGenerationType != nil {
 		in, out := &in.CertificateGenerationType, &out.CertificateGenerationType
@@ -11897,6 +12787,16 @@ func (in *AutonomousVmClusterSslCertificateManagementParameters) DeepCopyInto(ou
 		in, out := &in.CertificateID, &out.CertificateID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CertificateIDRef != nil {
+		in, out := &in.CertificateIDRef, &out.CertificateIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CertificateIDSelector != nil {
+		in, out := &in.CertificateIDSelector, &out.CertificateIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -12024,6 +12924,16 @@ func (in *BackupCancelManagementInitParameters) DeepCopyInto(out *BackupCancelMa
 		*out = new(string)
 		**out = **in
 	}
+	if in.BackupIDRef != nil {
+		in, out := &in.BackupIDRef, &out.BackupIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.BackupIDSelector != nil {
+		in, out := &in.BackupIDSelector, &out.BackupIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.CancelBackupTrigger != nil {
 		in, out := &in.CancelBackupTrigger, &out.CancelBackupTrigger
 		*out = new(float64)
@@ -12110,6 +13020,16 @@ func (in *BackupCancelManagementParameters) DeepCopyInto(out *BackupCancelManage
 		in, out := &in.BackupID, &out.BackupID
 		*out = new(string)
 		**out = **in
+	}
+	if in.BackupIDRef != nil {
+		in, out := &in.BackupIDRef, &out.BackupIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.BackupIDSelector != nil {
+		in, out := &in.BackupIDSelector, &out.BackupIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.CancelBackupTrigger != nil {
 		in, out := &in.CancelBackupTrigger, &out.CancelBackupTrigger
@@ -12539,6 +13459,16 @@ func (in *BackupDestinationInitParameters) DeepCopyInto(out *BackupDestinationIn
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ConnectionString != nil {
 		in, out := &in.ConnectionString, &out.ConnectionString
 		*out = new(string)
@@ -12842,6 +13772,16 @@ func (in *BackupDestinationParameters) DeepCopyInto(out *BackupDestinationParame
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ConnectionString != nil {
 		in, out := &in.ConnectionString, &out.ConnectionString
 		*out = new(string)
@@ -13032,6 +13972,16 @@ func (in *BackupInitParameters) DeepCopyInto(out *BackupInitParameters) {
 		in, out := &in.DatabaseID, &out.DatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseIDRef != nil {
+		in, out := &in.DatabaseIDRef, &out.DatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseIDSelector != nil {
+		in, out := &in.DatabaseIDSelector, &out.DatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DisplayName != nil {
 		in, out := &in.DisplayName, &out.DisplayName
@@ -13252,6 +14202,16 @@ func (in *BackupParameters) DeepCopyInto(out *BackupParameters) {
 		in, out := &in.DatabaseID, &out.DatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseIDRef != nil {
+		in, out := &in.DatabaseIDRef, &out.DatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseIDSelector != nil {
+		in, out := &in.DatabaseIDSelector, &out.DatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DisplayName != nil {
 		in, out := &in.DisplayName, &out.DisplayName
@@ -15210,6 +16170,16 @@ func (in *CloudDatabaseManagementInitParameters) DeepCopyInto(out *CloudDatabase
 		*out = new(string)
 		**out = **in
 	}
+	if in.DatabaseIDRef != nil {
+		in, out := &in.DatabaseIDRef, &out.DatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseIDSelector != nil {
+		in, out := &in.DatabaseIDSelector, &out.DatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.EnableManagement != nil {
 		in, out := &in.EnableManagement, &out.EnableManagement
 		*out = new(bool)
@@ -15244,6 +16214,16 @@ func (in *CloudDatabaseManagementInitParameters) DeepCopyInto(out *CloudDatabase
 		in, out := &in.SSLSecretID, &out.SSLSecretID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SSLSecretIDRef != nil {
+		in, out := &in.SSLSecretIDRef, &out.SSLSecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SSLSecretIDSelector != nil {
+		in, out := &in.SSLSecretIDSelector, &out.SSLSecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ServiceName != nil {
 		in, out := &in.ServiceName, &out.ServiceName
@@ -15381,6 +16361,16 @@ func (in *CloudDatabaseManagementParameters) DeepCopyInto(out *CloudDatabaseMana
 		*out = new(string)
 		**out = **in
 	}
+	if in.DatabaseIDRef != nil {
+		in, out := &in.DatabaseIDRef, &out.DatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseIDSelector != nil {
+		in, out := &in.DatabaseIDSelector, &out.DatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.EnableManagement != nil {
 		in, out := &in.EnableManagement, &out.EnableManagement
 		*out = new(bool)
@@ -15415,6 +16405,16 @@ func (in *CloudDatabaseManagementParameters) DeepCopyInto(out *CloudDatabaseMana
 		in, out := &in.SSLSecretID, &out.SSLSecretID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SSLSecretIDRef != nil {
+		in, out := &in.SSLSecretIDRef, &out.SSLSecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SSLSecretIDSelector != nil {
+		in, out := &in.SSLSecretIDSelector, &out.SSLSecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ServiceName != nil {
 		in, out := &in.ServiceName, &out.ServiceName
@@ -15699,6 +16699,16 @@ func (in *CloudExadataInfrastructureConfigureExascaleManagementInitParameters) D
 		in, out := &in.CloudExadataInfrastructureID, &out.CloudExadataInfrastructureID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CloudExadataInfrastructureIDRef != nil {
+		in, out := &in.CloudExadataInfrastructureIDRef, &out.CloudExadataInfrastructureIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudExadataInfrastructureIDSelector != nil {
+		in, out := &in.CloudExadataInfrastructureIDSelector, &out.CloudExadataInfrastructureIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.TotalStorageInGbs != nil {
 		in, out := &in.TotalStorageInGbs, &out.TotalStorageInGbs
@@ -16234,6 +17244,16 @@ func (in *CloudExadataInfrastructureConfigureExascaleManagementParameters) DeepC
 		in, out := &in.CloudExadataInfrastructureID, &out.CloudExadataInfrastructureID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CloudExadataInfrastructureIDRef != nil {
+		in, out := &in.CloudExadataInfrastructureIDRef, &out.CloudExadataInfrastructureIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudExadataInfrastructureIDSelector != nil {
+		in, out := &in.CloudExadataInfrastructureIDSelector, &out.CloudExadataInfrastructureIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.TotalStorageInGbs != nil {
 		in, out := &in.TotalStorageInGbs, &out.TotalStorageInGbs
@@ -17359,6 +18379,16 @@ func (in *CloudVmClusterInitParameters) DeepCopyInto(out *CloudVmClusterInitPara
 		*out = new(string)
 		**out = **in
 	}
+	if in.BackupSubnetIDRef != nil {
+		in, out := &in.BackupSubnetIDRef, &out.BackupSubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.BackupSubnetIDSelector != nil {
+		in, out := &in.BackupSubnetIDSelector, &out.BackupSubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.CPUCoreCount != nil {
 		in, out := &in.CPUCoreCount, &out.CPUCoreCount
 		*out = new(float64)
@@ -17376,6 +18406,16 @@ func (in *CloudVmClusterInitParameters) DeepCopyInto(out *CloudVmClusterInitPara
 		*out = new(string)
 		**out = **in
 	}
+	if in.CloudExadataInfrastructureIDRef != nil {
+		in, out := &in.CloudExadataInfrastructureIDRef, &out.CloudExadataInfrastructureIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudExadataInfrastructureIDSelector != nil {
+		in, out := &in.CloudExadataInfrastructureIDSelector, &out.CloudExadataInfrastructureIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ClusterName != nil {
 		in, out := &in.ClusterName, &out.ClusterName
 		*out = new(string)
@@ -17385,6 +18425,16 @@ func (in *CloudVmClusterInitParameters) DeepCopyInto(out *CloudVmClusterInitPara
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.CreateAsync != nil {
 		in, out := &in.CreateAsync, &out.CreateAsync
@@ -17454,6 +18504,16 @@ func (in *CloudVmClusterInitParameters) DeepCopyInto(out *CloudVmClusterInitPara
 		in, out := &in.ExascaleDBStorageVaultID, &out.ExascaleDBStorageVaultID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExascaleDBStorageVaultIDRef != nil {
+		in, out := &in.ExascaleDBStorageVaultIDRef, &out.ExascaleDBStorageVaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExascaleDBStorageVaultIDSelector != nil {
+		in, out := &in.ExascaleDBStorageVaultIDSelector, &out.ExascaleDBStorageVaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FileSystemConfigurationDetails != nil {
 		in, out := &in.FileSystemConfigurationDetails, &out.FileSystemConfigurationDetails
@@ -17529,6 +18589,16 @@ func (in *CloudVmClusterInitParameters) DeepCopyInto(out *CloudVmClusterInitPara
 		*out = new(string)
 		**out = **in
 	}
+	if in.PrivateZoneIDRef != nil {
+		in, out := &in.PrivateZoneIDRef, &out.PrivateZoneIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PrivateZoneIDSelector != nil {
+		in, out := &in.PrivateZoneIDSelector, &out.PrivateZoneIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.SSHPublicKeys != nil {
 		in, out := &in.SSHPublicKeys, &out.SSHPublicKeys
 		*out = make([]*string, len(*in))
@@ -17570,6 +18640,16 @@ func (in *CloudVmClusterInitParameters) DeepCopyInto(out *CloudVmClusterInitPara
 		in, out := &in.SubnetID, &out.SubnetID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SubnetIDRef != nil {
+		in, out := &in.SubnetIDRef, &out.SubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SubnetIDSelector != nil {
+		in, out := &in.SubnetIDSelector, &out.SubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.SubscriptionID != nil {
 		in, out := &in.SubscriptionID, &out.SubscriptionID
@@ -17723,6 +18803,16 @@ func (in *CloudVmClusterIormConfigInitParameters) DeepCopyInto(out *CloudVmClust
 		*out = new(string)
 		**out = **in
 	}
+	if in.CloudVMClusterIDRef != nil {
+		in, out := &in.CloudVMClusterIDRef, &out.CloudVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudVMClusterIDSelector != nil {
+		in, out := &in.CloudVMClusterIDSelector, &out.CloudVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DBPlans != nil {
 		in, out := &in.DBPlans, &out.DBPlans
 		*out = make([]CloudVmClusterIormConfigDBPlansInitParameters, len(*in))
@@ -17833,6 +18923,16 @@ func (in *CloudVmClusterIormConfigParameters) DeepCopyInto(out *CloudVmClusterIo
 		in, out := &in.CloudVMClusterID, &out.CloudVMClusterID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CloudVMClusterIDRef != nil {
+		in, out := &in.CloudVMClusterIDRef, &out.CloudVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudVMClusterIDSelector != nil {
+		in, out := &in.CloudVMClusterIDSelector, &out.CloudVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DBPlans != nil {
 		in, out := &in.DBPlans, &out.DBPlans
@@ -18366,6 +19466,16 @@ func (in *CloudVmClusterParameters) DeepCopyInto(out *CloudVmClusterParameters) 
 		*out = new(string)
 		**out = **in
 	}
+	if in.BackupSubnetIDRef != nil {
+		in, out := &in.BackupSubnetIDRef, &out.BackupSubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.BackupSubnetIDSelector != nil {
+		in, out := &in.BackupSubnetIDSelector, &out.BackupSubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.CPUCoreCount != nil {
 		in, out := &in.CPUCoreCount, &out.CPUCoreCount
 		*out = new(float64)
@@ -18383,6 +19493,16 @@ func (in *CloudVmClusterParameters) DeepCopyInto(out *CloudVmClusterParameters) 
 		*out = new(string)
 		**out = **in
 	}
+	if in.CloudExadataInfrastructureIDRef != nil {
+		in, out := &in.CloudExadataInfrastructureIDRef, &out.CloudExadataInfrastructureIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudExadataInfrastructureIDSelector != nil {
+		in, out := &in.CloudExadataInfrastructureIDSelector, &out.CloudExadataInfrastructureIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ClusterName != nil {
 		in, out := &in.ClusterName, &out.ClusterName
 		*out = new(string)
@@ -18392,6 +19512,16 @@ func (in *CloudVmClusterParameters) DeepCopyInto(out *CloudVmClusterParameters) 
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.CreateAsync != nil {
 		in, out := &in.CreateAsync, &out.CreateAsync
@@ -18461,6 +19591,16 @@ func (in *CloudVmClusterParameters) DeepCopyInto(out *CloudVmClusterParameters) 
 		in, out := &in.ExascaleDBStorageVaultID, &out.ExascaleDBStorageVaultID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExascaleDBStorageVaultIDRef != nil {
+		in, out := &in.ExascaleDBStorageVaultIDRef, &out.ExascaleDBStorageVaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExascaleDBStorageVaultIDSelector != nil {
+		in, out := &in.ExascaleDBStorageVaultIDSelector, &out.ExascaleDBStorageVaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FileSystemConfigurationDetails != nil {
 		in, out := &in.FileSystemConfigurationDetails, &out.FileSystemConfigurationDetails
@@ -18536,6 +19676,16 @@ func (in *CloudVmClusterParameters) DeepCopyInto(out *CloudVmClusterParameters) 
 		*out = new(string)
 		**out = **in
 	}
+	if in.PrivateZoneIDRef != nil {
+		in, out := &in.PrivateZoneIDRef, &out.PrivateZoneIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PrivateZoneIDSelector != nil {
+		in, out := &in.PrivateZoneIDSelector, &out.PrivateZoneIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.SSHPublicKeys != nil {
 		in, out := &in.SSHPublicKeys, &out.SSHPublicKeys
 		*out = make([]*string, len(*in))
@@ -18577,6 +19727,16 @@ func (in *CloudVmClusterParameters) DeepCopyInto(out *CloudVmClusterParameters) 
 		in, out := &in.SubnetID, &out.SubnetID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SubnetIDRef != nil {
+		in, out := &in.SubnetIDRef, &out.SubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SubnetIDSelector != nil {
+		in, out := &in.SubnetIDSelector, &out.SubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.SubscriptionID != nil {
 		in, out := &in.SubscriptionID, &out.SubscriptionID
@@ -19129,6 +20289,16 @@ func (in *ConnectionCredentialsInitParameters) DeepCopyInto(out *ConnectionCrede
 		*out = new(string)
 		**out = **in
 	}
+	if in.SSLSecretIDRef != nil {
+		in, out := &in.SSLSecretIDRef, &out.SSLSecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SSLSecretIDSelector != nil {
+		in, out := &in.SSLSecretIDSelector, &out.SSLSecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.Username != nil {
 		in, out := &in.Username, &out.Username
 		*out = new(string)
@@ -19213,6 +20383,16 @@ func (in *ConnectionCredentialsParameters) DeepCopyInto(out *ConnectionCredentia
 		in, out := &in.SSLSecretID, &out.SSLSecretID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SSLSecretIDRef != nil {
+		in, out := &in.SSLSecretIDRef, &out.SSLSecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SSLSecretIDSelector != nil {
+		in, out := &in.SSLSecretIDSelector, &out.SSLSecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Username != nil {
 		in, out := &in.Username, &out.Username
@@ -20586,6 +21766,16 @@ func (in *ContentInitParameters) DeepCopyInto(out *ContentInitParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.UserNameRef != nil {
+		in, out := &in.UserNameRef, &out.UserNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.UserNameSelector != nil {
+		in, out := &in.UserNameSelector, &out.UserNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new ContentInitParameters.
@@ -20648,6 +21838,16 @@ func (in *ContentParameters) DeepCopyInto(out *ContentParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.UserNameRef != nil {
+		in, out := &in.UserNameRef, &out.UserNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.UserNameSelector != nil {
+		in, out := &in.UserNameSelector, &out.UserNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new ContentParameters.
@@ -20668,6 +21868,16 @@ func (in *CredentialDetailsInitParameters) DeepCopyInto(out *CredentialDetailsIn
 		in, out := &in.UserName, &out.UserName
 		*out = new(string)
 		**out = **in
+	}
+	if in.UserNameRef != nil {
+		in, out := &in.UserNameRef, &out.UserNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.UserNameSelector != nil {
+		in, out := &in.UserNameSelector, &out.UserNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -20709,6 +21919,16 @@ func (in *CredentialDetailsParameters) DeepCopyInto(out *CredentialDetailsParame
 		in, out := &in.UserName, &out.UserName
 		*out = new(string)
 		**out = **in
+	}
+	if in.UserNameRef != nil {
+		in, out := &in.UserNameRef, &out.UserNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.UserNameSelector != nil {
+		in, out := &in.UserNameSelector, &out.UserNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -20917,10 +22137,30 @@ func (in *CredentialsInitParameters) DeepCopyInto(out *CredentialsInitParameters
 		*out = new(string)
 		**out = **in
 	}
+	if in.SecretIDRef != nil {
+		in, out := &in.SecretIDRef, &out.SecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SecretIDSelector != nil {
+		in, out := &in.SecretIDSelector, &out.SecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.UserName != nil {
 		in, out := &in.UserName, &out.UserName
 		*out = new(string)
 		**out = **in
+	}
+	if in.UserNameRef != nil {
+		in, out := &in.UserNameRef, &out.UserNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.UserNameSelector != nil {
+		in, out := &in.UserNameSelector, &out.UserNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -20982,10 +22222,30 @@ func (in *CredentialsParameters) DeepCopyInto(out *CredentialsParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.SecretIDRef != nil {
+		in, out := &in.SecretIDRef, &out.SecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SecretIDSelector != nil {
+		in, out := &in.SecretIDSelector, &out.SecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.UserName != nil {
 		in, out := &in.UserName, &out.UserName
 		*out = new(string)
 		**out = **in
+	}
+	if in.UserNameRef != nil {
+		in, out := &in.UserNameRef, &out.UserNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.UserNameSelector != nil {
+		in, out := &in.UserNameSelector, &out.UserNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -21071,6 +22331,16 @@ func (in *DBBackupConfigBackupDestinationDetailsInitParameters) DeepCopyInto(out
 		in, out := &in.DbrsPolicyID, &out.DbrsPolicyID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DbrsPolicyIDRef != nil {
+		in, out := &in.DbrsPolicyIDRef, &out.DbrsPolicyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DbrsPolicyIDSelector != nil {
+		in, out := &in.DbrsPolicyIDSelector, &out.DbrsPolicyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
@@ -21186,6 +22456,16 @@ func (in *DBBackupConfigBackupDestinationDetailsParameters) DeepCopyInto(out *DB
 		in, out := &in.DbrsPolicyID, &out.DbrsPolicyID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DbrsPolicyIDRef != nil {
+		in, out := &in.DbrsPolicyIDRef, &out.DbrsPolicyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DbrsPolicyIDSelector != nil {
+		in, out := &in.DbrsPolicyIDSelector, &out.DbrsPolicyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
@@ -21489,6 +22769,16 @@ func (in *DBHomeDatabaseDBBackupConfigBackupDestinationDetailsInitParameters) De
 		*out = new(string)
 		**out = **in
 	}
+	if in.DbrsPolicyIDRef != nil {
+		in, out := &in.DbrsPolicyIDRef, &out.DbrsPolicyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DbrsPolicyIDSelector != nil {
+		in, out := &in.DbrsPolicyIDSelector, &out.DbrsPolicyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -21588,6 +22878,16 @@ func (in *DBHomeDatabaseDBBackupConfigBackupDestinationDetailsParameters) DeepCo
 		in, out := &in.DbrsPolicyID, &out.DbrsPolicyID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DbrsPolicyIDRef != nil {
+		in, out := &in.DbrsPolicyIDRef, &out.DbrsPolicyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DbrsPolicyIDSelector != nil {
+		in, out := &in.DbrsPolicyIDSelector, &out.DbrsPolicyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
@@ -21806,6 +23106,16 @@ func (in *DBHomeDatabaseInitParameters) DeepCopyInto(out *DBHomeDatabaseInitPara
 		*out = new(string)
 		**out = **in
 	}
+	if in.BackupIDRef != nil {
+		in, out := &in.BackupIDRef, &out.BackupIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.BackupIDSelector != nil {
+		in, out := &in.BackupIDSelector, &out.BackupIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.BackupTdePasswordSecretRef != nil {
 		in, out := &in.BackupTdePasswordSecretRef, &out.BackupTdePasswordSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -21848,10 +23158,30 @@ func (in *DBHomeDatabaseInitParameters) DeepCopyInto(out *DBHomeDatabaseInitPara
 		*out = new(string)
 		**out = **in
 	}
+	if in.DatabaseIDRef != nil {
+		in, out := &in.DatabaseIDRef, &out.DatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseIDSelector != nil {
+		in, out := &in.DatabaseIDSelector, &out.DatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DatabaseSoftwareImageID != nil {
 		in, out := &in.DatabaseSoftwareImageID, &out.DatabaseSoftwareImageID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseSoftwareImageIDRef != nil {
+		in, out := &in.DatabaseSoftwareImageIDRef, &out.DatabaseSoftwareImageIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseSoftwareImageIDSelector != nil {
+		in, out := &in.DatabaseSoftwareImageIDSelector, &out.DatabaseSoftwareImageIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -21890,10 +23220,30 @@ func (in *DBHomeDatabaseInitParameters) DeepCopyInto(out *DBHomeDatabaseInitPara
 		*out = new(string)
 		**out = **in
 	}
+	if in.KMSKeyIDRef != nil {
+		in, out := &in.KMSKeyIDRef, &out.KMSKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyIDSelector != nil {
+		in, out := &in.KMSKeyIDSelector, &out.KMSKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.KMSKeyVersionID != nil {
 		in, out := &in.KMSKeyVersionID, &out.KMSKeyVersionID
 		*out = new(string)
 		**out = **in
+	}
+	if in.KMSKeyVersionIDRef != nil {
+		in, out := &in.KMSKeyVersionIDRef, &out.KMSKeyVersionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyVersionIDSelector != nil {
+		in, out := &in.KMSKeyVersionIDSelector, &out.KMSKeyVersionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.NcharacterSet != nil {
 		in, out := &in.NcharacterSet, &out.NcharacterSet
@@ -21930,6 +23280,16 @@ func (in *DBHomeDatabaseInitParameters) DeepCopyInto(out *DBHomeDatabaseInitPara
 		in, out := &in.VaultID, &out.VaultID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VaultIDRef != nil {
+		in, out := &in.VaultIDRef, &out.VaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VaultIDSelector != nil {
+		in, out := &in.VaultIDSelector, &out.VaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -22114,6 +23474,16 @@ func (in *DBHomeDatabaseParameters) DeepCopyInto(out *DBHomeDatabaseParameters) 
 		*out = new(string)
 		**out = **in
 	}
+	if in.BackupIDRef != nil {
+		in, out := &in.BackupIDRef, &out.BackupIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.BackupIDSelector != nil {
+		in, out := &in.BackupIDSelector, &out.BackupIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.BackupTdePasswordSecretRef != nil {
 		in, out := &in.BackupTdePasswordSecretRef, &out.BackupTdePasswordSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -22156,10 +23526,30 @@ func (in *DBHomeDatabaseParameters) DeepCopyInto(out *DBHomeDatabaseParameters) 
 		*out = new(string)
 		**out = **in
 	}
+	if in.DatabaseIDRef != nil {
+		in, out := &in.DatabaseIDRef, &out.DatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseIDSelector != nil {
+		in, out := &in.DatabaseIDSelector, &out.DatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DatabaseSoftwareImageID != nil {
 		in, out := &in.DatabaseSoftwareImageID, &out.DatabaseSoftwareImageID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseSoftwareImageIDRef != nil {
+		in, out := &in.DatabaseSoftwareImageIDRef, &out.DatabaseSoftwareImageIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseSoftwareImageIDSelector != nil {
+		in, out := &in.DatabaseSoftwareImageIDSelector, &out.DatabaseSoftwareImageIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -22198,10 +23588,30 @@ func (in *DBHomeDatabaseParameters) DeepCopyInto(out *DBHomeDatabaseParameters) 
 		*out = new(string)
 		**out = **in
 	}
+	if in.KMSKeyIDRef != nil {
+		in, out := &in.KMSKeyIDRef, &out.KMSKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyIDSelector != nil {
+		in, out := &in.KMSKeyIDSelector, &out.KMSKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.KMSKeyVersionID != nil {
 		in, out := &in.KMSKeyVersionID, &out.KMSKeyVersionID
 		*out = new(string)
 		**out = **in
+	}
+	if in.KMSKeyVersionIDRef != nil {
+		in, out := &in.KMSKeyVersionIDRef, &out.KMSKeyVersionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyVersionIDSelector != nil {
+		in, out := &in.KMSKeyVersionIDSelector, &out.KMSKeyVersionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.NcharacterSet != nil {
 		in, out := &in.NcharacterSet, &out.NcharacterSet
@@ -22239,6 +23649,16 @@ func (in *DBHomeDatabaseParameters) DeepCopyInto(out *DBHomeDatabaseParameters) 
 		*out = new(string)
 		**out = **in
 	}
+	if in.VaultIDRef != nil {
+		in, out := &in.VaultIDRef, &out.VaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VaultIDSelector != nil {
+		in, out := &in.VaultIDSelector, &out.VaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new DBHomeDatabaseParameters.
@@ -22275,6 +23695,16 @@ func (in *DBHomeInitParameters) DeepCopyInto(out *DBHomeInitParameters) {
 		in, out := &in.DatabaseSoftwareImageID, &out.DatabaseSoftwareImageID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseSoftwareImageIDRef != nil {
+		in, out := &in.DatabaseSoftwareImageIDRef, &out.DatabaseSoftwareImageIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseSoftwareImageIDSelector != nil {
+		in, out := &in.DatabaseSoftwareImageIDSelector, &out.DatabaseSoftwareImageIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -22463,6 +23893,16 @@ func (in *DBHomeParameters) DeepCopyInto(out *DBHomeParameters) {
 		in, out := &in.DatabaseSoftwareImageID, &out.DatabaseSoftwareImageID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseSoftwareImageIDRef != nil {
+		in, out := &in.DatabaseSoftwareImageIDRef, &out.DatabaseSoftwareImageIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseSoftwareImageIDSelector != nil {
+		in, out := &in.DatabaseSoftwareImageIDSelector, &out.DatabaseSoftwareImageIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -23222,10 +24662,30 @@ func (in *DataGuardAssociationInitParameters) DeepCopyInto(out *DataGuardAssocia
 		*out = new(string)
 		**out = **in
 	}
+	if in.DatabaseIDRef != nil {
+		in, out := &in.DatabaseIDRef, &out.DatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseIDSelector != nil {
+		in, out := &in.DatabaseIDSelector, &out.DatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DatabaseSoftwareImageID != nil {
 		in, out := &in.DatabaseSoftwareImageID, &out.DatabaseSoftwareImageID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseSoftwareImageIDRef != nil {
+		in, out := &in.DatabaseSoftwareImageIDRef, &out.DatabaseSoftwareImageIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseSoftwareImageIDSelector != nil {
+		in, out := &in.DatabaseSoftwareImageIDSelector, &out.DatabaseSoftwareImageIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DeleteStandbyDBHomeOnDelete != nil {
 		in, out := &in.DeleteStandbyDBHomeOnDelete, &out.DeleteStandbyDBHomeOnDelete
@@ -23294,10 +24754,30 @@ func (in *DataGuardAssociationInitParameters) DeepCopyInto(out *DataGuardAssocia
 		*out = new(string)
 		**out = **in
 	}
+	if in.PeerDBHomeIDRef != nil {
+		in, out := &in.PeerDBHomeIDRef, &out.PeerDBHomeIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerDBHomeIDSelector != nil {
+		in, out := &in.PeerDBHomeIDSelector, &out.PeerDBHomeIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PeerDBSystemID != nil {
 		in, out := &in.PeerDBSystemID, &out.PeerDBSystemID
 		*out = new(string)
 		**out = **in
+	}
+	if in.PeerDBSystemIDRef != nil {
+		in, out := &in.PeerDBSystemIDRef, &out.PeerDBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerDBSystemIDSelector != nil {
+		in, out := &in.PeerDBSystemIDSelector, &out.PeerDBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.PeerDBUniqueName != nil {
 		in, out := &in.PeerDBUniqueName, &out.PeerDBUniqueName
@@ -23313,6 +24793,16 @@ func (in *DataGuardAssociationInitParameters) DeepCopyInto(out *DataGuardAssocia
 		in, out := &in.PeerVMClusterID, &out.PeerVMClusterID
 		*out = new(string)
 		**out = **in
+	}
+	if in.PeerVMClusterIDRef != nil {
+		in, out := &in.PeerVMClusterIDRef, &out.PeerVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerVMClusterIDSelector != nil {
+		in, out := &in.PeerVMClusterIDSelector, &out.PeerVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.PrivateIP != nil {
 		in, out := &in.PrivateIP, &out.PrivateIP
@@ -23343,6 +24833,16 @@ func (in *DataGuardAssociationInitParameters) DeepCopyInto(out *DataGuardAssocia
 		in, out := &in.SubnetID, &out.SubnetID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SubnetIDRef != nil {
+		in, out := &in.SubnetIDRef, &out.SubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SubnetIDSelector != nil {
+		in, out := &in.SubnetIDSelector, &out.SubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.SubscriptionID != nil {
 		in, out := &in.SubscriptionID, &out.SubscriptionID
@@ -23885,10 +25385,30 @@ func (in *DataGuardAssociationParameters) DeepCopyInto(out *DataGuardAssociation
 		*out = new(string)
 		**out = **in
 	}
+	if in.DatabaseIDRef != nil {
+		in, out := &in.DatabaseIDRef, &out.DatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseIDSelector != nil {
+		in, out := &in.DatabaseIDSelector, &out.DatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DatabaseSoftwareImageID != nil {
 		in, out := &in.DatabaseSoftwareImageID, &out.DatabaseSoftwareImageID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseSoftwareImageIDRef != nil {
+		in, out := &in.DatabaseSoftwareImageIDRef, &out.DatabaseSoftwareImageIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseSoftwareImageIDSelector != nil {
+		in, out := &in.DatabaseSoftwareImageIDSelector, &out.DatabaseSoftwareImageIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DeleteStandbyDBHomeOnDelete != nil {
 		in, out := &in.DeleteStandbyDBHomeOnDelete, &out.DeleteStandbyDBHomeOnDelete
@@ -23957,10 +25477,30 @@ func (in *DataGuardAssociationParameters) DeepCopyInto(out *DataGuardAssociation
 		*out = new(string)
 		**out = **in
 	}
+	if in.PeerDBHomeIDRef != nil {
+		in, out := &in.PeerDBHomeIDRef, &out.PeerDBHomeIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerDBHomeIDSelector != nil {
+		in, out := &in.PeerDBHomeIDSelector, &out.PeerDBHomeIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PeerDBSystemID != nil {
 		in, out := &in.PeerDBSystemID, &out.PeerDBSystemID
 		*out = new(string)
 		**out = **in
+	}
+	if in.PeerDBSystemIDRef != nil {
+		in, out := &in.PeerDBSystemIDRef, &out.PeerDBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerDBSystemIDSelector != nil {
+		in, out := &in.PeerDBSystemIDSelector, &out.PeerDBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.PeerDBUniqueName != nil {
 		in, out := &in.PeerDBUniqueName, &out.PeerDBUniqueName
@@ -23976,6 +25516,16 @@ func (in *DataGuardAssociationParameters) DeepCopyInto(out *DataGuardAssociation
 		in, out := &in.PeerVMClusterID, &out.PeerVMClusterID
 		*out = new(string)
 		**out = **in
+	}
+	if in.PeerVMClusterIDRef != nil {
+		in, out := &in.PeerVMClusterIDRef, &out.PeerVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PeerVMClusterIDSelector != nil {
+		in, out := &in.PeerVMClusterIDSelector, &out.PeerVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.PrivateIP != nil {
 		in, out := &in.PrivateIP, &out.PrivateIP
@@ -24006,6 +25556,16 @@ func (in *DataGuardAssociationParameters) DeepCopyInto(out *DataGuardAssociation
 		in, out := &in.SubnetID, &out.SubnetID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SubnetIDRef != nil {
+		in, out := &in.SubnetIDRef, &out.SubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SubnetIDSelector != nil {
+		in, out := &in.SubnetIDSelector, &out.SubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.SubscriptionID != nil {
 		in, out := &in.SubscriptionID, &out.SubscriptionID
@@ -24377,6 +25937,16 @@ func (in *DataTransferMediumDetailsInitParameters) DeepCopyInto(out *DataTransfe
 		*out = new(string)
 		**out = **in
 	}
+	if in.AccessKeyIDRef != nil {
+		in, out := &in.AccessKeyIDRef, &out.AccessKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AccessKeyIDSelector != nil {
+		in, out := &in.AccessKeyIDSelector, &out.AccessKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.Name != nil {
 		in, out := &in.Name, &out.Name
 		*out = new(string)
@@ -24403,6 +25973,16 @@ func (in *DataTransferMediumDetailsInitParameters) DeepCopyInto(out *DataTransfe
 		in, out := &in.SharedStorageMountTargetID, &out.SharedStorageMountTargetID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SharedStorageMountTargetIDRef != nil {
+		in, out := &in.SharedStorageMountTargetIDRef, &out.SharedStorageMountTargetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SharedStorageMountTargetIDSelector != nil {
+		in, out := &in.SharedStorageMountTargetIDSelector, &out.SharedStorageMountTargetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Source != nil {
 		in, out := &in.Source, &out.Source
@@ -24504,6 +26084,16 @@ func (in *DataTransferMediumDetailsParameters) DeepCopyInto(out *DataTransferMed
 		*out = new(string)
 		**out = **in
 	}
+	if in.AccessKeyIDRef != nil {
+		in, out := &in.AccessKeyIDRef, &out.AccessKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AccessKeyIDSelector != nil {
+		in, out := &in.AccessKeyIDSelector, &out.AccessKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.Name != nil {
 		in, out := &in.Name, &out.Name
 		*out = new(string)
@@ -24530,6 +26120,16 @@ func (in *DataTransferMediumDetailsParameters) DeepCopyInto(out *DataTransferMed
 		in, out := &in.SharedStorageMountTargetID, &out.SharedStorageMountTargetID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SharedStorageMountTargetIDRef != nil {
+		in, out := &in.SharedStorageMountTargetIDRef, &out.SharedStorageMountTargetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SharedStorageMountTargetIDSelector != nil {
+		in, out := &in.SharedStorageMountTargetIDSelector, &out.SharedStorageMountTargetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Source != nil {
 		in, out := &in.Source, &out.Source
@@ -24617,10 +26217,30 @@ func (in *DatabaseConnectionDetailsConnectionCredentialsInitParameters) DeepCopy
 		*out = new(string)
 		**out = **in
 	}
+	if in.SSLSecretIDRef != nil {
+		in, out := &in.SSLSecretIDRef, &out.SSLSecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SSLSecretIDSelector != nil {
+		in, out := &in.SSLSecretIDSelector, &out.SSLSecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.UserName != nil {
 		in, out := &in.UserName, &out.UserName
 		*out = new(string)
 		**out = **in
+	}
+	if in.UserNameRef != nil {
+		in, out := &in.UserNameRef, &out.UserNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.UserNameSelector != nil {
+		in, out := &in.UserNameSelector, &out.UserNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -24702,10 +26322,30 @@ func (in *DatabaseConnectionDetailsConnectionCredentialsParameters) DeepCopyInto
 		*out = new(string)
 		**out = **in
 	}
+	if in.SSLSecretIDRef != nil {
+		in, out := &in.SSLSecretIDRef, &out.SSLSecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SSLSecretIDSelector != nil {
+		in, out := &in.SSLSecretIDSelector, &out.SSLSecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.UserName != nil {
 		in, out := &in.UserName, &out.UserName
 		*out = new(string)
 		**out = **in
+	}
+	if in.UserNameRef != nil {
+		in, out := &in.UserNameRef, &out.UserNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.UserNameSelector != nil {
+		in, out := &in.UserNameSelector, &out.UserNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -25247,6 +26887,16 @@ func (in *DatabaseDatabaseInitParameters) DeepCopyInto(out *DatabaseDatabaseInit
 		*out = new(string)
 		**out = **in
 	}
+	if in.BackupIDRef != nil {
+		in, out := &in.BackupIDRef, &out.BackupIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.BackupIDSelector != nil {
+		in, out := &in.BackupIDSelector, &out.BackupIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.BackupTdePasswordSecretRef != nil {
 		in, out := &in.BackupTdePasswordSecretRef, &out.BackupTdePasswordSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -25288,6 +26938,16 @@ func (in *DatabaseDatabaseInitParameters) DeepCopyInto(out *DatabaseDatabaseInit
 		in, out := &in.DatabaseSoftwareImageID, &out.DatabaseSoftwareImageID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseSoftwareImageIDRef != nil {
+		in, out := &in.DatabaseSoftwareImageIDRef, &out.DatabaseSoftwareImageIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseSoftwareImageIDSelector != nil {
+		in, out := &in.DatabaseSoftwareImageIDSelector, &out.DatabaseSoftwareImageIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -25338,10 +26998,30 @@ func (in *DatabaseDatabaseInitParameters) DeepCopyInto(out *DatabaseDatabaseInit
 		*out = new(string)
 		**out = **in
 	}
+	if in.KMSKeyIDRef != nil {
+		in, out := &in.KMSKeyIDRef, &out.KMSKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyIDSelector != nil {
+		in, out := &in.KMSKeyIDSelector, &out.KMSKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.KMSKeyVersionID != nil {
 		in, out := &in.KMSKeyVersionID, &out.KMSKeyVersionID
 		*out = new(string)
 		**out = **in
+	}
+	if in.KMSKeyVersionIDRef != nil {
+		in, out := &in.KMSKeyVersionIDRef, &out.KMSKeyVersionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyVersionIDSelector != nil {
+		in, out := &in.KMSKeyVersionIDSelector, &out.KMSKeyVersionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.NcharacterSet != nil {
 		in, out := &in.NcharacterSet, &out.NcharacterSet
@@ -25379,6 +27059,16 @@ func (in *DatabaseDatabaseInitParameters) DeepCopyInto(out *DatabaseDatabaseInit
 		*out = new(string)
 		**out = **in
 	}
+	if in.SourceDatabaseIDRef != nil {
+		in, out := &in.SourceDatabaseIDRef, &out.SourceDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SourceDatabaseIDSelector != nil {
+		in, out := &in.SourceDatabaseIDSelector, &out.SourceDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.SourceEncryptionKeyLocationDetails != nil {
 		in, out := &in.SourceEncryptionKeyLocationDetails, &out.SourceEncryptionKeyLocationDetails
 		*out = make([]SourceEncryptionKeyLocationDetailsInitParameters, len(*in))
@@ -25412,6 +27102,16 @@ func (in *DatabaseDatabaseInitParameters) DeepCopyInto(out *DatabaseDatabaseInit
 		in, out := &in.VaultID, &out.VaultID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VaultIDRef != nil {
+		in, out := &in.VaultIDRef, &out.VaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VaultIDSelector != nil {
+		in, out := &in.VaultIDSelector, &out.VaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -25604,6 +27304,16 @@ func (in *DatabaseDatabaseParameters) DeepCopyInto(out *DatabaseDatabaseParamete
 		*out = new(string)
 		**out = **in
 	}
+	if in.BackupIDRef != nil {
+		in, out := &in.BackupIDRef, &out.BackupIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.BackupIDSelector != nil {
+		in, out := &in.BackupIDSelector, &out.BackupIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.BackupTdePasswordSecretRef != nil {
 		in, out := &in.BackupTdePasswordSecretRef, &out.BackupTdePasswordSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -25645,6 +27355,16 @@ func (in *DatabaseDatabaseParameters) DeepCopyInto(out *DatabaseDatabaseParamete
 		in, out := &in.DatabaseSoftwareImageID, &out.DatabaseSoftwareImageID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseSoftwareImageIDRef != nil {
+		in, out := &in.DatabaseSoftwareImageIDRef, &out.DatabaseSoftwareImageIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseSoftwareImageIDSelector != nil {
+		in, out := &in.DatabaseSoftwareImageIDSelector, &out.DatabaseSoftwareImageIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -25695,10 +27415,30 @@ func (in *DatabaseDatabaseParameters) DeepCopyInto(out *DatabaseDatabaseParamete
 		*out = new(string)
 		**out = **in
 	}
+	if in.KMSKeyIDRef != nil {
+		in, out := &in.KMSKeyIDRef, &out.KMSKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyIDSelector != nil {
+		in, out := &in.KMSKeyIDSelector, &out.KMSKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.KMSKeyVersionID != nil {
 		in, out := &in.KMSKeyVersionID, &out.KMSKeyVersionID
 		*out = new(string)
 		**out = **in
+	}
+	if in.KMSKeyVersionIDRef != nil {
+		in, out := &in.KMSKeyVersionIDRef, &out.KMSKeyVersionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyVersionIDSelector != nil {
+		in, out := &in.KMSKeyVersionIDSelector, &out.KMSKeyVersionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.NcharacterSet != nil {
 		in, out := &in.NcharacterSet, &out.NcharacterSet
@@ -25736,6 +27476,16 @@ func (in *DatabaseDatabaseParameters) DeepCopyInto(out *DatabaseDatabaseParamete
 		*out = new(string)
 		**out = **in
 	}
+	if in.SourceDatabaseIDRef != nil {
+		in, out := &in.SourceDatabaseIDRef, &out.SourceDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SourceDatabaseIDSelector != nil {
+		in, out := &in.SourceDatabaseIDSelector, &out.SourceDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.SourceEncryptionKeyLocationDetails != nil {
 		in, out := &in.SourceEncryptionKeyLocationDetails, &out.SourceEncryptionKeyLocationDetails
 		*out = make([]SourceEncryptionKeyLocationDetailsParameters, len(*in))
@@ -25770,6 +27520,16 @@ func (in *DatabaseDatabaseParameters) DeepCopyInto(out *DatabaseDatabaseParamete
 		*out = new(string)
 		**out = **in
 	}
+	if in.VaultIDRef != nil {
+		in, out := &in.VaultIDRef, &out.VaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VaultIDSelector != nil {
+		in, out := &in.VaultIDSelector, &out.VaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new DatabaseDatabaseParameters.
@@ -25790,15 +27550,45 @@ func (in *DatabaseEncryptionKeyLocationDetailsInitParameters) DeepCopyInto(out *
 		*out = new(string)
 		**out = **in
 	}
+	if in.AwsEncryptionKeyIDRef != nil {
+		in, out := &in.AwsEncryptionKeyIDRef, &out.AwsEncryptionKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AwsEncryptionKeyIDSelector != nil {
+		in, out := &in.AwsEncryptionKeyIDSelector, &out.AwsEncryptionKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.AzureEncryptionKeyID != nil {
 		in, out := &in.AzureEncryptionKeyID, &out.AzureEncryptionKeyID
 		*out = new(string)
 		**out = **in
 	}
+	if in.AzureEncryptionKeyIDRef != nil {
+		in, out := &in.AzureEncryptionKeyIDRef, &out.AzureEncryptionKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AzureEncryptionKeyIDSelector != nil {
+		in, out := &in.AzureEncryptionKeyIDSelector, &out.AzureEncryptionKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.GoogleCloudProviderEncryptionKeyID != nil {
 		in, out := &in.GoogleCloudProviderEncryptionKeyID, &out.GoogleCloudProviderEncryptionKeyID
 		*out = new(string)
 		**out = **in
+	}
+	if in.GoogleCloudProviderEncryptionKeyIDRef != nil {
+		in, out := &in.GoogleCloudProviderEncryptionKeyIDRef, &out.GoogleCloudProviderEncryptionKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.GoogleCloudProviderEncryptionKeyIDSelector != nil {
+		in, out := &in.GoogleCloudProviderEncryptionKeyIDSelector, &out.GoogleCloudProviderEncryptionKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.HSMPasswordSecretRef != nil {
 		in, out := &in.HSMPasswordSecretRef, &out.HSMPasswordSecretRef
@@ -25865,15 +27655,45 @@ func (in *DatabaseEncryptionKeyLocationDetailsParameters) DeepCopyInto(out *Data
 		*out = new(string)
 		**out = **in
 	}
+	if in.AwsEncryptionKeyIDRef != nil {
+		in, out := &in.AwsEncryptionKeyIDRef, &out.AwsEncryptionKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AwsEncryptionKeyIDSelector != nil {
+		in, out := &in.AwsEncryptionKeyIDSelector, &out.AwsEncryptionKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.AzureEncryptionKeyID != nil {
 		in, out := &in.AzureEncryptionKeyID, &out.AzureEncryptionKeyID
 		*out = new(string)
 		**out = **in
 	}
+	if in.AzureEncryptionKeyIDRef != nil {
+		in, out := &in.AzureEncryptionKeyIDRef, &out.AzureEncryptionKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AzureEncryptionKeyIDSelector != nil {
+		in, out := &in.AzureEncryptionKeyIDSelector, &out.AzureEncryptionKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.GoogleCloudProviderEncryptionKeyID != nil {
 		in, out := &in.GoogleCloudProviderEncryptionKeyID, &out.GoogleCloudProviderEncryptionKeyID
 		*out = new(string)
 		**out = **in
+	}
+	if in.GoogleCloudProviderEncryptionKeyIDRef != nil {
+		in, out := &in.GoogleCloudProviderEncryptionKeyIDRef, &out.GoogleCloudProviderEncryptionKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.GoogleCloudProviderEncryptionKeyIDSelector != nil {
+		in, out := &in.GoogleCloudProviderEncryptionKeyIDSelector, &out.GoogleCloudProviderEncryptionKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.HSMPasswordSecretRef != nil {
 		in, out := &in.HSMPasswordSecretRef, &out.HSMPasswordSecretRef
@@ -25910,6 +27730,16 @@ func (in *DatabaseInitParameters) DeepCopyInto(out *DatabaseInitParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.DBHomeIDRef != nil {
+		in, out := &in.DBHomeIDRef, &out.DBHomeIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DBHomeIDSelector != nil {
+		in, out := &in.DBHomeIDSelector, &out.DBHomeIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DBVersion != nil {
 		in, out := &in.DBVersion, &out.DBVersion
 		*out = new(string)
@@ -25932,6 +27762,16 @@ func (in *DatabaseInitParameters) DeepCopyInto(out *DatabaseInitParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.KMSKeyIDRef != nil {
+		in, out := &in.KMSKeyIDRef, &out.KMSKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyIDSelector != nil {
+		in, out := &in.KMSKeyIDSelector, &out.KMSKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.KMSKeyMigration != nil {
 		in, out := &in.KMSKeyMigration, &out.KMSKeyMigration
 		*out = new(bool)
@@ -25946,6 +27786,16 @@ func (in *DatabaseInitParameters) DeepCopyInto(out *DatabaseInitParameters) {
 		in, out := &in.KMSKeyVersionID, &out.KMSKeyVersionID
 		*out = new(string)
 		**out = **in
+	}
+	if in.KMSKeyVersionIDRef != nil {
+		in, out := &in.KMSKeyVersionIDRef, &out.KMSKeyVersionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyVersionIDSelector != nil {
+		in, out := &in.KMSKeyVersionIDSelector, &out.KMSKeyVersionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.KeyStoreID != nil {
 		in, out := &in.KeyStoreID, &out.KeyStoreID
@@ -26339,6 +28189,16 @@ func (in *DatabaseParameters) DeepCopyInto(out *DatabaseParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.DBHomeIDRef != nil {
+		in, out := &in.DBHomeIDRef, &out.DBHomeIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DBHomeIDSelector != nil {
+		in, out := &in.DBHomeIDSelector, &out.DBHomeIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DBVersion != nil {
 		in, out := &in.DBVersion, &out.DBVersion
 		*out = new(string)
@@ -26361,6 +28221,16 @@ func (in *DatabaseParameters) DeepCopyInto(out *DatabaseParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.KMSKeyIDRef != nil {
+		in, out := &in.KMSKeyIDRef, &out.KMSKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyIDSelector != nil {
+		in, out := &in.KMSKeyIDSelector, &out.KMSKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.KMSKeyMigration != nil {
 		in, out := &in.KMSKeyMigration, &out.KMSKeyMigration
 		*out = new(bool)
@@ -26375,6 +28245,16 @@ func (in *DatabaseParameters) DeepCopyInto(out *DatabaseParameters) {
 		in, out := &in.KMSKeyVersionID, &out.KMSKeyVersionID
 		*out = new(string)
 		**out = **in
+	}
+	if in.KMSKeyVersionIDRef != nil {
+		in, out := &in.KMSKeyVersionIDRef, &out.KMSKeyVersionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyVersionIDSelector != nil {
+		in, out := &in.KMSKeyVersionIDSelector, &out.KMSKeyVersionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.KeyStoreID != nil {
 		in, out := &in.KeyStoreID, &out.KeyStoreID
@@ -26784,6 +28664,16 @@ func (in *DatabaseSnapshotStandbyInitParameters) DeepCopyInto(out *DatabaseSnaps
 		*out = new(string)
 		**out = **in
 	}
+	if in.DatabaseIDRef != nil {
+		in, out := &in.DatabaseIDRef, &out.DatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseIDSelector != nil {
+		in, out := &in.DatabaseIDSelector, &out.DatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.SnapshotDurationInDays != nil {
 		in, out := &in.SnapshotDurationInDays, &out.SnapshotDurationInDays
 		*out = new(float64)
@@ -27067,6 +28957,16 @@ func (in *DatabaseSnapshotStandbyParameters) DeepCopyInto(out *DatabaseSnapshotS
 		*out = new(string)
 		**out = **in
 	}
+	if in.DatabaseIDRef != nil {
+		in, out := &in.DatabaseIDRef, &out.DatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseIDSelector != nil {
+		in, out := &in.DatabaseIDSelector, &out.DatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.SnapshotDurationInDays != nil {
 		in, out := &in.SnapshotDurationInDays, &out.SnapshotDurationInDays
 		*out = new(float64)
@@ -27159,6 +29059,16 @@ func (in *DatabaseSoftwareImageInitParameters) DeepCopyInto(out *DatabaseSoftwar
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DatabaseSoftwareImageOneOffPatches != nil {
 		in, out := &in.DatabaseSoftwareImageOneOffPatches, &out.DatabaseSoftwareImageOneOffPatches
 		*out = make([]*string, len(*in))
@@ -27236,6 +29146,16 @@ func (in *DatabaseSoftwareImageInitParameters) DeepCopyInto(out *DatabaseSoftwar
 		in, out := &in.SourceDBHomeID, &out.SourceDBHomeID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SourceDBHomeIDRef != nil {
+		in, out := &in.SourceDBHomeIDRef, &out.SourceDBHomeIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SourceDBHomeIDSelector != nil {
+		in, out := &in.SourceDBHomeIDSelector, &out.SourceDBHomeIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -27444,6 +29364,16 @@ func (in *DatabaseSoftwareImageParameters) DeepCopyInto(out *DatabaseSoftwareIma
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DatabaseSoftwareImageOneOffPatches != nil {
 		in, out := &in.DatabaseSoftwareImageOneOffPatches, &out.DatabaseSoftwareImageOneOffPatches
 		*out = make([]*string, len(*in))
@@ -27521,6 +29451,16 @@ func (in *DatabaseSoftwareImageParameters) DeepCopyInto(out *DatabaseSoftwareIma
 		in, out := &in.SourceDBHomeID, &out.SourceDBHomeID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SourceDBHomeIDRef != nil {
+		in, out := &in.SourceDBHomeIDRef, &out.SourceDBHomeIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SourceDBHomeIDSelector != nil {
+		in, out := &in.SourceDBHomeIDSelector, &out.SourceDBHomeIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -28250,6 +30190,16 @@ func (in *DatabaseUpgradeInitParameters) DeepCopyInto(out *DatabaseUpgradeInitPa
 		*out = new(string)
 		**out = **in
 	}
+	if in.DatabaseIDRef != nil {
+		in, out := &in.DatabaseIDRef, &out.DatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseIDSelector != nil {
+		in, out := &in.DatabaseIDSelector, &out.DatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DatabaseUpgradeSourceDetails != nil {
 		in, out := &in.DatabaseUpgradeSourceDetails, &out.DatabaseUpgradeSourceDetails
 		*out = make([]DatabaseUpgradeSourceDetailsInitParameters, len(*in))
@@ -28545,6 +30495,16 @@ func (in *DatabaseUpgradeParameters) DeepCopyInto(out *DatabaseUpgradeParameters
 		*out = new(string)
 		**out = **in
 	}
+	if in.DatabaseIDRef != nil {
+		in, out := &in.DatabaseIDRef, &out.DatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseIDSelector != nil {
+		in, out := &in.DatabaseIDSelector, &out.DatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DatabaseUpgradeSourceDetails != nil {
 		in, out := &in.DatabaseUpgradeSourceDetails, &out.DatabaseUpgradeSourceDetails
 		*out = make([]DatabaseUpgradeSourceDetailsParameters, len(*in))
@@ -28576,6 +30536,16 @@ func (in *DatabaseUpgradeSourceDetailsInitParameters) DeepCopyInto(out *Database
 		in, out := &in.DatabaseSoftwareImageID, &out.DatabaseSoftwareImageID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseSoftwareImageIDRef != nil {
+		in, out := &in.DatabaseSoftwareImageIDRef, &out.DatabaseSoftwareImageIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseSoftwareImageIDSelector != nil {
+		in, out := &in.DatabaseSoftwareImageIDSelector, &out.DatabaseSoftwareImageIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Options != nil {
 		in, out := &in.Options, &out.Options
@@ -28646,6 +30616,16 @@ func (in *DatabaseUpgradeSourceDetailsParameters) DeepCopyInto(out *DatabaseUpgr
 		in, out := &in.DatabaseSoftwareImageID, &out.DatabaseSoftwareImageID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseSoftwareImageIDRef != nil {
+		in, out := &in.DatabaseSoftwareImageIDRef, &out.DatabaseSoftwareImageIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseSoftwareImageIDSelector != nil {
+		in, out := &in.DatabaseSoftwareImageIDSelector, &out.DatabaseSoftwareImageIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Options != nil {
 		in, out := &in.Options, &out.Options
@@ -29185,6 +31165,16 @@ func (in *DbHomeDatabaseDBBackupConfigBackupDestinationDetailsInitParameters) De
 		*out = new(string)
 		**out = **in
 	}
+	if in.DbrsPolicyIDRef != nil {
+		in, out := &in.DbrsPolicyIDRef, &out.DbrsPolicyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DbrsPolicyIDSelector != nil {
+		in, out := &in.DbrsPolicyIDSelector, &out.DbrsPolicyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -29299,6 +31289,16 @@ func (in *DbHomeDatabaseDBBackupConfigBackupDestinationDetailsParameters) DeepCo
 		in, out := &in.DbrsPolicyID, &out.DbrsPolicyID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DbrsPolicyIDRef != nil {
+		in, out := &in.DbrsPolicyIDRef, &out.DbrsPolicyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DbrsPolicyIDSelector != nil {
+		in, out := &in.DbrsPolicyIDSelector, &out.DbrsPolicyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
@@ -29531,6 +31531,16 @@ func (in *DbHomeDatabaseEncryptionKeyLocationDetailsInitParameters) DeepCopyInto
 		*out = new(string)
 		**out = **in
 	}
+	if in.AzureEncryptionKeyIDRef != nil {
+		in, out := &in.AzureEncryptionKeyIDRef, &out.AzureEncryptionKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AzureEncryptionKeyIDSelector != nil {
+		in, out := &in.AzureEncryptionKeyIDSelector, &out.AzureEncryptionKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.GoogleCloudProviderEncryptionKeyID != nil {
 		in, out := &in.GoogleCloudProviderEncryptionKeyID, &out.GoogleCloudProviderEncryptionKeyID
 		*out = new(string)
@@ -29606,6 +31616,16 @@ func (in *DbHomeDatabaseEncryptionKeyLocationDetailsParameters) DeepCopyInto(out
 		*out = new(string)
 		**out = **in
 	}
+	if in.AzureEncryptionKeyIDRef != nil {
+		in, out := &in.AzureEncryptionKeyIDRef, &out.AzureEncryptionKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AzureEncryptionKeyIDSelector != nil {
+		in, out := &in.AzureEncryptionKeyIDSelector, &out.AzureEncryptionKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.GoogleCloudProviderEncryptionKeyID != nil {
 		in, out := &in.GoogleCloudProviderEncryptionKeyID, &out.GoogleCloudProviderEncryptionKeyID
 		*out = new(string)
@@ -29642,6 +31662,16 @@ func (in *DbHomeDatabaseInitParameters) DeepCopyInto(out *DbHomeDatabaseInitPara
 		*out = new(string)
 		**out = **in
 	}
+	if in.BackupIDRef != nil {
+		in, out := &in.BackupIDRef, &out.BackupIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.BackupIDSelector != nil {
+		in, out := &in.BackupIDSelector, &out.BackupIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.BackupTdePasswordSecretRef != nil {
 		in, out := &in.BackupTdePasswordSecretRef, &out.BackupTdePasswordSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -29674,10 +31704,30 @@ func (in *DbHomeDatabaseInitParameters) DeepCopyInto(out *DbHomeDatabaseInitPara
 		*out = new(string)
 		**out = **in
 	}
+	if in.DatabaseIDRef != nil {
+		in, out := &in.DatabaseIDRef, &out.DatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseIDSelector != nil {
+		in, out := &in.DatabaseIDSelector, &out.DatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DatabaseSoftwareImageID != nil {
 		in, out := &in.DatabaseSoftwareImageID, &out.DatabaseSoftwareImageID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseSoftwareImageIDRef != nil {
+		in, out := &in.DatabaseSoftwareImageIDRef, &out.DatabaseSoftwareImageIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseSoftwareImageIDSelector != nil {
+		in, out := &in.DatabaseSoftwareImageIDSelector, &out.DatabaseSoftwareImageIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -29723,15 +31773,45 @@ func (in *DbHomeDatabaseInitParameters) DeepCopyInto(out *DbHomeDatabaseInitPara
 		*out = new(string)
 		**out = **in
 	}
+	if in.KMSKeyIDRef != nil {
+		in, out := &in.KMSKeyIDRef, &out.KMSKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyIDSelector != nil {
+		in, out := &in.KMSKeyIDSelector, &out.KMSKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.KMSKeyVersionID != nil {
 		in, out := &in.KMSKeyVersionID, &out.KMSKeyVersionID
 		*out = new(string)
 		**out = **in
 	}
+	if in.KMSKeyVersionIDRef != nil {
+		in, out := &in.KMSKeyVersionIDRef, &out.KMSKeyVersionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyVersionIDSelector != nil {
+		in, out := &in.KMSKeyVersionIDSelector, &out.KMSKeyVersionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.KeyStoreID != nil {
 		in, out := &in.KeyStoreID, &out.KeyStoreID
 		*out = new(string)
 		**out = **in
+	}
+	if in.KeyStoreIDRef != nil {
+		in, out := &in.KeyStoreIDRef, &out.KeyStoreIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KeyStoreIDSelector != nil {
+		in, out := &in.KeyStoreIDSelector, &out.KeyStoreIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.NcharacterSet != nil {
 		in, out := &in.NcharacterSet, &out.NcharacterSet
@@ -29775,6 +31855,16 @@ func (in *DbHomeDatabaseInitParameters) DeepCopyInto(out *DbHomeDatabaseInitPara
 		in, out := &in.VaultID, &out.VaultID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VaultIDRef != nil {
+		in, out := &in.VaultIDRef, &out.VaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VaultIDSelector != nil {
+		in, out := &in.VaultIDSelector, &out.VaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -29989,6 +32079,16 @@ func (in *DbHomeDatabaseParameters) DeepCopyInto(out *DbHomeDatabaseParameters) 
 		*out = new(string)
 		**out = **in
 	}
+	if in.BackupIDRef != nil {
+		in, out := &in.BackupIDRef, &out.BackupIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.BackupIDSelector != nil {
+		in, out := &in.BackupIDSelector, &out.BackupIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.BackupTdePasswordSecretRef != nil {
 		in, out := &in.BackupTdePasswordSecretRef, &out.BackupTdePasswordSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -30021,10 +32121,30 @@ func (in *DbHomeDatabaseParameters) DeepCopyInto(out *DbHomeDatabaseParameters) 
 		*out = new(string)
 		**out = **in
 	}
+	if in.DatabaseIDRef != nil {
+		in, out := &in.DatabaseIDRef, &out.DatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseIDSelector != nil {
+		in, out := &in.DatabaseIDSelector, &out.DatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DatabaseSoftwareImageID != nil {
 		in, out := &in.DatabaseSoftwareImageID, &out.DatabaseSoftwareImageID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseSoftwareImageIDRef != nil {
+		in, out := &in.DatabaseSoftwareImageIDRef, &out.DatabaseSoftwareImageIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseSoftwareImageIDSelector != nil {
+		in, out := &in.DatabaseSoftwareImageIDSelector, &out.DatabaseSoftwareImageIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -30070,15 +32190,45 @@ func (in *DbHomeDatabaseParameters) DeepCopyInto(out *DbHomeDatabaseParameters) 
 		*out = new(string)
 		**out = **in
 	}
+	if in.KMSKeyIDRef != nil {
+		in, out := &in.KMSKeyIDRef, &out.KMSKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyIDSelector != nil {
+		in, out := &in.KMSKeyIDSelector, &out.KMSKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.KMSKeyVersionID != nil {
 		in, out := &in.KMSKeyVersionID, &out.KMSKeyVersionID
 		*out = new(string)
 		**out = **in
 	}
+	if in.KMSKeyVersionIDRef != nil {
+		in, out := &in.KMSKeyVersionIDRef, &out.KMSKeyVersionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyVersionIDSelector != nil {
+		in, out := &in.KMSKeyVersionIDSelector, &out.KMSKeyVersionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.KeyStoreID != nil {
 		in, out := &in.KeyStoreID, &out.KeyStoreID
 		*out = new(string)
 		**out = **in
+	}
+	if in.KeyStoreIDRef != nil {
+		in, out := &in.KeyStoreIDRef, &out.KeyStoreIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KeyStoreIDSelector != nil {
+		in, out := &in.KeyStoreIDSelector, &out.KeyStoreIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.NcharacterSet != nil {
 		in, out := &in.NcharacterSet, &out.NcharacterSet
@@ -30122,6 +32272,16 @@ func (in *DbHomeDatabaseParameters) DeepCopyInto(out *DbHomeDatabaseParameters) 
 		in, out := &in.VaultID, &out.VaultID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VaultIDRef != nil {
+		in, out := &in.VaultIDRef, &out.VaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VaultIDSelector != nil {
+		in, out := &in.VaultIDSelector, &out.VaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -30223,6 +32383,16 @@ func (in *DbHomeInitParameters) DeepCopyInto(out *DbHomeInitParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.DBSystemIDRef != nil {
+		in, out := &in.DBSystemIDRef, &out.DBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DBSystemIDSelector != nil {
+		in, out := &in.DBSystemIDSelector, &out.DBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DBVersion != nil {
 		in, out := &in.DBVersion, &out.DBVersion
 		*out = new(string)
@@ -30239,6 +32409,16 @@ func (in *DbHomeInitParameters) DeepCopyInto(out *DbHomeInitParameters) {
 		in, out := &in.DatabaseSoftwareImageID, &out.DatabaseSoftwareImageID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseSoftwareImageIDRef != nil {
+		in, out := &in.DatabaseSoftwareImageIDRef, &out.DatabaseSoftwareImageIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseSoftwareImageIDSelector != nil {
+		in, out := &in.DatabaseSoftwareImageIDSelector, &out.DatabaseSoftwareImageIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -30297,10 +32477,30 @@ func (in *DbHomeInitParameters) DeepCopyInto(out *DbHomeInitParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.KMSKeyIDRef != nil {
+		in, out := &in.KMSKeyIDRef, &out.KMSKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyIDSelector != nil {
+		in, out := &in.KMSKeyIDSelector, &out.KMSKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.KMSKeyVersionID != nil {
 		in, out := &in.KMSKeyVersionID, &out.KMSKeyVersionID
 		*out = new(string)
 		**out = **in
+	}
+	if in.KMSKeyVersionIDRef != nil {
+		in, out := &in.KMSKeyVersionIDRef, &out.KMSKeyVersionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyVersionIDSelector != nil {
+		in, out := &in.KMSKeyVersionIDSelector, &out.KMSKeyVersionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Source != nil {
 		in, out := &in.Source, &out.Source
@@ -30311,6 +32511,16 @@ func (in *DbHomeInitParameters) DeepCopyInto(out *DbHomeInitParameters) {
 		in, out := &in.VMClusterID, &out.VMClusterID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VMClusterIDRef != nil {
+		in, out := &in.VMClusterIDRef, &out.VMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VMClusterIDSelector != nil {
+		in, out := &in.VMClusterIDSelector, &out.VMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -30524,6 +32734,16 @@ func (in *DbHomeParameters) DeepCopyInto(out *DbHomeParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.DBSystemIDRef != nil {
+		in, out := &in.DBSystemIDRef, &out.DBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DBSystemIDSelector != nil {
+		in, out := &in.DBSystemIDSelector, &out.DBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DBVersion != nil {
 		in, out := &in.DBVersion, &out.DBVersion
 		*out = new(string)
@@ -30540,6 +32760,16 @@ func (in *DbHomeParameters) DeepCopyInto(out *DbHomeParameters) {
 		in, out := &in.DatabaseSoftwareImageID, &out.DatabaseSoftwareImageID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseSoftwareImageIDRef != nil {
+		in, out := &in.DatabaseSoftwareImageIDRef, &out.DatabaseSoftwareImageIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseSoftwareImageIDSelector != nil {
+		in, out := &in.DatabaseSoftwareImageIDSelector, &out.DatabaseSoftwareImageIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -30598,10 +32828,30 @@ func (in *DbHomeParameters) DeepCopyInto(out *DbHomeParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.KMSKeyIDRef != nil {
+		in, out := &in.KMSKeyIDRef, &out.KMSKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyIDSelector != nil {
+		in, out := &in.KMSKeyIDSelector, &out.KMSKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.KMSKeyVersionID != nil {
 		in, out := &in.KMSKeyVersionID, &out.KMSKeyVersionID
 		*out = new(string)
 		**out = **in
+	}
+	if in.KMSKeyVersionIDRef != nil {
+		in, out := &in.KMSKeyVersionIDRef, &out.KMSKeyVersionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyVersionIDSelector != nil {
+		in, out := &in.KMSKeyVersionIDSelector, &out.KMSKeyVersionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Source != nil {
 		in, out := &in.Source, &out.Source
@@ -30612,6 +32862,16 @@ func (in *DbHomeParameters) DeepCopyInto(out *DbHomeParameters) {
 		in, out := &in.VMClusterID, &out.VMClusterID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VMClusterIDRef != nil {
+		in, out := &in.VMClusterIDRef, &out.VMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VMClusterIDSelector != nil {
+		in, out := &in.VMClusterIDSelector, &out.VMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -30721,6 +32981,16 @@ func (in *DbNodeConsoleConnectionInitParameters) DeepCopyInto(out *DbNodeConsole
 		in, out := &in.DBNodeID, &out.DBNodeID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DBNodeIDRef != nil {
+		in, out := &in.DBNodeIDRef, &out.DBNodeIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DBNodeIDSelector != nil {
+		in, out := &in.DBNodeIDSelector, &out.DBNodeIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -30903,6 +33173,16 @@ func (in *DbNodeConsoleConnectionParameters) DeepCopyInto(out *DbNodeConsoleConn
 		*out = new(string)
 		**out = **in
 	}
+	if in.DBNodeIDRef != nil {
+		in, out := &in.DBNodeIDRef, &out.DBNodeIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DBNodeIDSelector != nil {
+		in, out := &in.DBNodeIDSelector, &out.DBNodeIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -31021,6 +33301,16 @@ func (in *DbNodeConsoleHistoryInitParameters) DeepCopyInto(out *DbNodeConsoleHis
 		in, out := &in.DBNodeID, &out.DBNodeID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DBNodeIDRef != nil {
+		in, out := &in.DBNodeIDRef, &out.DBNodeIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DBNodeIDSelector != nil {
+		in, out := &in.DBNodeIDSelector, &out.DBNodeIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -31193,6 +33483,16 @@ func (in *DbNodeConsoleHistoryParameters) DeepCopyInto(out *DbNodeConsoleHistory
 		*out = new(string)
 		**out = **in
 	}
+	if in.DBNodeIDRef != nil {
+		in, out := &in.DBNodeIDRef, &out.DBNodeIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DBNodeIDSelector != nil {
+		in, out := &in.DBNodeIDSelector, &out.DBNodeIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -31284,6 +33584,16 @@ func (in *DbNodeInitParameters) DeepCopyInto(out *DbNodeInitParameters) {
 		in, out := &in.DBNodeID, &out.DBNodeID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DBNodeIDRef != nil {
+		in, out := &in.DBNodeIDRef, &out.DBNodeIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DBNodeIDSelector != nil {
+		in, out := &in.DBNodeIDSelector, &out.DBNodeIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -31572,6 +33882,16 @@ func (in *DbNodeParameters) DeepCopyInto(out *DbNodeParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.DBNodeIDRef != nil {
+		in, out := &in.DBNodeIDRef, &out.DBNodeIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DBNodeIDSelector != nil {
+		in, out := &in.DBNodeIDSelector, &out.DBNodeIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -31750,6 +34070,16 @@ func (in *DbNodeSnapshotManagementInitParameters) DeepCopyInto(out *DbNodeSnapsh
 		in, out := &in.ExadbVMClusterID, &out.ExadbVMClusterID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExadbVMClusterIDRef != nil {
+		in, out := &in.ExadbVMClusterIDRef, &out.ExadbVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExadbVMClusterIDSelector != nil {
+		in, out := &in.ExadbVMClusterIDSelector, &out.ExadbVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
@@ -31930,6 +34260,16 @@ func (in *DbNodeSnapshotManagementParameters) DeepCopyInto(out *DbNodeSnapshotMa
 		in, out := &in.ExadbVMClusterID, &out.ExadbVMClusterID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExadbVMClusterIDRef != nil {
+		in, out := &in.ExadbVMClusterIDRef, &out.ExadbVMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExadbVMClusterIDSelector != nil {
+		in, out := &in.ExadbVMClusterIDSelector, &out.ExadbVMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
@@ -32373,6 +34713,16 @@ func (in *DbSystemInitParameters) DeepCopyInto(out *DbSystemInitParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.BackupSubnetIDRef != nil {
+		in, out := &in.BackupSubnetIDRef, &out.BackupSubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.BackupSubnetIDSelector != nil {
+		in, out := &in.BackupSubnetIDSelector, &out.BackupSubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.CPUCoreCount != nil {
 		in, out := &in.CPUCoreCount, &out.CPUCoreCount
 		*out = new(float64)
@@ -32392,6 +34742,16 @@ func (in *DbSystemInitParameters) DeepCopyInto(out *DbSystemInitParameters) {
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ComputeCount != nil {
 		in, out := &in.ComputeCount, &out.ComputeCount
@@ -32507,10 +34867,30 @@ func (in *DbSystemInitParameters) DeepCopyInto(out *DbSystemInitParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.KMSKeyIDRef != nil {
+		in, out := &in.KMSKeyIDRef, &out.KMSKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyIDSelector != nil {
+		in, out := &in.KMSKeyIDSelector, &out.KMSKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.KMSKeyVersionID != nil {
 		in, out := &in.KMSKeyVersionID, &out.KMSKeyVersionID
 		*out = new(string)
 		**out = **in
+	}
+	if in.KMSKeyVersionIDRef != nil {
+		in, out := &in.KMSKeyVersionIDRef, &out.KMSKeyVersionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyVersionIDSelector != nil {
+		in, out := &in.KMSKeyVersionIDSelector, &out.KMSKeyVersionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.LicenseModel != nil {
 		in, out := &in.LicenseModel, &out.LicenseModel
@@ -32597,6 +34977,16 @@ func (in *DbSystemInitParameters) DeepCopyInto(out *DbSystemInitParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.SourceDBSystemIDRef != nil {
+		in, out := &in.SourceDBSystemIDRef, &out.SourceDBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SourceDBSystemIDSelector != nil {
+		in, out := &in.SourceDBSystemIDSelector, &out.SourceDBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.SparseDiskgroup != nil {
 		in, out := &in.SparseDiskgroup, &out.SparseDiskgroup
 		*out = new(bool)
@@ -32611,6 +35001,16 @@ func (in *DbSystemInitParameters) DeepCopyInto(out *DbSystemInitParameters) {
 		in, out := &in.SubnetID, &out.SubnetID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SubnetIDRef != nil {
+		in, out := &in.SubnetIDRef, &out.SubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SubnetIDSelector != nil {
+		in, out := &in.SubnetIDSelector, &out.SubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.SubscriptionID != nil {
 		in, out := &in.SubscriptionID, &out.SubscriptionID
@@ -33814,6 +36214,16 @@ func (in *DbSystemParameters) DeepCopyInto(out *DbSystemParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.BackupSubnetIDRef != nil {
+		in, out := &in.BackupSubnetIDRef, &out.BackupSubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.BackupSubnetIDSelector != nil {
+		in, out := &in.BackupSubnetIDSelector, &out.BackupSubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.CPUCoreCount != nil {
 		in, out := &in.CPUCoreCount, &out.CPUCoreCount
 		*out = new(float64)
@@ -33833,6 +36243,16 @@ func (in *DbSystemParameters) DeepCopyInto(out *DbSystemParameters) {
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ComputeCount != nil {
 		in, out := &in.ComputeCount, &out.ComputeCount
@@ -33948,10 +36368,30 @@ func (in *DbSystemParameters) DeepCopyInto(out *DbSystemParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.KMSKeyIDRef != nil {
+		in, out := &in.KMSKeyIDRef, &out.KMSKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyIDSelector != nil {
+		in, out := &in.KMSKeyIDSelector, &out.KMSKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.KMSKeyVersionID != nil {
 		in, out := &in.KMSKeyVersionID, &out.KMSKeyVersionID
 		*out = new(string)
 		**out = **in
+	}
+	if in.KMSKeyVersionIDRef != nil {
+		in, out := &in.KMSKeyVersionIDRef, &out.KMSKeyVersionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyVersionIDSelector != nil {
+		in, out := &in.KMSKeyVersionIDSelector, &out.KMSKeyVersionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.LicenseModel != nil {
 		in, out := &in.LicenseModel, &out.LicenseModel
@@ -34038,6 +36478,16 @@ func (in *DbSystemParameters) DeepCopyInto(out *DbSystemParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.SourceDBSystemIDRef != nil {
+		in, out := &in.SourceDBSystemIDRef, &out.SourceDBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SourceDBSystemIDSelector != nil {
+		in, out := &in.SourceDBSystemIDSelector, &out.SourceDBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.SparseDiskgroup != nil {
 		in, out := &in.SparseDiskgroup, &out.SparseDiskgroup
 		*out = new(bool)
@@ -34052,6 +36502,16 @@ func (in *DbSystemParameters) DeepCopyInto(out *DbSystemParameters) {
 		in, out := &in.SubnetID, &out.SubnetID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SubnetIDRef != nil {
+		in, out := &in.SubnetIDRef, &out.SubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SubnetIDSelector != nil {
+		in, out := &in.SubnetIDSelector, &out.SubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.SubscriptionID != nil {
 		in, out := &in.SubscriptionID, &out.SubscriptionID
@@ -34199,6 +36659,16 @@ func (in *DbSystemsUpgradeInitParameters) DeepCopyInto(out *DbSystemsUpgradeInit
 		in, out := &in.DBSystemID, &out.DBSystemID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DBSystemIDRef != nil {
+		in, out := &in.DBSystemIDRef, &out.DBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DBSystemIDSelector != nil {
+		in, out := &in.DBSystemIDSelector, &out.DBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.IsSnapshotRetentionDaysForceUpdated != nil {
 		in, out := &in.IsSnapshotRetentionDaysForceUpdated, &out.IsSnapshotRetentionDaysForceUpdated
@@ -34928,6 +37398,16 @@ func (in *DbSystemsUpgradeParameters) DeepCopyInto(out *DbSystemsUpgradeParamete
 		in, out := &in.DBSystemID, &out.DBSystemID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DBSystemIDRef != nil {
+		in, out := &in.DBSystemIDRef, &out.DBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DBSystemIDSelector != nil {
+		in, out := &in.DBSystemIDSelector, &out.DBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.IsSnapshotRetentionDaysForceUpdated != nil {
 		in, out := &in.IsSnapshotRetentionDaysForceUpdated, &out.IsSnapshotRetentionDaysForceUpdated
@@ -37258,6 +39738,16 @@ func (in *EncryptionKeyInitParameters) DeepCopyInto(out *EncryptionKeyInitParame
 		*out = new(string)
 		**out = **in
 	}
+	if in.CertificateIDRef != nil {
+		in, out := &in.CertificateIDRef, &out.CertificateIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CertificateIDSelector != nil {
+		in, out := &in.CertificateIDSelector, &out.CertificateIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DirectoryName != nil {
 		in, out := &in.DirectoryName, &out.DirectoryName
 		*out = new(string)
@@ -37273,6 +39763,16 @@ func (in *EncryptionKeyInitParameters) DeepCopyInto(out *EncryptionKeyInitParame
 		*out = new(string)
 		**out = **in
 	}
+	if in.KMSKeyIDRef != nil {
+		in, out := &in.KMSKeyIDRef, &out.KMSKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyIDSelector != nil {
+		in, out := &in.KMSKeyIDSelector, &out.KMSKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.KMSRestEndpoint != nil {
 		in, out := &in.KMSRestEndpoint, &out.KMSRestEndpoint
 		*out = new(string)
@@ -37287,6 +39787,16 @@ func (in *EncryptionKeyInitParameters) DeepCopyInto(out *EncryptionKeyInitParame
 		in, out := &in.KeyName, &out.KeyName
 		*out = new(string)
 		**out = **in
+	}
+	if in.KeyNameRef != nil {
+		in, out := &in.KeyNameRef, &out.KeyNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KeyNameSelector != nil {
+		in, out := &in.KeyNameSelector, &out.KeyNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.KeyRing != nil {
 		in, out := &in.KeyRing, &out.KeyRing
@@ -37322,6 +39832,16 @@ func (in *EncryptionKeyInitParameters) DeepCopyInto(out *EncryptionKeyInitParame
 		in, out := &in.VaultID, &out.VaultID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VaultIDRef != nil {
+		in, out := &in.VaultIDRef, &out.VaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VaultIDSelector != nil {
+		in, out := &in.VaultIDSelector, &out.VaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.VaultURI != nil {
 		in, out := &in.VaultURI, &out.VaultURI
@@ -37538,6 +40058,16 @@ func (in *EncryptionKeyParameters) DeepCopyInto(out *EncryptionKeyParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.CertificateIDRef != nil {
+		in, out := &in.CertificateIDRef, &out.CertificateIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CertificateIDSelector != nil {
+		in, out := &in.CertificateIDSelector, &out.CertificateIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DirectoryName != nil {
 		in, out := &in.DirectoryName, &out.DirectoryName
 		*out = new(string)
@@ -37553,6 +40083,16 @@ func (in *EncryptionKeyParameters) DeepCopyInto(out *EncryptionKeyParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.KMSKeyIDRef != nil {
+		in, out := &in.KMSKeyIDRef, &out.KMSKeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyIDSelector != nil {
+		in, out := &in.KMSKeyIDSelector, &out.KMSKeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.KMSRestEndpoint != nil {
 		in, out := &in.KMSRestEndpoint, &out.KMSRestEndpoint
 		*out = new(string)
@@ -37567,6 +40107,16 @@ func (in *EncryptionKeyParameters) DeepCopyInto(out *EncryptionKeyParameters) {
 		in, out := &in.KeyName, &out.KeyName
 		*out = new(string)
 		**out = **in
+	}
+	if in.KeyNameRef != nil {
+		in, out := &in.KeyNameRef, &out.KeyNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KeyNameSelector != nil {
+		in, out := &in.KeyNameSelector, &out.KeyNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.KeyRing != nil {
 		in, out := &in.KeyRing, &out.KeyRing
@@ -37602,6 +40152,16 @@ func (in *EncryptionKeyParameters) DeepCopyInto(out *EncryptionKeyParameters) {
 		in, out := &in.VaultID, &out.VaultID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VaultIDRef != nil {
+		in, out := &in.VaultIDRef, &out.VaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VaultIDSelector != nil {
+		in, out := &in.VaultIDSelector, &out.VaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.VaultURI != nil {
 		in, out := &in.VaultURI, &out.VaultURI
@@ -40979,6 +43539,16 @@ func (in *ExadataInfrastructureStorageInitParameters) DeepCopyInto(out *ExadataI
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ComputeCount != nil {
 		in, out := &in.ComputeCount, &out.ComputeCount
 		*out = new(float64)
@@ -41710,6 +44280,16 @@ func (in *ExadataInfrastructureStorageParameters) DeepCopyInto(out *ExadataInfra
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ComputeCount != nil {
 		in, out := &in.ComputeCount, &out.ComputeCount
 		*out = new(float64)
@@ -42321,6 +44901,16 @@ func (in *ExadbVmClusterInitParameters) DeepCopyInto(out *ExadbVmClusterInitPara
 		*out = new(string)
 		**out = **in
 	}
+	if in.BackupSubnetIDRef != nil {
+		in, out := &in.BackupSubnetIDRef, &out.BackupSubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.BackupSubnetIDSelector != nil {
+		in, out := &in.BackupSubnetIDSelector, &out.BackupSubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ClusterName != nil {
 		in, out := &in.ClusterName, &out.ClusterName
 		*out = new(string)
@@ -42330,6 +44920,16 @@ func (in *ExadbVmClusterInitParameters) DeepCopyInto(out *ExadbVmClusterInitPara
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DataCollectionOptions != nil {
 		in, out := &in.DataCollectionOptions, &out.DataCollectionOptions
@@ -42369,6 +44969,16 @@ func (in *ExadbVmClusterInitParameters) DeepCopyInto(out *ExadbVmClusterInitPara
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExascaleDBStorageVaultIDRef != nil {
+		in, out := &in.ExascaleDBStorageVaultIDRef, &out.ExascaleDBStorageVaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExascaleDBStorageVaultIDSelector != nil {
+		in, out := &in.ExascaleDBStorageVaultIDSelector, &out.ExascaleDBStorageVaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
 		*out = make(map[string]*string, len(*in))
@@ -42389,6 +44999,16 @@ func (in *ExadbVmClusterInitParameters) DeepCopyInto(out *ExadbVmClusterInitPara
 		in, out := &in.GridImageID, &out.GridImageID
 		*out = new(string)
 		**out = **in
+	}
+	if in.GridImageIDRef != nil {
+		in, out := &in.GridImageIDRef, &out.GridImageIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.GridImageIDSelector != nil {
+		in, out := &in.GridImageIDSelector, &out.GridImageIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Hostname != nil {
 		in, out := &in.Hostname, &out.Hostname
@@ -42429,6 +45049,16 @@ func (in *ExadbVmClusterInitParameters) DeepCopyInto(out *ExadbVmClusterInitPara
 		in, out := &in.PrivateZoneID, &out.PrivateZoneID
 		*out = new(string)
 		**out = **in
+	}
+	if in.PrivateZoneIDRef != nil {
+		in, out := &in.PrivateZoneIDRef, &out.PrivateZoneIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PrivateZoneIDSelector != nil {
+		in, out := &in.PrivateZoneIDSelector, &out.PrivateZoneIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.SSHPublicKeys != nil {
 		in, out := &in.SSHPublicKeys, &out.SSHPublicKeys
@@ -42481,6 +45111,16 @@ func (in *ExadbVmClusterInitParameters) DeepCopyInto(out *ExadbVmClusterInitPara
 		in, out := &in.SubnetID, &out.SubnetID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SubnetIDRef != nil {
+		in, out := &in.SubnetIDRef, &out.SubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SubnetIDSelector != nil {
+		in, out := &in.SubnetIDSelector, &out.SubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.SubscriptionID != nil {
 		in, out := &in.SubscriptionID, &out.SubscriptionID
@@ -43009,6 +45649,16 @@ func (in *ExadbVmClusterParameters) DeepCopyInto(out *ExadbVmClusterParameters) 
 		*out = new(string)
 		**out = **in
 	}
+	if in.BackupSubnetIDRef != nil {
+		in, out := &in.BackupSubnetIDRef, &out.BackupSubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.BackupSubnetIDSelector != nil {
+		in, out := &in.BackupSubnetIDSelector, &out.BackupSubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ClusterName != nil {
 		in, out := &in.ClusterName, &out.ClusterName
 		*out = new(string)
@@ -43018,6 +45668,16 @@ func (in *ExadbVmClusterParameters) DeepCopyInto(out *ExadbVmClusterParameters) 
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DataCollectionOptions != nil {
 		in, out := &in.DataCollectionOptions, &out.DataCollectionOptions
@@ -43057,6 +45717,16 @@ func (in *ExadbVmClusterParameters) DeepCopyInto(out *ExadbVmClusterParameters) 
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExascaleDBStorageVaultIDRef != nil {
+		in, out := &in.ExascaleDBStorageVaultIDRef, &out.ExascaleDBStorageVaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExascaleDBStorageVaultIDSelector != nil {
+		in, out := &in.ExascaleDBStorageVaultIDSelector, &out.ExascaleDBStorageVaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
 		*out = make(map[string]*string, len(*in))
@@ -43077,6 +45747,16 @@ func (in *ExadbVmClusterParameters) DeepCopyInto(out *ExadbVmClusterParameters) 
 		in, out := &in.GridImageID, &out.GridImageID
 		*out = new(string)
 		**out = **in
+	}
+	if in.GridImageIDRef != nil {
+		in, out := &in.GridImageIDRef, &out.GridImageIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.GridImageIDSelector != nil {
+		in, out := &in.GridImageIDSelector, &out.GridImageIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Hostname != nil {
 		in, out := &in.Hostname, &out.Hostname
@@ -43117,6 +45797,16 @@ func (in *ExadbVmClusterParameters) DeepCopyInto(out *ExadbVmClusterParameters) 
 		in, out := &in.PrivateZoneID, &out.PrivateZoneID
 		*out = new(string)
 		**out = **in
+	}
+	if in.PrivateZoneIDRef != nil {
+		in, out := &in.PrivateZoneIDRef, &out.PrivateZoneIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PrivateZoneIDSelector != nil {
+		in, out := &in.PrivateZoneIDSelector, &out.PrivateZoneIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.SSHPublicKeys != nil {
 		in, out := &in.SSHPublicKeys, &out.SSHPublicKeys
@@ -43169,6 +45859,16 @@ func (in *ExadbVmClusterParameters) DeepCopyInto(out *ExadbVmClusterParameters) 
 		in, out := &in.SubnetID, &out.SubnetID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SubnetIDRef != nil {
+		in, out := &in.SubnetIDRef, &out.SubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SubnetIDSelector != nil {
+		in, out := &in.SubnetIDSelector, &out.SubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.SubscriptionID != nil {
 		in, out := &in.SubscriptionID, &out.SubscriptionID
@@ -43342,6 +46042,16 @@ func (in *ExascaleDbStorageVaultInitParameters) DeepCopyInto(out *ExascaleDbStor
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -43372,6 +46082,16 @@ func (in *ExascaleDbStorageVaultInitParameters) DeepCopyInto(out *ExascaleDbStor
 		in, out := &in.ExadataInfrastructureID, &out.ExadataInfrastructureID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExadataInfrastructureIDRef != nil {
+		in, out := &in.ExadataInfrastructureIDRef, &out.ExadataInfrastructureIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExadataInfrastructureIDSelector != nil {
+		in, out := &in.ExadataInfrastructureIDSelector, &out.ExadataInfrastructureIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
@@ -43655,6 +46375,16 @@ func (in *ExascaleDbStorageVaultParameters) DeepCopyInto(out *ExascaleDbStorageV
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -43685,6 +46415,16 @@ func (in *ExascaleDbStorageVaultParameters) DeepCopyInto(out *ExascaleDbStorageV
 		in, out := &in.ExadataInfrastructureID, &out.ExadataInfrastructureID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExadataInfrastructureIDRef != nil {
+		in, out := &in.ExadataInfrastructureIDRef, &out.ExadataInfrastructureIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExadataInfrastructureIDSelector != nil {
+		in, out := &in.ExadataInfrastructureIDSelector, &out.ExadataInfrastructureIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
@@ -43954,6 +46694,16 @@ func (in *ExecutionActionInitParameters) DeepCopyInto(out *ExecutionActionInitPa
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -43974,6 +46724,16 @@ func (in *ExecutionActionInitParameters) DeepCopyInto(out *ExecutionActionInitPa
 		in, out := &in.ExecutionWindowID, &out.ExecutionWindowID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExecutionWindowIDRef != nil {
+		in, out := &in.ExecutionWindowIDRef, &out.ExecutionWindowIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExecutionWindowIDSelector != nil {
+		in, out := &in.ExecutionWindowIDSelector, &out.ExecutionWindowIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
@@ -44211,6 +46971,16 @@ func (in *ExecutionActionParameters) DeepCopyInto(out *ExecutionActionParameters
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -44231,6 +47001,16 @@ func (in *ExecutionActionParameters) DeepCopyInto(out *ExecutionActionParameters
 		in, out := &in.ExecutionWindowID, &out.ExecutionWindowID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExecutionWindowIDRef != nil {
+		in, out := &in.ExecutionWindowIDRef, &out.ExecutionWindowIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExecutionWindowIDSelector != nil {
+		in, out := &in.ExecutionWindowIDSelector, &out.ExecutionWindowIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
@@ -44329,6 +47109,16 @@ func (in *ExecutionWindowInitParameters) DeepCopyInto(out *ExecutionWindowInitPa
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -44570,6 +47360,16 @@ func (in *ExecutionWindowParameters) DeepCopyInto(out *ExecutionWindowParameters
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -44840,6 +47640,16 @@ func (in *ExternalContainerDatabaseInitParameters) DeepCopyInto(out *ExternalCon
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -44961,10 +47771,30 @@ func (in *ExternalContainerDatabaseManagementInitParameters) DeepCopyInto(out *E
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalContainerDatabaseIDRef != nil {
+		in, out := &in.ExternalContainerDatabaseIDRef, &out.ExternalContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalContainerDatabaseIDSelector != nil {
+		in, out := &in.ExternalContainerDatabaseIDSelector, &out.ExternalContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ExternalDatabaseConnectorID != nil {
 		in, out := &in.ExternalDatabaseConnectorID, &out.ExternalDatabaseConnectorID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalDatabaseConnectorIDRef != nil {
+		in, out := &in.ExternalDatabaseConnectorIDRef, &out.ExternalDatabaseConnectorIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDatabaseConnectorIDSelector != nil {
+		in, out := &in.ExternalDatabaseConnectorIDSelector, &out.ExternalDatabaseConnectorIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.LicenseModel != nil {
 		in, out := &in.LicenseModel, &out.LicenseModel
@@ -45068,10 +47898,30 @@ func (in *ExternalContainerDatabaseManagementParameters) DeepCopyInto(out *Exter
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalContainerDatabaseIDRef != nil {
+		in, out := &in.ExternalContainerDatabaseIDRef, &out.ExternalContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalContainerDatabaseIDSelector != nil {
+		in, out := &in.ExternalContainerDatabaseIDSelector, &out.ExternalContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ExternalDatabaseConnectorID != nil {
 		in, out := &in.ExternalDatabaseConnectorID, &out.ExternalDatabaseConnectorID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalDatabaseConnectorIDRef != nil {
+		in, out := &in.ExternalDatabaseConnectorIDRef, &out.ExternalDatabaseConnectorIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDatabaseConnectorIDSelector != nil {
+		in, out := &in.ExternalDatabaseConnectorIDSelector, &out.ExternalDatabaseConnectorIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.LicenseModel != nil {
 		in, out := &in.LicenseModel, &out.LicenseModel
@@ -45285,6 +48135,16 @@ func (in *ExternalContainerDatabaseParameters) DeepCopyInto(out *ExternalContain
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -45448,6 +48308,16 @@ func (in *ExternalDatabaseConnectorInitParameters) DeepCopyInto(out *ExternalDat
 		in, out := &in.ExternalDatabaseID, &out.ExternalDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalDatabaseIDRef != nil {
+		in, out := &in.ExternalDatabaseIDRef, &out.ExternalDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDatabaseIDSelector != nil {
+		in, out := &in.ExternalDatabaseIDSelector, &out.ExternalDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
@@ -45694,6 +48564,16 @@ func (in *ExternalDatabaseConnectorParameters) DeepCopyInto(out *ExternalDatabas
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalDatabaseIDRef != nil {
+		in, out := &in.ExternalDatabaseIDRef, &out.ExternalDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDatabaseIDSelector != nil {
+		in, out := &in.ExternalDatabaseIDSelector, &out.ExternalDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
 		*out = make(map[string]*string, len(*in))
@@ -45852,6 +48732,16 @@ func (in *ExternalNonContainerDatabaseInitParameters) DeepCopyInto(out *External
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -45973,10 +48863,30 @@ func (in *ExternalNonContainerDatabaseManagementInitParameters) DeepCopyInto(out
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalDatabaseConnectorIDRef != nil {
+		in, out := &in.ExternalDatabaseConnectorIDRef, &out.ExternalDatabaseConnectorIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDatabaseConnectorIDSelector != nil {
+		in, out := &in.ExternalDatabaseConnectorIDSelector, &out.ExternalDatabaseConnectorIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ExternalNonContainerDatabaseID != nil {
 		in, out := &in.ExternalNonContainerDatabaseID, &out.ExternalNonContainerDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalNonContainerDatabaseIDRef != nil {
+		in, out := &in.ExternalNonContainerDatabaseIDRef, &out.ExternalNonContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalNonContainerDatabaseIDSelector != nil {
+		in, out := &in.ExternalNonContainerDatabaseIDSelector, &out.ExternalNonContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.LicenseModel != nil {
 		in, out := &in.LicenseModel, &out.LicenseModel
@@ -46080,10 +48990,30 @@ func (in *ExternalNonContainerDatabaseManagementParameters) DeepCopyInto(out *Ex
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalDatabaseConnectorIDRef != nil {
+		in, out := &in.ExternalDatabaseConnectorIDRef, &out.ExternalDatabaseConnectorIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDatabaseConnectorIDSelector != nil {
+		in, out := &in.ExternalDatabaseConnectorIDSelector, &out.ExternalDatabaseConnectorIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ExternalNonContainerDatabaseID != nil {
 		in, out := &in.ExternalNonContainerDatabaseID, &out.ExternalNonContainerDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalNonContainerDatabaseIDRef != nil {
+		in, out := &in.ExternalNonContainerDatabaseIDRef, &out.ExternalNonContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalNonContainerDatabaseIDSelector != nil {
+		in, out := &in.ExternalNonContainerDatabaseIDSelector, &out.ExternalNonContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.LicenseModel != nil {
 		in, out := &in.LicenseModel, &out.LicenseModel
@@ -46336,10 +49266,30 @@ func (in *ExternalNonContainerDatabaseOperationsInsightsManagementInitParameters
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalDatabaseConnectorIDRef != nil {
+		in, out := &in.ExternalDatabaseConnectorIDRef, &out.ExternalDatabaseConnectorIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDatabaseConnectorIDSelector != nil {
+		in, out := &in.ExternalDatabaseConnectorIDSelector, &out.ExternalDatabaseConnectorIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ExternalNonContainerDatabaseID != nil {
 		in, out := &in.ExternalNonContainerDatabaseID, &out.ExternalNonContainerDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalNonContainerDatabaseIDRef != nil {
+		in, out := &in.ExternalNonContainerDatabaseIDRef, &out.ExternalNonContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalNonContainerDatabaseIDSelector != nil {
+		in, out := &in.ExternalNonContainerDatabaseIDSelector, &out.ExternalNonContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -46433,10 +49383,30 @@ func (in *ExternalNonContainerDatabaseOperationsInsightsManagementParameters) De
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalDatabaseConnectorIDRef != nil {
+		in, out := &in.ExternalDatabaseConnectorIDRef, &out.ExternalDatabaseConnectorIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDatabaseConnectorIDSelector != nil {
+		in, out := &in.ExternalDatabaseConnectorIDSelector, &out.ExternalDatabaseConnectorIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ExternalNonContainerDatabaseID != nil {
 		in, out := &in.ExternalNonContainerDatabaseID, &out.ExternalNonContainerDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalNonContainerDatabaseIDRef != nil {
+		in, out := &in.ExternalNonContainerDatabaseIDRef, &out.ExternalNonContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalNonContainerDatabaseIDSelector != nil {
+		in, out := &in.ExternalNonContainerDatabaseIDSelector, &out.ExternalNonContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -46492,6 +49462,16 @@ func (in *ExternalNonContainerDatabaseParameters) DeepCopyInto(out *ExternalNonC
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -46727,6 +49707,16 @@ func (in *ExternalPluggableDatabaseInitParameters) DeepCopyInto(out *ExternalPlu
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -46752,6 +49742,16 @@ func (in *ExternalPluggableDatabaseInitParameters) DeepCopyInto(out *ExternalPlu
 		in, out := &in.ExternalContainerDatabaseID, &out.ExternalContainerDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalContainerDatabaseIDRef != nil {
+		in, out := &in.ExternalContainerDatabaseIDRef, &out.ExternalContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalContainerDatabaseIDSelector != nil {
+		in, out := &in.ExternalContainerDatabaseIDSelector, &out.ExternalContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
@@ -46858,10 +49858,30 @@ func (in *ExternalPluggableDatabaseManagementInitParameters) DeepCopyInto(out *E
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalDatabaseConnectorIDRef != nil {
+		in, out := &in.ExternalDatabaseConnectorIDRef, &out.ExternalDatabaseConnectorIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDatabaseConnectorIDSelector != nil {
+		in, out := &in.ExternalDatabaseConnectorIDSelector, &out.ExternalDatabaseConnectorIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ExternalPluggableDatabaseID != nil {
 		in, out := &in.ExternalPluggableDatabaseID, &out.ExternalPluggableDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalPluggableDatabaseIDRef != nil {
+		in, out := &in.ExternalPluggableDatabaseIDRef, &out.ExternalPluggableDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalPluggableDatabaseIDSelector != nil {
+		in, out := &in.ExternalPluggableDatabaseIDSelector, &out.ExternalPluggableDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -46955,10 +49975,30 @@ func (in *ExternalPluggableDatabaseManagementParameters) DeepCopyInto(out *Exter
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalDatabaseConnectorIDRef != nil {
+		in, out := &in.ExternalDatabaseConnectorIDRef, &out.ExternalDatabaseConnectorIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDatabaseConnectorIDSelector != nil {
+		in, out := &in.ExternalDatabaseConnectorIDSelector, &out.ExternalDatabaseConnectorIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ExternalPluggableDatabaseID != nil {
 		in, out := &in.ExternalPluggableDatabaseID, &out.ExternalPluggableDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalPluggableDatabaseIDRef != nil {
+		in, out := &in.ExternalPluggableDatabaseIDRef, &out.ExternalPluggableDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalPluggableDatabaseIDSelector != nil {
+		in, out := &in.ExternalPluggableDatabaseIDSelector, &out.ExternalPluggableDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -47271,10 +50311,30 @@ func (in *ExternalPluggableDatabaseOperationsInsightsManagementInitParameters) D
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalDatabaseConnectorIDRef != nil {
+		in, out := &in.ExternalDatabaseConnectorIDRef, &out.ExternalDatabaseConnectorIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDatabaseConnectorIDSelector != nil {
+		in, out := &in.ExternalDatabaseConnectorIDSelector, &out.ExternalDatabaseConnectorIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ExternalPluggableDatabaseID != nil {
 		in, out := &in.ExternalPluggableDatabaseID, &out.ExternalPluggableDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalPluggableDatabaseIDRef != nil {
+		in, out := &in.ExternalPluggableDatabaseIDRef, &out.ExternalPluggableDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalPluggableDatabaseIDSelector != nil {
+		in, out := &in.ExternalPluggableDatabaseIDSelector, &out.ExternalPluggableDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -47368,10 +50428,30 @@ func (in *ExternalPluggableDatabaseOperationsInsightsManagementParameters) DeepC
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalDatabaseConnectorIDRef != nil {
+		in, out := &in.ExternalDatabaseConnectorIDRef, &out.ExternalDatabaseConnectorIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDatabaseConnectorIDSelector != nil {
+		in, out := &in.ExternalDatabaseConnectorIDSelector, &out.ExternalDatabaseConnectorIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ExternalPluggableDatabaseID != nil {
 		in, out := &in.ExternalPluggableDatabaseID, &out.ExternalPluggableDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalPluggableDatabaseIDRef != nil {
+		in, out := &in.ExternalPluggableDatabaseIDRef, &out.ExternalPluggableDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalPluggableDatabaseIDSelector != nil {
+		in, out := &in.ExternalPluggableDatabaseIDSelector, &out.ExternalPluggableDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -47428,6 +50508,16 @@ func (in *ExternalPluggableDatabaseParameters) DeepCopyInto(out *ExternalPluggab
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -47453,6 +50543,16 @@ func (in *ExternalPluggableDatabaseParameters) DeepCopyInto(out *ExternalPluggab
 		in, out := &in.ExternalContainerDatabaseID, &out.ExternalContainerDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalContainerDatabaseIDRef != nil {
+		in, out := &in.ExternalContainerDatabaseIDRef, &out.ExternalContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalContainerDatabaseIDSelector != nil {
+		in, out := &in.ExternalContainerDatabaseIDSelector, &out.ExternalContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
@@ -47617,10 +50717,30 @@ func (in *ExternalcontainerdatabasesStackMonitoringInitParameters) DeepCopyInto(
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalContainerDatabaseIDRef != nil {
+		in, out := &in.ExternalContainerDatabaseIDRef, &out.ExternalContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalContainerDatabaseIDSelector != nil {
+		in, out := &in.ExternalContainerDatabaseIDSelector, &out.ExternalContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ExternalDatabaseConnectorID != nil {
 		in, out := &in.ExternalDatabaseConnectorID, &out.ExternalDatabaseConnectorID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalDatabaseConnectorIDRef != nil {
+		in, out := &in.ExternalDatabaseConnectorIDRef, &out.ExternalDatabaseConnectorIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDatabaseConnectorIDSelector != nil {
+		in, out := &in.ExternalDatabaseConnectorIDSelector, &out.ExternalDatabaseConnectorIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -47714,10 +50834,30 @@ func (in *ExternalcontainerdatabasesStackMonitoringParameters) DeepCopyInto(out 
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalContainerDatabaseIDRef != nil {
+		in, out := &in.ExternalContainerDatabaseIDRef, &out.ExternalContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalContainerDatabaseIDSelector != nil {
+		in, out := &in.ExternalContainerDatabaseIDSelector, &out.ExternalContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ExternalDatabaseConnectorID != nil {
 		in, out := &in.ExternalDatabaseConnectorID, &out.ExternalDatabaseConnectorID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalDatabaseConnectorIDRef != nil {
+		in, out := &in.ExternalDatabaseConnectorIDRef, &out.ExternalDatabaseConnectorIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDatabaseConnectorIDSelector != nil {
+		in, out := &in.ExternalDatabaseConnectorIDSelector, &out.ExternalDatabaseConnectorIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -47806,10 +50946,30 @@ func (in *ExternalnoncontainerdatabasesStackMonitoringInitParameters) DeepCopyIn
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalDatabaseConnectorIDRef != nil {
+		in, out := &in.ExternalDatabaseConnectorIDRef, &out.ExternalDatabaseConnectorIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDatabaseConnectorIDSelector != nil {
+		in, out := &in.ExternalDatabaseConnectorIDSelector, &out.ExternalDatabaseConnectorIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ExternalNonContainerDatabaseID != nil {
 		in, out := &in.ExternalNonContainerDatabaseID, &out.ExternalNonContainerDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalNonContainerDatabaseIDRef != nil {
+		in, out := &in.ExternalNonContainerDatabaseIDRef, &out.ExternalNonContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalNonContainerDatabaseIDSelector != nil {
+		in, out := &in.ExternalNonContainerDatabaseIDSelector, &out.ExternalNonContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -47903,10 +51063,30 @@ func (in *ExternalnoncontainerdatabasesStackMonitoringParameters) DeepCopyInto(o
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalDatabaseConnectorIDRef != nil {
+		in, out := &in.ExternalDatabaseConnectorIDRef, &out.ExternalDatabaseConnectorIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDatabaseConnectorIDSelector != nil {
+		in, out := &in.ExternalDatabaseConnectorIDSelector, &out.ExternalDatabaseConnectorIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ExternalNonContainerDatabaseID != nil {
 		in, out := &in.ExternalNonContainerDatabaseID, &out.ExternalNonContainerDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalNonContainerDatabaseIDRef != nil {
+		in, out := &in.ExternalNonContainerDatabaseIDRef, &out.ExternalNonContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalNonContainerDatabaseIDSelector != nil {
+		in, out := &in.ExternalNonContainerDatabaseIDSelector, &out.ExternalNonContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -47995,10 +51175,30 @@ func (in *ExternalpluggabledatabasesStackMonitoringInitParameters) DeepCopyInto(
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalDatabaseConnectorIDRef != nil {
+		in, out := &in.ExternalDatabaseConnectorIDRef, &out.ExternalDatabaseConnectorIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDatabaseConnectorIDSelector != nil {
+		in, out := &in.ExternalDatabaseConnectorIDSelector, &out.ExternalDatabaseConnectorIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ExternalPluggableDatabaseID != nil {
 		in, out := &in.ExternalPluggableDatabaseID, &out.ExternalPluggableDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalPluggableDatabaseIDRef != nil {
+		in, out := &in.ExternalPluggableDatabaseIDRef, &out.ExternalPluggableDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalPluggableDatabaseIDSelector != nil {
+		in, out := &in.ExternalPluggableDatabaseIDSelector, &out.ExternalPluggableDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -48092,10 +51292,30 @@ func (in *ExternalpluggabledatabasesStackMonitoringParameters) DeepCopyInto(out 
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalDatabaseConnectorIDRef != nil {
+		in, out := &in.ExternalDatabaseConnectorIDRef, &out.ExternalDatabaseConnectorIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDatabaseConnectorIDSelector != nil {
+		in, out := &in.ExternalDatabaseConnectorIDSelector, &out.ExternalDatabaseConnectorIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ExternalPluggableDatabaseID != nil {
 		in, out := &in.ExternalPluggableDatabaseID, &out.ExternalPluggableDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalPluggableDatabaseIDRef != nil {
+		in, out := &in.ExternalPluggableDatabaseIDRef, &out.ExternalPluggableDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalPluggableDatabaseIDSelector != nil {
+		in, out := &in.ExternalPluggableDatabaseIDSelector, &out.ExternalPluggableDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -48322,6 +51542,16 @@ func (in *FeatureDetailsDatabaseConnectionDetailsConnectionCredentialsInitParame
 		*out = new(string)
 		**out = **in
 	}
+	if in.NamedCredentialIDRef != nil {
+		in, out := &in.NamedCredentialIDRef, &out.NamedCredentialIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.NamedCredentialIDSelector != nil {
+		in, out := &in.NamedCredentialIDSelector, &out.NamedCredentialIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PasswordSecretIDSecretRef != nil {
 		in, out := &in.PasswordSecretIDSecretRef, &out.PasswordSecretIDSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -48337,10 +51567,30 @@ func (in *FeatureDetailsDatabaseConnectionDetailsConnectionCredentialsInitParame
 		*out = new(string)
 		**out = **in
 	}
+	if in.SSLSecretIDRef != nil {
+		in, out := &in.SSLSecretIDRef, &out.SSLSecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SSLSecretIDSelector != nil {
+		in, out := &in.SSLSecretIDSelector, &out.SSLSecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.UserName != nil {
 		in, out := &in.UserName, &out.UserName
 		*out = new(string)
 		**out = **in
+	}
+	if in.UserNameRef != nil {
+		in, out := &in.UserNameRef, &out.UserNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.UserNameSelector != nil {
+		in, out := &in.UserNameSelector, &out.UserNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -48417,6 +51667,16 @@ func (in *FeatureDetailsDatabaseConnectionDetailsConnectionCredentialsParameters
 		*out = new(string)
 		**out = **in
 	}
+	if in.NamedCredentialIDRef != nil {
+		in, out := &in.NamedCredentialIDRef, &out.NamedCredentialIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.NamedCredentialIDSelector != nil {
+		in, out := &in.NamedCredentialIDSelector, &out.NamedCredentialIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PasswordSecretIDSecretRef != nil {
 		in, out := &in.PasswordSecretIDSecretRef, &out.PasswordSecretIDSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -48432,10 +51692,30 @@ func (in *FeatureDetailsDatabaseConnectionDetailsConnectionCredentialsParameters
 		*out = new(string)
 		**out = **in
 	}
+	if in.SSLSecretIDRef != nil {
+		in, out := &in.SSLSecretIDRef, &out.SSLSecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SSLSecretIDSelector != nil {
+		in, out := &in.SSLSecretIDSelector, &out.SSLSecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.UserName != nil {
 		in, out := &in.UserName, &out.UserName
 		*out = new(string)
 		**out = **in
+	}
+	if in.UserNameRef != nil {
+		in, out := &in.UserNameRef, &out.UserNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.UserNameSelector != nil {
+		in, out := &in.UserNameSelector, &out.UserNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -49297,6 +52577,16 @@ func (in *HubDetailsInitParameters) DeepCopyInto(out *HubDetailsInitParameters) 
 		*out = new(string)
 		**out = **in
 	}
+	if in.KeyIDRef != nil {
+		in, out := &in.KeyIDRef, &out.KeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KeyIDSelector != nil {
+		in, out := &in.KeyIDSelector, &out.KeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.Replicat != nil {
 		in, out := &in.Replicat, &out.Replicat
 		*out = make([]HubDetailsReplicatInitParameters, len(*in))
@@ -49320,6 +52610,16 @@ func (in *HubDetailsInitParameters) DeepCopyInto(out *HubDetailsInitParameters) 
 		in, out := &in.VaultID, &out.VaultID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VaultIDRef != nil {
+		in, out := &in.VaultIDRef, &out.VaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VaultIDSelector != nil {
+		in, out := &in.VaultIDSelector, &out.VaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -49419,6 +52719,16 @@ func (in *HubDetailsParameters) DeepCopyInto(out *HubDetailsParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.KeyIDRef != nil {
+		in, out := &in.KeyIDRef, &out.KeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KeyIDSelector != nil {
+		in, out := &in.KeyIDSelector, &out.KeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.Replicat != nil {
 		in, out := &in.Replicat, &out.Replicat
 		*out = make([]HubDetailsReplicatParameters, len(*in))
@@ -49442,6 +52752,16 @@ func (in *HubDetailsParameters) DeepCopyInto(out *HubDetailsParameters) {
 		in, out := &in.VaultID, &out.VaultID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VaultIDRef != nil {
+		in, out := &in.VaultIDRef, &out.VaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VaultIDSelector != nil {
+		in, out := &in.VaultIDSelector, &out.VaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -50375,6 +53695,16 @@ func (in *KeyStoreContentInitParameters) DeepCopyInto(out *KeyStoreContentInitPa
 		*out = new(string)
 		**out = **in
 	}
+	if in.SecretIDRef != nil {
+		in, out := &in.SecretIDRef, &out.SecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SecretIDSelector != nil {
+		in, out := &in.SecretIDSelector, &out.SecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ValueType != nil {
 		in, out := &in.ValueType, &out.ValueType
 		*out = new(string)
@@ -50425,6 +53755,16 @@ func (in *KeyStoreContentParameters) DeepCopyInto(out *KeyStoreContentParameters
 		*out = new(string)
 		**out = **in
 	}
+	if in.SecretIDRef != nil {
+		in, out := &in.SecretIDRef, &out.SecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SecretIDSelector != nil {
+		in, out := &in.SecretIDSelector, &out.SecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ValueType != nil {
 		in, out := &in.ValueType, &out.ValueType
 		*out = new(string)
@@ -50449,6 +53789,16 @@ func (in *KeyStoreInitParameters) DeepCopyInto(out *KeyStoreInitParameters) {
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ConfirmDetailsTrigger != nil {
 		in, out := &in.ConfirmDetailsTrigger, &out.ConfirmDetailsTrigger
@@ -50675,6 +54025,16 @@ func (in *KeyStoreParameters) DeepCopyInto(out *KeyStoreParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ConfirmDetailsTrigger != nil {
 		in, out := &in.ConfirmDetailsTrigger, &out.ConfirmDetailsTrigger
 		*out = new(float64)
@@ -50744,6 +54104,16 @@ func (in *KeyStorePasswordInitParameters) DeepCopyInto(out *KeyStorePasswordInit
 		*out = new(string)
 		**out = **in
 	}
+	if in.SecretIDRef != nil {
+		in, out := &in.SecretIDRef, &out.SecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SecretIDSelector != nil {
+		in, out := &in.SecretIDSelector, &out.SecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ValueType != nil {
 		in, out := &in.ValueType, &out.ValueType
 		*out = new(string)
@@ -50793,6 +54163,16 @@ func (in *KeyStorePasswordParameters) DeepCopyInto(out *KeyStorePasswordParamete
 		in, out := &in.SecretID, &out.SecretID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SecretIDRef != nil {
+		in, out := &in.SecretIDRef, &out.SecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SecretIDSelector != nil {
+		in, out := &in.SecretIDSelector, &out.SecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ValueType != nil {
 		in, out := &in.ValueType, &out.ValueType
@@ -51343,10 +54723,30 @@ func (in *MaintenanceRunInitParameters) DeepCopyInto(out *MaintenanceRunInitPara
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DatabaseSoftwareImageID != nil {
 		in, out := &in.DatabaseSoftwareImageID, &out.DatabaseSoftwareImageID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseSoftwareImageIDRef != nil {
+		in, out := &in.DatabaseSoftwareImageIDRef, &out.DatabaseSoftwareImageIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseSoftwareImageIDSelector != nil {
+		in, out := &in.DatabaseSoftwareImageIDSelector, &out.DatabaseSoftwareImageIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.IsDstFileUpdateEnabled != nil {
 		in, out := &in.IsDstFileUpdateEnabled, &out.IsDstFileUpdateEnabled
@@ -51634,10 +55034,30 @@ func (in *MaintenanceRunParameters) DeepCopyInto(out *MaintenanceRunParameters) 
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DatabaseSoftwareImageID != nil {
 		in, out := &in.DatabaseSoftwareImageID, &out.DatabaseSoftwareImageID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseSoftwareImageIDRef != nil {
+		in, out := &in.DatabaseSoftwareImageIDRef, &out.DatabaseSoftwareImageIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseSoftwareImageIDSelector != nil {
+		in, out := &in.DatabaseSoftwareImageIDSelector, &out.DatabaseSoftwareImageIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.IsDstFileUpdateEnabled != nil {
 		in, out := &in.IsDstFileUpdateEnabled, &out.IsDstFileUpdateEnabled
@@ -52577,6 +55997,16 @@ func (in *ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementIni
 		*out = new(string)
 		**out = **in
 	}
+	if in.AutonomousDatabaseIDRef != nil {
+		in, out := &in.AutonomousDatabaseIDRef, &out.AutonomousDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AutonomousDatabaseIDSelector != nil {
+		in, out := &in.AutonomousDatabaseIDSelector, &out.AutonomousDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.EnableAutonomousDatabaseDbmFeature != nil {
 		in, out := &in.EnableAutonomousDatabaseDbmFeature, &out.EnableAutonomousDatabaseDbmFeature
 		*out = new(bool)
@@ -52678,6 +56108,16 @@ func (in *ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementPar
 		*out = new(string)
 		**out = **in
 	}
+	if in.AutonomousDatabaseIDRef != nil {
+		in, out := &in.AutonomousDatabaseIDRef, &out.AutonomousDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.AutonomousDatabaseIDSelector != nil {
+		in, out := &in.AutonomousDatabaseIDSelector, &out.AutonomousDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.EnableAutonomousDatabaseDbmFeature != nil {
 		in, out := &in.EnableAutonomousDatabaseDbmFeature, &out.EnableAutonomousDatabaseDbmFeature
 		*out = new(bool)
@@ -52772,6 +56212,16 @@ func (in *ManagementCloudAsmInitParameters) DeepCopyInto(out *ManagementCloudAsm
 		*out = new(string)
 		**out = **in
 	}
+	if in.CloudAsmIDRef != nil {
+		in, out := &in.CloudAsmIDRef, &out.CloudAsmIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudAsmIDSelector != nil {
+		in, out := &in.CloudAsmIDSelector, &out.CloudAsmIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.CloudConnectorID != nil {
 		in, out := &in.CloudConnectorID, &out.CloudConnectorID
 		*out = new(string)
@@ -52855,6 +56305,16 @@ func (in *ManagementCloudAsmInstanceInitParameters) DeepCopyInto(out *Management
 		in, out := &in.CloudAsmInstanceID, &out.CloudAsmInstanceID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CloudAsmInstanceIDRef != nil {
+		in, out := &in.CloudAsmInstanceIDRef, &out.CloudAsmInstanceIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudAsmInstanceIDSelector != nil {
+		in, out := &in.CloudAsmInstanceIDSelector, &out.CloudAsmInstanceIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -53077,6 +56537,16 @@ func (in *ManagementCloudAsmInstanceParameters) DeepCopyInto(out *ManagementClou
 		in, out := &in.CloudAsmInstanceID, &out.CloudAsmInstanceID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CloudAsmInstanceIDRef != nil {
+		in, out := &in.CloudAsmInstanceIDRef, &out.CloudAsmInstanceIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudAsmInstanceIDSelector != nil {
+		in, out := &in.CloudAsmInstanceIDSelector, &out.CloudAsmInstanceIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -53363,6 +56833,16 @@ func (in *ManagementCloudAsmParameters) DeepCopyInto(out *ManagementCloudAsmPara
 		*out = new(string)
 		**out = **in
 	}
+	if in.CloudAsmIDRef != nil {
+		in, out := &in.CloudAsmIDRef, &out.CloudAsmIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudAsmIDSelector != nil {
+		in, out := &in.CloudAsmIDSelector, &out.CloudAsmIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.CloudConnectorID != nil {
 		in, out := &in.CloudConnectorID, &out.CloudConnectorID
 		*out = new(string)
@@ -53482,6 +56962,16 @@ func (in *ManagementCloudClusterInitParameters) DeepCopyInto(out *ManagementClou
 		*out = new(string)
 		**out = **in
 	}
+	if in.CloudClusterIDRef != nil {
+		in, out := &in.CloudClusterIDRef, &out.CloudClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudClusterIDSelector != nil {
+		in, out := &in.CloudClusterIDSelector, &out.CloudClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.CloudConnectorID != nil {
 		in, out := &in.CloudConnectorID, &out.CloudConnectorID
 		*out = new(string)
@@ -53565,6 +57055,16 @@ func (in *ManagementCloudClusterInstanceInitParameters) DeepCopyInto(out *Manage
 		in, out := &in.CloudClusterInstanceID, &out.CloudClusterInstanceID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CloudClusterInstanceIDRef != nil {
+		in, out := &in.CloudClusterInstanceIDRef, &out.CloudClusterInstanceIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudClusterInstanceIDSelector != nil {
+		in, out := &in.CloudClusterInstanceIDSelector, &out.CloudClusterInstanceIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.CloudConnectorID != nil {
 		in, out := &in.CloudConnectorID, &out.CloudConnectorID
@@ -53807,6 +57307,16 @@ func (in *ManagementCloudClusterInstanceParameters) DeepCopyInto(out *Management
 		in, out := &in.CloudClusterInstanceID, &out.CloudClusterInstanceID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CloudClusterInstanceIDRef != nil {
+		in, out := &in.CloudClusterInstanceIDRef, &out.CloudClusterInstanceIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudClusterInstanceIDSelector != nil {
+		in, out := &in.CloudClusterInstanceIDSelector, &out.CloudClusterInstanceIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.CloudConnectorID != nil {
 		in, out := &in.CloudConnectorID, &out.CloudConnectorID
@@ -54112,6 +57622,16 @@ func (in *ManagementCloudClusterParameters) DeepCopyInto(out *ManagementCloudClu
 		*out = new(string)
 		**out = **in
 	}
+	if in.CloudClusterIDRef != nil {
+		in, out := &in.CloudClusterIDRef, &out.CloudClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudClusterIDSelector != nil {
+		in, out := &in.CloudClusterIDSelector, &out.CloudClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.CloudConnectorID != nil {
 		in, out := &in.CloudConnectorID, &out.CloudConnectorID
 		*out = new(string)
@@ -54230,6 +57750,16 @@ func (in *ManagementCloudDbHomeInitParameters) DeepCopyInto(out *ManagementCloud
 		in, out := &in.CloudDBHomeID, &out.CloudDBHomeID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CloudDBHomeIDRef != nil {
+		in, out := &in.CloudDBHomeIDRef, &out.CloudDBHomeIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudDBHomeIDSelector != nil {
+		in, out := &in.CloudDBHomeIDSelector, &out.CloudDBHomeIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -54454,6 +57984,16 @@ func (in *ManagementCloudDbHomeParameters) DeepCopyInto(out *ManagementCloudDbHo
 		*out = new(string)
 		**out = **in
 	}
+	if in.CloudDBHomeIDRef != nil {
+		in, out := &in.CloudDBHomeIDRef, &out.CloudDBHomeIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudDBHomeIDSelector != nil {
+		in, out := &in.CloudDBHomeIDSelector, &out.CloudDBHomeIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -54572,6 +58112,16 @@ func (in *ManagementCloudDbNodeInitParameters) DeepCopyInto(out *ManagementCloud
 		in, out := &in.CloudDBNodeID, &out.CloudDBNodeID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CloudDBNodeIDRef != nil {
+		in, out := &in.CloudDBNodeIDRef, &out.CloudDBNodeIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudDBNodeIDSelector != nil {
+		in, out := &in.CloudDBNodeIDSelector, &out.CloudDBNodeIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -54821,6 +58371,16 @@ func (in *ManagementCloudDbNodeParameters) DeepCopyInto(out *ManagementCloudDbNo
 		*out = new(string)
 		**out = **in
 	}
+	if in.CloudDBNodeIDRef != nil {
+		in, out := &in.CloudDBNodeIDRef, &out.CloudDBNodeIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudDBNodeIDSelector != nil {
+		in, out := &in.CloudDBNodeIDSelector, &out.CloudDBNodeIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -54962,6 +58522,16 @@ func (in *ManagementCloudDbSystemCloudDatabaseManagementsManagementInitParameter
 		*out = new(string)
 		**out = **in
 	}
+	if in.CloudDBSystemIDRef != nil {
+		in, out := &in.CloudDBSystemIDRef, &out.CloudDBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudDBSystemIDSelector != nil {
+		in, out := &in.CloudDBSystemIDSelector, &out.CloudDBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.EnableCloudDatabaseManagement != nil {
 		in, out := &in.EnableCloudDatabaseManagement, &out.EnableCloudDatabaseManagement
 		*out = new(bool)
@@ -55069,6 +58639,16 @@ func (in *ManagementCloudDbSystemCloudDatabaseManagementsManagementParameters) D
 		*out = new(string)
 		**out = **in
 	}
+	if in.CloudDBSystemIDRef != nil {
+		in, out := &in.CloudDBSystemIDRef, &out.CloudDBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudDBSystemIDSelector != nil {
+		in, out := &in.CloudDBSystemIDSelector, &out.CloudDBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.EnableCloudDatabaseManagement != nil {
 		in, out := &in.EnableCloudDatabaseManagement, &out.EnableCloudDatabaseManagement
 		*out = new(bool)
@@ -55165,6 +58745,16 @@ func (in *ManagementCloudDbSystemCloudStackMonitoringsManagementInitParameters) 
 		in, out := &in.CloudDBSystemID, &out.CloudDBSystemID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CloudDBSystemIDRef != nil {
+		in, out := &in.CloudDBSystemIDRef, &out.CloudDBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudDBSystemIDSelector != nil {
+		in, out := &in.CloudDBSystemIDSelector, &out.CloudDBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.EnableCloudStackMonitoring != nil {
 		in, out := &in.EnableCloudStackMonitoring, &out.EnableCloudStackMonitoring
@@ -55273,6 +58863,16 @@ func (in *ManagementCloudDbSystemCloudStackMonitoringsManagementParameters) Deep
 		*out = new(string)
 		**out = **in
 	}
+	if in.CloudDBSystemIDRef != nil {
+		in, out := &in.CloudDBSystemIDRef, &out.CloudDBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudDBSystemIDSelector != nil {
+		in, out := &in.CloudDBSystemIDSelector, &out.CloudDBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.EnableCloudStackMonitoring != nil {
 		in, out := &in.EnableCloudStackMonitoring, &out.EnableCloudStackMonitoring
 		*out = new(bool)
@@ -55374,6 +58974,16 @@ func (in *ManagementCloudDbSystemConnectorInitParameters) DeepCopyInto(out *Mana
 		in, out := &in.CloudDBSystemID, &out.CloudDBSystemID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CloudDBSystemIDRef != nil {
+		in, out := &in.CloudDBSystemIDRef, &out.CloudDBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudDBSystemIDSelector != nil {
+		in, out := &in.CloudDBSystemIDSelector, &out.CloudDBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ConnectionInfo != nil {
 		in, out := &in.ConnectionInfo, &out.ConnectionInfo
@@ -55616,6 +59226,16 @@ func (in *ManagementCloudDbSystemConnectorParameters) DeepCopyInto(out *Manageme
 		*out = new(string)
 		**out = **in
 	}
+	if in.CloudDBSystemIDRef != nil {
+		in, out := &in.CloudDBSystemIDRef, &out.CloudDBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudDBSystemIDSelector != nil {
+		in, out := &in.CloudDBSystemIDSelector, &out.CloudDBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ConnectionInfo != nil {
 		in, out := &in.ConnectionInfo, &out.ConnectionInfo
 		*out = make([]ConnectionInfoParameters, len(*in))
@@ -55826,6 +59446,16 @@ func (in *ManagementCloudDbSystemDiscoveryInitParameters) DeepCopyInto(out *Mana
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DbaasParentInfrastructureID != nil {
 		in, out := &in.DbaasParentInfrastructureID, &out.DbaasParentInfrastructureID
@@ -56080,6 +59710,16 @@ func (in *ManagementCloudDbSystemDiscoveryParameters) DeepCopyInto(out *Manageme
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DbaasParentInfrastructureID != nil {
 		in, out := &in.DbaasParentInfrastructureID, &out.DbaasParentInfrastructureID
 		*out = new(string)
@@ -56188,6 +59828,16 @@ func (in *ManagementCloudDbSystemInitParameters) DeepCopyInto(out *ManagementClo
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DBSystemDiscoveryID != nil {
 		in, out := &in.DBSystemDiscoveryID, &out.DBSystemDiscoveryID
@@ -56438,6 +60088,16 @@ func (in *ManagementCloudDbSystemParameters) DeepCopyInto(out *ManagementCloudDb
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DBSystemDiscoveryID != nil {
 		in, out := &in.DBSystemDiscoveryID, &out.DBSystemDiscoveryID
@@ -56732,6 +60392,16 @@ func (in *ManagementCloudListenerInitParameters) DeepCopyInto(out *ManagementClo
 		in, out := &in.CloudListenerID, &out.CloudListenerID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CloudListenerIDRef != nil {
+		in, out := &in.CloudListenerIDRef, &out.CloudListenerIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudListenerIDSelector != nil {
+		in, out := &in.CloudListenerIDSelector, &out.CloudListenerIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -57036,6 +60706,16 @@ func (in *ManagementCloudListenerParameters) DeepCopyInto(out *ManagementCloudLi
 		in, out := &in.CloudListenerID, &out.CloudListenerID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CloudListenerIDRef != nil {
+		in, out := &in.CloudListenerIDRef, &out.CloudListenerIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CloudListenerIDSelector != nil {
+		in, out := &in.CloudListenerIDSelector, &out.CloudListenerIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -57388,6 +61068,16 @@ func (in *ManagementDatabaseDbmFeaturesManagementInitParameters) DeepCopyInto(ou
 		*out = new(string)
 		**out = **in
 	}
+	if in.DatabaseIDRef != nil {
+		in, out := &in.DatabaseIDRef, &out.DatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseIDSelector != nil {
+		in, out := &in.DatabaseIDSelector, &out.DatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.EnableDatabaseDbmFeature != nil {
 		in, out := &in.EnableDatabaseDbmFeature, &out.EnableDatabaseDbmFeature
 		*out = new(bool)
@@ -57519,6 +61209,16 @@ func (in *ManagementDatabaseDbmFeaturesManagementParameters) DeepCopyInto(out *M
 		*out = new(string)
 		**out = **in
 	}
+	if in.DatabaseIDRef != nil {
+		in, out := &in.DatabaseIDRef, &out.DatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseIDSelector != nil {
+		in, out := &in.DatabaseIDSelector, &out.DatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.EnableDatabaseDbmFeature != nil {
 		in, out := &in.EnableDatabaseDbmFeature, &out.EnableDatabaseDbmFeature
 		*out = new(bool)
@@ -57623,6 +61323,16 @@ func (in *ManagementDbManagementPrivateEndpointInitParameters) DeepCopyInto(out 
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -57690,6 +61400,16 @@ func (in *ManagementDbManagementPrivateEndpointInitParameters) DeepCopyInto(out 
 		in, out := &in.SubnetID, &out.SubnetID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SubnetIDRef != nil {
+		in, out := &in.SubnetIDRef, &out.SubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SubnetIDSelector != nil {
+		in, out := &in.SubnetIDSelector, &out.SubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -57872,6 +61592,16 @@ func (in *ManagementDbManagementPrivateEndpointParameters) DeepCopyInto(out *Man
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -57939,6 +61669,16 @@ func (in *ManagementDbManagementPrivateEndpointParameters) DeepCopyInto(out *Man
 		in, out := &in.SubnetID, &out.SubnetID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SubnetIDRef != nil {
+		in, out := &in.SubnetIDRef, &out.SubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SubnetIDSelector != nil {
+		in, out := &in.SubnetIDSelector, &out.SubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -58038,6 +61778,16 @@ func (in *ManagementExternalAsmInitParameters) DeepCopyInto(out *ManagementExter
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalAsmIDRef != nil {
+		in, out := &in.ExternalAsmIDRef, &out.ExternalAsmIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalAsmIDSelector != nil {
+		in, out := &in.ExternalAsmIDSelector, &out.ExternalAsmIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ExternalConnectorID != nil {
 		in, out := &in.ExternalConnectorID, &out.ExternalConnectorID
 		*out = new(string)
@@ -58121,6 +61871,16 @@ func (in *ManagementExternalAsmInstanceInitParameters) DeepCopyInto(out *Managem
 		in, out := &in.ExternalAsmInstanceID, &out.ExternalAsmInstanceID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalAsmInstanceIDRef != nil {
+		in, out := &in.ExternalAsmInstanceIDRef, &out.ExternalAsmInstanceIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalAsmInstanceIDSelector != nil {
+		in, out := &in.ExternalAsmInstanceIDSelector, &out.ExternalAsmInstanceIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
@@ -58338,6 +62098,16 @@ func (in *ManagementExternalAsmInstanceParameters) DeepCopyInto(out *ManagementE
 		in, out := &in.ExternalAsmInstanceID, &out.ExternalAsmInstanceID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalAsmInstanceIDRef != nil {
+		in, out := &in.ExternalAsmInstanceIDRef, &out.ExternalAsmInstanceIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalAsmInstanceIDSelector != nil {
+		in, out := &in.ExternalAsmInstanceIDSelector, &out.ExternalAsmInstanceIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
@@ -58619,6 +62389,16 @@ func (in *ManagementExternalAsmParameters) DeepCopyInto(out *ManagementExternalA
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalAsmIDRef != nil {
+		in, out := &in.ExternalAsmIDRef, &out.ExternalAsmIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalAsmIDSelector != nil {
+		in, out := &in.ExternalAsmIDSelector, &out.ExternalAsmIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ExternalConnectorID != nil {
 		in, out := &in.ExternalConnectorID, &out.ExternalConnectorID
 		*out = new(string)
@@ -58829,6 +62609,16 @@ func (in *ManagementExternalClusterInitParameters) DeepCopyInto(out *ManagementE
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalClusterIDRef != nil {
+		in, out := &in.ExternalClusterIDRef, &out.ExternalClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalClusterIDSelector != nil {
+		in, out := &in.ExternalClusterIDSelector, &out.ExternalClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ExternalConnectorID != nil {
 		in, out := &in.ExternalConnectorID, &out.ExternalConnectorID
 		*out = new(string)
@@ -58912,6 +62702,16 @@ func (in *ManagementExternalClusterInstanceInitParameters) DeepCopyInto(out *Man
 		in, out := &in.ExternalClusterInstanceID, &out.ExternalClusterInstanceID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalClusterInstanceIDRef != nil {
+		in, out := &in.ExternalClusterInstanceIDRef, &out.ExternalClusterInstanceIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalClusterInstanceIDSelector != nil {
+		in, out := &in.ExternalClusterInstanceIDSelector, &out.ExternalClusterInstanceIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ExternalConnectorID != nil {
 		in, out := &in.ExternalConnectorID, &out.ExternalConnectorID
@@ -59149,6 +62949,16 @@ func (in *ManagementExternalClusterInstanceParameters) DeepCopyInto(out *Managem
 		in, out := &in.ExternalClusterInstanceID, &out.ExternalClusterInstanceID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalClusterInstanceIDRef != nil {
+		in, out := &in.ExternalClusterInstanceIDRef, &out.ExternalClusterInstanceIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalClusterInstanceIDSelector != nil {
+		in, out := &in.ExternalClusterInstanceIDSelector, &out.ExternalClusterInstanceIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ExternalConnectorID != nil {
 		in, out := &in.ExternalConnectorID, &out.ExternalConnectorID
@@ -59509,6 +63319,16 @@ func (in *ManagementExternalClusterParameters) DeepCopyInto(out *ManagementExter
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalClusterIDRef != nil {
+		in, out := &in.ExternalClusterIDRef, &out.ExternalClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalClusterIDSelector != nil {
+		in, out := &in.ExternalClusterIDSelector, &out.ExternalClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ExternalConnectorID != nil {
 		in, out := &in.ExternalConnectorID, &out.ExternalConnectorID
 		*out = new(string)
@@ -59753,6 +63573,16 @@ func (in *ManagementExternalDbHomeInitParameters) DeepCopyInto(out *ManagementEx
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalDBHomeIDRef != nil {
+		in, out := &in.ExternalDBHomeIDRef, &out.ExternalDBHomeIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDBHomeIDSelector != nil {
+		in, out := &in.ExternalDBHomeIDSelector, &out.ExternalDBHomeIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
 		*out = make(map[string]*string, len(*in))
@@ -59971,6 +63801,16 @@ func (in *ManagementExternalDbHomeParameters) DeepCopyInto(out *ManagementExtern
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalDBHomeIDRef != nil {
+		in, out := &in.ExternalDBHomeIDRef, &out.ExternalDBHomeIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDBHomeIDSelector != nil {
+		in, out := &in.ExternalDBHomeIDSelector, &out.ExternalDBHomeIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
 		*out = make(map[string]*string, len(*in))
@@ -60089,6 +63929,16 @@ func (in *ManagementExternalDbNodeInitParameters) DeepCopyInto(out *ManagementEx
 		in, out := &in.ExternalDBNodeID, &out.ExternalDBNodeID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalDBNodeIDRef != nil {
+		in, out := &in.ExternalDBNodeIDRef, &out.ExternalDBNodeIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDBNodeIDSelector != nil {
+		in, out := &in.ExternalDBNodeIDSelector, &out.ExternalDBNodeIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
@@ -60332,6 +64182,16 @@ func (in *ManagementExternalDbNodeParameters) DeepCopyInto(out *ManagementExtern
 		in, out := &in.ExternalDBNodeID, &out.ExternalDBNodeID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalDBNodeIDRef != nil {
+		in, out := &in.ExternalDBNodeIDRef, &out.ExternalDBNodeIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDBNodeIDSelector != nil {
+		in, out := &in.ExternalDBNodeIDSelector, &out.ExternalDBNodeIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
@@ -60883,6 +64743,16 @@ func (in *ManagementExternalDbSystemConnectorInitParameters) DeepCopyInto(out *M
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalDBSystemIDRef != nil {
+		in, out := &in.ExternalDBSystemIDRef, &out.ExternalDBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDBSystemIDSelector != nil {
+		in, out := &in.ExternalDBSystemIDSelector, &out.ExternalDBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
 		*out = make(map[string]*string, len(*in))
@@ -61124,6 +64994,16 @@ func (in *ManagementExternalDbSystemConnectorParameters) DeepCopyInto(out *Manag
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalDBSystemIDRef != nil {
+		in, out := &in.ExternalDBSystemIDRef, &out.ExternalDBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDBSystemIDSelector != nil {
+		in, out := &in.ExternalDBSystemIDSelector, &out.ExternalDBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
 		*out = make(map[string]*string, len(*in))
@@ -61287,6 +65167,16 @@ func (in *ManagementExternalDbSystemDatabaseManagementsManagementInitParameters)
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalDBSystemIDRef != nil {
+		in, out := &in.ExternalDBSystemIDRef, &out.ExternalDBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDBSystemIDSelector != nil {
+		in, out := &in.ExternalDBSystemIDSelector, &out.ExternalDBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.LicenseModel != nil {
 		in, out := &in.LicenseModel, &out.LicenseModel
 		*out = new(string)
@@ -61383,6 +65273,16 @@ func (in *ManagementExternalDbSystemDatabaseManagementsManagementParameters) Dee
 		in, out := &in.ExternalDBSystemID, &out.ExternalDBSystemID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalDBSystemIDRef != nil {
+		in, out := &in.ExternalDBSystemIDRef, &out.ExternalDBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDBSystemIDSelector != nil {
+		in, out := &in.ExternalDBSystemIDSelector, &out.ExternalDBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.LicenseModel != nil {
 		in, out := &in.LicenseModel, &out.LicenseModel
@@ -62290,6 +66190,16 @@ func (in *ManagementExternalDbSystemDiscoveryInitParameters) DeepCopyInto(out *M
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -62523,6 +66433,16 @@ func (in *ManagementExternalDbSystemDiscoveryParameters) DeepCopyInto(out *Manag
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -62717,6 +66637,16 @@ func (in *ManagementExternalDbSystemInitParameters) DeepCopyInto(out *Management
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DBSystemDiscoveryID != nil {
 		in, out := &in.DBSystemDiscoveryID, &out.DBSystemDiscoveryID
@@ -62958,6 +66888,16 @@ func (in *ManagementExternalDbSystemParameters) DeepCopyInto(out *ManagementExte
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DBSystemDiscoveryID != nil {
 		in, out := &in.DBSystemDiscoveryID, &out.DBSystemDiscoveryID
 		*out = new(string)
@@ -63159,6 +67099,16 @@ func (in *ManagementExternalDbSystemStackMonitoringsManagementInitParameters) De
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalDBSystemIDRef != nil {
+		in, out := &in.ExternalDBSystemIDRef, &out.ExternalDBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDBSystemIDSelector != nil {
+		in, out := &in.ExternalDBSystemIDSelector, &out.ExternalDBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.IsEnabled != nil {
 		in, out := &in.IsEnabled, &out.IsEnabled
 		*out = new(bool)
@@ -63265,6 +67215,16 @@ func (in *ManagementExternalDbSystemStackMonitoringsManagementParameters) DeepCo
 		in, out := &in.ExternalDBSystemID, &out.ExternalDBSystemID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalDBSystemIDRef != nil {
+		in, out := &in.ExternalDBSystemIDRef, &out.ExternalDBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalDBSystemIDSelector != nil {
+		in, out := &in.ExternalDBSystemIDSelector, &out.ExternalDBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.IsEnabled != nil {
 		in, out := &in.IsEnabled, &out.IsEnabled
@@ -63407,6 +67367,16 @@ func (in *ManagementExternalExadataInfrastructureExadataManagementInitParameters
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalExadataInfrastructureIDRef != nil {
+		in, out := &in.ExternalExadataInfrastructureIDRef, &out.ExternalExadataInfrastructureIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalExadataInfrastructureIDSelector != nil {
+		in, out := &in.ExternalExadataInfrastructureIDSelector, &out.ExternalExadataInfrastructureIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.LicenseModel != nil {
 		in, out := &in.LicenseModel, &out.LicenseModel
 		*out = new(string)
@@ -63504,6 +67474,16 @@ func (in *ManagementExternalExadataInfrastructureExadataManagementParameters) De
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalExadataInfrastructureIDRef != nil {
+		in, out := &in.ExternalExadataInfrastructureIDRef, &out.ExternalExadataInfrastructureIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalExadataInfrastructureIDSelector != nil {
+		in, out := &in.ExternalExadataInfrastructureIDSelector, &out.ExternalExadataInfrastructureIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.LicenseModel != nil {
 		in, out := &in.LicenseModel, &out.LicenseModel
 		*out = new(string)
@@ -63563,6 +67543,16 @@ func (in *ManagementExternalExadataInfrastructureInitParameters) DeepCopyInto(ou
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DBSystemIds != nil {
 		in, out := &in.DBSystemIds, &out.DBSystemIds
@@ -63875,6 +67865,16 @@ func (in *ManagementExternalExadataInfrastructureParameters) DeepCopyInto(out *M
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DBSystemIds != nil {
 		in, out := &in.DBSystemIds, &out.DBSystemIds
@@ -64441,6 +68441,16 @@ func (in *ManagementExternalExadataStorageGridInitParameters) DeepCopyInto(out *
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalExadataStorageGridIDRef != nil {
+		in, out := &in.ExternalExadataStorageGridIDRef, &out.ExternalExadataStorageGridIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalExadataStorageGridIDSelector != nil {
+		in, out := &in.ExternalExadataStorageGridIDSelector, &out.ExternalExadataStorageGridIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
 		*out = make(map[string]*string, len(*in))
@@ -64675,6 +68685,16 @@ func (in *ManagementExternalExadataStorageGridParameters) DeepCopyInto(out *Mana
 		in, out := &in.ExternalExadataStorageGridID, &out.ExternalExadataStorageGridID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalExadataStorageGridIDRef != nil {
+		in, out := &in.ExternalExadataStorageGridIDRef, &out.ExternalExadataStorageGridIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalExadataStorageGridIDSelector != nil {
+		in, out := &in.ExternalExadataStorageGridIDSelector, &out.ExternalExadataStorageGridIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
@@ -64964,6 +68984,16 @@ func (in *ManagementExternalExadataStorageServerInitParameters) DeepCopyInto(out
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalExadataStorageServerIDRef != nil {
+		in, out := &in.ExternalExadataStorageServerIDRef, &out.ExternalExadataStorageServerIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalExadataStorageServerIDSelector != nil {
+		in, out := &in.ExternalExadataStorageServerIDSelector, &out.ExternalExadataStorageServerIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
 		*out = make(map[string]*string, len(*in))
@@ -65239,6 +69269,16 @@ func (in *ManagementExternalExadataStorageServerParameters) DeepCopyInto(out *Ma
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalExadataStorageServerIDRef != nil {
+		in, out := &in.ExternalExadataStorageServerIDRef, &out.ExternalExadataStorageServerIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalExadataStorageServerIDSelector != nil {
+		in, out := &in.ExternalExadataStorageServerIDSelector, &out.ExternalExadataStorageServerIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
 		*out = make(map[string]*string, len(*in))
@@ -65433,6 +69473,16 @@ func (in *ManagementExternalListenerInitParameters) DeepCopyInto(out *Management
 		in, out := &in.ExternalListenerID, &out.ExternalListenerID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalListenerIDRef != nil {
+		in, out := &in.ExternalListenerIDRef, &out.ExternalListenerIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalListenerIDSelector != nil {
+		in, out := &in.ExternalListenerIDSelector, &out.ExternalListenerIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
@@ -65732,6 +69782,16 @@ func (in *ManagementExternalListenerParameters) DeepCopyInto(out *ManagementExte
 		in, out := &in.ExternalListenerID, &out.ExternalListenerID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalListenerIDRef != nil {
+		in, out := &in.ExternalListenerIDRef, &out.ExternalListenerIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalListenerIDSelector != nil {
+		in, out := &in.ExternalListenerIDSelector, &out.ExternalListenerIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
@@ -66033,6 +70093,16 @@ func (in *ManagementExternalMySqlDatabaseConnectorConnectorDetailsInitParameters
 		*out = new(string)
 		**out = **in
 	}
+	if in.SSLSecretIDRef != nil {
+		in, out := &in.SSLSecretIDRef, &out.SSLSecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SSLSecretIDSelector != nil {
+		in, out := &in.SSLSecretIDSelector, &out.SSLSecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new ManagementExternalMySqlDatabaseConnectorConnectorDetailsInitParameters.
@@ -66143,6 +70213,16 @@ func (in *ManagementExternalMySqlDatabaseConnectorConnectorDetailsParameters) De
 		*out = new(string)
 		**out = **in
 	}
+	if in.SSLSecretIDRef != nil {
+		in, out := &in.SSLSecretIDRef, &out.SSLSecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SSLSecretIDSelector != nil {
+		in, out := &in.SSLSecretIDSelector, &out.SSLSecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new ManagementExternalMySqlDatabaseConnectorConnectorDetailsParameters.
@@ -66167,6 +70247,16 @@ func (in *ManagementExternalMySqlDatabaseConnectorInitParameters) DeepCopyInto(o
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ConnectorDetails != nil {
 		in, out := &in.ConnectorDetails, &out.ConnectorDetails
@@ -66369,6 +70459,16 @@ func (in *ManagementExternalMySqlDatabaseConnectorParameters) DeepCopyInto(out *
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ConnectorDetails != nil {
 		in, out := &in.ConnectorDetails, &out.ConnectorDetails
 		*out = make([]ManagementExternalMySqlDatabaseConnectorConnectorDetailsParameters, len(*in))
@@ -66473,6 +70573,16 @@ func (in *ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagementInitPar
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalMySQLDatabaseIDRef != nil {
+		in, out := &in.ExternalMySQLDatabaseIDRef, &out.ExternalMySQLDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalMySQLDatabaseIDSelector != nil {
+		in, out := &in.ExternalMySQLDatabaseIDSelector, &out.ExternalMySQLDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagementInitParameters.
@@ -66570,6 +70680,16 @@ func (in *ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagementParamet
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalMySQLDatabaseIDRef != nil {
+		in, out := &in.ExternalMySQLDatabaseIDRef, &out.ExternalMySQLDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalMySQLDatabaseIDSelector != nil {
+		in, out := &in.ExternalMySQLDatabaseIDSelector, &out.ExternalMySQLDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagementParameters.
@@ -66624,6 +70744,16 @@ func (in *ManagementExternalMySqlDatabaseInitParameters) DeepCopyInto(out *Manag
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DBName != nil {
 		in, out := &in.DBName, &out.DBName
@@ -66716,6 +70846,16 @@ func (in *ManagementExternalMySqlDatabaseParameters) DeepCopyInto(out *Managemen
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DBName != nil {
 		in, out := &in.DBName, &out.DBName
@@ -67045,6 +71185,16 @@ func (in *ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagem
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalContainerDatabaseIDRef != nil {
+		in, out := &in.ExternalContainerDatabaseIDRef, &out.ExternalContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalContainerDatabaseIDSelector != nil {
+		in, out := &in.ExternalContainerDatabaseIDSelector, &out.ExternalContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.Feature != nil {
 		in, out := &in.Feature, &out.Feature
 		*out = new(string)
@@ -67165,6 +71315,16 @@ func (in *ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagem
 		in, out := &in.ExternalContainerDatabaseID, &out.ExternalContainerDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalContainerDatabaseIDRef != nil {
+		in, out := &in.ExternalContainerDatabaseIDRef, &out.ExternalContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalContainerDatabaseIDSelector != nil {
+		in, out := &in.ExternalContainerDatabaseIDSelector, &out.ExternalContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Feature != nil {
 		in, out := &in.Feature, &out.Feature
@@ -67496,6 +71656,16 @@ func (in *ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesM
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalNonContainerDatabaseIDRef != nil {
+		in, out := &in.ExternalNonContainerDatabaseIDRef, &out.ExternalNonContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalNonContainerDatabaseIDSelector != nil {
+		in, out := &in.ExternalNonContainerDatabaseIDSelector, &out.ExternalNonContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.FeatureDetails != nil {
 		in, out := &in.FeatureDetails, &out.FeatureDetails
 		*out = make([]ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsInitParameters, len(*in))
@@ -67596,6 +71766,16 @@ func (in *ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesM
 		in, out := &in.ExternalNonContainerDatabaseID, &out.ExternalNonContainerDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalNonContainerDatabaseIDRef != nil {
+		in, out := &in.ExternalNonContainerDatabaseIDRef, &out.ExternalNonContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalNonContainerDatabaseIDSelector != nil {
+		in, out := &in.ExternalNonContainerDatabaseIDSelector, &out.ExternalNonContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FeatureDetails != nil {
 		in, out := &in.FeatureDetails, &out.FeatureDetails
@@ -67877,6 +72057,16 @@ func (in *ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagem
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExternalPluggableDatabaseIDRef != nil {
+		in, out := &in.ExternalPluggableDatabaseIDRef, &out.ExternalPluggableDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalPluggableDatabaseIDSelector != nil {
+		in, out := &in.ExternalPluggableDatabaseIDSelector, &out.ExternalPluggableDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.Feature != nil {
 		in, out := &in.Feature, &out.Feature
 		*out = new(string)
@@ -67987,6 +72177,16 @@ func (in *ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagem
 		in, out := &in.ExternalPluggableDatabaseID, &out.ExternalPluggableDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExternalPluggableDatabaseIDRef != nil {
+		in, out := &in.ExternalPluggableDatabaseIDRef, &out.ExternalPluggableDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExternalPluggableDatabaseIDSelector != nil {
+		in, out := &in.ExternalPluggableDatabaseIDSelector, &out.ExternalPluggableDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Feature != nil {
 		in, out := &in.Feature, &out.Feature
@@ -68108,6 +72308,16 @@ func (in *ManagementManagedDatabaseGroupInitParameters) DeepCopyInto(out *Manage
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -68315,6 +72525,16 @@ func (in *ManagementManagedDatabaseGroupParameters) DeepCopyInto(out *Management
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -68450,6 +72670,16 @@ func (in *ManagementManagedDatabaseInitParameters) DeepCopyInto(out *ManagementM
 		in, out := &in.ManagedDatabaseID, &out.ManagedDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ManagedDatabaseIDRef != nil {
+		in, out := &in.ManagedDatabaseIDRef, &out.ManagedDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ManagedDatabaseIDSelector != nil {
+		in, out := &in.ManagedDatabaseIDSelector, &out.ManagedDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -68713,6 +72943,16 @@ func (in *ManagementManagedDatabaseParameters) DeepCopyInto(out *ManagementManag
 		*out = new(string)
 		**out = **in
 	}
+	if in.ManagedDatabaseIDRef != nil {
+		in, out := &in.ManagedDatabaseIDRef, &out.ManagedDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ManagedDatabaseIDSelector != nil {
+		in, out := &in.ManagedDatabaseIDSelector, &out.ManagedDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new ManagementManagedDatabaseParameters.
@@ -68800,6 +73040,16 @@ func (in *ManagementManagedDatabasesChangeDatabaseParameterDatabaseCredentialIni
 		*out = new(string)
 		**out = **in
 	}
+	if in.NamedCredentialIDRef != nil {
+		in, out := &in.NamedCredentialIDRef, &out.NamedCredentialIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.NamedCredentialIDSelector != nil {
+		in, out := &in.NamedCredentialIDSelector, &out.NamedCredentialIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PasswordSecretIDSecretRef != nil {
 		in, out := &in.PasswordSecretIDSecretRef, &out.PasswordSecretIDSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -68880,6 +73130,16 @@ func (in *ManagementManagedDatabasesChangeDatabaseParameterDatabaseCredentialPar
 		*out = new(string)
 		**out = **in
 	}
+	if in.NamedCredentialIDRef != nil {
+		in, out := &in.NamedCredentialIDRef, &out.NamedCredentialIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.NamedCredentialIDSelector != nil {
+		in, out := &in.NamedCredentialIDSelector, &out.NamedCredentialIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PasswordSecretIDSecretRef != nil {
 		in, out := &in.PasswordSecretIDSecretRef, &out.PasswordSecretIDSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -68933,6 +73193,16 @@ func (in *ManagementManagedDatabasesChangeDatabaseParameterInitParameters) DeepC
 		in, out := &in.ManagedDatabaseID, &out.ManagedDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ManagedDatabaseIDRef != nil {
+		in, out := &in.ManagedDatabaseIDRef, &out.ManagedDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ManagedDatabaseIDSelector != nil {
+		in, out := &in.ManagedDatabaseIDSelector, &out.ManagedDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Parameters != nil {
 		in, out := &in.Parameters, &out.Parameters
@@ -69063,6 +73333,16 @@ func (in *ManagementManagedDatabasesChangeDatabaseParameterParameters) DeepCopyI
 		*out = new(string)
 		**out = **in
 	}
+	if in.ManagedDatabaseIDRef != nil {
+		in, out := &in.ManagedDatabaseIDRef, &out.ManagedDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ManagedDatabaseIDSelector != nil {
+		in, out := &in.ManagedDatabaseIDSelector, &out.ManagedDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.Parameters != nil {
 		in, out := &in.Parameters, &out.Parameters
 		*out = make([]ParametersParameters, len(*in))
@@ -69167,10 +73447,30 @@ func (in *ManagementManagedDatabasesResetDatabaseParameterCredentialsInitParamet
 		*out = new(string)
 		**out = **in
 	}
+	if in.SecretIDRef != nil {
+		in, out := &in.SecretIDRef, &out.SecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SecretIDSelector != nil {
+		in, out := &in.SecretIDSelector, &out.SecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.UserName != nil {
 		in, out := &in.UserName, &out.UserName
 		*out = new(string)
 		**out = **in
+	}
+	if in.UserNameRef != nil {
+		in, out := &in.UserNameRef, &out.UserNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.UserNameSelector != nil {
+		in, out := &in.UserNameSelector, &out.UserNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -69232,10 +73532,30 @@ func (in *ManagementManagedDatabasesResetDatabaseParameterCredentialsParameters)
 		*out = new(string)
 		**out = **in
 	}
+	if in.SecretIDRef != nil {
+		in, out := &in.SecretIDRef, &out.SecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SecretIDSelector != nil {
+		in, out := &in.SecretIDSelector, &out.SecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.UserName != nil {
 		in, out := &in.UserName, &out.UserName
 		*out = new(string)
 		**out = **in
+	}
+	if in.UserNameRef != nil {
+		in, out := &in.UserNameRef, &out.UserNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.UserNameSelector != nil {
+		in, out := &in.UserNameSelector, &out.UserNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -69261,6 +73581,16 @@ func (in *ManagementManagedDatabasesResetDatabaseParameterDatabaseCredentialInit
 		in, out := &in.NamedCredentialID, &out.NamedCredentialID
 		*out = new(string)
 		**out = **in
+	}
+	if in.NamedCredentialIDRef != nil {
+		in, out := &in.NamedCredentialIDRef, &out.NamedCredentialIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.NamedCredentialIDSelector != nil {
+		in, out := &in.NamedCredentialIDSelector, &out.NamedCredentialIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.PasswordSecretIDSecretRef != nil {
 		in, out := &in.PasswordSecretIDSecretRef, &out.PasswordSecretIDSecretRef
@@ -69342,6 +73672,16 @@ func (in *ManagementManagedDatabasesResetDatabaseParameterDatabaseCredentialPara
 		*out = new(string)
 		**out = **in
 	}
+	if in.NamedCredentialIDRef != nil {
+		in, out := &in.NamedCredentialIDRef, &out.NamedCredentialIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.NamedCredentialIDSelector != nil {
+		in, out := &in.NamedCredentialIDSelector, &out.NamedCredentialIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PasswordSecretIDSecretRef != nil {
 		in, out := &in.PasswordSecretIDSecretRef, &out.PasswordSecretIDSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -69395,6 +73735,16 @@ func (in *ManagementManagedDatabasesResetDatabaseParameterInitParameters) DeepCo
 		in, out := &in.ManagedDatabaseID, &out.ManagedDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ManagedDatabaseIDRef != nil {
+		in, out := &in.ManagedDatabaseIDRef, &out.ManagedDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ManagedDatabaseIDSelector != nil {
+		in, out := &in.ManagedDatabaseIDSelector, &out.ManagedDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Parameters != nil {
 		in, out := &in.Parameters, &out.Parameters
@@ -69533,6 +73883,16 @@ func (in *ManagementManagedDatabasesResetDatabaseParameterParameters) DeepCopyIn
 		*out = new(string)
 		**out = **in
 	}
+	if in.ManagedDatabaseIDRef != nil {
+		in, out := &in.ManagedDatabaseIDRef, &out.ManagedDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ManagedDatabaseIDSelector != nil {
+		in, out := &in.ManagedDatabaseIDSelector, &out.ManagedDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.Parameters != nil {
 		in, out := &in.Parameters, &out.Parameters
 		*out = make([]*string, len(*in))
@@ -69635,6 +73995,16 @@ func (in *ManagementNamedCredentialInitParameters) DeepCopyInto(out *ManagementN
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Content != nil {
 		in, out := &in.Content, &out.Content
@@ -69876,6 +74246,16 @@ func (in *ManagementNamedCredentialParameters) DeepCopyInto(out *ManagementNamed
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Content != nil {
 		in, out := &in.Content, &out.Content
@@ -70133,6 +74513,16 @@ func (in *ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatu
 		*out = new(string)
 		**out = **in
 	}
+	if in.NamedCredentialIDRef != nil {
+		in, out := &in.NamedCredentialIDRef, &out.NamedCredentialIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.NamedCredentialIDSelector != nil {
+		in, out := &in.NamedCredentialIDSelector, &out.NamedCredentialIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PasswordSecretIDSecretRef != nil {
 		in, out := &in.PasswordSecretIDSecretRef, &out.PasswordSecretIDSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -70148,10 +74538,30 @@ func (in *ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatu
 		*out = new(string)
 		**out = **in
 	}
+	if in.SSLSecretIDRef != nil {
+		in, out := &in.SSLSecretIDRef, &out.SSLSecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SSLSecretIDSelector != nil {
+		in, out := &in.SSLSecretIDSelector, &out.SSLSecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.UserName != nil {
 		in, out := &in.UserName, &out.UserName
 		*out = new(string)
 		**out = **in
+	}
+	if in.UserNameRef != nil {
+		in, out := &in.UserNameRef, &out.UserNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.UserNameSelector != nil {
+		in, out := &in.UserNameSelector, &out.UserNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -70228,6 +74638,16 @@ func (in *ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatu
 		*out = new(string)
 		**out = **in
 	}
+	if in.NamedCredentialIDRef != nil {
+		in, out := &in.NamedCredentialIDRef, &out.NamedCredentialIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.NamedCredentialIDSelector != nil {
+		in, out := &in.NamedCredentialIDSelector, &out.NamedCredentialIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.PasswordSecretIDSecretRef != nil {
 		in, out := &in.PasswordSecretIDSecretRef, &out.PasswordSecretIDSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -70243,10 +74663,30 @@ func (in *ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatu
 		*out = new(string)
 		**out = **in
 	}
+	if in.SSLSecretIDRef != nil {
+		in, out := &in.SSLSecretIDRef, &out.SSLSecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SSLSecretIDSelector != nil {
+		in, out := &in.SSLSecretIDSelector, &out.SSLSecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.UserName != nil {
 		in, out := &in.UserName, &out.UserName
 		*out = new(string)
 		**out = **in
+	}
+	if in.UserNameRef != nil {
+		in, out := &in.UserNameRef, &out.UserNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.UserNameSelector != nil {
+		in, out := &in.UserNameSelector, &out.UserNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -70629,6 +75069,16 @@ func (in *ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagementInitP
 		*out = new(string)
 		**out = **in
 	}
+	if in.PluggableDatabaseIDRef != nil {
+		in, out := &in.PluggableDatabaseIDRef, &out.PluggableDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PluggableDatabaseIDSelector != nil {
+		in, out := &in.PluggableDatabaseIDSelector, &out.PluggableDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagementInitParameters.
@@ -70749,6 +75199,16 @@ func (in *ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagementParam
 		in, out := &in.PluggableDatabaseID, &out.PluggableDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.PluggableDatabaseIDRef != nil {
+		in, out := &in.PluggableDatabaseIDRef, &out.PluggableDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PluggableDatabaseIDSelector != nil {
+		in, out := &in.PluggableDatabaseIDSelector, &out.PluggableDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -71076,6 +75536,16 @@ func (in *MigrationConnectionInitParameters) DeepCopyInto(out *MigrationConnecti
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ConnectionString != nil {
 		in, out := &in.ConnectionString, &out.ConnectionString
 		*out = new(string)
@@ -71091,15 +75561,45 @@ func (in *MigrationConnectionInitParameters) DeepCopyInto(out *MigrationConnecti
 		*out = new(string)
 		**out = **in
 	}
+	if in.DBSystemIDRef != nil {
+		in, out := &in.DBSystemIDRef, &out.DBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DBSystemIDSelector != nil {
+		in, out := &in.DBSystemIDSelector, &out.DBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DatabaseID != nil {
 		in, out := &in.DatabaseID, &out.DatabaseID
 		*out = new(string)
 		**out = **in
 	}
+	if in.DatabaseIDRef != nil {
+		in, out := &in.DatabaseIDRef, &out.DatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseIDSelector != nil {
+		in, out := &in.DatabaseIDSelector, &out.DatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DatabaseName != nil {
 		in, out := &in.DatabaseName, &out.DatabaseName
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseNameRef != nil {
+		in, out := &in.DatabaseNameRef, &out.DatabaseNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseNameSelector != nil {
+		in, out := &in.DatabaseNameSelector, &out.DatabaseNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -71152,6 +75652,16 @@ func (in *MigrationConnectionInitParameters) DeepCopyInto(out *MigrationConnecti
 		in, out := &in.KeyID, &out.KeyID
 		*out = new(string)
 		**out = **in
+	}
+	if in.KeyIDRef != nil {
+		in, out := &in.KeyIDRef, &out.KeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KeyIDSelector != nil {
+		in, out := &in.KeyIDSelector, &out.KeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.NsgIds != nil {
 		in, out := &in.NsgIds, &out.NsgIds
@@ -71235,6 +75745,16 @@ func (in *MigrationConnectionInitParameters) DeepCopyInto(out *MigrationConnecti
 		*out = new(string)
 		**out = **in
 	}
+	if in.SubnetIDRef != nil {
+		in, out := &in.SubnetIDRef, &out.SubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SubnetIDSelector != nil {
+		in, out := &in.SubnetIDSelector, &out.SubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.TechnologyType != nil {
 		in, out := &in.TechnologyType, &out.TechnologyType
 		*out = new(string)
@@ -71249,6 +75769,16 @@ func (in *MigrationConnectionInitParameters) DeepCopyInto(out *MigrationConnecti
 		in, out := &in.VaultID, &out.VaultID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VaultIDRef != nil {
+		in, out := &in.VaultIDRef, &out.VaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VaultIDSelector != nil {
+		in, out := &in.VaultIDSelector, &out.VaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Wallet != nil {
 		in, out := &in.Wallet, &out.Wallet
@@ -71572,6 +76102,16 @@ func (in *MigrationConnectionParameters) DeepCopyInto(out *MigrationConnectionPa
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ConnectionString != nil {
 		in, out := &in.ConnectionString, &out.ConnectionString
 		*out = new(string)
@@ -71587,15 +76127,45 @@ func (in *MigrationConnectionParameters) DeepCopyInto(out *MigrationConnectionPa
 		*out = new(string)
 		**out = **in
 	}
+	if in.DBSystemIDRef != nil {
+		in, out := &in.DBSystemIDRef, &out.DBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DBSystemIDSelector != nil {
+		in, out := &in.DBSystemIDSelector, &out.DBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DatabaseID != nil {
 		in, out := &in.DatabaseID, &out.DatabaseID
 		*out = new(string)
 		**out = **in
 	}
+	if in.DatabaseIDRef != nil {
+		in, out := &in.DatabaseIDRef, &out.DatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseIDSelector != nil {
+		in, out := &in.DatabaseIDSelector, &out.DatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DatabaseName != nil {
 		in, out := &in.DatabaseName, &out.DatabaseName
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseNameRef != nil {
+		in, out := &in.DatabaseNameRef, &out.DatabaseNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseNameSelector != nil {
+		in, out := &in.DatabaseNameSelector, &out.DatabaseNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -71648,6 +76218,16 @@ func (in *MigrationConnectionParameters) DeepCopyInto(out *MigrationConnectionPa
 		in, out := &in.KeyID, &out.KeyID
 		*out = new(string)
 		**out = **in
+	}
+	if in.KeyIDRef != nil {
+		in, out := &in.KeyIDRef, &out.KeyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KeyIDSelector != nil {
+		in, out := &in.KeyIDSelector, &out.KeyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.NsgIds != nil {
 		in, out := &in.NsgIds, &out.NsgIds
@@ -71731,6 +76311,16 @@ func (in *MigrationConnectionParameters) DeepCopyInto(out *MigrationConnectionPa
 		*out = new(string)
 		**out = **in
 	}
+	if in.SubnetIDRef != nil {
+		in, out := &in.SubnetIDRef, &out.SubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SubnetIDSelector != nil {
+		in, out := &in.SubnetIDSelector, &out.SubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.TechnologyType != nil {
 		in, out := &in.TechnologyType, &out.TechnologyType
 		*out = new(string)
@@ -71745,6 +76335,16 @@ func (in *MigrationConnectionParameters) DeepCopyInto(out *MigrationConnectionPa
 		in, out := &in.VaultID, &out.VaultID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VaultIDRef != nil {
+		in, out := &in.VaultIDRef, &out.VaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VaultIDSelector != nil {
+		in, out := &in.VaultIDSelector, &out.VaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Wallet != nil {
 		in, out := &in.Wallet, &out.Wallet
@@ -71805,6 +76405,16 @@ func (in *MigrationInitParameters) DeepCopyInto(out *MigrationInitParameters) {
 		in, out := &in.DBSystemID, &out.DBSystemID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DBSystemIDRef != nil {
+		in, out := &in.DBSystemIDRef, &out.DBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DBSystemIDSelector != nil {
+		in, out := &in.DBSystemIDSelector, &out.DBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -71889,6 +76499,16 @@ func (in *MigrationJobInitParameters) DeepCopyInto(out *MigrationJobInitParamete
 		in, out := &in.JobID, &out.JobID
 		*out = new(string)
 		**out = **in
+	}
+	if in.JobIDRef != nil {
+		in, out := &in.JobIDRef, &out.JobIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.JobIDSelector != nil {
+		in, out := &in.JobIDSelector, &out.JobIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.SuspendTrigger != nil {
 		in, out := &in.SuspendTrigger, &out.SuspendTrigger
@@ -72125,6 +76745,16 @@ func (in *MigrationJobParameters) DeepCopyInto(out *MigrationJobParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.JobIDRef != nil {
+		in, out := &in.JobIDRef, &out.JobIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.JobIDSelector != nil {
+		in, out := &in.JobIDSelector, &out.JobIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.SuspendTrigger != nil {
 		in, out := &in.SuspendTrigger, &out.SuspendTrigger
 		*out = new(float64)
@@ -72263,6 +76893,16 @@ func (in *MigrationMigrationInitParameters) DeepCopyInto(out *MigrationMigration
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DataTransferMediumDetails != nil {
 		in, out := &in.DataTransferMediumDetails, &out.DataTransferMediumDetails
 		*out = make([]DataTransferMediumDetailsInitParameters, len(*in))
@@ -72357,20 +76997,60 @@ func (in *MigrationMigrationInitParameters) DeepCopyInto(out *MigrationMigration
 		*out = new(string)
 		**out = **in
 	}
+	if in.SourceContainerDatabaseConnectionIDRef != nil {
+		in, out := &in.SourceContainerDatabaseConnectionIDRef, &out.SourceContainerDatabaseConnectionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SourceContainerDatabaseConnectionIDSelector != nil {
+		in, out := &in.SourceContainerDatabaseConnectionIDSelector, &out.SourceContainerDatabaseConnectionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.SourceDatabaseConnectionID != nil {
 		in, out := &in.SourceDatabaseConnectionID, &out.SourceDatabaseConnectionID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SourceDatabaseConnectionIDRef != nil {
+		in, out := &in.SourceDatabaseConnectionIDRef, &out.SourceDatabaseConnectionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SourceDatabaseConnectionIDSelector != nil {
+		in, out := &in.SourceDatabaseConnectionIDSelector, &out.SourceDatabaseConnectionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.SourceStandbyDatabaseConnectionID != nil {
 		in, out := &in.SourceStandbyDatabaseConnectionID, &out.SourceStandbyDatabaseConnectionID
 		*out = new(string)
 		**out = **in
 	}
+	if in.SourceStandbyDatabaseConnectionIDRef != nil {
+		in, out := &in.SourceStandbyDatabaseConnectionIDRef, &out.SourceStandbyDatabaseConnectionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SourceStandbyDatabaseConnectionIDSelector != nil {
+		in, out := &in.SourceStandbyDatabaseConnectionIDSelector, &out.SourceStandbyDatabaseConnectionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.TargetDatabaseConnectionID != nil {
 		in, out := &in.TargetDatabaseConnectionID, &out.TargetDatabaseConnectionID
 		*out = new(string)
 		**out = **in
+	}
+	if in.TargetDatabaseConnectionIDRef != nil {
+		in, out := &in.TargetDatabaseConnectionIDRef, &out.TargetDatabaseConnectionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.TargetDatabaseConnectionIDSelector != nil {
+		in, out := &in.TargetDatabaseConnectionIDSelector, &out.TargetDatabaseConnectionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
@@ -72657,6 +77337,16 @@ func (in *MigrationMigrationParameters) DeepCopyInto(out *MigrationMigrationPara
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DataTransferMediumDetails != nil {
 		in, out := &in.DataTransferMediumDetails, &out.DataTransferMediumDetails
 		*out = make([]DataTransferMediumDetailsParameters, len(*in))
@@ -72751,20 +77441,60 @@ func (in *MigrationMigrationParameters) DeepCopyInto(out *MigrationMigrationPara
 		*out = new(string)
 		**out = **in
 	}
+	if in.SourceContainerDatabaseConnectionIDRef != nil {
+		in, out := &in.SourceContainerDatabaseConnectionIDRef, &out.SourceContainerDatabaseConnectionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SourceContainerDatabaseConnectionIDSelector != nil {
+		in, out := &in.SourceContainerDatabaseConnectionIDSelector, &out.SourceContainerDatabaseConnectionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.SourceDatabaseConnectionID != nil {
 		in, out := &in.SourceDatabaseConnectionID, &out.SourceDatabaseConnectionID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SourceDatabaseConnectionIDRef != nil {
+		in, out := &in.SourceDatabaseConnectionIDRef, &out.SourceDatabaseConnectionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SourceDatabaseConnectionIDSelector != nil {
+		in, out := &in.SourceDatabaseConnectionIDSelector, &out.SourceDatabaseConnectionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.SourceStandbyDatabaseConnectionID != nil {
 		in, out := &in.SourceStandbyDatabaseConnectionID, &out.SourceStandbyDatabaseConnectionID
 		*out = new(string)
 		**out = **in
 	}
+	if in.SourceStandbyDatabaseConnectionIDRef != nil {
+		in, out := &in.SourceStandbyDatabaseConnectionIDRef, &out.SourceStandbyDatabaseConnectionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SourceStandbyDatabaseConnectionIDSelector != nil {
+		in, out := &in.SourceStandbyDatabaseConnectionIDSelector, &out.SourceStandbyDatabaseConnectionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.TargetDatabaseConnectionID != nil {
 		in, out := &in.TargetDatabaseConnectionID, &out.TargetDatabaseConnectionID
 		*out = new(string)
 		**out = **in
+	}
+	if in.TargetDatabaseConnectionIDRef != nil {
+		in, out := &in.TargetDatabaseConnectionIDRef, &out.TargetDatabaseConnectionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.TargetDatabaseConnectionIDSelector != nil {
+		in, out := &in.TargetDatabaseConnectionIDSelector, &out.TargetDatabaseConnectionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
@@ -72867,6 +77597,16 @@ func (in *MigrationParameters) DeepCopyInto(out *MigrationParameters) {
 		in, out := &in.DBSystemID, &out.DBSystemID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DBSystemIDRef != nil {
+		in, out := &in.DBSystemIDRef, &out.DBSystemIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DBSystemIDSelector != nil {
+		in, out := &in.DBSystemIDSelector, &out.DBSystemIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -73773,6 +78513,16 @@ func (in *OneoffPatchInitParameters) DeepCopyInto(out *OneoffPatchInitParameters
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DBVersion != nil {
 		in, out := &in.DBVersion, &out.DBVersion
 		*out = new(string)
@@ -74026,6 +78776,16 @@ func (in *OneoffPatchParameters) DeepCopyInto(out *OneoffPatchParameters) {
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DBVersion != nil {
 		in, out := &in.DBVersion, &out.DBVersion
@@ -75138,10 +79898,30 @@ func (in *PdbCreationTypeDetailsInitParameters) DeepCopyInto(out *PdbCreationTyp
 		*out = new(string)
 		**out = **in
 	}
+	if in.SourcePluggableDatabaseIDRef != nil {
+		in, out := &in.SourcePluggableDatabaseIDRef, &out.SourcePluggableDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SourcePluggableDatabaseIDSelector != nil {
+		in, out := &in.SourcePluggableDatabaseIDSelector, &out.SourcePluggableDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.SourcePluggableDatabaseSnapshotID != nil {
 		in, out := &in.SourcePluggableDatabaseSnapshotID, &out.SourcePluggableDatabaseSnapshotID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SourcePluggableDatabaseSnapshotIDRef != nil {
+		in, out := &in.SourcePluggableDatabaseSnapshotIDRef, &out.SourcePluggableDatabaseSnapshotIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SourcePluggableDatabaseSnapshotIDSelector != nil {
+		in, out := &in.SourcePluggableDatabaseSnapshotIDSelector, &out.SourcePluggableDatabaseSnapshotIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -75242,10 +80022,30 @@ func (in *PdbCreationTypeDetailsParameters) DeepCopyInto(out *PdbCreationTypeDet
 		*out = new(string)
 		**out = **in
 	}
+	if in.SourcePluggableDatabaseIDRef != nil {
+		in, out := &in.SourcePluggableDatabaseIDRef, &out.SourcePluggableDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SourcePluggableDatabaseIDSelector != nil {
+		in, out := &in.SourcePluggableDatabaseIDSelector, &out.SourcePluggableDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.SourcePluggableDatabaseSnapshotID != nil {
 		in, out := &in.SourcePluggableDatabaseSnapshotID, &out.SourcePluggableDatabaseSnapshotID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SourcePluggableDatabaseSnapshotIDRef != nil {
+		in, out := &in.SourcePluggableDatabaseSnapshotIDRef, &out.SourcePluggableDatabaseSnapshotIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SourcePluggableDatabaseSnapshotIDSelector != nil {
+		in, out := &in.SourcePluggableDatabaseSnapshotIDSelector, &out.SourcePluggableDatabaseSnapshotIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -75791,6 +80591,16 @@ func (in *PluggableDatabaseInitParameters) DeepCopyInto(out *PluggableDatabaseIn
 		*out = new(string)
 		**out = **in
 	}
+	if in.ContainerDatabaseIDRef != nil {
+		in, out := &in.ContainerDatabaseIDRef, &out.ContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ContainerDatabaseIDSelector != nil {
+		in, out := &in.ContainerDatabaseIDSelector, &out.ContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ConvertToRegularTrigger != nil {
 		in, out := &in.ConvertToRegularTrigger, &out.ConvertToRegularTrigger
 		*out = new(float64)
@@ -75832,6 +80642,16 @@ func (in *PluggableDatabaseInitParameters) DeepCopyInto(out *PluggableDatabaseIn
 		in, out := &in.KMSKeyVersionID, &out.KMSKeyVersionID
 		*out = new(string)
 		**out = **in
+	}
+	if in.KMSKeyVersionIDRef != nil {
+		in, out := &in.KMSKeyVersionIDRef, &out.KMSKeyVersionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyVersionIDSelector != nil {
+		in, out := &in.KMSKeyVersionIDSelector, &out.KMSKeyVersionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.PdbAdminPasswordSecretRef != nil {
 		in, out := &in.PdbAdminPasswordSecretRef, &out.PdbAdminPasswordSecretRef
@@ -76155,6 +80975,16 @@ func (in *PluggableDatabaseParameters) DeepCopyInto(out *PluggableDatabaseParame
 		*out = new(string)
 		**out = **in
 	}
+	if in.ContainerDatabaseIDRef != nil {
+		in, out := &in.ContainerDatabaseIDRef, &out.ContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ContainerDatabaseIDSelector != nil {
+		in, out := &in.ContainerDatabaseIDSelector, &out.ContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ConvertToRegularTrigger != nil {
 		in, out := &in.ConvertToRegularTrigger, &out.ConvertToRegularTrigger
 		*out = new(float64)
@@ -76196,6 +81026,16 @@ func (in *PluggableDatabaseParameters) DeepCopyInto(out *PluggableDatabaseParame
 		in, out := &in.KMSKeyVersionID, &out.KMSKeyVersionID
 		*out = new(string)
 		**out = **in
+	}
+	if in.KMSKeyVersionIDRef != nil {
+		in, out := &in.KMSKeyVersionIDRef, &out.KMSKeyVersionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.KMSKeyVersionIDSelector != nil {
+		in, out := &in.KMSKeyVersionIDSelector, &out.KMSKeyVersionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.PdbAdminPasswordSecretRef != nil {
 		in, out := &in.PdbAdminPasswordSecretRef, &out.PdbAdminPasswordSecretRef
@@ -76374,6 +81214,16 @@ func (in *PluggableDatabasePluggabledatabasemanagementsManagementInitParameters)
 		*out = new(string)
 		**out = **in
 	}
+	if in.PluggableDatabaseIDRef != nil {
+		in, out := &in.PluggableDatabaseIDRef, &out.PluggableDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PluggableDatabaseIDSelector != nil {
+		in, out := &in.PluggableDatabaseIDSelector, &out.PluggableDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.Port != nil {
 		in, out := &in.Port, &out.Port
 		*out = new(float64)
@@ -76398,6 +81248,16 @@ func (in *PluggableDatabasePluggabledatabasemanagementsManagementInitParameters)
 		in, out := &in.SSLSecretID, &out.SSLSecretID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SSLSecretIDRef != nil {
+		in, out := &in.SSLSecretIDRef, &out.SSLSecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SSLSecretIDSelector != nil {
+		in, out := &in.SSLSecretIDSelector, &out.SSLSecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ServiceName != nil {
 		in, out := &in.ServiceName, &out.ServiceName
@@ -76621,6 +81481,16 @@ func (in *PluggableDatabasePluggabledatabasemanagementsManagementParameters) Dee
 		*out = new(string)
 		**out = **in
 	}
+	if in.PluggableDatabaseIDRef != nil {
+		in, out := &in.PluggableDatabaseIDRef, &out.PluggableDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PluggableDatabaseIDSelector != nil {
+		in, out := &in.PluggableDatabaseIDSelector, &out.PluggableDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.Port != nil {
 		in, out := &in.Port, &out.Port
 		*out = new(float64)
@@ -76645,6 +81515,16 @@ func (in *PluggableDatabasePluggabledatabasemanagementsManagementParameters) Dee
 		in, out := &in.SSLSecretID, &out.SSLSecretID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SSLSecretIDRef != nil {
+		in, out := &in.SSLSecretIDRef, &out.SSLSecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SSLSecretIDSelector != nil {
+		in, out := &in.SSLSecretIDSelector, &out.SSLSecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ServiceName != nil {
 		in, out := &in.ServiceName, &out.ServiceName
@@ -76824,6 +81704,16 @@ func (in *PluggableDatabaseSnapshotInitParameters) DeepCopyInto(out *PluggableDa
 		in, out := &in.PluggableDatabaseID, &out.PluggableDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.PluggableDatabaseIDRef != nil {
+		in, out := &in.PluggableDatabaseIDRef, &out.PluggableDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PluggableDatabaseIDSelector != nil {
+		in, out := &in.PluggableDatabaseIDSelector, &out.PluggableDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -77016,6 +81906,16 @@ func (in *PluggableDatabaseSnapshotParameters) DeepCopyInto(out *PluggableDataba
 		in, out := &in.PluggableDatabaseID, &out.PluggableDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.PluggableDatabaseIDRef != nil {
+		in, out := &in.PluggableDatabaseIDRef, &out.PluggableDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PluggableDatabaseIDSelector != nil {
+		in, out := &in.PluggableDatabaseIDSelector, &out.PluggableDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -77607,6 +82507,16 @@ func (in *PluggableDatabasesLocalCloneInitParameters) DeepCopyInto(out *Pluggabl
 		*out = new(string)
 		**out = **in
 	}
+	if in.PluggableDatabaseIDRef != nil {
+		in, out := &in.PluggableDatabaseIDRef, &out.PluggableDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PluggableDatabaseIDSelector != nil {
+		in, out := &in.PluggableDatabaseIDSelector, &out.PluggableDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ShouldPdbAdminAccountBeLocked != nil {
 		in, out := &in.ShouldPdbAdminAccountBeLocked, &out.ShouldPdbAdminAccountBeLocked
 		*out = new(bool)
@@ -77829,6 +82739,16 @@ func (in *PluggableDatabasesLocalCloneParameters) DeepCopyInto(out *PluggableDat
 		in, out := &in.PluggableDatabaseID, &out.PluggableDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.PluggableDatabaseIDRef != nil {
+		in, out := &in.PluggableDatabaseIDRef, &out.PluggableDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PluggableDatabaseIDSelector != nil {
+		in, out := &in.PluggableDatabaseIDSelector, &out.PluggableDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ShouldPdbAdminAccountBeLocked != nil {
 		in, out := &in.ShouldPdbAdminAccountBeLocked, &out.ShouldPdbAdminAccountBeLocked
@@ -78210,6 +83130,16 @@ func (in *PluggableDatabasesRemoteCloneInitParameters) DeepCopyInto(out *Pluggab
 		*out = new(string)
 		**out = **in
 	}
+	if in.PluggableDatabaseIDRef != nil {
+		in, out := &in.PluggableDatabaseIDRef, &out.PluggableDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PluggableDatabaseIDSelector != nil {
+		in, out := &in.PluggableDatabaseIDSelector, &out.PluggableDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ShouldPdbAdminAccountBeLocked != nil {
 		in, out := &in.ShouldPdbAdminAccountBeLocked, &out.ShouldPdbAdminAccountBeLocked
 		*out = new(bool)
@@ -78220,6 +83150,16 @@ func (in *PluggableDatabasesRemoteCloneInitParameters) DeepCopyInto(out *Pluggab
 		in, out := &in.TargetContainerDatabaseID, &out.TargetContainerDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.TargetContainerDatabaseIDRef != nil {
+		in, out := &in.TargetContainerDatabaseIDRef, &out.TargetContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.TargetContainerDatabaseIDSelector != nil {
+		in, out := &in.TargetContainerDatabaseIDSelector, &out.TargetContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.TargetTdeWalletPasswordSecretRef != nil {
 		in, out := &in.TargetTdeWalletPasswordSecretRef, &out.TargetTdeWalletPasswordSecretRef
@@ -78444,6 +83384,16 @@ func (in *PluggableDatabasesRemoteCloneParameters) DeepCopyInto(out *PluggableDa
 		*out = new(string)
 		**out = **in
 	}
+	if in.PluggableDatabaseIDRef != nil {
+		in, out := &in.PluggableDatabaseIDRef, &out.PluggableDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PluggableDatabaseIDSelector != nil {
+		in, out := &in.PluggableDatabaseIDSelector, &out.PluggableDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ShouldPdbAdminAccountBeLocked != nil {
 		in, out := &in.ShouldPdbAdminAccountBeLocked, &out.ShouldPdbAdminAccountBeLocked
 		*out = new(bool)
@@ -78454,6 +83404,16 @@ func (in *PluggableDatabasesRemoteCloneParameters) DeepCopyInto(out *PluggableDa
 		in, out := &in.TargetContainerDatabaseID, &out.TargetContainerDatabaseID
 		*out = new(string)
 		**out = **in
+	}
+	if in.TargetContainerDatabaseIDRef != nil {
+		in, out := &in.TargetContainerDatabaseIDRef, &out.TargetContainerDatabaseIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.TargetContainerDatabaseIDSelector != nil {
+		in, out := &in.TargetContainerDatabaseIDSelector, &out.TargetContainerDatabaseIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.TargetTdeWalletPasswordSecretRef != nil {
 		in, out := &in.TargetTdeWalletPasswordSecretRef, &out.TargetTdeWalletPasswordSecretRef
@@ -78838,6 +83798,16 @@ func (in *ProxyClientInitParameters) DeepCopyInto(out *ProxyClientInitParameters
 		*out = new(string)
 		**out = **in
 	}
+	if in.UserNameRef != nil {
+		in, out := &in.UserNameRef, &out.UserNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.UserNameSelector != nil {
+		in, out := &in.UserNameSelector, &out.UserNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.UserPassword != nil {
 		in, out := &in.UserPassword, &out.UserPassword
 		*out = make([]UserPasswordInitParameters, len(*in))
@@ -78923,6 +83893,16 @@ func (in *ProxyClientParameters) DeepCopyInto(out *ProxyClientParameters) {
 		in, out := &in.UserName, &out.UserName
 		*out = new(string)
 		**out = **in
+	}
+	if in.UserNameRef != nil {
+		in, out := &in.UserNameRef, &out.UserNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.UserNameSelector != nil {
+		in, out := &in.UserNameSelector, &out.UserNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.UserPassword != nil {
 		in, out := &in.UserPassword, &out.UserPassword
@@ -80003,6 +84983,16 @@ func (in *ScheduledActionInitParameters) DeepCopyInto(out *ScheduledActionInitPa
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -80039,6 +85029,16 @@ func (in *ScheduledActionInitParameters) DeepCopyInto(out *ScheduledActionInitPa
 		in, out := &in.SchedulingPlanID, &out.SchedulingPlanID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SchedulingPlanIDRef != nil {
+		in, out := &in.SchedulingPlanIDRef, &out.SchedulingPlanIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SchedulingPlanIDSelector != nil {
+		in, out := &in.SchedulingPlanIDSelector, &out.SchedulingPlanIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.SchedulingWindowID != nil {
 		in, out := &in.SchedulingWindowID, &out.SchedulingWindowID
@@ -80266,6 +85266,16 @@ func (in *ScheduledActionParameters) DeepCopyInto(out *ScheduledActionParameters
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -80302,6 +85312,16 @@ func (in *ScheduledActionParameters) DeepCopyInto(out *ScheduledActionParameters
 		in, out := &in.SchedulingPlanID, &out.SchedulingPlanID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SchedulingPlanIDRef != nil {
+		in, out := &in.SchedulingPlanIDRef, &out.SchedulingPlanIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SchedulingPlanIDSelector != nil {
+		in, out := &in.SchedulingPlanIDSelector, &out.SchedulingPlanIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.SchedulingWindowID != nil {
 		in, out := &in.SchedulingWindowID, &out.SchedulingWindowID
@@ -80486,6 +85506,16 @@ func (in *SchedulingPlanInitParameters) DeepCopyInto(out *SchedulingPlanInitPara
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -80532,6 +85562,16 @@ func (in *SchedulingPlanInitParameters) DeepCopyInto(out *SchedulingPlanInitPara
 		in, out := &in.SchedulingPolicyID, &out.SchedulingPolicyID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SchedulingPolicyIDRef != nil {
+		in, out := &in.SchedulingPolicyIDRef, &out.SchedulingPolicyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SchedulingPolicyIDSelector != nil {
+		in, out := &in.SchedulingPolicyIDSelector, &out.SchedulingPolicyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ServiceType != nil {
 		in, out := &in.ServiceType, &out.ServiceType
@@ -80718,6 +85758,16 @@ func (in *SchedulingPlanParameters) DeepCopyInto(out *SchedulingPlanParameters) 
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -80764,6 +85814,16 @@ func (in *SchedulingPlanParameters) DeepCopyInto(out *SchedulingPlanParameters) 
 		in, out := &in.SchedulingPolicyID, &out.SchedulingPolicyID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SchedulingPolicyIDRef != nil {
+		in, out := &in.SchedulingPolicyIDRef, &out.SchedulingPolicyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SchedulingPolicyIDSelector != nil {
+		in, out := &in.SchedulingPolicyIDSelector, &out.SchedulingPolicyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ServiceType != nil {
 		in, out := &in.ServiceType, &out.ServiceType
@@ -80863,6 +85923,16 @@ func (in *SchedulingPolicyInitParameters) DeepCopyInto(out *SchedulingPolicyInit
 		in, out := &in.CompartmentID, &out.CompartmentID
 		*out = new(string)
 		**out = **in
+	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -81064,6 +86134,16 @@ func (in *SchedulingPolicyParameters) DeepCopyInto(out *SchedulingPolicyParamete
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -81148,6 +86228,16 @@ func (in *SchedulingPolicySchedulingWindowInitParameters) DeepCopyInto(out *Sche
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -81184,6 +86274,16 @@ func (in *SchedulingPolicySchedulingWindowInitParameters) DeepCopyInto(out *Sche
 		in, out := &in.SchedulingPolicyID, &out.SchedulingPolicyID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SchedulingPolicyIDRef != nil {
+		in, out := &in.SchedulingPolicyIDRef, &out.SchedulingPolicyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SchedulingPolicyIDSelector != nil {
+		in, out := &in.SchedulingPolicyIDSelector, &out.SchedulingPolicyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.WindowPreference != nil {
 		in, out := &in.WindowPreference, &out.WindowPreference
@@ -81343,6 +86443,16 @@ func (in *SchedulingPolicySchedulingWindowParameters) DeepCopyInto(out *Scheduli
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -81379,6 +86489,16 @@ func (in *SchedulingPolicySchedulingWindowParameters) DeepCopyInto(out *Scheduli
 		in, out := &in.SchedulingPolicyID, &out.SchedulingPolicyID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SchedulingPolicyIDRef != nil {
+		in, out := &in.SchedulingPolicyIDRef, &out.SchedulingPolicyIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SchedulingPolicyIDSelector != nil {
+		in, out := &in.SchedulingPolicyIDSelector, &out.SchedulingPolicyIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.WindowPreference != nil {
 		in, out := &in.WindowPreference, &out.WindowPreference
@@ -82997,6 +88117,16 @@ func (in *ToolsDatabaseToolsConnectionInitParameters) DeepCopyInto(out *ToolsDat
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ConnectionString != nil {
 		in, out := &in.ConnectionString, &out.ConnectionString
 		*out = new(string)
@@ -83058,6 +88188,16 @@ func (in *ToolsDatabaseToolsConnectionInitParameters) DeepCopyInto(out *ToolsDat
 		*out = new(string)
 		**out = **in
 	}
+	if in.PrivateEndpointIDRef != nil {
+		in, out := &in.PrivateEndpointIDRef, &out.PrivateEndpointIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PrivateEndpointIDSelector != nil {
+		in, out := &in.PrivateEndpointIDSelector, &out.PrivateEndpointIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ProxyClient != nil {
 		in, out := &in.ProxyClient, &out.ProxyClient
 		*out = make([]ProxyClientInitParameters, len(*in))
@@ -83096,6 +88236,16 @@ func (in *ToolsDatabaseToolsConnectionInitParameters) DeepCopyInto(out *ToolsDat
 		in, out := &in.UserName, &out.UserName
 		*out = new(string)
 		**out = **in
+	}
+	if in.UserNameRef != nil {
+		in, out := &in.UserNameRef, &out.UserNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.UserNameSelector != nil {
+		in, out := &in.UserNameSelector, &out.UserNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.UserPassword != nil {
 		in, out := &in.UserPassword, &out.UserPassword
@@ -83361,6 +88511,16 @@ func (in *ToolsDatabaseToolsConnectionParameters) DeepCopyInto(out *ToolsDatabas
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ConnectionString != nil {
 		in, out := &in.ConnectionString, &out.ConnectionString
 		*out = new(string)
@@ -83422,6 +88582,16 @@ func (in *ToolsDatabaseToolsConnectionParameters) DeepCopyInto(out *ToolsDatabas
 		*out = new(string)
 		**out = **in
 	}
+	if in.PrivateEndpointIDRef != nil {
+		in, out := &in.PrivateEndpointIDRef, &out.PrivateEndpointIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PrivateEndpointIDSelector != nil {
+		in, out := &in.PrivateEndpointIDSelector, &out.PrivateEndpointIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ProxyClient != nil {
 		in, out := &in.ProxyClient, &out.ProxyClient
 		*out = make([]ProxyClientParameters, len(*in))
@@ -83460,6 +88630,16 @@ func (in *ToolsDatabaseToolsConnectionParameters) DeepCopyInto(out *ToolsDatabas
 		in, out := &in.UserName, &out.UserName
 		*out = new(string)
 		**out = **in
+	}
+	if in.UserNameRef != nil {
+		in, out := &in.UserNameRef, &out.UserNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.UserNameSelector != nil {
+		in, out := &in.UserNameSelector, &out.UserNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.UserPassword != nil {
 		in, out := &in.UserPassword, &out.UserPassword
@@ -83523,6 +88703,16 @@ func (in *ToolsDatabaseToolsConnectionUserPasswordInitParameters) DeepCopyInto(o
 		*out = new(string)
 		**out = **in
 	}
+	if in.SecretIDRef != nil {
+		in, out := &in.SecretIDRef, &out.SecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SecretIDSelector != nil {
+		in, out := &in.SecretIDSelector, &out.SecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ValueType != nil {
 		in, out := &in.ValueType, &out.ValueType
 		*out = new(string)
@@ -83572,6 +88762,16 @@ func (in *ToolsDatabaseToolsConnectionUserPasswordParameters) DeepCopyInto(out *
 		in, out := &in.SecretID, &out.SecretID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SecretIDRef != nil {
+		in, out := &in.SecretIDRef, &out.SecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SecretIDSelector != nil {
+		in, out := &in.SecretIDSelector, &out.SecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.ValueType != nil {
 		in, out := &in.ValueType, &out.ValueType
@@ -83625,6 +88825,16 @@ func (in *ToolsDatabaseToolsIdentityInitParameters) DeepCopyInto(out *ToolsDatab
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.CredentialKey != nil {
 		in, out := &in.CredentialKey, &out.CredentialKey
 		*out = new(string)
@@ -83634,6 +88844,16 @@ func (in *ToolsDatabaseToolsIdentityInitParameters) DeepCopyInto(out *ToolsDatab
 		in, out := &in.DatabaseToolsConnectionID, &out.DatabaseToolsConnectionID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseToolsConnectionIDRef != nil {
+		in, out := &in.DatabaseToolsConnectionIDRef, &out.DatabaseToolsConnectionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseToolsConnectionIDSelector != nil {
+		in, out := &in.DatabaseToolsConnectionIDSelector, &out.DatabaseToolsConnectionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -83941,6 +89161,16 @@ func (in *ToolsDatabaseToolsIdentityParameters) DeepCopyInto(out *ToolsDatabaseT
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.CredentialKey != nil {
 		in, out := &in.CredentialKey, &out.CredentialKey
 		*out = new(string)
@@ -83950,6 +89180,16 @@ func (in *ToolsDatabaseToolsIdentityParameters) DeepCopyInto(out *ToolsDatabaseT
 		in, out := &in.DatabaseToolsConnectionID, &out.DatabaseToolsConnectionID
 		*out = new(string)
 		**out = **in
+	}
+	if in.DatabaseToolsConnectionIDRef != nil {
+		in, out := &in.DatabaseToolsConnectionIDRef, &out.DatabaseToolsConnectionIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DatabaseToolsConnectionIDSelector != nil {
+		in, out := &in.DatabaseToolsConnectionIDSelector, &out.DatabaseToolsConnectionIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
@@ -84082,6 +89322,16 @@ func (in *ToolsDatabaseToolsPrivateEndpointInitParameters) DeepCopyInto(out *Too
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -84172,6 +89422,16 @@ func (in *ToolsDatabaseToolsPrivateEndpointInitParameters) DeepCopyInto(out *Too
 		in, out := &in.SubnetID, &out.SubnetID
 		*out = new(string)
 		**out = **in
+	}
+	if in.SubnetIDRef != nil {
+		in, out := &in.SubnetIDRef, &out.SubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SubnetIDSelector != nil {
+		in, out := &in.SubnetIDSelector, &out.SubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -84515,6 +89775,16 @@ func (in *ToolsDatabaseToolsPrivateEndpointParameters) DeepCopyInto(out *ToolsDa
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DefinedTags != nil {
 		in, out := &in.DefinedTags, &out.DefinedTags
 		*out = make(map[string]*string, len(*in))
@@ -84606,6 +89876,16 @@ func (in *ToolsDatabaseToolsPrivateEndpointParameters) DeepCopyInto(out *ToolsDa
 		*out = new(string)
 		**out = **in
 	}
+	if in.SubnetIDRef != nil {
+		in, out := &in.SubnetIDRef, &out.SubnetIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SubnetIDSelector != nil {
+		in, out := &in.SubnetIDSelector, &out.SubnetIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new ToolsDatabaseToolsPrivateEndpointParameters.
@@ -84677,6 +89957,16 @@ func (in *TypeDetailsInitParameters) DeepCopyInto(out *TypeDetailsInitParameters
 		*out = new(string)
 		**out = **in
 	}
+	if in.SecretIDRef != nil {
+		in, out := &in.SecretIDRef, &out.SecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SecretIDSelector != nil {
+		in, out := &in.SecretIDSelector, &out.SecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
 		*out = new(string)
@@ -84686,6 +89976,16 @@ func (in *TypeDetailsInitParameters) DeepCopyInto(out *TypeDetailsInitParameters
 		in, out := &in.VaultID, &out.VaultID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VaultIDRef != nil {
+		in, out := &in.VaultIDRef, &out.VaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VaultIDSelector != nil {
+		in, out := &in.VaultIDSelector, &out.VaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -84769,6 +90069,16 @@ func (in *TypeDetailsParameters) DeepCopyInto(out *TypeDetailsParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.SecretIDRef != nil {
+		in, out := &in.SecretIDRef, &out.SecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SecretIDSelector != nil {
+		in, out := &in.SecretIDSelector, &out.SecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.Type != nil {
 		in, out := &in.Type, &out.Type
 		*out = new(string)
@@ -84778,6 +90088,16 @@ func (in *TypeDetailsParameters) DeepCopyInto(out *TypeDetailsParameters) {
 		in, out := &in.VaultID, &out.VaultID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VaultIDRef != nil {
+		in, out := &in.VaultIDRef, &out.VaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VaultIDSelector != nil {
+		in, out := &in.VaultIDSelector, &out.VaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -84859,6 +90179,16 @@ func (in *UserPasswordInitParameters) DeepCopyInto(out *UserPasswordInitParamete
 		*out = new(string)
 		**out = **in
 	}
+	if in.SecretIDRef != nil {
+		in, out := &in.SecretIDRef, &out.SecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SecretIDSelector != nil {
+		in, out := &in.SecretIDSelector, &out.SecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ValueType != nil {
 		in, out := &in.ValueType, &out.ValueType
 		*out = new(string)
@@ -84909,6 +90239,16 @@ func (in *UserPasswordParameters) DeepCopyInto(out *UserPasswordParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.SecretIDRef != nil {
+		in, out := &in.SecretIDRef, &out.SecretIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.SecretIDSelector != nil {
+		in, out := &in.SecretIDSelector, &out.SecretIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ValueType != nil {
 		in, out := &in.ValueType, &out.ValueType
 		*out = new(string)
@@ -84933,6 +90273,16 @@ func (in *VMNetworksInitParameters) DeepCopyInto(out *VMNetworksInitParameters) 
 		in, out := &in.DomainName, &out.DomainName
 		*out = new(string)
 		**out = **in
+	}
+	if in.DomainNameRef != nil {
+		in, out := &in.DomainNameRef, &out.DomainNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DomainNameSelector != nil {
+		in, out := &in.DomainNameSelector, &out.DomainNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Gateway != nil {
 		in, out := &in.Gateway, &out.Gateway
@@ -85027,6 +90377,16 @@ func (in *VMNetworksParameters) DeepCopyInto(out *VMNetworksParameters) {
 		in, out := &in.DomainName, &out.DomainName
 		*out = new(string)
 		**out = **in
+	}
+	if in.DomainNameRef != nil {
+		in, out := &in.DomainNameRef, &out.DomainNameRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.DomainNameSelector != nil {
+		in, out := &in.DomainNameSelector, &out.DomainNameSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Gateway != nil {
 		in, out := &in.Gateway, &out.Gateway
@@ -86262,6 +91622,16 @@ func (in *VmClusterAddVirtualMachineInitParameters) DeepCopyInto(out *VmClusterA
 		*out = new(string)
 		**out = **in
 	}
+	if in.VMClusterIDRef != nil {
+		in, out := &in.VMClusterIDRef, &out.VMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VMClusterIDSelector != nil {
+		in, out := &in.VMClusterIDSelector, &out.VMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new VmClusterAddVirtualMachineInitParameters.
@@ -86546,6 +91916,16 @@ func (in *VmClusterAddVirtualMachineParameters) DeepCopyInto(out *VmClusterAddVi
 		in, out := &in.VMClusterID, &out.VMClusterID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VMClusterIDRef != nil {
+		in, out := &in.VMClusterIDRef, &out.VMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VMClusterIDSelector != nil {
+		in, out := &in.VMClusterIDSelector, &out.VMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -86896,6 +92276,16 @@ func (in *VmClusterInitParameters) DeepCopyInto(out *VmClusterInitParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DBNodeStorageSizeInGbs != nil {
 		in, out := &in.DBNodeStorageSizeInGbs, &out.DBNodeStorageSizeInGbs
 		*out = new(float64)
@@ -86955,10 +92345,30 @@ func (in *VmClusterInitParameters) DeepCopyInto(out *VmClusterInitParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExadataInfrastructureIDRef != nil {
+		in, out := &in.ExadataInfrastructureIDRef, &out.ExadataInfrastructureIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExadataInfrastructureIDSelector != nil {
+		in, out := &in.ExadataInfrastructureIDSelector, &out.ExadataInfrastructureIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ExascaleDBStorageVaultID != nil {
 		in, out := &in.ExascaleDBStorageVaultID, &out.ExascaleDBStorageVaultID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExascaleDBStorageVaultIDRef != nil {
+		in, out := &in.ExascaleDBStorageVaultIDRef, &out.ExascaleDBStorageVaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExascaleDBStorageVaultIDSelector != nil {
+		in, out := &in.ExascaleDBStorageVaultIDSelector, &out.ExascaleDBStorageVaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FileSystemConfigurationDetails != nil {
 		in, out := &in.FileSystemConfigurationDetails, &out.FileSystemConfigurationDetails
@@ -87038,6 +92448,16 @@ func (in *VmClusterInitParameters) DeepCopyInto(out *VmClusterInitParameters) {
 		in, out := &in.VMClusterNetworkID, &out.VMClusterNetworkID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VMClusterNetworkIDRef != nil {
+		in, out := &in.VMClusterNetworkIDRef, &out.VMClusterNetworkIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VMClusterNetworkIDSelector != nil {
+		in, out := &in.VMClusterNetworkIDSelector, &out.VMClusterNetworkIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.VMClusterType != nil {
 		in, out := &in.VMClusterType, &out.VMClusterType
@@ -87128,6 +92548,16 @@ func (in *VmClusterNetworkInitParameters) DeepCopyInto(out *VmClusterNetworkInit
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DNS != nil {
 		in, out := &in.DNS, &out.DNS
 		*out = make([]*string, len(*in))
@@ -87171,6 +92601,16 @@ func (in *VmClusterNetworkInitParameters) DeepCopyInto(out *VmClusterNetworkInit
 		in, out := &in.ExadataInfrastructureID, &out.ExadataInfrastructureID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExadataInfrastructureIDRef != nil {
+		in, out := &in.ExadataInfrastructureIDRef, &out.ExadataInfrastructureIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExadataInfrastructureIDSelector != nil {
+		in, out := &in.ExadataInfrastructureIDSelector, &out.ExadataInfrastructureIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
@@ -87431,6 +92871,16 @@ func (in *VmClusterNetworkParameters) DeepCopyInto(out *VmClusterNetworkParamete
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DNS != nil {
 		in, out := &in.DNS, &out.DNS
 		*out = make([]*string, len(*in))
@@ -87474,6 +92924,16 @@ func (in *VmClusterNetworkParameters) DeepCopyInto(out *VmClusterNetworkParamete
 		in, out := &in.ExadataInfrastructureID, &out.ExadataInfrastructureID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExadataInfrastructureIDRef != nil {
+		in, out := &in.ExadataInfrastructureIDRef, &out.ExadataInfrastructureIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExadataInfrastructureIDSelector != nil {
+		in, out := &in.ExadataInfrastructureIDSelector, &out.ExadataInfrastructureIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FreeformTags != nil {
 		in, out := &in.FreeformTags, &out.FreeformTags
@@ -87839,6 +93299,16 @@ func (in *VmClusterParameters) DeepCopyInto(out *VmClusterParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.CompartmentIDRef != nil {
+		in, out := &in.CompartmentIDRef, &out.CompartmentIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.CompartmentIDSelector != nil {
+		in, out := &in.CompartmentIDSelector, &out.CompartmentIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.DBNodeStorageSizeInGbs != nil {
 		in, out := &in.DBNodeStorageSizeInGbs, &out.DBNodeStorageSizeInGbs
 		*out = new(float64)
@@ -87898,10 +93368,30 @@ func (in *VmClusterParameters) DeepCopyInto(out *VmClusterParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.ExadataInfrastructureIDRef != nil {
+		in, out := &in.ExadataInfrastructureIDRef, &out.ExadataInfrastructureIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExadataInfrastructureIDSelector != nil {
+		in, out := &in.ExadataInfrastructureIDSelector, &out.ExadataInfrastructureIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.ExascaleDBStorageVaultID != nil {
 		in, out := &in.ExascaleDBStorageVaultID, &out.ExascaleDBStorageVaultID
 		*out = new(string)
 		**out = **in
+	}
+	if in.ExascaleDBStorageVaultIDRef != nil {
+		in, out := &in.ExascaleDBStorageVaultIDRef, &out.ExascaleDBStorageVaultIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.ExascaleDBStorageVaultIDSelector != nil {
+		in, out := &in.ExascaleDBStorageVaultIDSelector, &out.ExascaleDBStorageVaultIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.FileSystemConfigurationDetails != nil {
 		in, out := &in.FileSystemConfigurationDetails, &out.FileSystemConfigurationDetails
@@ -87981,6 +93471,16 @@ func (in *VmClusterParameters) DeepCopyInto(out *VmClusterParameters) {
 		in, out := &in.VMClusterNetworkID, &out.VMClusterNetworkID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VMClusterNetworkIDRef != nil {
+		in, out := &in.VMClusterNetworkIDRef, &out.VMClusterNetworkIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VMClusterNetworkIDSelector != nil {
+		in, out := &in.VMClusterNetworkIDSelector, &out.VMClusterNetworkIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.VMClusterType != nil {
 		in, out := &in.VMClusterType, &out.VMClusterType
@@ -88395,6 +93895,16 @@ func (in *VmClusterRemoveVirtualMachineInitParameters) DeepCopyInto(out *VmClust
 		*out = new(string)
 		**out = **in
 	}
+	if in.VMClusterIDRef != nil {
+		in, out := &in.VMClusterIDRef, &out.VMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VMClusterIDSelector != nil {
+		in, out := &in.VMClusterIDSelector, &out.VMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new VmClusterRemoveVirtualMachineInitParameters.
@@ -88669,6 +94179,16 @@ func (in *VmClusterRemoveVirtualMachineParameters) DeepCopyInto(out *VmClusterRe
 		in, out := &in.VMClusterID, &out.VMClusterID
 		*out = new(string)
 		**out = **in
+	}
+	if in.VMClusterIDRef != nil {
+		in, out := &in.VMClusterIDRef, &out.VMClusterIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.VMClusterIDSelector != nil {
+		in, out := &in.VMClusterIDSelector, &out.VMClusterIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 }
 

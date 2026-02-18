@@ -16,7 +16,16 @@ import (
 type HealthCheckerDNSInitParameters struct {
 
 	// (Updatable) The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/identity/v1alpha1.Domain
 	DomainName *string `json:"domainName,omitempty" tf:"domain_name,omitempty"`
+
+	// Reference to a Domain in identity to populate domainName.
+	// +kubebuilder:validation:Optional
+	DomainNameRef *v1.Reference `json:"domainNameRef,omitempty" tf:"-"`
+
+	// Selector for a Domain in identity to populate domainName.
+	// +kubebuilder:validation:Optional
+	DomainNameSelector *v1.Selector `json:"domainNameSelector,omitempty" tf:"-"`
 
 	// (Updatable) The class the dns health check query to use; either IN or CH.  Example: IN
 	QueryClass *string `json:"queryClass,omitempty" tf:"query_class,omitempty"`
@@ -52,8 +61,17 @@ type HealthCheckerDNSObservation struct {
 type HealthCheckerDNSParameters struct {
 
 	// (Updatable) The absolute fully-qualified domain name to perform periodic DNS queries. If not provided, an extra dot will be added at the end of a domain name during the query.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/identity/v1alpha1.Domain
 	// +kubebuilder:validation:Optional
-	DomainName *string `json:"domainName" tf:"domain_name,omitempty"`
+	DomainName *string `json:"domainName,omitempty" tf:"domain_name,omitempty"`
+
+	// Reference to a Domain in identity to populate domainName.
+	// +kubebuilder:validation:Optional
+	DomainNameRef *v1.Reference `json:"domainNameRef,omitempty" tf:"-"`
+
+	// Selector for a Domain in identity to populate domainName.
+	// +kubebuilder:validation:Optional
+	DomainNameSelector *v1.Selector `json:"domainNameSelector,omitempty" tf:"-"`
 
 	// (Updatable) The class the dns health check query to use; either IN or CH.  Example: IN
 	// +kubebuilder:validation:Optional
@@ -93,7 +111,17 @@ type NetworkLoadBalancersBackendSetsUnifiedBackendsInitParameters struct {
 	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/cloudguard/v1alpha1.GuardTarget
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	TargetID *string `json:"targetId,omitempty" tf:"target_id,omitempty"`
+
+	// Reference to a GuardTarget in cloudguard to populate targetId.
+	// +kubebuilder:validation:Optional
+	TargetIDRef *v1.Reference `json:"targetIdRef,omitempty" tf:"-"`
+
+	// Selector for a GuardTarget in cloudguard to populate targetId.
+	// +kubebuilder:validation:Optional
+	TargetIDSelector *v1.Selector `json:"targetIdSelector,omitempty" tf:"-"`
 
 	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see Network Load Balancer Policies.  Example: 3
 	Weight *float64 `json:"weight,omitempty" tf:"weight,omitempty"`
@@ -153,8 +181,18 @@ type NetworkLoadBalancersBackendSetsUnifiedBackendsParameters struct {
 	Port *float64 `json:"port" tf:"port,omitempty"`
 
 	// (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/cloudguard/v1alpha1.GuardTarget
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	TargetID *string `json:"targetId,omitempty" tf:"target_id,omitempty"`
+
+	// Reference to a GuardTarget in cloudguard to populate targetId.
+	// +kubebuilder:validation:Optional
+	TargetIDRef *v1.Reference `json:"targetIdRef,omitempty" tf:"-"`
+
+	// Selector for a GuardTarget in cloudguard to populate targetId.
+	// +kubebuilder:validation:Optional
+	TargetIDSelector *v1.Selector `json:"targetIdSelector,omitempty" tf:"-"`
 
 	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see Network Load Balancer Policies.  Example: 3
 	// +kubebuilder:validation:Optional

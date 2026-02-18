@@ -47,7 +47,17 @@ type FileSystemInitParameters struct {
 	DisplayName *string `json:"displayName,omitempty" tf:"display_name,omitempty"`
 
 	// (Updatable) The OCID of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/filestorage/v1alpha1.StorageFilesystemSnapshotPolicy
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	FilesystemSnapshotPolicyID *string `json:"filesystemSnapshotPolicyId,omitempty" tf:"filesystem_snapshot_policy_id,omitempty"`
+
+	// Reference to a StorageFilesystemSnapshotPolicy in filestorage to populate filesystemSnapshotPolicyId.
+	// +kubebuilder:validation:Optional
+	FilesystemSnapshotPolicyIDRef *v1.Reference `json:"filesystemSnapshotPolicyIdRef,omitempty" tf:"-"`
+
+	// Selector for a StorageFilesystemSnapshotPolicy in filestorage to populate filesystemSnapshotPolicyId.
+	// +kubebuilder:validation:Optional
+	FilesystemSnapshotPolicyIDSelector *v1.Selector `json:"filesystemSnapshotPolicyIdSelector,omitempty" tf:"-"`
 
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see Resource Tags. Example: {"Department": "Finance"}
 	// +mapType=granular
@@ -56,13 +66,33 @@ type FileSystemInitParameters struct {
 	IsLockOverride *bool `json:"isLockOverride,omitempty" tf:"is_lock_override,omitempty"`
 
 	// (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/kms/v1alpha1.Key
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	KMSKeyID *string `json:"kmsKeyId,omitempty" tf:"kms_key_id,omitempty"`
+
+	// Reference to a Key in kms to populate kmsKeyId.
+	// +kubebuilder:validation:Optional
+	KMSKeyIDRef *v1.Reference `json:"kmsKeyIdRef,omitempty" tf:"-"`
+
+	// Selector for a Key in kms to populate kmsKeyId.
+	// +kubebuilder:validation:Optional
+	KMSKeyIDSelector *v1.Selector `json:"kmsKeyIdSelector,omitempty" tf:"-"`
 
 	// Locks associated with this resource.
 	Locks []FileSystemLocksInitParameters `json:"locks,omitempty" tf:"locks,omitempty"`
 
 	// The OCID of the snapshot used to create a cloned file system. See Cloning a File System.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/filestorage/v1alpha1.Snapshot
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	SourceSnapshotID *string `json:"sourceSnapshotId,omitempty" tf:"source_snapshot_id,omitempty"`
+
+	// Reference to a Snapshot in filestorage to populate sourceSnapshotId.
+	// +kubebuilder:validation:Optional
+	SourceSnapshotIDRef *v1.Reference `json:"sourceSnapshotIdRef,omitempty" tf:"-"`
+
+	// Selector for a Snapshot in filestorage to populate sourceSnapshotId.
+	// +kubebuilder:validation:Optional
+	SourceSnapshotIDSelector *v1.Selector `json:"sourceSnapshotIdSelector,omitempty" tf:"-"`
 }
 
 type FileSystemLocksInitParameters struct {
@@ -241,8 +271,18 @@ type FileSystemParameters struct {
 	DisplayName *string `json:"displayName,omitempty" tf:"display_name,omitempty"`
 
 	// (Updatable) The OCID of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/filestorage/v1alpha1.StorageFilesystemSnapshotPolicy
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	FilesystemSnapshotPolicyID *string `json:"filesystemSnapshotPolicyId,omitempty" tf:"filesystem_snapshot_policy_id,omitempty"`
+
+	// Reference to a StorageFilesystemSnapshotPolicy in filestorage to populate filesystemSnapshotPolicyId.
+	// +kubebuilder:validation:Optional
+	FilesystemSnapshotPolicyIDRef *v1.Reference `json:"filesystemSnapshotPolicyIdRef,omitempty" tf:"-"`
+
+	// Selector for a StorageFilesystemSnapshotPolicy in filestorage to populate filesystemSnapshotPolicyId.
+	// +kubebuilder:validation:Optional
+	FilesystemSnapshotPolicyIDSelector *v1.Selector `json:"filesystemSnapshotPolicyIdSelector,omitempty" tf:"-"`
 
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see Resource Tags. Example: {"Department": "Finance"}
 	// +kubebuilder:validation:Optional
@@ -253,16 +293,36 @@ type FileSystemParameters struct {
 	IsLockOverride *bool `json:"isLockOverride,omitempty" tf:"is_lock_override,omitempty"`
 
 	// (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/kms/v1alpha1.Key
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	KMSKeyID *string `json:"kmsKeyId,omitempty" tf:"kms_key_id,omitempty"`
+
+	// Reference to a Key in kms to populate kmsKeyId.
+	// +kubebuilder:validation:Optional
+	KMSKeyIDRef *v1.Reference `json:"kmsKeyIdRef,omitempty" tf:"-"`
+
+	// Selector for a Key in kms to populate kmsKeyId.
+	// +kubebuilder:validation:Optional
+	KMSKeyIDSelector *v1.Selector `json:"kmsKeyIdSelector,omitempty" tf:"-"`
 
 	// Locks associated with this resource.
 	// +kubebuilder:validation:Optional
 	Locks []FileSystemLocksParameters `json:"locks,omitempty" tf:"locks,omitempty"`
 
 	// The OCID of the snapshot used to create a cloned file system. See Cloning a File System.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/filestorage/v1alpha1.Snapshot
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	SourceSnapshotID *string `json:"sourceSnapshotId,omitempty" tf:"source_snapshot_id,omitempty"`
+
+	// Reference to a Snapshot in filestorage to populate sourceSnapshotId.
+	// +kubebuilder:validation:Optional
+	SourceSnapshotIDRef *v1.Reference `json:"sourceSnapshotIdRef,omitempty" tf:"-"`
+
+	// Selector for a Snapshot in filestorage to populate sourceSnapshotId.
+	// +kubebuilder:validation:Optional
+	SourceSnapshotIDSelector *v1.Selector `json:"sourceSnapshotIdSelector,omitempty" tf:"-"`
 }
 
 type SourceDetailsInitParameters struct {

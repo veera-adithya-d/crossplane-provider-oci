@@ -1,0 +1,14 @@
+apiVersion: osmanagement.oci.upbound.io/v1alpha1
+kind: ManagementHubSoftwareSourceReplacePackagesManagement
+metadata:
+  annotations:
+    meta.upbound.io/example-id: osmanagement/v1alpha1/managementhubsoftwaresourcereplacepackagesmanagement
+  labels:
+    testing.upbound.io/example-name: test_software_source_replace_packages_management
+  name: test-software-source-replace-packages-management
+spec:
+  forProvider:
+    packages: ${var.software_source_replace_packages_management_packages}
+    softwareSourceIdSelector:
+      matchLabels:
+        testing.upbound.io/example-name: test_software_source

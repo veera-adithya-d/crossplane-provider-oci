@@ -16,7 +16,17 @@ import (
 type BackendInitParameters struct {
 
 	// The name of the backend set to which to add the backend server.  Example: example_backend_set
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/networkloadbalancer/v1alpha1.BackendSet
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("name",false)
 	BackendSetName *string `json:"backendSetName,omitempty" tf:"backend_set_name,omitempty"`
+
+	// Reference to a BackendSet in networkloadbalancer to populate backendSetName.
+	// +kubebuilder:validation:Optional
+	BackendSetNameRef *v1.Reference `json:"backendSetNameRef,omitempty" tf:"-"`
+
+	// Selector for a BackendSet in networkloadbalancer to populate backendSetName.
+	// +kubebuilder:validation:Optional
+	BackendSetNameSelector *v1.Selector `json:"backendSetNameSelector,omitempty" tf:"-"`
 
 	// The IP address of the backend server. Example: 10.0.0.3
 	IPAddress *string `json:"ipAddress,omitempty" tf:"ip_address,omitempty"`
@@ -49,7 +59,17 @@ type BackendInitParameters struct {
 	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// The IP OCID/Instance OCID associated with the backend server. Example: ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/cloudguard/v1alpha1.GuardTarget
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	TargetID *string `json:"targetId,omitempty" tf:"target_id,omitempty"`
+
+	// Reference to a GuardTarget in cloudguard to populate targetId.
+	// +kubebuilder:validation:Optional
+	TargetIDRef *v1.Reference `json:"targetIdRef,omitempty" tf:"-"`
+
+	// Selector for a GuardTarget in cloudguard to populate targetId.
+	// +kubebuilder:validation:Optional
+	TargetIDSelector *v1.Selector `json:"targetIdSelector,omitempty" tf:"-"`
 
 	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about network load balancer policies, see Network Load Balancer Policies.  Example: 3
 	Weight *float64 `json:"weight,omitempty" tf:"weight,omitempty"`
@@ -93,8 +113,18 @@ type BackendObservation struct {
 type BackendParameters struct {
 
 	// The name of the backend set to which to add the backend server.  Example: example_backend_set
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/networkloadbalancer/v1alpha1.BackendSet
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("name",false)
 	// +kubebuilder:validation:Optional
 	BackendSetName *string `json:"backendSetName,omitempty" tf:"backend_set_name,omitempty"`
+
+	// Reference to a BackendSet in networkloadbalancer to populate backendSetName.
+	// +kubebuilder:validation:Optional
+	BackendSetNameRef *v1.Reference `json:"backendSetNameRef,omitempty" tf:"-"`
+
+	// Selector for a BackendSet in networkloadbalancer to populate backendSetName.
+	// +kubebuilder:validation:Optional
+	BackendSetNameSelector *v1.Selector `json:"backendSetNameSelector,omitempty" tf:"-"`
 
 	// The IP address of the backend server. Example: 10.0.0.3
 	// +kubebuilder:validation:Optional
@@ -134,8 +164,18 @@ type BackendParameters struct {
 	Port *float64 `json:"port,omitempty" tf:"port,omitempty"`
 
 	// The IP OCID/Instance OCID associated with the backend server. Example: ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/cloudguard/v1alpha1.GuardTarget
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	TargetID *string `json:"targetId,omitempty" tf:"target_id,omitempty"`
+
+	// Reference to a GuardTarget in cloudguard to populate targetId.
+	// +kubebuilder:validation:Optional
+	TargetIDRef *v1.Reference `json:"targetIdRef,omitempty" tf:"-"`
+
+	// Selector for a GuardTarget in cloudguard to populate targetId.
+	// +kubebuilder:validation:Optional
+	TargetIDSelector *v1.Selector `json:"targetIdSelector,omitempty" tf:"-"`
 
 	// (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about network load balancer policies, see Network Load Balancer Policies.  Example: 3
 	// +kubebuilder:validation:Optional
@@ -178,7 +218,6 @@ type BackendStatus struct {
 type Backend struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
-	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.backendSetName) || (has(self.initProvider) && has(self.initProvider.backendSetName))",message="spec.forProvider.backendSetName is a required parameter"
 	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.port) || (has(self.initProvider) && has(self.initProvider.port))",message="spec.forProvider.port is a required parameter"
 	Spec   BackendSpec   `json:"spec"`
 	Status BackendStatus `json:"status,omitempty"`

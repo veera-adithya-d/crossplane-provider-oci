@@ -16,19 +16,59 @@ import (
 type FailureDestinationInitParameters struct {
 
 	// (Applicable when kind=QUEUE) (Updatable) The ID of the channel in the queue.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/mysql/v1alpha1.MysqlChannel
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	ChannelID *string `json:"channelId,omitempty" tf:"channel_id,omitempty"`
+
+	// Reference to a MysqlChannel in mysql to populate channelId.
+	// +kubebuilder:validation:Optional
+	ChannelIDRef *v1.Reference `json:"channelIdRef,omitempty" tf:"-"`
+
+	// Selector for a MysqlChannel in mysql to populate channelId.
+	// +kubebuilder:validation:Optional
+	ChannelIDSelector *v1.Selector `json:"channelIdSelector,omitempty" tf:"-"`
 
 	// (Updatable) The type of destination for the response to a failed detached function invocation.
 	Kind *string `json:"kind,omitempty" tf:"kind,omitempty"`
 
 	// (Updatable) The OCID of the queue.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/queue/v1alpha1.Queue
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	QueueID *string `json:"queueId,omitempty" tf:"queue_id,omitempty"`
 
+	// Reference to a Queue in queue to populate queueId.
+	// +kubebuilder:validation:Optional
+	QueueIDRef *v1.Reference `json:"queueIdRef,omitempty" tf:"-"`
+
+	// Selector for a Queue in queue to populate queueId.
+	// +kubebuilder:validation:Optional
+	QueueIDSelector *v1.Selector `json:"queueIdSelector,omitempty" tf:"-"`
+
 	// (Updatable) The OCID of the stream.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/streaming/v1alpha1.Stream
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	StreamID *string `json:"streamId,omitempty" tf:"stream_id,omitempty"`
 
+	// Reference to a Stream in streaming to populate streamId.
+	// +kubebuilder:validation:Optional
+	StreamIDRef *v1.Reference `json:"streamIdRef,omitempty" tf:"-"`
+
+	// Selector for a Stream in streaming to populate streamId.
+	// +kubebuilder:validation:Optional
+	StreamIDSelector *v1.Selector `json:"streamIdSelector,omitempty" tf:"-"`
+
 	// (Updatable) The OCID of the topic.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/ons/v1alpha1.NotificationTopic
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	TopicID *string `json:"topicId,omitempty" tf:"topic_id,omitempty"`
+
+	// Reference to a NotificationTopic in ons to populate topicId.
+	// +kubebuilder:validation:Optional
+	TopicIDRef *v1.Reference `json:"topicIdRef,omitempty" tf:"-"`
+
+	// Selector for a NotificationTopic in ons to populate topicId.
+	// +kubebuilder:validation:Optional
+	TopicIDSelector *v1.Selector `json:"topicIdSelector,omitempty" tf:"-"`
 }
 
 type FailureDestinationObservation struct {
@@ -52,24 +92,64 @@ type FailureDestinationObservation struct {
 type FailureDestinationParameters struct {
 
 	// (Applicable when kind=QUEUE) (Updatable) The ID of the channel in the queue.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/mysql/v1alpha1.MysqlChannel
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	ChannelID *string `json:"channelId,omitempty" tf:"channel_id,omitempty"`
+
+	// Reference to a MysqlChannel in mysql to populate channelId.
+	// +kubebuilder:validation:Optional
+	ChannelIDRef *v1.Reference `json:"channelIdRef,omitempty" tf:"-"`
+
+	// Selector for a MysqlChannel in mysql to populate channelId.
+	// +kubebuilder:validation:Optional
+	ChannelIDSelector *v1.Selector `json:"channelIdSelector,omitempty" tf:"-"`
 
 	// (Updatable) The type of destination for the response to a failed detached function invocation.
 	// +kubebuilder:validation:Optional
 	Kind *string `json:"kind" tf:"kind,omitempty"`
 
 	// (Updatable) The OCID of the queue.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/queue/v1alpha1.Queue
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	QueueID *string `json:"queueId,omitempty" tf:"queue_id,omitempty"`
 
+	// Reference to a Queue in queue to populate queueId.
+	// +kubebuilder:validation:Optional
+	QueueIDRef *v1.Reference `json:"queueIdRef,omitempty" tf:"-"`
+
+	// Selector for a Queue in queue to populate queueId.
+	// +kubebuilder:validation:Optional
+	QueueIDSelector *v1.Selector `json:"queueIdSelector,omitempty" tf:"-"`
+
 	// (Updatable) The OCID of the stream.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/streaming/v1alpha1.Stream
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	StreamID *string `json:"streamId,omitempty" tf:"stream_id,omitempty"`
 
+	// Reference to a Stream in streaming to populate streamId.
+	// +kubebuilder:validation:Optional
+	StreamIDRef *v1.Reference `json:"streamIdRef,omitempty" tf:"-"`
+
+	// Selector for a Stream in streaming to populate streamId.
+	// +kubebuilder:validation:Optional
+	StreamIDSelector *v1.Selector `json:"streamIdSelector,omitempty" tf:"-"`
+
 	// (Updatable) The OCID of the topic.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/ons/v1alpha1.NotificationTopic
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	TopicID *string `json:"topicId,omitempty" tf:"topic_id,omitempty"`
+
+	// Reference to a NotificationTopic in ons to populate topicId.
+	// +kubebuilder:validation:Optional
+	TopicIDRef *v1.Reference `json:"topicIdRef,omitempty" tf:"-"`
+
+	// Selector for a NotificationTopic in ons to populate topicId.
+	// +kubebuilder:validation:Optional
+	TopicIDSelector *v1.Selector `json:"topicIdSelector,omitempty" tf:"-"`
 }
 
 type FunctionInitParameters struct {
@@ -359,19 +439,59 @@ type SourceDetailsParameters struct {
 type SuccessDestinationInitParameters struct {
 
 	// (Applicable when kind=QUEUE) (Updatable) The ID of the channel in the queue.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/mysql/v1alpha1.MysqlChannel
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	ChannelID *string `json:"channelId,omitempty" tf:"channel_id,omitempty"`
+
+	// Reference to a MysqlChannel in mysql to populate channelId.
+	// +kubebuilder:validation:Optional
+	ChannelIDRef *v1.Reference `json:"channelIdRef,omitempty" tf:"-"`
+
+	// Selector for a MysqlChannel in mysql to populate channelId.
+	// +kubebuilder:validation:Optional
+	ChannelIDSelector *v1.Selector `json:"channelIdSelector,omitempty" tf:"-"`
 
 	// (Updatable) The type of destination for the response to a failed detached function invocation.
 	Kind *string `json:"kind,omitempty" tf:"kind,omitempty"`
 
 	// (Updatable) The OCID of the queue.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/queue/v1alpha1.Queue
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	QueueID *string `json:"queueId,omitempty" tf:"queue_id,omitempty"`
 
+	// Reference to a Queue in queue to populate queueId.
+	// +kubebuilder:validation:Optional
+	QueueIDRef *v1.Reference `json:"queueIdRef,omitempty" tf:"-"`
+
+	// Selector for a Queue in queue to populate queueId.
+	// +kubebuilder:validation:Optional
+	QueueIDSelector *v1.Selector `json:"queueIdSelector,omitempty" tf:"-"`
+
 	// (Updatable) The OCID of the stream.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/streaming/v1alpha1.Stream
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	StreamID *string `json:"streamId,omitempty" tf:"stream_id,omitempty"`
 
+	// Reference to a Stream in streaming to populate streamId.
+	// +kubebuilder:validation:Optional
+	StreamIDRef *v1.Reference `json:"streamIdRef,omitempty" tf:"-"`
+
+	// Selector for a Stream in streaming to populate streamId.
+	// +kubebuilder:validation:Optional
+	StreamIDSelector *v1.Selector `json:"streamIdSelector,omitempty" tf:"-"`
+
 	// (Updatable) The OCID of the topic.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/ons/v1alpha1.NotificationTopic
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	TopicID *string `json:"topicId,omitempty" tf:"topic_id,omitempty"`
+
+	// Reference to a NotificationTopic in ons to populate topicId.
+	// +kubebuilder:validation:Optional
+	TopicIDRef *v1.Reference `json:"topicIdRef,omitempty" tf:"-"`
+
+	// Selector for a NotificationTopic in ons to populate topicId.
+	// +kubebuilder:validation:Optional
+	TopicIDSelector *v1.Selector `json:"topicIdSelector,omitempty" tf:"-"`
 }
 
 type SuccessDestinationObservation struct {
@@ -395,24 +515,64 @@ type SuccessDestinationObservation struct {
 type SuccessDestinationParameters struct {
 
 	// (Applicable when kind=QUEUE) (Updatable) The ID of the channel in the queue.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/mysql/v1alpha1.MysqlChannel
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	ChannelID *string `json:"channelId,omitempty" tf:"channel_id,omitempty"`
+
+	// Reference to a MysqlChannel in mysql to populate channelId.
+	// +kubebuilder:validation:Optional
+	ChannelIDRef *v1.Reference `json:"channelIdRef,omitempty" tf:"-"`
+
+	// Selector for a MysqlChannel in mysql to populate channelId.
+	// +kubebuilder:validation:Optional
+	ChannelIDSelector *v1.Selector `json:"channelIdSelector,omitempty" tf:"-"`
 
 	// (Updatable) The type of destination for the response to a failed detached function invocation.
 	// +kubebuilder:validation:Optional
 	Kind *string `json:"kind" tf:"kind,omitempty"`
 
 	// (Updatable) The OCID of the queue.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/queue/v1alpha1.Queue
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	QueueID *string `json:"queueId,omitempty" tf:"queue_id,omitempty"`
 
+	// Reference to a Queue in queue to populate queueId.
+	// +kubebuilder:validation:Optional
+	QueueIDRef *v1.Reference `json:"queueIdRef,omitempty" tf:"-"`
+
+	// Selector for a Queue in queue to populate queueId.
+	// +kubebuilder:validation:Optional
+	QueueIDSelector *v1.Selector `json:"queueIdSelector,omitempty" tf:"-"`
+
 	// (Updatable) The OCID of the stream.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/streaming/v1alpha1.Stream
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	StreamID *string `json:"streamId,omitempty" tf:"stream_id,omitempty"`
 
+	// Reference to a Stream in streaming to populate streamId.
+	// +kubebuilder:validation:Optional
+	StreamIDRef *v1.Reference `json:"streamIdRef,omitempty" tf:"-"`
+
+	// Selector for a Stream in streaming to populate streamId.
+	// +kubebuilder:validation:Optional
+	StreamIDSelector *v1.Selector `json:"streamIdSelector,omitempty" tf:"-"`
+
 	// (Updatable) The OCID of the topic.
+	// +crossplane:generate:reference:type=github.com/oracle/provider-oci/apis/ons/v1alpha1.NotificationTopic
+	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	TopicID *string `json:"topicId,omitempty" tf:"topic_id,omitempty"`
+
+	// Reference to a NotificationTopic in ons to populate topicId.
+	// +kubebuilder:validation:Optional
+	TopicIDRef *v1.Reference `json:"topicIdRef,omitempty" tf:"-"`
+
+	// Selector for a NotificationTopic in ons to populate topicId.
+	// +kubebuilder:validation:Optional
+	TopicIDSelector *v1.Selector `json:"topicIdSelector,omitempty" tf:"-"`
 }
 
 // FunctionSpec defines the desired state of Function
