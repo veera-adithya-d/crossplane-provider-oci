@@ -16,8 +16,8 @@ spec:
     - name: instanceconsoleconnection_publickey
     - name: image_instance_ocid
     - name: computehost_id
-    - name: compartment_ocid
     - name: availability_domain
+    - name: compartment_ocid
     - name: create_compartment
       value: "true"
     - name: create_resources
@@ -141,6 +141,54 @@ spec:
                 value: "examples/compute/v1alpha1/computecapacityreport.yaml"
               - name: envVars
                 value: "AVAILABILITY_DOMAIN={{workflow.parameters.availability_domain}}"
+        - name: create-autoscaleinstancepool
+          templateRef:
+            name: test-template
+            template: create-resource
+          when: "{{workflow.parameters.create_resources}} == true"
+          dependencies: [create-compartment, create-instanceconfiguration]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/autoscaleinstancepool.yaml"
+        - name: create-autoscaleinstanceconfiguration
+          templateRef:
+            name: test-template
+            template: create-resource
+          when: "{{workflow.parameters.create_resources}} == true"
+          dependencies: [create-compartment]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/compute/v1alpha1/autoscaleinstanceconfiguration.yaml"
+        - name: delete-autoscaleinstanceconfiguration
+          templateRef:
+            name: test-template
+            template: delete-resource
+          when: "{{workflow.parameters.delete_resources}} == true"
+          dependencies: ["create-autoscaleinstanceconfiguration", "delete-instancepool"]
+          arguments:
+            parameters:
+              - name: resourceKind
+                value: "{{tasks.create-instanceconfiguration.outputs.parameters.resourceKind}}"
+              - name: resourceName
+                value: "{{tasks.create-instanceconfiguration.outputs.parameters.resourceName}}"
+              - name: resourceGroup
+                value: "{{tasks.create-instanceconfiguration.outputs.parameters.resourceGroup}}"
+        - name: delete-autoscaleinstancepool
+          templateRef:
+            name: test-template
+            template: delete-resource
+          when: "{{workflow.parameters.delete_resources}} == true"
+          dependencies: ["create-autoscaleinstancepool"]
+          arguments:
+            parameters:
+              - name: resourceKind
+                value: "{{tasks.create-instancepool.outputs.parameters.resourceKind}}"
+              - name: resourceName
+                value: "{{tasks.create-instancepool.outputs.parameters.resourceName}}"
+              - name: resourceGroup
+                value: "{{tasks.create-instancepool.outputs.parameters.resourceGroup}}"
         - name: delete-computecapacityreport
           templateRef:
             name: test-template

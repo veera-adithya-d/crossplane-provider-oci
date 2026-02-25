@@ -2,10 +2,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
-  name: oci-certificatesManagement-v1alpha1-tests-template
+  name: oci-certificatesmanagement-v1alpha1-tests-template
 spec:
   serviceAccountName: argo-workflow
-  entrypoint: certificatesManagement-tests-workflow
+  entrypoint: certificatesmanagement-tests-workflow
   volumes:
     - name: git-repo
       persistentVolumeClaim:
@@ -20,7 +20,7 @@ spec:
     - name: delete_resources
       value: "true"
   templates:
-    - name: certificatesManagement-tests-workflow
+    - name: certificatesmanagement-tests-workflow
       dag:
         tasks:
         - name: create-compartment
@@ -43,7 +43,7 @@ spec:
           arguments:
             parameters:
               - name: resourceFile
-                value: "examples/certificatesManagement/v1alpha1/certificateauthority.yaml"
+                value: "examples/certificatesmanagement/v1alpha1/certificateauthority.yaml"
         - name: create-certificate
           templateRef:
             name: test-template
@@ -53,7 +53,7 @@ spec:
           arguments:
             parameters:
               - name: resourceFile
-                value: "examples/certificatesManagement/v1alpha1/certificate.yaml"
+                value: "examples/certificatesmanagement/v1alpha1/certificate.yaml"
         - name: create-cabundle
           templateRef:
             name: test-template
@@ -63,7 +63,7 @@ spec:
           arguments:
             parameters:
               - name: resourceFile
-                value: "examples/certificatesManagement/v1alpha1/cabundle.yaml"
+                value: "examples/certificatesmanagement/v1alpha1/cabundle.yaml"
         - name: delete-cabundle
           templateRef:
             name: test-template

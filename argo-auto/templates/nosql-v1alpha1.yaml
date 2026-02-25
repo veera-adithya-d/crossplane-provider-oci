@@ -12,7 +12,7 @@ spec:
         claimName: git-repo-pvc
   arguments:
     parameters:
-    - name: var_table_ddl_statement
+    - name: nosql_table_ddlstatement
     - name: compartment_ocid
     - name: create_compartment
       value: "true"
@@ -56,7 +56,7 @@ spec:
               - name: resourceFile
                 value: "examples/nosql/v1alpha1/table.yaml"
               - name: envVars
-                value: "var.table_ddl_statement={{workflow.parameters.var_table_ddl_statement}}"
+                value: "NOSQL_TABLE_DDLSTATEMENT={{workflow.parameters.nosql_table_ddlstatement}}"
         - name: create-index
           templateRef:
             name: test-template

@@ -2,10 +2,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
-  name: oci-streaming-v1alpha1-tests-template
+  name: oci-resourcemanager-v1alpha1-tests-template
 spec:
   serviceAccountName: argo-workflow
-  entrypoint: streaming-tests-workflow
+  entrypoint: resourcemanager-tests-workflow
   volumes:
     - name: git-repo
       persistentVolumeClaim:
@@ -13,16 +13,30 @@ spec:
   arguments:
     parameters:
     - name: compartment_ocid
+    - name: create_vcn
+      value: "true"
     - name: create_compartment
+      value: "true"
+    - name: create_subnet
       value: "true"
     - name: create_resources
       value: "true"
     - name: delete_resources
       value: "true"
   templates:
-    - name: streaming-tests-workflow
+    - name: resourcemanager-tests-workflow
       dag:
         tasks:
+        - name: create-vcn
+          templateRef:
+            name: test-template
+            template: create-resource
+          when: "{{workflow.parameters.create_vcn}} == true"
+          dependencies: [create-compartment]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/networking/v1alpha1/vcn.yaml"
         - name: create-compartment
           templateRef:
             name: test-template
@@ -34,51 +48,37 @@ spec:
                 value: "examples/identity/v1alpha1/compartment.yaml"
               - name: envVars
                 value: "COMPARTMENT_OCID={{workflow.parameters.compartment_ocid}}"
-        - name: create-streampool
+        - name: create-subnet
+          templateRef:
+            name: test-template
+            template: create-resource
+          when: "{{workflow.parameters.create_subnet}} == true"
+          dependencies: [create-compartment, create-vcn]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/networking/v1alpha1/privatesubnet.yaml"
+        - name: create-privateendpoint
           templateRef:
             name: test-template
             template: create-resource
           when: "{{workflow.parameters.create_resources}} == true"
-          dependencies: [create-compartment]
+          dependencies: [create-subnet, create-vcn, create-compartment]
           arguments:
             parameters:
               - name: resourceFile
-                value: "examples/streaming/v1alpha1/streampool.yaml"
-        - name: create-streamingconnectharness
-          templateRef:
-            name: test-template
-            template: create-resource
-          when: "{{workflow.parameters.create_resources}} == true"
-          dependencies: [create-compartment]
-          arguments:
-            parameters:
-              - name: resourceFile
-                value: "examples/streaming/v1alpha1/streamingconnectharness.yaml"
-        - name: delete-streamingconnectharness
+                value: "examples/resourcemanager/v1alpha1/privateendpoint.yaml"
+        - name: delete-privateendpoint
           templateRef:
             name: test-template
             template: delete-resource
           when: "{{workflow.parameters.delete_resources}} == true"
-          dependencies: ["create-streamingconnectharness"]
+          dependencies: ["create-privateendpoint"]
           arguments:
             parameters:
               - name: resourceKind
-                value: "{{tasks.create-connectharness.outputs.parameters.resourceKind}}"
+                value: "{{tasks.create-privateendpoint.outputs.parameters.resourceKind}}"
               - name: resourceName
-                value: "{{tasks.create-connectharness.outputs.parameters.resourceName}}"
+                value: "{{tasks.create-privateendpoint.outputs.parameters.resourceName}}"
               - name: resourceGroup
-                value: "{{tasks.create-connectharness.outputs.parameters.resourceGroup}}"
-        - name: delete-streampool
-          templateRef:
-            name: test-template
-            template: delete-resource
-          when: "{{workflow.parameters.delete_resources}} == true"
-          dependencies: ["create-streampool"]
-          arguments:
-            parameters:
-              - name: resourceKind
-                value: "{{tasks.create-streampool.outputs.parameters.resourceKind}}"
-              - name: resourceName
-                value: "{{tasks.create-streampool.outputs.parameters.resourceName}}"
-              - name: resourceGroup
-                value: "{{tasks.create-streampool.outputs.parameters.resourceGroup}}"
+                value: "{{tasks.create-privateendpoint.outputs.parameters.resourceGroup}}"

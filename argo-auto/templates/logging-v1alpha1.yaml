@@ -74,6 +74,30 @@ spec:
             parameters:
               - name: resourceFile
                 value: "examples/logging/v1alpha1/log.yaml"
+        - name: create-customlog
+          templateRef:
+            name: test-template
+            template: create-resource
+          when: "{{workflow.parameters.create_resources}} == true"
+          dependencies: [create-loggroup]
+          arguments:
+            parameters:
+              - name: resourceFile
+                value: "examples/logging/v1alpha1/customlog.yaml"
+        - name: delete-customlog
+          templateRef:
+            name: test-template
+            template: delete-resource
+          when: "{{workflow.parameters.delete_resources}} == true"
+          dependencies: ["create-customlog"]
+          arguments:
+            parameters:
+              - name: resourceKind
+                value: "{{tasks.create-log.outputs.parameters.resourceKind}}"
+              - name: resourceName
+                value: "{{tasks.create-log.outputs.parameters.resourceName}}"
+              - name: resourceGroup
+                value: "{{tasks.create-log.outputs.parameters.resourceGroup}}"
         - name: delete-log
           templateRef:
             name: test-template

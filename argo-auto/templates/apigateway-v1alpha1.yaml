@@ -98,16 +98,6 @@ spec:
             parameters:
               - name: resourceFile
                 value: "examples/apigateway/v1alpha1/deployment.yaml"
-        - name: create-certificate
-          templateRef:
-            name: test-template
-            template: create-resource
-          when: "{{workflow.parameters.create_resources}} == true"
-          dependencies: [create-compartment]
-          arguments:
-            parameters:
-              - name: resourceFile
-                value: "examples/apigateway/v1alpha1/certificate.yaml"
         - name: create-api
           templateRef:
             name: test-template
@@ -132,20 +122,6 @@ spec:
                 value: "{{tasks.create-api.outputs.parameters.resourceName}}"
               - name: resourceGroup
                 value: "{{tasks.create-api.outputs.parameters.resourceGroup}}"
-        - name: delete-certificate
-          templateRef:
-            name: test-template
-            template: delete-resource
-          when: "{{workflow.parameters.delete_resources}} == true"
-          dependencies: ["create-certificate"]
-          arguments:
-            parameters:
-              - name: resourceKind
-                value: "{{tasks.create-certificate.outputs.parameters.resourceKind}}"
-              - name: resourceName
-                value: "{{tasks.create-certificate.outputs.parameters.resourceName}}"
-              - name: resourceGroup
-                value: "{{tasks.create-certificate.outputs.parameters.resourceGroup}}"
         - name: delete-deployment
           templateRef:
             name: test-template
