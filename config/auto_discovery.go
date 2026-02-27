@@ -21,8 +21,6 @@ import (
 
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
-
-	"github.com/crossplane/upjet/pkg/config"
 )
 
 // ProblematicResources returns a list of regex patterns for resources that should be
@@ -49,24 +47,6 @@ func ProblematicResources() []string {
 		`oci_load_balancer$`,                                             // Alias for oci_load_balancer_load_balancer
 
 		// Add more specific resources here as we discover generation issues
-	}
-}
-
-// AutoExternalNameConfiguration provides automatic external name configuration
-// for resources that don't have explicit configuration in ExternalNameConfigs.
-// This ensures all discovered resources can be properly managed.
-func AutoExternalNameConfiguration() config.ResourceOption {
-	return func(r *config.Resource) {
-		// Only apply if not already configured
-		if r.ExternalName.DisableNameInitializer == false {
-			// Check if this resource has explicit configuration
-			if _, ok := ExternalNameConfigs[r.Name]; !ok {
-				// Use IdentifierFromProvider as default for all OCI resources
-				// This is the most common pattern in OCI
-				r.ExternalName = config.IdentifierFromProvider
-				r.Version = "v1alpha1"
-			}
-		}
 	}
 }
 
