@@ -1,0 +1,29 @@
+@startuml
+title Current Wiring (V1)
+
+package "Provider Binary" {
+  [cmd/provider/main.go]
+}
+
+package "APIs" {
+  [apis/*]
+  [v1beta1.ProviderConfig]
+  [v1alpha1.StoreConfig]
+}
+
+package "Controllers" {
+  [internal/controller/*]
+}
+
+package "CRDs" {
+  [cluster-scoped MRs]
+  [publishConnectionDetailsTo]
+}
+
+[cmd/provider/main.go] --> [apis/*] : AddToScheme
+[cmd/provider/main.go] --> [internal/controller/*] : Setup_monolith
+[internal/controller/*] --> [v1beta1.ProviderConfig] : providerConfigRef
+[internal/controller/*] --> [v1alpha1.StoreConfig] : ESS optional
+[cluster-scoped MRs] --> [publishConnectionDetailsTo]
+
+@enduml

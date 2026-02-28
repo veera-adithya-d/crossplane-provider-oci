@@ -1,0 +1,30 @@
+@startuml
+title Target Wiring (V2)
+
+package "Generator" {
+  [GetProvider()]
+  [GetProviderNamespaced()]
+  [pipeline.Run(cluster,namespaced)]
+}
+
+package "APIs" {
+  [apis/cluster/*]
+  [apis/namespaced/*]
+}
+
+package "Controllers" {
+  [internal/controller/cluster/*]
+  [internal/controller/namespaced/*]
+}
+
+package "CRDs" {
+  [legacy cluster MRs]
+  [modern namespaced MRs]
+}
+
+[pipeline.Run(cluster,namespaced)] --> [apis/cluster/*]
+[pipeline.Run(cluster,namespaced)] --> [apis/namespaced/*]
+[internal/controller/cluster/*] --> [legacy cluster MRs]
+[internal/controller/namespaced/*] --> [modern namespaced MRs]
+
+@enduml

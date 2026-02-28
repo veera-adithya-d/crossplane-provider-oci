@@ -1,0 +1,21 @@
+@startuml
+title Generation Flow (V2)
+
+start
+:update config/provider.go;
+:GetProvider + GetProviderNamespaced;
+:run make generate;
+:pipeline generates cluster + namespaced APIs/controllers;
+:controller-gen emits dual-scope CRDs;
+:angryjet methodsets;
+:resolver transform;
+if (validation pass?) then (yes)
+  :update docs/examples/tests;
+  stop
+else (no)
+  :fix config/template;
+  :run make generate;
+  stop
+endif
+
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+title SafeStart Gate Sequence
+
+participant Main
+participant RBAC as "SelfSubjectAccessReview"
+participant Gate as "CRD Gate"
+participant CRDG as "customresourcesgate"
+participant CCtrl as "cluster SetupGated"
+participant NCtrl as "namespaced SetupGated"
+
+Main -> RBAC : canWatchCRD(get,list,watch)
+alt allowed
+  Main -> Gate : create shared gate
+  Main -> CRDG : Setup(gate)
+  Main -> CCtrl : SetupGated(gate)
+  Main -> NCtrl : SetupGated(gate)
+else denied
+  Main -> CCtrl : Setup()
+  Main -> NCtrl : Setup()
+end
+
+@enduml

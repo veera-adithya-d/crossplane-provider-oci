@@ -1,0 +1,23 @@
+@startuml
+title ProviderConfig Resolution (V2)
+
+actor MR as "Managed Resource"
+participant Setup as "TerraformSetupBuilder"
+participant K8s as "K8s API"
+participant Norm as "Common Config Mapper"
+
+MR -> Setup : providerConfigRef(kind,name)
+alt legacy MR group
+  Setup -> K8s : get ProviderConfig.oci.upbound.io
+else modern namespaced MR
+  alt kind=ProviderConfig
+    Setup -> K8s : get ProviderConfig.oci.m.upbound.io (namespaced)
+  else kind=ClusterProviderConfig
+    Setup -> K8s : get ClusterProviderConfig.oci.m.upbound.io
+  end
+end
+Setup -> Norm : map to common ProviderConfigSpec
+Norm --> Setup : normalized credentials
+Setup --> MR : terraform setup
+
+@enduml
