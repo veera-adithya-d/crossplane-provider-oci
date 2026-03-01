@@ -3,7 +3,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.18.0
+    controller-gen.kubebuilder.io/version: v0.20.0
   name: certificateauthorities.certificatesmanagement.oci.upbound.io
 spec:
   group: certificatesmanagement.oci.upbound.io
@@ -1397,10 +1397,6 @@ spec:
                   Secret to which any connection details for this managed resource should
                   be written. Connection details frequently include the endpoint, username,
                   and password required to connect to the managed resource.
-                  This field is planned to be replaced in a future release in favor of
-                  PublishConnectionDetailsTo. Currently, both could be set independently
-                  and connection details would be published to both without affecting
-                  each other.
                 properties:
                   name:
                     description: Name of the secret.
