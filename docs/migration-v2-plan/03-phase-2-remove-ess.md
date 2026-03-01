@@ -8,8 +8,8 @@ Remove External Secret Store (`StoreConfig`, `publishConnectionDetailsTo`) usage
 
 - `apis/v1alpha1/types.go`
 - `apis/v1alpha1/register.go`
-- `cmd/provider/main.go`
 - `hack/main.go.tmpl`
+- generated `cmd/provider/*/zz_main.go`
 - generated `internal/controller/**/zz_controller.go`
 - generated `package/crds/*.yaml`
 

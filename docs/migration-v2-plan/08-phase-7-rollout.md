@@ -8,7 +8,7 @@ De-risk rollout by piloting a small set first.
 
 1. `config`
 2. one service provider (`objectstorage` suggested)
-3. full monolith + full subpackages
+3. expand to full subpackage set
 
 ## Steps
 

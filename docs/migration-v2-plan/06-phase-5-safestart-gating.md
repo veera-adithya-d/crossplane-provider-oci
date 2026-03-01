@@ -7,7 +7,6 @@ Gate controller startup on CRD readiness when RBAC allows.
 ## Key Files
 
 - `hack/main.go.tmpl`
-- `cmd/provider/main.go`
 - `cmd/provider/*/zz_main.go` (generated)
 - `internal/controller/cluster/**`
 - `internal/controller/namespaced/**`

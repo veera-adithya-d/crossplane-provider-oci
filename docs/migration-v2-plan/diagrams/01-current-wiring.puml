@@ -1,14 +1,14 @@
 @startuml
-title Current Wiring (V1)
+title Current Wiring (Subpackage Build)
 
-package "Provider Binary" {
-  [cmd/provider/main.go]
+package "Generation" {
+  [hack/main.go.tmpl]
+  [cmd/provider/*/zz_main.go]
 }
 
 package "APIs" {
   [apis/*]
   [v1beta1.ProviderConfig]
-  [v1alpha1.StoreConfig]
 }
 
 package "Controllers" {
@@ -17,13 +17,11 @@ package "Controllers" {
 
 package "CRDs" {
   [cluster-scoped MRs]
-  [publishConnectionDetailsTo]
 }
 
-[cmd/provider/main.go] --> [apis/*] : AddToScheme
-[cmd/provider/main.go] --> [internal/controller/*] : Setup_monolith
+[hack/main.go.tmpl] --> [cmd/provider/*/zz_main.go] : generate
+[cmd/provider/*/zz_main.go] --> [apis/*] : AddToScheme
+[cmd/provider/*/zz_main.go] --> [internal/controller/*] : Setup_<group>
 [internal/controller/*] --> [v1beta1.ProviderConfig] : providerConfigRef
-[internal/controller/*] --> [v1alpha1.StoreConfig] : ESS optional
-[cluster-scoped MRs] --> [publishConnectionDetailsTo]
 
 @enduml

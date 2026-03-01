@@ -15,7 +15,8 @@ git checkout -b feat/upjet-v2-migration
 ```bash
 git status
 go version
-go test ./cmd/provider -run TestNonExistent -count=0
+go test ./cmd/generator -run TestNonExistent -count=0
+go test ./cmd/provider/config -run TestNonExistent -count=0
 ```
 
 3. Capture generated scope counts.
