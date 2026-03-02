@@ -3,12 +3,19 @@
 package main
 
 import (
+	"context"
 	"io"
 	"os"
 	"path/filepath"
 	"time"
 
 	"github.com/alecthomas/kingpin/v2"
+	authorizationv1 "k8s.io/api/authorization/v1"
+	apiextensionsv1 "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/apimachinery/pkg/runtime/schema"
+	"k8s.io/client-go/kubernetes"
+	"k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/leaderelection/resourcelock"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/cache"
@@ -16,8 +23,10 @@ import (
 
 	xpcontroller "github.com/crossplane/crossplane-runtime/v2/pkg/controller"
 	"github.com/crossplane/crossplane-runtime/v2/pkg/feature"
+	"github.com/crossplane/crossplane-runtime/v2/pkg/gate"
 	"github.com/crossplane/crossplane-runtime/v2/pkg/logging"
 	"github.com/crossplane/crossplane-runtime/v2/pkg/ratelimiter"
+	"github.com/crossplane/crossplane-runtime/v2/pkg/reconciler/customresourcesgate"
 	tjcontroller "github.com/crossplane/upjet/v2/pkg/controller"
 	"github.com/crossplane/upjet/v2/pkg/terraform"
 
@@ -25,8 +34,9 @@ import (
 	"github.com/oracle/provider-oci/config"
 	resolverapis "github.com/oracle/provider-oci/internal/apis"
 	"github.com/oracle/provider-oci/internal/clients"
-	"github.com/oracle/provider-oci/internal/controller"
+	clustercontroller "github.com/oracle/provider-oci/internal/controller/cluster"
 	"github.com/oracle/provider-oci/internal/features"
+	namespacedcontroller "github.com/oracle/provider-oci/internal/controller/namespaced"
 )
 
 func main() {
@@ -75,6 +85,7 @@ func main() {
 	})
 	kingpin.FatalIfError(err, "Cannot create controller manager")
 	kingpin.FatalIfError(apis.AddToScheme(mgr.GetScheme()), "Cannot add Oci APIs to scheme")
+	kingpin.FatalIfError(apiextensionsv1.AddToScheme(mgr.GetScheme()), "Cannot add apiextensions APIs to scheme")
 	kingpin.FatalIfError(resolverapis.BuildScheme(apis.AddToSchemes), "Cannot register the OCI APIs with the API resolver's runtime scheme")
 	o := tjcontroller.Options{
 		Options: xpcontroller.Options{
@@ -96,6 +107,57 @@ func main() {
 		log.Info("Beta feature enabled", "flag", features.EnableBetaManagementPolicies)
 	}
 
-	kingpin.FatalIfError(controller.Setup_apigateway(mgr, o), "Cannot setup apigateway controllers")
+	if canWatchCRD(context.Background(), cfg, log) {
+		log.Info("SafeStart enabled", "service", "apigateway")
+		o.Gate = &gate.Gate[schema.GroupVersionKind]{}
+
+		kingpin.FatalIfError(setupGatedControllers(mgr, o), "Cannot setup gated apigateway controllers")
+		kingpin.FatalIfError(customresourcesgate.Setup(mgr, o.Options), "Cannot setup custom resource gate controller")
+	} else {
+		log.Info("SafeStart disabled; falling back to eager controller setup", "service", "apigateway")
+		kingpin.FatalIfError(setupControllers(mgr, o), "Cannot setup apigateway controllers")
+	}
 	kingpin.FatalIfError(mgr.Start(ctrl.SetupSignalHandler()), "Cannot start controller manager")
+}
+
+func setupControllers(mgr ctrl.Manager, o tjcontroller.Options) error {
+	if err := clustercontroller.Setup_apigateway(mgr, o); err != nil {
+		return err
+	}
+	return namespacedcontroller.Setup_apigateway(mgr, o)
+}
+
+func setupGatedControllers(mgr ctrl.Manager, o tjcontroller.Options) error {
+	if err := clustercontroller.SetupGated_apigateway(mgr, o); err != nil {
+		return err
+	}
+	return namespacedcontroller.SetupGated_apigateway(mgr, o)
+}
+
+func canWatchCRD(ctx context.Context, cfg *rest.Config, log logging.Logger) bool {
+	cs, err := kubernetes.NewForConfig(cfg)
+	if err != nil {
+		log.Info("SafeStart disabled; failed to create Kubernetes client", "error", err)
+		return false
+	}
+
+	resp, err := cs.AuthorizationV1().SelfSubjectAccessReviews().Create(ctx, &authorizationv1.SelfSubjectAccessReview{
+		Spec: authorizationv1.SelfSubjectAccessReviewSpec{
+			ResourceAttributes: &authorizationv1.ResourceAttributes{
+				Group:    "apiextensions.k8s.io",
+				Resource: "customresourcedefinitions",
+				Verb:     "watch",
+			},
+		},
+	}, metav1.CreateOptions{})
+	if err != nil {
+		log.Info("SafeStart disabled; CRD watch capability check failed", "error", err)
+		return false
+	}
+
+	if !resp.Status.Allowed {
+		log.Info("SafeStart disabled; CRD watch access denied", "reason", resp.Status.Reason, "evaluationError", resp.Status.EvaluationError)
+		return false
+	}
+	return true
 }
