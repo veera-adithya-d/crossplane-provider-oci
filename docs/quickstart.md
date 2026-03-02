@@ -210,6 +210,18 @@ This method uses OCI Workload Identity for authentication in OKE environments.
 After choosing one authentication method above, register the provider configuration:
 ```bash
 cat <<EOF | kubectl apply -f -
+apiVersion: oci.m.upbound.io/v1beta1
+kind: ClusterProviderConfig
+metadata:
+  name: default
+spec:
+  credentials:
+    source: Secret
+    secretRef:
+      name: oci-creds
+      namespace: crossplane-system
+      key: credentials
+---
 apiVersion: oci.upbound.io/v1beta1
 kind: ProviderConfig
 metadata:
@@ -226,6 +238,9 @@ EOF
 
 > [!NOTE]
 > If the provider configuration is incorrect (for example, wrong credentials or authentication settings), managed resources can report `READY=False` and `SYNCED=False` until the configuration is fixed.
+>
+> `ClusterProviderConfig.oci.m.upbound.io` is the modern default for namespaced managed resources (`*.oci.m.upbound.io`).
+> Legacy cluster-scoped managed resources (`*.oci.upbound.io`) continue to use `ProviderConfig.oci.upbound.io`.
 
 
 ## Create a managed resource
@@ -235,11 +250,23 @@ Create a managed resource to verify the provider-oci-objectstorage is functionin
 Use this command to instruct Crossplane to create the bucket in the OCI tenancy.
 
 ```bash
-# Edit examples/objectstorage/bucket.yaml with your compartment and storage name space as documented.
+# Edit examples/objectstorage/v1alpha1/bucket.yaml with your compartment and storage namespace as documented.
 # Apply the example that creates an Object Storage bucket
 
-kubectl apply -f examples/objectstorage/bucket.yaml
+kubectl apply -f examples/objectstorage/v1alpha1/bucket.yaml
 ```
+
+For namespaced managed resources (`apiVersion: *.oci.m.upbound.io/*`), set:
+```yaml
+metadata:
+  namespace: upbound-system
+spec:
+  providerConfigRef:
+    kind: ClusterProviderConfig
+    name: default
+```
+
+For local namespaced secret references inside namespaced resources, do not set `namespace` in the local ref fields.
 
 Verify the status of the resource by running this command (example output is shown).
 ```bash
@@ -296,20 +323,16 @@ Events:
 The output indicates the `Bucket` is using a `ProviderConfig` named `default`. The applied `ProviderConfig` is `oci-provider`.
 
 ```bash
-kubectl get providerconfig
-```
-```
-# Sample output
-NAME           AGE
-oci-provider   7s
+kubectl get clusterproviderconfigs.oci.m.upbound.io
+kubectl get providerconfigs.oci.upbound.io
 ```
 
 ## Delete the managed resource
 
-Remove the managed resource by using `kubectl delete -f examples/objectstorage/bucket.yaml`. Verify removal of the bucket with kubectl get buckets
+Remove the managed resource by using `kubectl delete -f examples/objectstorage/v1alpha1/bucket.yaml`. Verify removal of the bucket with kubectl get buckets
 
 ```bash
-kubectl delete -f examples/objectstorage/bucket.yaml
+kubectl delete -f examples/objectstorage/v1alpha1/bucket.yaml
 ```
 ```
 # Sample output
