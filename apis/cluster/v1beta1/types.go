@@ -96,6 +96,13 @@ var ProviderConfigGroupVersionKind = schema.GroupVersionKind{
 	Kind:    "ProviderConfig",
 }
 
+// ProviderConfigUsageGroupVersionKind is the GroupVersionKind for ProviderConfigUsage
+var ProviderConfigUsageGroupVersionKind = schema.GroupVersionKind{
+	Group:   Group,
+	Version: Version,
+	Kind:    "ProviderConfigUsage",
+}
+
 // ProviderConfigUsageListGroupVersionKind is the GroupVersionKind for ProviderConfigUsageList
 var ProviderConfigUsageListGroupVersionKind = schema.GroupVersionKind{
 	Group:   Group,
