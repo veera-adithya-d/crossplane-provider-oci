@@ -10,6 +10,9 @@ import (
 	"time"
 
 	"github.com/alecthomas/kingpin/v2"
+	changelogsv1alpha1 "github.com/crossplane/crossplane-runtime/v2/apis/changelogs/proto/v1alpha1"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
 	authorizationv1 "k8s.io/api/authorization/v1"
 	apiextensionsv1 "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -27,6 +30,7 @@ import (
 	"github.com/crossplane/crossplane-runtime/v2/pkg/logging"
 	"github.com/crossplane/crossplane-runtime/v2/pkg/ratelimiter"
 	"github.com/crossplane/crossplane-runtime/v2/pkg/reconciler/customresourcesgate"
+	"github.com/crossplane/crossplane-runtime/v2/pkg/reconciler/managed"
 	tjcontroller "github.com/crossplane/upjet/v2/pkg/controller"
 	"github.com/crossplane/upjet/v2/pkg/terraform"
 
@@ -35,22 +39,24 @@ import (
 	resolverapis "github.com/oracle/provider-oci/internal/apis"
 	"github.com/oracle/provider-oci/internal/clients"
 	clustercontroller "github.com/oracle/provider-oci/internal/controller/cluster"
-	"github.com/oracle/provider-oci/internal/features"
 	namespacedcontroller "github.com/oracle/provider-oci/internal/controller/namespaced"
+	"github.com/oracle/provider-oci/internal/features"
 )
 
 func main() {
 	var (
-		app              = kingpin.New(filepath.Base(os.Args[0]), "OCI support for Crossplane - adm Service.").DefaultEnvars()
-		debug            = app.Flag("debug", "Run with debug logging.").Short('d').Bool()
-		syncPeriod       = app.Flag("sync", "Controller manager sync period such as 300ms, 1.5h, or 2h45m").Short('s').Default("1h").Duration()
-		pollInterval     = app.Flag("poll", "How often individual resources are checked for drift from desired state.").Default("1m").Duration()
-		leaderElection   = app.Flag("leader-election", "Use leader election for the controller manager.").Short('l').Default("false").Envar("LEADER_ELECTION").Bool()
-		terraformVersion = app.Flag("terraform-version", "Terraform version.").Required().Envar("TERRAFORM_VERSION").String()
-		providerSource   = app.Flag("terraform-provider-source", "Terraform provider source.").Required().Envar("TERRAFORM_PROVIDER_SOURCE").String()
-		providerVersion  = app.Flag("terraform-provider-version", "Terraform provider version.").Required().Envar("TERRAFORM_PROVIDER_VERSION").String()
-		maxReconcileRate = app.Flag("max-reconcile-rate", "The global maximum rate per second at which resources may checked for drift from the desired state.").Default("10").Int()
+		app                      = kingpin.New(filepath.Base(os.Args[0]), "OCI support for Crossplane - adm Service.").DefaultEnvars()
+		debug                    = app.Flag("debug", "Run with debug logging.").Short('d').Bool()
+		syncPeriod               = app.Flag("sync", "Controller manager sync period such as 300ms, 1.5h, or 2h45m").Short('s').Default("1h").Duration()
+		pollInterval             = app.Flag("poll", "How often individual resources are checked for drift from desired state.").Default("1m").Duration()
+		leaderElection           = app.Flag("leader-election", "Use leader election for the controller manager.").Short('l').Default("false").Envar("LEADER_ELECTION").Bool()
+		terraformVersion         = app.Flag("terraform-version", "Terraform version.").Required().Envar("TERRAFORM_VERSION").String()
+		providerSource           = app.Flag("terraform-provider-source", "Terraform provider source.").Required().Envar("TERRAFORM_PROVIDER_SOURCE").String()
+		providerVersion          = app.Flag("terraform-provider-version", "Terraform provider version.").Required().Envar("TERRAFORM_PROVIDER_VERSION").String()
+		maxReconcileRate         = app.Flag("max-reconcile-rate", "The global maximum rate per second at which resources may checked for drift from the desired state.").Default("10").Int()
+		changelogsSocketPath     = app.Flag("changelogs-socket-path", "Path for changelogs socket (if enabled).").Default("/var/run/changelogs/changelogs.sock").Envar("CHANGELOGS_SOCKET_PATH").String()
 		enableManagementPolicies = app.Flag("enable-management-policies", "Enable support for ManagementPolicies.").Default("true").Envar("ENABLE_MANAGEMENT_POLICIES").Bool()
+		enableChangeLogs         = app.Flag("enable-changelogs", "Enable support for capturing change logs during reconciliation.").Default("false").Envar("ENABLE_CHANGE_LOGS").Bool()
 	)
 
 	kingpin.MustParse(app.Parse(os.Args[1:]))
@@ -105,6 +111,20 @@ func main() {
 	if *enableManagementPolicies {
 		o.Features.Enable(features.EnableBetaManagementPolicies)
 		log.Info("Beta feature enabled", "flag", features.EnableBetaManagementPolicies)
+	}
+
+	if *enableChangeLogs {
+		o.Features.Enable(features.EnableAlphaChangeLogs)
+		log.Info("Alpha feature enabled", "flag", features.EnableAlphaChangeLogs)
+
+		conn, err := grpc.NewClient("unix://"+*changelogsSocketPath, grpc.WithTransportCredentials(insecure.NewCredentials()))
+		kingpin.FatalIfError(err, "failed to create change logs client connection at %s", *changelogsSocketPath)
+
+		o.ChangeLogOptions = &xpcontroller.ChangeLogOptions{
+			ChangeLogger: managed.NewGRPCChangeLogger(
+				changelogsv1alpha1.NewChangeLogServiceClient(conn),
+				managed.WithProviderVersion(*providerSource+":"+*providerVersion)),
+		}
 	}
 
 	if canWatchCRD(context.Background(), cfg, log) {
