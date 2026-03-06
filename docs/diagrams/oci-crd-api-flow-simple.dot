@@ -1,0 +1,47 @@
+digraph OCI_CRD_API_Flow_Simple {
+  rankdir=LR;
+  graph [
+    bgcolor="white",
+    pad="0.2",
+    nodesep="0.5",
+    ranksep="0.7",
+    fontname="Helvetica",
+    fontsize="12",
+    label="Simple API Flow: CRDs to OCI Resource Management",
+    labelloc="t",
+    labeljust="l"
+  ];
+
+  node [
+    shape=box,
+    style="rounded,filled",
+    fillcolor="#f8fafc",
+    color="#475569",
+    fontname="Helvetica",
+    fontsize="11"
+  ];
+
+  edge [
+    color="#64748b",
+    penwidth="1.2",
+    arrowsize="0.8",
+    fontname="Helvetica",
+    fontsize="10"
+  ];
+
+  yaml [label="YAML (desired state)\nCrossplane/CAPOCI objects", fillcolor="#e0f2fe", color="#0284c7"];
+  crd [label="Kubernetes API + CRDs\nStore desired + status", fillcolor="#ecfeff", color="#0891b2"];
+  ctrl [label="Controller/Reconciler\n(provider-oci or CAPOCI)", fillcolor="#dcfce7", color="#16a34a"];
+  ociapi [label="OCI API", fillcolor="#fee2e2", color="#dc2626"];
+  resource [label="OCI Resource\n(VCN, OKE, Bucket, VM, etc.)", fillcolor="#f3e8ff", color="#9333ea"];
+  status [label="Status/Conditions\nReady, Synced, errors", fillcolor="#f1f5f9", color="#475569"];
+
+  yaml -> crd [label="apply"];
+  crd -> ctrl [label="watch"];
+  ctrl -> ociapi [label="create/update/delete"];
+  ociapi -> resource [label="provision/manage"];
+  resource -> ociapi [label="actual state"];
+  ociapi -> ctrl [label="observe"];
+  ctrl -> status [label="set status"];
+  status -> crd [label="update status"];
+}

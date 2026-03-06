@@ -1,0 +1,84 @@
+digraph OCI_CRD_Wiring {
+  rankdir=LR;
+  graph [
+    bgcolor="white",
+    pad="0.25",
+    nodesep="0.45",
+    ranksep="0.7",
+    fontname="Helvetica",
+    fontsize="12",
+    label="Kubernetes on OCI: CRD Wiring and Reconciliation Flow",
+    labelloc="t",
+    labeljust="l"
+  ];
+
+  node [
+    shape=box,
+    style="rounded,filled",
+    color="#4b5563",
+    fillcolor="#f9fafb",
+    fontname="Helvetica",
+    fontsize="11",
+    margin="0.08,0.06"
+  ];
+
+  edge [
+    color="#6b7280",
+    penwidth="1.2",
+    arrowsize="0.8",
+    fontname="Helvetica",
+    fontsize="10"
+  ];
+
+  yaml [label="Customer YAMLs\n- Crossplane Managed Resources / Compositions\n- CAPI Cluster Templates / Objects", fillcolor="#eef2ff", color="#6366f1"];
+  apiserver [label="Kubernetes API Server + etcd\n(stores desired + observed state)", fillcolor="#ecfeff", color="#0891b2"];
+
+  subgraph cluster_crds {
+    label="CRD API Surfaces";
+    color="#d1d5db";
+    style="rounded";
+    fontname="Helvetica";
+    fontsize="11";
+    xrd [label="Crossplane OCI CRDs\n(provider-family-oci + sub-provider CRDs)", fillcolor="#f0fdf4", color="#16a34a"];
+    capi [label="Cluster API OCI CRDs\n(OCICluster, OCIMachine,\nOCIManagedCluster, OCIManagedControlPlane...)", fillcolor="#f0f9ff", color="#0284c7"];
+  }
+
+  subgraph cluster_ctrl {
+    label="Reconciliation Controllers";
+    color="#d1d5db";
+    style="rounded";
+    fontname="Helvetica";
+    fontsize="11";
+    xpctrl [label="Crossplane + provider-oci controllers\nWatch CRs, call OCI APIs,\nupdate Ready/Synced/Conditions", fillcolor="#dcfce7", color="#16a34a"];
+    capctrl [label="CAPI core + CAPOCI controllers\nWatch cluster CRs, create/update cluster infra,\nmanage lifecycle + health", fillcolor="#e0f2fe", color="#0284c7"];
+  }
+
+  auth [label="Auth & Identity\nSecret / API Key / Instance Principal /\nWorkload Identity", fillcolor="#fff7ed", color="#ea580c"];
+  ociapi [label="OCI APIs\nCompute, Networking, OKE,\nStorage, IAM, LB, etc.", fillcolor="#fef2f2", color="#dc2626"];
+  ocires [label="OCI Resources\nVCNs, Subnets, OKE Clusters, Node Pools,\nBuckets, Databases, Load Balancers...", fillcolor="#faf5ff", color="#9333ea"];
+  status [label="Status + Drift Signals\nEvents, Conditions, observed state", fillcolor="#f5f3ff", color="#7c3aed"];
+
+  yaml -> apiserver [label="kubectl / GitOps apply"];
+  apiserver -> xrd [label="validate against CRDs"];
+  apiserver -> capi [label="validate against CRDs"];
+
+  xrd -> xpctrl [label="watch desired state"];
+  capi -> capctrl [label="watch desired state"];
+  apiserver -> xpctrl [label="read spec"];
+  apiserver -> capctrl [label="read spec"];
+
+  auth -> xpctrl [label="credentials"];
+  auth -> capctrl [label="credentials"];
+
+  xpctrl -> ociapi [label="reconcile"];
+  capctrl -> ociapi [label="reconcile"];
+  ociapi -> ocires [label="create / update / delete"];
+  ocires -> ociapi [label="actual runtime state"];
+
+  ociapi -> xpctrl [label="observe"];
+  ociapi -> capctrl [label="observe"];
+
+  xpctrl -> status [label="set conditions"];
+  capctrl -> status [label="set conditions"];
+  status -> apiserver [label="write status/events"];
+}

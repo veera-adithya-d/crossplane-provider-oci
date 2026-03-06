@@ -1,0 +1,72 @@
+digraph OCI_CRD_API_Flow_Orthogonal {
+  rankdir=LR;
+  splines=ortho;
+  graph [
+    bgcolor="white",
+    pad="0.2",
+    nodesep="1.0",
+    ranksep="1.4",
+    fontname="Helvetica",
+    fontsize="12",
+    label="Orthogonal API Flow: YAML -> CRD -> Controller -> OCI",
+    labelloc="t",
+    labeljust="l"
+  ];
+
+  node [
+    shape=box,
+    style="rounded,filled",
+    fillcolor="#f8fafc",
+    color="#475569",
+    fontname="Helvetica",
+    fontsize="11",
+    width=2.3,
+    height=0.9
+  ];
+
+  edge [
+    color="#64748b",
+    penwidth="1.2",
+    arrowsize="0.75",
+    fontname="Helvetica",
+    fontsize="10",
+    fontcolor="#334155"
+  ];
+
+  // Top row: desired-state to provisioning path
+  { rank=same;
+    yaml   [label="YAML\n(desired state)", fillcolor="#e0f2fe", color="#0284c7"];
+    crd    [label="Kubernetes API + CRD", fillcolor="#ecfeff", color="#0891b2"];
+    ctrl   [label="Controller /\nReconciler", fillcolor="#dcfce7", color="#16a34a"];
+    ociapi [label="OCI API", fillcolor="#fee2e2", color="#dc2626"];
+    ocires [label="OCI Resource", fillcolor="#f3e8ff", color="#9333ea"];
+  }
+
+  // Bottom row: observe/manage feedback path
+  { rank=same;
+    spacer1 [label="", shape=point, width=0.01, color=white];
+    status  [label="Status / Conditions", fillcolor="#f1f5f9", color="#475569"];
+    observe [label="Observe Actual State", fillcolor="#fff7ed", color="#ea580c"];
+    spacer2 [label="", shape=point, width=0.01, color=white];
+    spacer3 [label="", shape=point, width=0.01, color=white];
+  }
+
+  // Keep strict columns
+  yaml   -> spacer1 [style=invis, weight=20];
+  crd    -> status  [style=invis, weight=20];
+  ctrl   -> observe [style=invis, weight=20];
+  ociapi -> spacer2 [style=invis, weight=20];
+  ocires -> spacer3 [style=invis, weight=20];
+
+  // Main forward flow
+  yaml -> crd [xlabel="apply"];
+  crd -> ctrl [xlabel="watch"];
+  ctrl -> ociapi [xlabel="reconcile"];
+  ociapi -> ocires [xlabel="provision"];
+
+  // Feedback flow
+  ocires -> observe [xlabel="actual state"];
+  observe -> ctrl [xlabel="observe"];
+  ctrl -> status [xlabel="set status"];
+  status:s -> crd:s [taillabel="update status", labeldistance=5.0, labelangle=90];
+}
