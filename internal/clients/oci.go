@@ -20,7 +20,6 @@ import (
 
 	clusterv1beta1 "github.com/oracle/provider-oci/apis/cluster/v1beta1"
 	namespacedv1beta1 "github.com/oracle/provider-oci/apis/namespaced/v1beta1"
-	legacyv1beta1 "github.com/oracle/provider-oci/apis/v1beta1"
 )
 
 const (
@@ -95,12 +94,12 @@ func resolveLegacyProviderConfig(ctx context.Context, kube client.Client, mg res
 		return nil, errors.New(errNoProviderConfig)
 	}
 
-	pc := &legacyv1beta1.ProviderConfig{}
+	pc := &clusterv1beta1.ProviderConfig{}
 	if err := kube.Get(ctx, types.NamespacedName{Name: configRef.Name}, pc); err != nil {
 		return nil, errors.Wrap(err, errGetProviderConfig)
 	}
 
-	t := resource.NewLegacyProviderConfigUsageTracker(kube, &legacyv1beta1.ProviderConfigUsage{})
+	t := resource.NewLegacyProviderConfigUsageTracker(kube, &clusterv1beta1.ProviderConfigUsage{})
 	if err := t.Track(ctx, mg); err != nil {
 		return nil, errors.Wrap(err, errTrackUsage)
 	}
@@ -119,13 +118,13 @@ func resolveClusterProviderConfigForModernMR(ctx context.Context, kube client.Cl
 
 	kind := configRef.Kind
 	if kind == "" {
-		kind = legacyv1beta1.ProviderConfigGroupVersionKind.Kind
+		kind = clusterv1beta1.ProviderConfigGroupVersionKind.Kind
 	}
-	if kind != legacyv1beta1.ProviderConfigGroupVersionKind.Kind && kind != namespacedv1beta1.ClusterProviderConfigKind {
+	if kind != clusterv1beta1.ProviderConfigGroupVersionKind.Kind && kind != namespacedv1beta1.ClusterProviderConfigKind {
 		return nil, errors.Wrap(errors.New(kind), errUnsupportedProviderCfgKind)
 	}
 
-	pc := &legacyv1beta1.ProviderConfig{}
+	pc := &clusterv1beta1.ProviderConfig{}
 	if err := kube.Get(ctx, types.NamespacedName{Name: configRef.Name}, pc); err != nil {
 		return nil, errors.Wrap(err, errGetProviderConfig)
 	}
