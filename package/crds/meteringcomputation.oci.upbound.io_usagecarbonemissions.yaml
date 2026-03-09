@@ -3,7 +3,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.0
+    controller-gen.kubebuilder.io/version: v0.18.0
   name: usagecarbonemissions.meteringcomputation.oci.upbound.io
 spec:
   group: meteringcomputation.oci.upbound.io
@@ -230,6 +230,8 @@ spec:
                   - Delete
                   - LateInitialize
                   - '*'
+                  - MustCreate
+                  - Orphan
                   type: string
                 type: array
               providerConfigRef:

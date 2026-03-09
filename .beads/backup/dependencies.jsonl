@@ -1,3 +1,4 @@
 {"created_at":"2026-03-05T11:46:34Z","created_by":"vdittaka","depends_on_id":"crossplane-provider-oci-xug","issue_id":"crossplane-provider-oci-61a","type":"discovered-from"}
 {"created_at":"2026-03-05T11:46:34Z","created_by":"vdittaka","depends_on_id":"crossplane-provider-oci-xug","issue_id":"crossplane-provider-oci-78w","type":"discovered-from"}
+{"created_at":"2026-03-06T12:53:55Z","created_by":"vdittaka","depends_on_id":"crossplane-provider-oci-78w","issue_id":"crossplane-provider-oci-8hj","type":"discovered-from"}
 {"created_at":"2026-03-05T11:46:34Z","created_by":"vdittaka","depends_on_id":"crossplane-provider-oci-xug","issue_id":"crossplane-provider-oci-b3f","type":"discovered-from"}
