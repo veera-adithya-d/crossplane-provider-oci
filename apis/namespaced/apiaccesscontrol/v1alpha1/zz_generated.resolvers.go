@@ -25,7 +25,7 @@ func (mg *PrivilegedApiControl) ResolveReferences( // ResolveReferences of this 
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *PrivilegedApiControl) ResolveReferences( // ResolveReferences of this 
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("ons.oci.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
+		m, l, err = apisresolver.GetManagedResource("ons.oci.m.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -67,7 +67,7 @@ func (mg *PrivilegedApiControl) ResolveReferences( // ResolveReferences of this 
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.PrivilegedOperationList); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("apigateway.oci.upbound.io", "v1alpha1", "Api", "ApiList")
+			m, l, err = apisresolver.GetManagedResource("apigateway.oci.m.upbound.io", "v1alpha1", "Api", "ApiList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -88,7 +88,7 @@ func (mg *PrivilegedApiControl) ResolveReferences( // ResolveReferences of this 
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -107,7 +107,7 @@ func (mg *PrivilegedApiControl) ResolveReferences( // ResolveReferences of this 
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("ons.oci.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
+		m, l, err = apisresolver.GetManagedResource("ons.oci.m.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -129,7 +129,7 @@ func (mg *PrivilegedApiControl) ResolveReferences( // ResolveReferences of this 
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.PrivilegedOperationList); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("apigateway.oci.upbound.io", "v1alpha1", "Api", "ApiList")
+			m, l, err = apisresolver.GetManagedResource("apigateway.oci.m.upbound.io", "v1alpha1", "Api", "ApiList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -162,7 +162,7 @@ func (mg *PrivilegedApiRequest) ResolveReferences(ctx context.Context, c client.
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -182,7 +182,7 @@ func (mg *PrivilegedApiRequest) ResolveReferences(ctx context.Context, c client.
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("ons.oci.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
+		m, l, err = apisresolver.GetManagedResource("ons.oci.m.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -204,7 +204,7 @@ func (mg *PrivilegedApiRequest) ResolveReferences(ctx context.Context, c client.
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.PrivilegedOperationList); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("apigateway.oci.upbound.io", "v1alpha1", "Api", "ApiList")
+			m, l, err = apisresolver.GetManagedResource("apigateway.oci.m.upbound.io", "v1alpha1", "Api", "ApiList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -225,7 +225,7 @@ func (mg *PrivilegedApiRequest) ResolveReferences(ctx context.Context, c client.
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -244,7 +244,7 @@ func (mg *PrivilegedApiRequest) ResolveReferences(ctx context.Context, c client.
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("ons.oci.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
+		m, l, err = apisresolver.GetManagedResource("ons.oci.m.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -266,7 +266,7 @@ func (mg *PrivilegedApiRequest) ResolveReferences(ctx context.Context, c client.
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.PrivilegedOperationList); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("apigateway.oci.upbound.io", "v1alpha1", "Api", "ApiList")
+			m, l, err = apisresolver.GetManagedResource("apigateway.oci.m.upbound.io", "v1alpha1", "Api", "ApiList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}

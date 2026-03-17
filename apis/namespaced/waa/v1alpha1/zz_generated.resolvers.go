@@ -25,7 +25,7 @@ func (mg *WebAppAcceleration) ResolveReferences( // ResolveReferences of this We
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *WebAppAcceleration) ResolveReferences( // ResolveReferences of this We
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("loadbalancer.oci.upbound.io", "v1alpha1", "LoadBalancer", "LoadBalancerList")
+		m, l, err = apisresolver.GetManagedResource("loadbalancer.oci.m.upbound.io", "v1alpha1", "LoadBalancer", "LoadBalancerList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -65,7 +65,7 @@ func (mg *WebAppAcceleration) ResolveReferences( // ResolveReferences of this We
 	mg.Spec.ForProvider.LoadBalancerID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.LoadBalancerIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("waa.oci.upbound.io", "v1alpha1", "WebAppAccelerationPolicy", "WebAppAccelerationPolicyList")
+		m, l, err = apisresolver.GetManagedResource("waa.oci.m.upbound.io", "v1alpha1", "WebAppAccelerationPolicy", "WebAppAccelerationPolicyList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -85,7 +85,7 @@ func (mg *WebAppAcceleration) ResolveReferences( // ResolveReferences of this We
 	mg.Spec.ForProvider.WebAppAccelerationPolicyID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.WebAppAccelerationPolicyIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -105,7 +105,7 @@ func (mg *WebAppAcceleration) ResolveReferences( // ResolveReferences of this We
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("loadbalancer.oci.upbound.io", "v1alpha1", "LoadBalancer", "LoadBalancerList")
+		m, l, err = apisresolver.GetManagedResource("loadbalancer.oci.m.upbound.io", "v1alpha1", "LoadBalancer", "LoadBalancerList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -125,7 +125,7 @@ func (mg *WebAppAcceleration) ResolveReferences( // ResolveReferences of this We
 	mg.Spec.InitProvider.LoadBalancerID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.LoadBalancerIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("waa.oci.upbound.io", "v1alpha1", "WebAppAccelerationPolicy", "WebAppAccelerationPolicyList")
+		m, l, err = apisresolver.GetManagedResource("waa.oci.m.upbound.io", "v1alpha1", "WebAppAccelerationPolicy", "WebAppAccelerationPolicyList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -157,7 +157,7 @@ func (mg *WebAppAccelerationPolicy) ResolveReferences(ctx context.Context, c cli
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -177,7 +177,7 @@ func (mg *WebAppAccelerationPolicy) ResolveReferences(ctx context.Context, c cli
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

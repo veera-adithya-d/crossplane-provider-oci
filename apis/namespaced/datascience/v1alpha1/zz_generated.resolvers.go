@@ -25,7 +25,7 @@ func (mg *Job) ResolveReferences( // ResolveReferences of this Job.
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -47,7 +47,7 @@ func (mg *Job) ResolveReferences( // ResolveReferences of this Job.
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.JobInfrastructureConfigurationDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -69,7 +69,7 @@ func (mg *Job) ResolveReferences( // ResolveReferences of this Job.
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.JobLogConfigurationDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+			m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -91,7 +91,7 @@ func (mg *Job) ResolveReferences( // ResolveReferences of this Job.
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.JobLogConfigurationDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+			m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -114,7 +114,7 @@ func (mg *Job) ResolveReferences( // ResolveReferences of this Job.
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.JobNodeConfigurationDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.JobNodeConfigurationDetails[i3].JobNetworkConfiguration); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+				m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -139,7 +139,7 @@ func (mg *Job) ResolveReferences( // ResolveReferences of this Job.
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.JobNodeConfigurationDetails[i3].JobNodeGroupConfigurationDetailsList); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.JobNodeConfigurationDetails[i3].JobNodeGroupConfigurationDetailsList[i4].JobInfrastructureConfigurationDetails); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+					m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -163,7 +163,7 @@ func (mg *Job) ResolveReferences( // ResolveReferences of this Job.
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.JobStorageMountConfigurationDetailsList); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "Export", "ExportList")
+			m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "Export", "ExportList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -185,7 +185,7 @@ func (mg *Job) ResolveReferences( // ResolveReferences of this Job.
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.JobStorageMountConfigurationDetailsList); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
+			m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -206,7 +206,7 @@ func (mg *Job) ResolveReferences( // ResolveReferences of this Job.
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -225,7 +225,7 @@ func (mg *Job) ResolveReferences( // ResolveReferences of this Job.
 	mg.Spec.ForProvider.ProjectID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ProjectIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -247,7 +247,7 @@ func (mg *Job) ResolveReferences( // ResolveReferences of this Job.
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.JobInfrastructureConfigurationDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -269,7 +269,7 @@ func (mg *Job) ResolveReferences( // ResolveReferences of this Job.
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.JobLogConfigurationDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+			m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -291,7 +291,7 @@ func (mg *Job) ResolveReferences( // ResolveReferences of this Job.
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.JobLogConfigurationDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+			m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -314,7 +314,7 @@ func (mg *Job) ResolveReferences( // ResolveReferences of this Job.
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.JobNodeConfigurationDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.JobNodeConfigurationDetails[i3].JobNetworkConfiguration); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+				m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -339,7 +339,7 @@ func (mg *Job) ResolveReferences( // ResolveReferences of this Job.
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.JobNodeConfigurationDetails[i3].JobNodeGroupConfigurationDetailsList); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.JobNodeConfigurationDetails[i3].JobNodeGroupConfigurationDetailsList[i4].JobInfrastructureConfigurationDetails); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+					m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -363,7 +363,7 @@ func (mg *Job) ResolveReferences( // ResolveReferences of this Job.
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.JobStorageMountConfigurationDetailsList); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "Export", "ExportList")
+			m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "Export", "ExportList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -385,7 +385,7 @@ func (mg *Job) ResolveReferences( // ResolveReferences of this Job.
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.JobStorageMountConfigurationDetailsList); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
+			m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -406,7 +406,7 @@ func (mg *Job) ResolveReferences( // ResolveReferences of this Job.
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -437,7 +437,7 @@ func (mg *JobRun) ResolveReferences(ctx context.Context, c client.Reader) error 
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -457,7 +457,7 @@ func (mg *JobRun) ResolveReferences(ctx context.Context, c client.Reader) error 
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Job", "JobList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Job", "JobList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -479,7 +479,7 @@ func (mg *JobRun) ResolveReferences(ctx context.Context, c client.Reader) error 
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.JobInfrastructureConfigurationOverrideDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -501,7 +501,7 @@ func (mg *JobRun) ResolveReferences(ctx context.Context, c client.Reader) error 
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.JobLogConfigurationOverrideDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+			m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -523,7 +523,7 @@ func (mg *JobRun) ResolveReferences(ctx context.Context, c client.Reader) error 
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.JobLogConfigurationOverrideDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+			m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -546,7 +546,7 @@ func (mg *JobRun) ResolveReferences(ctx context.Context, c client.Reader) error 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.JobNodeConfigurationOverrideDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.JobNodeConfigurationOverrideDetails[i3].JobNetworkConfiguration); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+				m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -571,7 +571,7 @@ func (mg *JobRun) ResolveReferences(ctx context.Context, c client.Reader) error 
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.JobNodeConfigurationOverrideDetails[i3].JobNodeGroupConfigurationDetailsList); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.JobNodeConfigurationOverrideDetails[i3].JobNodeGroupConfigurationDetailsList[i4].JobInfrastructureConfigurationDetails); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+					m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -594,7 +594,7 @@ func (mg *JobRun) ResolveReferences(ctx context.Context, c client.Reader) error 
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -613,7 +613,7 @@ func (mg *JobRun) ResolveReferences(ctx context.Context, c client.Reader) error 
 	mg.Spec.ForProvider.ProjectID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ProjectIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -633,7 +633,7 @@ func (mg *JobRun) ResolveReferences(ctx context.Context, c client.Reader) error 
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Job", "JobList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Job", "JobList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -655,7 +655,7 @@ func (mg *JobRun) ResolveReferences(ctx context.Context, c client.Reader) error 
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.JobInfrastructureConfigurationOverrideDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -677,7 +677,7 @@ func (mg *JobRun) ResolveReferences(ctx context.Context, c client.Reader) error 
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.JobLogConfigurationOverrideDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+			m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -699,7 +699,7 @@ func (mg *JobRun) ResolveReferences(ctx context.Context, c client.Reader) error 
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.JobLogConfigurationOverrideDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+			m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -722,7 +722,7 @@ func (mg *JobRun) ResolveReferences(ctx context.Context, c client.Reader) error 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.JobNodeConfigurationOverrideDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.JobNodeConfigurationOverrideDetails[i3].JobNetworkConfiguration); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+				m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -747,7 +747,7 @@ func (mg *JobRun) ResolveReferences(ctx context.Context, c client.Reader) error 
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.JobNodeConfigurationOverrideDetails[i3].JobNodeGroupConfigurationDetailsList); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.JobNodeConfigurationOverrideDetails[i3].JobNodeGroupConfigurationDetailsList[i4].JobInfrastructureConfigurationDetails); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+					m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -770,7 +770,7 @@ func (mg *JobRun) ResolveReferences(ctx context.Context, c client.Reader) error 
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -801,7 +801,7 @@ func (mg *MlApplication) ResolveReferences(ctx context.Context, c client.Reader)
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -821,7 +821,7 @@ func (mg *MlApplication) ResolveReferences(ctx context.Context, c client.Reader)
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -853,7 +853,7 @@ func (mg *MlApplicationImplementation) ResolveReferences(ctx context.Context, c 
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -876,7 +876,7 @@ func (mg *MlApplicationImplementation) ResolveReferences(ctx context.Context, c 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Logging); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Logging[i3].AggregatedInstanceViewLog); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+				m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -900,7 +900,7 @@ func (mg *MlApplicationImplementation) ResolveReferences(ctx context.Context, c 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Logging); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Logging[i3].AggregatedInstanceViewLog); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+				m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -924,7 +924,7 @@ func (mg *MlApplicationImplementation) ResolveReferences(ctx context.Context, c 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Logging); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Logging[i3].ImplementationLog); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+				m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -948,7 +948,7 @@ func (mg *MlApplicationImplementation) ResolveReferences(ctx context.Context, c 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Logging); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Logging[i3].ImplementationLog); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+				m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -972,7 +972,7 @@ func (mg *MlApplicationImplementation) ResolveReferences(ctx context.Context, c 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Logging); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Logging[i3].TriggerLog); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+				m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -996,7 +996,7 @@ func (mg *MlApplicationImplementation) ResolveReferences(ctx context.Context, c 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Logging); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Logging[i3].TriggerLog); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+				m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -1018,7 +1018,7 @@ func (mg *MlApplicationImplementation) ResolveReferences(ctx context.Context, c 
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "MlApplication", "MlApplicationList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "MlApplication", "MlApplicationList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1037,7 +1037,7 @@ func (mg *MlApplicationImplementation) ResolveReferences(ctx context.Context, c 
 	mg.Spec.ForProvider.MLApplicationID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.MLApplicationIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1060,7 +1060,7 @@ func (mg *MlApplicationImplementation) ResolveReferences(ctx context.Context, c 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Logging); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Logging[i3].AggregatedInstanceViewLog); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+				m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -1084,7 +1084,7 @@ func (mg *MlApplicationImplementation) ResolveReferences(ctx context.Context, c 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Logging); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Logging[i3].AggregatedInstanceViewLog); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+				m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -1108,7 +1108,7 @@ func (mg *MlApplicationImplementation) ResolveReferences(ctx context.Context, c 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Logging); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Logging[i3].ImplementationLog); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+				m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -1132,7 +1132,7 @@ func (mg *MlApplicationImplementation) ResolveReferences(ctx context.Context, c 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Logging); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Logging[i3].ImplementationLog); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+				m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -1156,7 +1156,7 @@ func (mg *MlApplicationImplementation) ResolveReferences(ctx context.Context, c 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Logging); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Logging[i3].TriggerLog); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+				m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -1180,7 +1180,7 @@ func (mg *MlApplicationImplementation) ResolveReferences(ctx context.Context, c 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Logging); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Logging[i3].TriggerLog); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+				m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -1202,7 +1202,7 @@ func (mg *MlApplicationImplementation) ResolveReferences(ctx context.Context, c 
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "MlApplication", "MlApplicationList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "MlApplication", "MlApplicationList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1235,7 +1235,7 @@ func (mg *MlApplicationInstance) ResolveReferences(ctx context.Context, c client
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.AuthConfiguration); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("dataflow.oci.upbound.io", "v1alpha1", "Application", "ApplicationList")
+			m, l, err = apisresolver.GetManagedResource("dataflow.oci.m.upbound.io", "v1alpha1", "Application", "ApplicationList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1257,7 +1257,7 @@ func (mg *MlApplicationInstance) ResolveReferences(ctx context.Context, c client
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.AuthConfiguration); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Domain", "DomainList")
+			m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Domain", "DomainList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1278,7 +1278,7 @@ func (mg *MlApplicationInstance) ResolveReferences(ctx context.Context, c client
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1297,7 +1297,7 @@ func (mg *MlApplicationInstance) ResolveReferences(ctx context.Context, c client
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "MlApplication", "MlApplicationList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "MlApplication", "MlApplicationList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1317,7 +1317,7 @@ func (mg *MlApplicationInstance) ResolveReferences(ctx context.Context, c client
 	mg.Spec.ForProvider.MLApplicationID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.MLApplicationIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "MlApplicationImplementation", "MlApplicationImplementationList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "MlApplicationImplementation", "MlApplicationImplementationList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1339,7 +1339,7 @@ func (mg *MlApplicationInstance) ResolveReferences(ctx context.Context, c client
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.AuthConfiguration); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("dataflow.oci.upbound.io", "v1alpha1", "Application", "ApplicationList")
+			m, l, err = apisresolver.GetManagedResource("dataflow.oci.m.upbound.io", "v1alpha1", "Application", "ApplicationList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1361,7 +1361,7 @@ func (mg *MlApplicationInstance) ResolveReferences(ctx context.Context, c client
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.AuthConfiguration); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Domain", "DomainList")
+			m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Domain", "DomainList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1382,7 +1382,7 @@ func (mg *MlApplicationInstance) ResolveReferences(ctx context.Context, c client
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1401,7 +1401,7 @@ func (mg *MlApplicationInstance) ResolveReferences(ctx context.Context, c client
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "MlApplication", "MlApplicationList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "MlApplication", "MlApplicationList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1421,7 +1421,7 @@ func (mg *MlApplicationInstance) ResolveReferences(ctx context.Context, c client
 	mg.Spec.InitProvider.MLApplicationID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.MLApplicationIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "MlApplicationImplementation", "MlApplicationImplementationList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "MlApplicationImplementation", "MlApplicationImplementationList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1453,7 +1453,7 @@ func (mg *Model) ResolveReferences(ctx context.Context, c client.Reader) error {
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1473,7 +1473,7 @@ func (mg *Model) ResolveReferences(ctx context.Context, c client.Reader) error {
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1493,7 +1493,7 @@ func (mg *Model) ResolveReferences(ctx context.Context, c client.Reader) error {
 	mg.Spec.ForProvider.ProjectID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ProjectIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1513,7 +1513,7 @@ func (mg *Model) ResolveReferences(ctx context.Context, c client.Reader) error {
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1545,7 +1545,7 @@ func (mg *ModelCustomMetadataArtifact) ResolveReferences(ctx context.Context, c 
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+		m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1565,7 +1565,7 @@ func (mg *ModelCustomMetadataArtifact) ResolveReferences(ctx context.Context, c 
 	mg.Spec.ForProvider.MetadatumKeyName = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.MetadatumKeyNameRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Model", "ModelList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Model", "ModelList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1585,7 +1585,7 @@ func (mg *ModelCustomMetadataArtifact) ResolveReferences(ctx context.Context, c 
 	mg.Spec.ForProvider.ModelID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ModelIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+		m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1605,7 +1605,7 @@ func (mg *ModelCustomMetadataArtifact) ResolveReferences(ctx context.Context, c 
 	mg.Spec.InitProvider.MetadatumKeyName = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.MetadatumKeyNameRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Model", "ModelList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Model", "ModelList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1637,7 +1637,7 @@ func (mg *ModelDefinedMetadataArtifact) ResolveReferences(ctx context.Context, c
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+		m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1657,7 +1657,7 @@ func (mg *ModelDefinedMetadataArtifact) ResolveReferences(ctx context.Context, c
 	mg.Spec.ForProvider.MetadatumKeyName = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.MetadatumKeyNameRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Model", "ModelList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Model", "ModelList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1677,7 +1677,7 @@ func (mg *ModelDefinedMetadataArtifact) ResolveReferences(ctx context.Context, c
 	mg.Spec.ForProvider.ModelID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ModelIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+		m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1697,7 +1697,7 @@ func (mg *ModelDefinedMetadataArtifact) ResolveReferences(ctx context.Context, c
 	mg.Spec.InitProvider.MetadatumKeyName = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.MetadatumKeyNameRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Model", "ModelList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Model", "ModelList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1732,7 +1732,7 @@ func (mg *ModelDeployment) ResolveReferences(ctx context.Context, c client.Reade
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.CategoryLogDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.CategoryLogDetails[i3].Access); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+				m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -1756,7 +1756,7 @@ func (mg *ModelDeployment) ResolveReferences(ctx context.Context, c client.Reade
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.CategoryLogDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.CategoryLogDetails[i3].Access); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+				m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -1780,7 +1780,7 @@ func (mg *ModelDeployment) ResolveReferences(ctx context.Context, c client.Reade
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.CategoryLogDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.CategoryLogDetails[i3].Predict); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+				m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -1804,7 +1804,7 @@ func (mg *ModelDeployment) ResolveReferences(ctx context.Context, c client.Reade
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.CategoryLogDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.CategoryLogDetails[i3].Predict); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+				m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -1826,7 +1826,7 @@ func (mg *ModelDeployment) ResolveReferences(ctx context.Context, c client.Reade
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1849,7 +1849,7 @@ func (mg *ModelDeployment) ResolveReferences(ctx context.Context, c client.Reade
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.ModelDeploymentConfigurationDetails[i3].ModelConfigurationDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.ModelDeploymentConfigurationDetails[i3].ModelConfigurationDetails[i4].InstanceConfiguration); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "PrivateEndpoint", "PrivateEndpointList")
+					m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "PrivateEndpoint", "PrivateEndpointList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -1875,7 +1875,7 @@ func (mg *ModelDeployment) ResolveReferences(ctx context.Context, c client.Reade
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.ModelDeploymentConfigurationDetails[i3].ModelConfigurationDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.ModelDeploymentConfigurationDetails[i3].ModelConfigurationDetails[i4].InstanceConfiguration); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+					m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -1900,7 +1900,7 @@ func (mg *ModelDeployment) ResolveReferences(ctx context.Context, c client.Reade
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.ModelDeploymentConfigurationDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.ModelDeploymentConfigurationDetails[i3].ModelConfigurationDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Model", "ModelList")
+				m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Model", "ModelList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -1922,7 +1922,7 @@ func (mg *ModelDeployment) ResolveReferences(ctx context.Context, c client.Reade
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1944,7 +1944,7 @@ func (mg *ModelDeployment) ResolveReferences(ctx context.Context, c client.Reade
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.CategoryLogDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.CategoryLogDetails[i3].Access); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+				m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -1968,7 +1968,7 @@ func (mg *ModelDeployment) ResolveReferences(ctx context.Context, c client.Reade
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.CategoryLogDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.CategoryLogDetails[i3].Access); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+				m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -1992,7 +1992,7 @@ func (mg *ModelDeployment) ResolveReferences(ctx context.Context, c client.Reade
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.CategoryLogDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.CategoryLogDetails[i3].Predict); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+				m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -2016,7 +2016,7 @@ func (mg *ModelDeployment) ResolveReferences(ctx context.Context, c client.Reade
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.CategoryLogDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.CategoryLogDetails[i3].Predict); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+				m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -2038,7 +2038,7 @@ func (mg *ModelDeployment) ResolveReferences(ctx context.Context, c client.Reade
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2061,7 +2061,7 @@ func (mg *ModelDeployment) ResolveReferences(ctx context.Context, c client.Reade
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.ModelDeploymentConfigurationDetails[i3].ModelConfigurationDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.ModelDeploymentConfigurationDetails[i3].ModelConfigurationDetails[i4].InstanceConfiguration); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "PrivateEndpoint", "PrivateEndpointList")
+					m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "PrivateEndpoint", "PrivateEndpointList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -2087,7 +2087,7 @@ func (mg *ModelDeployment) ResolveReferences(ctx context.Context, c client.Reade
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.ModelDeploymentConfigurationDetails[i3].ModelConfigurationDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.ModelDeploymentConfigurationDetails[i3].ModelConfigurationDetails[i4].InstanceConfiguration); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+					m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -2112,7 +2112,7 @@ func (mg *ModelDeployment) ResolveReferences(ctx context.Context, c client.Reade
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.ModelDeploymentConfigurationDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.ModelDeploymentConfigurationDetails[i3].ModelConfigurationDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Model", "ModelList")
+				m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Model", "ModelList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -2134,7 +2134,7 @@ func (mg *ModelDeployment) ResolveReferences(ctx context.Context, c client.Reade
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2165,7 +2165,7 @@ func (mg *ModelGroup) ResolveReferences(ctx context.Context, c client.Reader) er
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2188,7 +2188,7 @@ func (mg *ModelGroup) ResolveReferences(ctx context.Context, c client.Reader) er
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.MemberModelEntries); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.MemberModelEntries[i3].MemberModelDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Model", "ModelList")
+				m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Model", "ModelList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -2213,7 +2213,7 @@ func (mg *ModelGroup) ResolveReferences(ctx context.Context, c client.Reader) er
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.ModelGroupCloneSourceDetails[i3].ModifyModelGroupDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.ModelGroupCloneSourceDetails[i3].ModifyModelGroupDetails[i4].ModelGroupDetails); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Model", "ModelList")
+					m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Model", "ModelList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -2238,7 +2238,7 @@ func (mg *ModelGroup) ResolveReferences(ctx context.Context, c client.Reader) er
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.ModelGroupCloneSourceDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.ModelGroupCloneSourceDetails[i3].ModifyModelGroupDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "ModelGroupVersionHistory", "ModelGroupVersionHistoryList")
+				m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "ModelGroupVersionHistory", "ModelGroupVersionHistoryList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -2264,7 +2264,7 @@ func (mg *ModelGroup) ResolveReferences(ctx context.Context, c client.Reader) er
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.ModelGroupCloneSourceDetails[i3].PatchModelGroupMemberModelDetails[i4].Items); i5++ {
 				for i6 := 0; i6 < len(mg.Spec.ForProvider.ModelGroupCloneSourceDetails[i3].PatchModelGroupMemberModelDetails[i4].Items[i5].Values); i6++ {
 					{
-						m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Model", "ModelList")
+						m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Model", "ModelList")
 						if err != nil {
 							return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 						}
@@ -2289,7 +2289,7 @@ func (mg *ModelGroup) ResolveReferences(ctx context.Context, c client.Reader) er
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.ModelGroupDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Model", "ModelList")
+			m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Model", "ModelList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -2310,7 +2310,7 @@ func (mg *ModelGroup) ResolveReferences(ctx context.Context, c client.Reader) er
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "ModelGroupVersionHistory", "ModelGroupVersionHistoryList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "ModelGroupVersionHistory", "ModelGroupVersionHistoryList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2329,7 +2329,7 @@ func (mg *ModelGroup) ResolveReferences(ctx context.Context, c client.Reader) er
 	mg.Spec.ForProvider.ModelGroupVersionHistoryID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ModelGroupVersionHistoryIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2349,7 +2349,7 @@ func (mg *ModelGroup) ResolveReferences(ctx context.Context, c client.Reader) er
 	mg.Spec.ForProvider.ProjectID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ProjectIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2372,7 +2372,7 @@ func (mg *ModelGroup) ResolveReferences(ctx context.Context, c client.Reader) er
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.MemberModelEntries); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.MemberModelEntries[i3].MemberModelDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Model", "ModelList")
+				m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Model", "ModelList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -2397,7 +2397,7 @@ func (mg *ModelGroup) ResolveReferences(ctx context.Context, c client.Reader) er
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.ModelGroupCloneSourceDetails[i3].ModifyModelGroupDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.ModelGroupCloneSourceDetails[i3].ModifyModelGroupDetails[i4].ModelGroupDetails); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Model", "ModelList")
+					m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Model", "ModelList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -2422,7 +2422,7 @@ func (mg *ModelGroup) ResolveReferences(ctx context.Context, c client.Reader) er
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.ModelGroupCloneSourceDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.ModelGroupCloneSourceDetails[i3].ModifyModelGroupDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "ModelGroupVersionHistory", "ModelGroupVersionHistoryList")
+				m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "ModelGroupVersionHistory", "ModelGroupVersionHistoryList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -2448,7 +2448,7 @@ func (mg *ModelGroup) ResolveReferences(ctx context.Context, c client.Reader) er
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.ModelGroupCloneSourceDetails[i3].PatchModelGroupMemberModelDetails[i4].Items); i5++ {
 				for i6 := 0; i6 < len(mg.Spec.InitProvider.ModelGroupCloneSourceDetails[i3].PatchModelGroupMemberModelDetails[i4].Items[i5].Values); i6++ {
 					{
-						m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Model", "ModelList")
+						m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Model", "ModelList")
 						if err != nil {
 							return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 						}
@@ -2473,7 +2473,7 @@ func (mg *ModelGroup) ResolveReferences(ctx context.Context, c client.Reader) er
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.ModelGroupDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Model", "ModelList")
+			m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Model", "ModelList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -2494,7 +2494,7 @@ func (mg *ModelGroup) ResolveReferences(ctx context.Context, c client.Reader) er
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "ModelGroupVersionHistory", "ModelGroupVersionHistoryList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "ModelGroupVersionHistory", "ModelGroupVersionHistoryList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2513,7 +2513,7 @@ func (mg *ModelGroup) ResolveReferences(ctx context.Context, c client.Reader) er
 	mg.Spec.InitProvider.ModelGroupVersionHistoryID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.ModelGroupVersionHistoryIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2545,7 +2545,7 @@ func (mg *ModelGroupArtifact) ResolveReferences(ctx context.Context, c client.Re
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "ModelGroup", "ModelGroupList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "ModelGroup", "ModelGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2565,7 +2565,7 @@ func (mg *ModelGroupArtifact) ResolveReferences(ctx context.Context, c client.Re
 	mg.Spec.ForProvider.ModelGroupID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ModelGroupIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "ModelGroup", "ModelGroupList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "ModelGroup", "ModelGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2597,7 +2597,7 @@ func (mg *ModelGroupVersionHistory) ResolveReferences(ctx context.Context, c cli
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2617,7 +2617,7 @@ func (mg *ModelGroupVersionHistory) ResolveReferences(ctx context.Context, c cli
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "ModelGroup", "ModelGroupList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "ModelGroup", "ModelGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2637,7 +2637,7 @@ func (mg *ModelGroupVersionHistory) ResolveReferences(ctx context.Context, c cli
 	mg.Spec.ForProvider.LatestModelGroupID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.LatestModelGroupIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2657,7 +2657,7 @@ func (mg *ModelGroupVersionHistory) ResolveReferences(ctx context.Context, c cli
 	mg.Spec.ForProvider.ProjectID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ProjectIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2677,7 +2677,7 @@ func (mg *ModelGroupVersionHistory) ResolveReferences(ctx context.Context, c cli
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "ModelGroup", "ModelGroupList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "ModelGroup", "ModelGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2697,7 +2697,7 @@ func (mg *ModelGroupVersionHistory) ResolveReferences(ctx context.Context, c cli
 	mg.Spec.InitProvider.LatestModelGroupID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.LatestModelGroupIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2729,7 +2729,7 @@ func (mg *ModelProvenance) ResolveReferences(ctx context.Context, c client.Reade
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Model", "ModelList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Model", "ModelList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2749,7 +2749,7 @@ func (mg *ModelProvenance) ResolveReferences(ctx context.Context, c client.Reade
 	mg.Spec.ForProvider.ModelID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ModelIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Model", "ModelList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Model", "ModelList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2781,7 +2781,7 @@ func (mg *ModelVersionSet) ResolveReferences(ctx context.Context, c client.Reade
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2801,7 +2801,7 @@ func (mg *ModelVersionSet) ResolveReferences(ctx context.Context, c client.Reade
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2821,7 +2821,7 @@ func (mg *ModelVersionSet) ResolveReferences(ctx context.Context, c client.Reade
 	mg.Spec.ForProvider.ProjectID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ProjectIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2841,7 +2841,7 @@ func (mg *ModelVersionSet) ResolveReferences(ctx context.Context, c client.Reade
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2873,7 +2873,7 @@ func (mg *NotebookSession) ResolveReferences(ctx context.Context, c client.Reade
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2895,7 +2895,7 @@ func (mg *NotebookSession) ResolveReferences(ctx context.Context, c client.Reade
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.NotebookSessionConfigDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("dataflow.oci.upbound.io", "v1alpha1", "PrivateEndpoint", "PrivateEndpointList")
+			m, l, err = apisresolver.GetManagedResource("dataflow.oci.m.upbound.io", "v1alpha1", "PrivateEndpoint", "PrivateEndpointList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -2917,7 +2917,7 @@ func (mg *NotebookSession) ResolveReferences(ctx context.Context, c client.Reade
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.NotebookSessionConfigDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -2939,7 +2939,7 @@ func (mg *NotebookSession) ResolveReferences(ctx context.Context, c client.Reade
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.NotebookSessionConfigurationDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("dataflow.oci.upbound.io", "v1alpha1", "PrivateEndpoint", "PrivateEndpointList")
+			m, l, err = apisresolver.GetManagedResource("dataflow.oci.m.upbound.io", "v1alpha1", "PrivateEndpoint", "PrivateEndpointList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -2961,7 +2961,7 @@ func (mg *NotebookSession) ResolveReferences(ctx context.Context, c client.Reade
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.NotebookSessionConfigurationDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -2983,7 +2983,7 @@ func (mg *NotebookSession) ResolveReferences(ctx context.Context, c client.Reade
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.NotebookSessionStorageMountConfigurationDetailsList); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "Export", "ExportList")
+			m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "Export", "ExportList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3005,7 +3005,7 @@ func (mg *NotebookSession) ResolveReferences(ctx context.Context, c client.Reade
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.NotebookSessionStorageMountConfigurationDetailsList); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
+			m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3026,7 +3026,7 @@ func (mg *NotebookSession) ResolveReferences(ctx context.Context, c client.Reade
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3045,7 +3045,7 @@ func (mg *NotebookSession) ResolveReferences(ctx context.Context, c client.Reade
 	mg.Spec.ForProvider.ProjectID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ProjectIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3067,7 +3067,7 @@ func (mg *NotebookSession) ResolveReferences(ctx context.Context, c client.Reade
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.NotebookSessionConfigDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("dataflow.oci.upbound.io", "v1alpha1", "PrivateEndpoint", "PrivateEndpointList")
+			m, l, err = apisresolver.GetManagedResource("dataflow.oci.m.upbound.io", "v1alpha1", "PrivateEndpoint", "PrivateEndpointList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3089,7 +3089,7 @@ func (mg *NotebookSession) ResolveReferences(ctx context.Context, c client.Reade
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.NotebookSessionConfigDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3111,7 +3111,7 @@ func (mg *NotebookSession) ResolveReferences(ctx context.Context, c client.Reade
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.NotebookSessionConfigurationDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("dataflow.oci.upbound.io", "v1alpha1", "PrivateEndpoint", "PrivateEndpointList")
+			m, l, err = apisresolver.GetManagedResource("dataflow.oci.m.upbound.io", "v1alpha1", "PrivateEndpoint", "PrivateEndpointList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3133,7 +3133,7 @@ func (mg *NotebookSession) ResolveReferences(ctx context.Context, c client.Reade
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.NotebookSessionConfigurationDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3155,7 +3155,7 @@ func (mg *NotebookSession) ResolveReferences(ctx context.Context, c client.Reade
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.NotebookSessionStorageMountConfigurationDetailsList); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "Export", "ExportList")
+			m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "Export", "ExportList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3177,7 +3177,7 @@ func (mg *NotebookSession) ResolveReferences(ctx context.Context, c client.Reade
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.NotebookSessionStorageMountConfigurationDetailsList); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
+			m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3198,7 +3198,7 @@ func (mg *NotebookSession) ResolveReferences(ctx context.Context, c client.Reade
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3229,7 +3229,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3251,7 +3251,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.InfrastructureConfigurationDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3273,7 +3273,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.LogConfigurationDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+			m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3295,7 +3295,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.LogConfigurationDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+			m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3316,7 +3316,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3337,7 +3337,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.StepDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("dataflow.oci.upbound.io", "v1alpha1", "Application", "ApplicationList")
+			m, l, err = apisresolver.GetManagedResource("dataflow.oci.m.upbound.io", "v1alpha1", "Application", "ApplicationList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3359,7 +3359,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.StepDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Job", "JobList")
+			m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Job", "JobList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3382,7 +3382,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.StepDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.StepDetails[i3].StepInfrastructureConfigurationDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+				m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -3406,7 +3406,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.StepDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.StepDetails[i3].StepStorageMountConfigurationDetailsList); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "Export", "ExportList")
+				m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "Export", "ExportList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -3430,7 +3430,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.StepDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.StepDetails[i3].StepStorageMountConfigurationDetailsList); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
+				m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -3453,7 +3453,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.StorageMountConfigurationDetailsList); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "Export", "ExportList")
+			m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "Export", "ExportList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3475,7 +3475,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.StorageMountConfigurationDetailsList); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
+			m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3496,7 +3496,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3517,7 +3517,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.InfrastructureConfigurationDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3539,7 +3539,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.LogConfigurationDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+			m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3561,7 +3561,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.LogConfigurationDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+			m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3582,7 +3582,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3603,7 +3603,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.StepDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("dataflow.oci.upbound.io", "v1alpha1", "Application", "ApplicationList")
+			m, l, err = apisresolver.GetManagedResource("dataflow.oci.m.upbound.io", "v1alpha1", "Application", "ApplicationList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3625,7 +3625,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.StepDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Job", "JobList")
+			m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Job", "JobList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3648,7 +3648,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.StepDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.StepDetails[i3].StepInfrastructureConfigurationDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+				m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -3672,7 +3672,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.StepDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.StepDetails[i3].StepStorageMountConfigurationDetailsList); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "Export", "ExportList")
+				m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "Export", "ExportList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -3696,7 +3696,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.StepDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.StepDetails[i3].StepStorageMountConfigurationDetailsList); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
+				m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -3719,7 +3719,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.StorageMountConfigurationDetailsList); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "Export", "ExportList")
+			m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "Export", "ExportList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3741,7 +3741,7 @@ func (mg *Pipeline) ResolveReferences(ctx context.Context, c client.Reader) erro
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.StorageMountConfigurationDetailsList); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
+			m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3774,7 +3774,7 @@ func (mg *PipelineRun) ResolveReferences(ctx context.Context, c client.Reader) e
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3796,7 +3796,7 @@ func (mg *PipelineRun) ResolveReferences(ctx context.Context, c client.Reader) e
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.InfrastructureConfigurationOverrideDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3818,7 +3818,7 @@ func (mg *PipelineRun) ResolveReferences(ctx context.Context, c client.Reader) e
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.LogConfigurationOverrideDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+			m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3840,7 +3840,7 @@ func (mg *PipelineRun) ResolveReferences(ctx context.Context, c client.Reader) e
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.LogConfigurationOverrideDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+			m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3861,7 +3861,7 @@ func (mg *PipelineRun) ResolveReferences(ctx context.Context, c client.Reader) e
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Pipeline", "PipelineList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Pipeline", "PipelineList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3880,7 +3880,7 @@ func (mg *PipelineRun) ResolveReferences(ctx context.Context, c client.Reader) e
 	mg.Spec.ForProvider.PipelineID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.PipelineIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3903,7 +3903,7 @@ func (mg *PipelineRun) ResolveReferences(ctx context.Context, c client.Reader) e
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.StepOverrideDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.StepOverrideDetails[i3].StepInfrastructureConfigurationDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+				m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -3927,7 +3927,7 @@ func (mg *PipelineRun) ResolveReferences(ctx context.Context, c client.Reader) e
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.StepOverrideDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.StepOverrideDetails[i3].StepStorageMountConfigurationDetailsList); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "Export", "ExportList")
+				m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "Export", "ExportList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -3951,7 +3951,7 @@ func (mg *PipelineRun) ResolveReferences(ctx context.Context, c client.Reader) e
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.StepOverrideDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.StepOverrideDetails[i3].StepStorageMountConfigurationDetailsList); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
+				m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -3974,7 +3974,7 @@ func (mg *PipelineRun) ResolveReferences(ctx context.Context, c client.Reader) e
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.StorageMountConfigurationOverrideDetailsList); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "Export", "ExportList")
+			m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "Export", "ExportList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3996,7 +3996,7 @@ func (mg *PipelineRun) ResolveReferences(ctx context.Context, c client.Reader) e
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.StorageMountConfigurationOverrideDetailsList); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
+			m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -4017,7 +4017,7 @@ func (mg *PipelineRun) ResolveReferences(ctx context.Context, c client.Reader) e
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -4038,7 +4038,7 @@ func (mg *PipelineRun) ResolveReferences(ctx context.Context, c client.Reader) e
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.InfrastructureConfigurationOverrideDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -4060,7 +4060,7 @@ func (mg *PipelineRun) ResolveReferences(ctx context.Context, c client.Reader) e
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.LogConfigurationOverrideDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+			m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -4082,7 +4082,7 @@ func (mg *PipelineRun) ResolveReferences(ctx context.Context, c client.Reader) e
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.LogConfigurationOverrideDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+			m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -4103,7 +4103,7 @@ func (mg *PipelineRun) ResolveReferences(ctx context.Context, c client.Reader) e
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Pipeline", "PipelineList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Pipeline", "PipelineList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -4122,7 +4122,7 @@ func (mg *PipelineRun) ResolveReferences(ctx context.Context, c client.Reader) e
 	mg.Spec.InitProvider.PipelineID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.PipelineIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -4145,7 +4145,7 @@ func (mg *PipelineRun) ResolveReferences(ctx context.Context, c client.Reader) e
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.StepOverrideDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.StepOverrideDetails[i3].StepInfrastructureConfigurationDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+				m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -4169,7 +4169,7 @@ func (mg *PipelineRun) ResolveReferences(ctx context.Context, c client.Reader) e
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.StepOverrideDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.StepOverrideDetails[i3].StepStorageMountConfigurationDetailsList); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "Export", "ExportList")
+				m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "Export", "ExportList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -4193,7 +4193,7 @@ func (mg *PipelineRun) ResolveReferences(ctx context.Context, c client.Reader) e
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.StepOverrideDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.StepOverrideDetails[i3].StepStorageMountConfigurationDetailsList); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
+				m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -4216,7 +4216,7 @@ func (mg *PipelineRun) ResolveReferences(ctx context.Context, c client.Reader) e
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.StorageMountConfigurationOverrideDetailsList); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "Export", "ExportList")
+			m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "Export", "ExportList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -4238,7 +4238,7 @@ func (mg *PipelineRun) ResolveReferences(ctx context.Context, c client.Reader) e
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.StorageMountConfigurationOverrideDetailsList); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("filestorage.oci.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
+			m, l, err = apisresolver.GetManagedResource("filestorage.oci.m.upbound.io", "v1alpha1", "MountTarget", "MountTargetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -4271,7 +4271,7 @@ func (mg *PrivateEndpoint) ResolveReferences(ctx context.Context, c client.Reade
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -4291,7 +4291,7 @@ func (mg *PrivateEndpoint) ResolveReferences(ctx context.Context, c client.Reade
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+		m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -4311,7 +4311,7 @@ func (mg *PrivateEndpoint) ResolveReferences(ctx context.Context, c client.Reade
 	mg.Spec.ForProvider.SubnetID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.SubnetIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -4331,7 +4331,7 @@ func (mg *PrivateEndpoint) ResolveReferences(ctx context.Context, c client.Reade
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+		m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -4363,7 +4363,7 @@ func (mg *Project) ResolveReferences(ctx context.Context, c client.Reader) error
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -4383,7 +4383,7 @@ func (mg *Project) ResolveReferences(ctx context.Context, c client.Reader) error
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -4419,7 +4419,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Action[i3].ActionDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.Action[i3].ActionDetails[i4].CreateJobRunDetails); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Job", "JobList")
+					m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Job", "JobList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -4446,7 +4446,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.Action[i3].ActionDetails[i4].CreateJobRunDetails); i5++ {
 				for i6 := 0; i6 < len(mg.Spec.ForProvider.Action[i3].ActionDetails[i4].CreateJobRunDetails[i5].JobLogConfigurationOverrideDetails); i6++ {
 					{
-						m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+						m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 						if err != nil {
 							return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 						}
@@ -4474,7 +4474,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.Action[i3].ActionDetails[i4].CreateJobRunDetails); i5++ {
 				for i6 := 0; i6 < len(mg.Spec.ForProvider.Action[i3].ActionDetails[i4].CreateJobRunDetails[i5].JobLogConfigurationOverrideDetails); i6++ {
 					{
-						m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+						m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 						if err != nil {
 							return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 						}
@@ -4501,7 +4501,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Action[i3].ActionDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.Action[i3].ActionDetails[i4].CreateJobRunDetails); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+					m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -4528,7 +4528,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.Action[i3].ActionDetails[i4].CreatePipelineRunDetails); i5++ {
 				for i6 := 0; i6 < len(mg.Spec.ForProvider.Action[i3].ActionDetails[i4].CreatePipelineRunDetails[i5].LogConfigurationOverrideDetails); i6++ {
 					{
-						m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+						m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 						if err != nil {
 							return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 						}
@@ -4556,7 +4556,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.Action[i3].ActionDetails[i4].CreatePipelineRunDetails); i5++ {
 				for i6 := 0; i6 < len(mg.Spec.ForProvider.Action[i3].ActionDetails[i4].CreatePipelineRunDetails[i5].LogConfigurationOverrideDetails); i6++ {
 					{
-						m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+						m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 						if err != nil {
 							return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 						}
@@ -4583,7 +4583,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Action[i3].ActionDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.Action[i3].ActionDetails[i4].CreatePipelineRunDetails); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Pipeline", "PipelineList")
+					m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Pipeline", "PipelineList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -4609,7 +4609,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Action[i3].ActionDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.Action[i3].ActionDetails[i4].CreatePipelineRunDetails); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+					m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -4634,7 +4634,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Action); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Action[i3].ActionDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("dns.oci.upbound.io", "v1alpha1", "View", "ViewList")
+				m, l, err = apisresolver.GetManagedResource("dns.oci.m.upbound.io", "v1alpha1", "View", "ViewList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -4659,7 +4659,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Action[i3].ActionDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.Action[i3].ActionDetails[i4].TriggerMLApplicationInstanceViewFlowDetails); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("devops.oci.upbound.io", "v1alpha1", "Trigger", "TriggerList")
+					m, l, err = apisresolver.GetManagedResource("devops.oci.m.upbound.io", "v1alpha1", "Trigger", "TriggerList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -4682,7 +4682,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -4703,7 +4703,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.LogDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+			m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -4725,7 +4725,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.LogDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+			m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -4746,7 +4746,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -4769,7 +4769,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Action[i3].ActionDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.Action[i3].ActionDetails[i4].CreateJobRunDetails); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Job", "JobList")
+					m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Job", "JobList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -4796,7 +4796,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.Action[i3].ActionDetails[i4].CreateJobRunDetails); i5++ {
 				for i6 := 0; i6 < len(mg.Spec.InitProvider.Action[i3].ActionDetails[i4].CreateJobRunDetails[i5].JobLogConfigurationOverrideDetails); i6++ {
 					{
-						m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+						m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 						if err != nil {
 							return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 						}
@@ -4824,7 +4824,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.Action[i3].ActionDetails[i4].CreateJobRunDetails); i5++ {
 				for i6 := 0; i6 < len(mg.Spec.InitProvider.Action[i3].ActionDetails[i4].CreateJobRunDetails[i5].JobLogConfigurationOverrideDetails); i6++ {
 					{
-						m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+						m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 						if err != nil {
 							return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 						}
@@ -4851,7 +4851,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Action[i3].ActionDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.Action[i3].ActionDetails[i4].CreateJobRunDetails); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+					m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -4878,7 +4878,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.Action[i3].ActionDetails[i4].CreatePipelineRunDetails); i5++ {
 				for i6 := 0; i6 < len(mg.Spec.InitProvider.Action[i3].ActionDetails[i4].CreatePipelineRunDetails[i5].LogConfigurationOverrideDetails); i6++ {
 					{
-						m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+						m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 						if err != nil {
 							return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 						}
@@ -4906,7 +4906,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.Action[i3].ActionDetails[i4].CreatePipelineRunDetails); i5++ {
 				for i6 := 0; i6 < len(mg.Spec.InitProvider.Action[i3].ActionDetails[i4].CreatePipelineRunDetails[i5].LogConfigurationOverrideDetails); i6++ {
 					{
-						m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+						m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 						if err != nil {
 							return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 						}
@@ -4933,7 +4933,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Action[i3].ActionDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.Action[i3].ActionDetails[i4].CreatePipelineRunDetails); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Pipeline", "PipelineList")
+					m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Pipeline", "PipelineList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -4959,7 +4959,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Action[i3].ActionDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.Action[i3].ActionDetails[i4].CreatePipelineRunDetails); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+					m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -4984,7 +4984,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Action); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Action[i3].ActionDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("dns.oci.upbound.io", "v1alpha1", "View", "ViewList")
+				m, l, err = apisresolver.GetManagedResource("dns.oci.m.upbound.io", "v1alpha1", "View", "ViewList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -5009,7 +5009,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Action[i3].ActionDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.Action[i3].ActionDetails[i4].TriggerMLApplicationInstanceViewFlowDetails); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("devops.oci.upbound.io", "v1alpha1", "Trigger", "TriggerList")
+					m, l, err = apisresolver.GetManagedResource("devops.oci.m.upbound.io", "v1alpha1", "Trigger", "TriggerList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -5032,7 +5032,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -5053,7 +5053,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.LogDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
+			m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "LogGroup", "LogGroupList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -5075,7 +5075,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.LogDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("logging.oci.upbound.io", "v1alpha1", "Log", "LogList")
+			m, l, err = apisresolver.GetManagedResource("logging.oci.m.upbound.io", "v1alpha1", "Log", "LogList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -5096,7 +5096,7 @@ func (mg *Schedule) ResolveReferences(ctx context.Context, c client.Reader) erro
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("datascience.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("datascience.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

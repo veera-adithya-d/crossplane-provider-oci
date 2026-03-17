@@ -25,7 +25,7 @@ func (mg *Agent) ResolveReferences( // ResolveReferences of this Agent.
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *Agent) ResolveReferences( // ResolveReferences of this Agent.
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.upbound.io", "v1alpha1", "Environment", "EnvironmentList")
+		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.m.upbound.io", "v1alpha1", "Environment", "EnvironmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -65,7 +65,7 @@ func (mg *Agent) ResolveReferences( // ResolveReferences of this Agent.
 	mg.Spec.ForProvider.EnvironmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.EnvironmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -85,7 +85,7 @@ func (mg *Agent) ResolveReferences( // ResolveReferences of this Agent.
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.upbound.io", "v1alpha1", "Environment", "EnvironmentList")
+		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.m.upbound.io", "v1alpha1", "Environment", "EnvironmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -117,7 +117,7 @@ func (mg *AgentDependency) ResolveReferences(ctx context.Context, c client.Reade
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -137,7 +137,7 @@ func (mg *AgentDependency) ResolveReferences(ctx context.Context, c client.Reade
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -169,7 +169,7 @@ func (mg *AgentPlugin) ResolveReferences(ctx context.Context, c client.Reader) e
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.upbound.io", "v1alpha1", "Agent", "AgentList")
+		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.m.upbound.io", "v1alpha1", "Agent", "AgentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -189,7 +189,7 @@ func (mg *AgentPlugin) ResolveReferences(ctx context.Context, c client.Reader) e
 	mg.Spec.ForProvider.AgentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.AgentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.upbound.io", "v1alpha1", "Agent", "AgentList")
+		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.m.upbound.io", "v1alpha1", "Agent", "AgentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -221,7 +221,7 @@ func (mg *Asset) ResolveReferences(ctx context.Context, c client.Reader) error {
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -241,7 +241,7 @@ func (mg *Asset) ResolveReferences(ctx context.Context, c client.Reader) error {
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.upbound.io", "v1alpha1", "Inventory", "InventoryList")
+		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.m.upbound.io", "v1alpha1", "Inventory", "InventoryList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -261,7 +261,7 @@ func (mg *Asset) ResolveReferences(ctx context.Context, c client.Reader) error {
 	mg.Spec.ForProvider.InventoryID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.InventoryIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -281,7 +281,7 @@ func (mg *Asset) ResolveReferences(ctx context.Context, c client.Reader) error {
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.upbound.io", "v1alpha1", "Inventory", "InventoryList")
+		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.m.upbound.io", "v1alpha1", "Inventory", "InventoryList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -313,7 +313,7 @@ func (mg *AssetSource) ResolveReferences(ctx context.Context, c client.Reader) e
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -333,7 +333,7 @@ func (mg *AssetSource) ResolveReferences(ctx context.Context, c client.Reader) e
 	mg.Spec.ForProvider.AssetsCompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.AssetsCompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -355,7 +355,7 @@ func (mg *AssetSource) ResolveReferences(ctx context.Context, c client.Reader) e
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.DiscoveryCredentials); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("vault.oci.upbound.io", "v1alpha1", "Secret", "SecretList")
+			m, l, err = apisresolver.GetManagedResource("vault.oci.m.upbound.io", "v1alpha1", "Secret", "SecretList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -376,7 +376,7 @@ func (mg *AssetSource) ResolveReferences(ctx context.Context, c client.Reader) e
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.upbound.io", "v1alpha1", "DiscoverySchedule", "DiscoveryScheduleList")
+		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.m.upbound.io", "v1alpha1", "DiscoverySchedule", "DiscoveryScheduleList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -395,7 +395,7 @@ func (mg *AssetSource) ResolveReferences(ctx context.Context, c client.Reader) e
 	mg.Spec.ForProvider.DiscoveryScheduleID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.DiscoveryScheduleIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.upbound.io", "v1alpha1", "Environment", "EnvironmentList")
+		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.m.upbound.io", "v1alpha1", "Environment", "EnvironmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -415,7 +415,7 @@ func (mg *AssetSource) ResolveReferences(ctx context.Context, c client.Reader) e
 	mg.Spec.ForProvider.EnvironmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.EnvironmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.upbound.io", "v1alpha1", "Inventory", "InventoryList")
+		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.m.upbound.io", "v1alpha1", "Inventory", "InventoryList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -437,7 +437,7 @@ func (mg *AssetSource) ResolveReferences(ctx context.Context, c client.Reader) e
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.ReplicationCredentials); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("vault.oci.upbound.io", "v1alpha1", "Secret", "SecretList")
+			m, l, err = apisresolver.GetManagedResource("vault.oci.m.upbound.io", "v1alpha1", "Secret", "SecretList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -458,7 +458,7 @@ func (mg *AssetSource) ResolveReferences(ctx context.Context, c client.Reader) e
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -477,7 +477,7 @@ func (mg *AssetSource) ResolveReferences(ctx context.Context, c client.Reader) e
 	mg.Spec.InitProvider.AssetsCompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.AssetsCompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -499,7 +499,7 @@ func (mg *AssetSource) ResolveReferences(ctx context.Context, c client.Reader) e
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.DiscoveryCredentials); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("vault.oci.upbound.io", "v1alpha1", "Secret", "SecretList")
+			m, l, err = apisresolver.GetManagedResource("vault.oci.m.upbound.io", "v1alpha1", "Secret", "SecretList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -520,7 +520,7 @@ func (mg *AssetSource) ResolveReferences(ctx context.Context, c client.Reader) e
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.upbound.io", "v1alpha1", "DiscoverySchedule", "DiscoveryScheduleList")
+		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.m.upbound.io", "v1alpha1", "DiscoverySchedule", "DiscoveryScheduleList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -539,7 +539,7 @@ func (mg *AssetSource) ResolveReferences(ctx context.Context, c client.Reader) e
 	mg.Spec.InitProvider.DiscoveryScheduleID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.DiscoveryScheduleIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.upbound.io", "v1alpha1", "Environment", "EnvironmentList")
+		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.m.upbound.io", "v1alpha1", "Environment", "EnvironmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -559,7 +559,7 @@ func (mg *AssetSource) ResolveReferences(ctx context.Context, c client.Reader) e
 	mg.Spec.InitProvider.EnvironmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.EnvironmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.upbound.io", "v1alpha1", "Inventory", "InventoryList")
+		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.m.upbound.io", "v1alpha1", "Inventory", "InventoryList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -581,7 +581,7 @@ func (mg *AssetSource) ResolveReferences(ctx context.Context, c client.Reader) e
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.ReplicationCredentials); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("vault.oci.upbound.io", "v1alpha1", "Secret", "SecretList")
+			m, l, err = apisresolver.GetManagedResource("vault.oci.m.upbound.io", "v1alpha1", "Secret", "SecretList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -614,7 +614,7 @@ func (mg *DiscoverySchedule) ResolveReferences(ctx context.Context, c client.Rea
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -634,7 +634,7 @@ func (mg *DiscoverySchedule) ResolveReferences(ctx context.Context, c client.Rea
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -666,7 +666,7 @@ func (mg *Environment) ResolveReferences(ctx context.Context, c client.Reader) e
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -686,7 +686,7 @@ func (mg *Environment) ResolveReferences(ctx context.Context, c client.Reader) e
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -718,7 +718,7 @@ func (mg *Inventory) ResolveReferences(ctx context.Context, c client.Reader) err
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -738,7 +738,7 @@ func (mg *Inventory) ResolveReferences(ctx context.Context, c client.Reader) err
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

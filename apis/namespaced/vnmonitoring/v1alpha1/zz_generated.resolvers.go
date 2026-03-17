@@ -25,7 +25,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -47,7 +47,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.DestinationEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("compute.oci.upbound.io", "v1alpha1", "Instance", "InstanceList")
+			m, l, err = apisresolver.GetManagedResource("compute.oci.m.upbound.io", "v1alpha1", "Instance", "InstanceList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -69,7 +69,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.DestinationEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("loadbalancer.oci.upbound.io", "v1alpha1", "Listener", "ListenerList")
+			m, l, err = apisresolver.GetManagedResource("loadbalancer.oci.m.upbound.io", "v1alpha1", "Listener", "ListenerList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -91,7 +91,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.DestinationEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("loadbalancer.oci.upbound.io", "v1alpha1", "LoadBalancer", "LoadBalancerList")
+			m, l, err = apisresolver.GetManagedResource("loadbalancer.oci.m.upbound.io", "v1alpha1", "LoadBalancer", "LoadBalancerList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -113,7 +113,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.DestinationEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
+			m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.m.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -135,7 +135,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.DestinationEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -157,7 +157,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.DestinationEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Vlan", "VlanList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Vlan", "VlanList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -179,7 +179,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.DestinationEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "VnicAttachment", "VnicAttachmentList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "VnicAttachment", "VnicAttachmentList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -201,7 +201,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.SourceEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("compute.oci.upbound.io", "v1alpha1", "Instance", "InstanceList")
+			m, l, err = apisresolver.GetManagedResource("compute.oci.m.upbound.io", "v1alpha1", "Instance", "InstanceList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -223,7 +223,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.SourceEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("loadbalancer.oci.upbound.io", "v1alpha1", "Listener", "ListenerList")
+			m, l, err = apisresolver.GetManagedResource("loadbalancer.oci.m.upbound.io", "v1alpha1", "Listener", "ListenerList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -245,7 +245,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.SourceEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("loadbalancer.oci.upbound.io", "v1alpha1", "LoadBalancer", "LoadBalancerList")
+			m, l, err = apisresolver.GetManagedResource("loadbalancer.oci.m.upbound.io", "v1alpha1", "LoadBalancer", "LoadBalancerList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -267,7 +267,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.SourceEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
+			m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.m.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -289,7 +289,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.SourceEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -311,7 +311,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.SourceEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Vlan", "VlanList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Vlan", "VlanList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -333,7 +333,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.SourceEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "VnicAttachment", "VnicAttachmentList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "VnicAttachment", "VnicAttachmentList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -354,7 +354,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -375,7 +375,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.DestinationEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("compute.oci.upbound.io", "v1alpha1", "Instance", "InstanceList")
+			m, l, err = apisresolver.GetManagedResource("compute.oci.m.upbound.io", "v1alpha1", "Instance", "InstanceList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -397,7 +397,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.DestinationEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("loadbalancer.oci.upbound.io", "v1alpha1", "Listener", "ListenerList")
+			m, l, err = apisresolver.GetManagedResource("loadbalancer.oci.m.upbound.io", "v1alpha1", "Listener", "ListenerList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -419,7 +419,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.DestinationEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("loadbalancer.oci.upbound.io", "v1alpha1", "LoadBalancer", "LoadBalancerList")
+			m, l, err = apisresolver.GetManagedResource("loadbalancer.oci.m.upbound.io", "v1alpha1", "LoadBalancer", "LoadBalancerList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -441,7 +441,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.DestinationEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
+			m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.m.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -463,7 +463,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.DestinationEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -485,7 +485,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.DestinationEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Vlan", "VlanList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Vlan", "VlanList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -507,7 +507,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.DestinationEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "VnicAttachment", "VnicAttachmentList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "VnicAttachment", "VnicAttachmentList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -529,7 +529,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.SourceEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("compute.oci.upbound.io", "v1alpha1", "Instance", "InstanceList")
+			m, l, err = apisresolver.GetManagedResource("compute.oci.m.upbound.io", "v1alpha1", "Instance", "InstanceList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -551,7 +551,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.SourceEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("loadbalancer.oci.upbound.io", "v1alpha1", "Listener", "ListenerList")
+			m, l, err = apisresolver.GetManagedResource("loadbalancer.oci.m.upbound.io", "v1alpha1", "Listener", "ListenerList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -573,7 +573,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.SourceEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("loadbalancer.oci.upbound.io", "v1alpha1", "LoadBalancer", "LoadBalancerList")
+			m, l, err = apisresolver.GetManagedResource("loadbalancer.oci.m.upbound.io", "v1alpha1", "LoadBalancer", "LoadBalancerList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -595,7 +595,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.SourceEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
+			m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.m.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -617,7 +617,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.SourceEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -639,7 +639,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.SourceEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Vlan", "VlanList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Vlan", "VlanList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -661,7 +661,7 @@ func (mg *PathAnalysi) ResolveReferences( // ResolveReferences of this PathAnaly
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.SourceEndpoint); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "VnicAttachment", "VnicAttachmentList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "VnicAttachment", "VnicAttachmentList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}

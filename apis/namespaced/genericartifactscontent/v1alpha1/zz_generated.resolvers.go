@@ -25,7 +25,7 @@ func (mg *ArtifactByPath) ResolveReferences( // ResolveReferences of this Artifa
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("artifacts.oci.upbound.io", "v1alpha1", "Repository", "RepositoryList")
+		m, l, err = apisresolver.GetManagedResource("artifacts.oci.m.upbound.io", "v1alpha1", "Repository", "RepositoryList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *ArtifactByPath) ResolveReferences( // ResolveReferences of this Artifa
 	mg.Spec.ForProvider.RepositoryID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.RepositoryIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("artifacts.oci.upbound.io", "v1alpha1", "Repository", "RepositoryList")
+		m, l, err = apisresolver.GetManagedResource("artifacts.oci.m.upbound.io", "v1alpha1", "Repository", "RepositoryList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

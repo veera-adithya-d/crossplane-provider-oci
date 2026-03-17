@@ -25,7 +25,7 @@ func (mg *DelegationControl) ResolveReferences( // ResolveReferences of this Del
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *DelegationControl) ResolveReferences( // ResolveReferences of this Del
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("ons.oci.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
+		m, l, err = apisresolver.GetManagedResource("ons.oci.m.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -65,7 +65,7 @@ func (mg *DelegationControl) ResolveReferences( // ResolveReferences of this Del
 	mg.Spec.ForProvider.NotificationTopicID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.NotificationTopicIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Vault", "VaultList")
+		m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Vault", "VaultList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -85,7 +85,7 @@ func (mg *DelegationControl) ResolveReferences( // ResolveReferences of this Del
 	mg.Spec.ForProvider.VaultID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.VaultIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+		m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -105,7 +105,7 @@ func (mg *DelegationControl) ResolveReferences( // ResolveReferences of this Del
 	mg.Spec.ForProvider.VaultKeyID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.VaultKeyIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -125,7 +125,7 @@ func (mg *DelegationControl) ResolveReferences( // ResolveReferences of this Del
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("ons.oci.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
+		m, l, err = apisresolver.GetManagedResource("ons.oci.m.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -145,7 +145,7 @@ func (mg *DelegationControl) ResolveReferences( // ResolveReferences of this Del
 	mg.Spec.InitProvider.NotificationTopicID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.NotificationTopicIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Vault", "VaultList")
+		m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Vault", "VaultList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -165,7 +165,7 @@ func (mg *DelegationControl) ResolveReferences( // ResolveReferences of this Del
 	mg.Spec.InitProvider.VaultID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.VaultIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+		m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -197,7 +197,7 @@ func (mg *DelegationSubscription) ResolveReferences(ctx context.Context, c clien
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -217,7 +217,7 @@ func (mg *DelegationSubscription) ResolveReferences(ctx context.Context, c clien
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

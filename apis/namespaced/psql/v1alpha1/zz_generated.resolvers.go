@@ -25,7 +25,7 @@ func (mg *PsqlBackup) ResolveReferences( // ResolveReferences of this PsqlBackup
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *PsqlBackup) ResolveReferences( // ResolveReferences of this PsqlBackup
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("psql.oci.upbound.io", "v1alpha1", "PsqlDbSystem", "PsqlDbSystemList")
+		m, l, err = apisresolver.GetManagedResource("psql.oci.m.upbound.io", "v1alpha1", "PsqlDbSystem", "PsqlDbSystemList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -65,7 +65,7 @@ func (mg *PsqlBackup) ResolveReferences( // ResolveReferences of this PsqlBackup
 	mg.Spec.ForProvider.DBSystemID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.DBSystemIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -85,7 +85,7 @@ func (mg *PsqlBackup) ResolveReferences( // ResolveReferences of this PsqlBackup
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("psql.oci.upbound.io", "v1alpha1", "PsqlDbSystem", "PsqlDbSystemList")
+		m, l, err = apisresolver.GetManagedResource("psql.oci.m.upbound.io", "v1alpha1", "PsqlDbSystem", "PsqlDbSystemList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -117,7 +117,7 @@ func (mg *PsqlConfiguration) ResolveReferences(ctx context.Context, c client.Rea
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -137,7 +137,7 @@ func (mg *PsqlConfiguration) ResolveReferences(ctx context.Context, c client.Rea
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -169,7 +169,7 @@ func (mg *PsqlDbSystem) ResolveReferences(ctx context.Context, c client.Reader) 
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -189,7 +189,7 @@ func (mg *PsqlDbSystem) ResolveReferences(ctx context.Context, c client.Reader) 
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("apmconfig.oci.upbound.io", "v1alpha1", "Config", "ConfigList")
+		m, l, err = apisresolver.GetManagedResource("apmconfig.oci.m.upbound.io", "v1alpha1", "Config", "ConfigList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -212,7 +212,7 @@ func (mg *PsqlDbSystem) ResolveReferences(ctx context.Context, c client.Reader) 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Credentials); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Credentials[i3].PasswordDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("vault.oci.upbound.io", "v1alpha1", "Secret", "SecretList")
+				m, l, err = apisresolver.GetManagedResource("vault.oci.m.upbound.io", "v1alpha1", "Secret", "SecretList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -235,7 +235,7 @@ func (mg *PsqlDbSystem) ResolveReferences(ctx context.Context, c client.Reader) 
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.NetworkDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -257,7 +257,7 @@ func (mg *PsqlDbSystem) ResolveReferences(ctx context.Context, c client.Reader) 
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Source); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("psql.oci.upbound.io", "v1alpha1", "PsqlBackup", "PsqlBackupList")
+			m, l, err = apisresolver.GetManagedResource("psql.oci.m.upbound.io", "v1alpha1", "PsqlBackup", "PsqlBackupList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -278,7 +278,7 @@ func (mg *PsqlDbSystem) ResolveReferences(ctx context.Context, c client.Reader) 
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -297,7 +297,7 @@ func (mg *PsqlDbSystem) ResolveReferences(ctx context.Context, c client.Reader) 
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("apmconfig.oci.upbound.io", "v1alpha1", "Config", "ConfigList")
+		m, l, err = apisresolver.GetManagedResource("apmconfig.oci.m.upbound.io", "v1alpha1", "Config", "ConfigList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -320,7 +320,7 @@ func (mg *PsqlDbSystem) ResolveReferences(ctx context.Context, c client.Reader) 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Credentials); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Credentials[i3].PasswordDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("vault.oci.upbound.io", "v1alpha1", "Secret", "SecretList")
+				m, l, err = apisresolver.GetManagedResource("vault.oci.m.upbound.io", "v1alpha1", "Secret", "SecretList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -343,7 +343,7 @@ func (mg *PsqlDbSystem) ResolveReferences(ctx context.Context, c client.Reader) 
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.NetworkDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -365,7 +365,7 @@ func (mg *PsqlDbSystem) ResolveReferences(ctx context.Context, c client.Reader) 
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Source); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("psql.oci.upbound.io", "v1alpha1", "PsqlBackup", "PsqlBackupList")
+			m, l, err = apisresolver.GetManagedResource("psql.oci.m.upbound.io", "v1alpha1", "PsqlBackup", "PsqlBackupList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}

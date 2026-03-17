@@ -82,6 +82,69 @@ spec:
       pullSecretRef:
         name: private-registry-credentials
 ```
+
+OCI service sub-packages such as `provider-oci-compute` depend on `provider-family-oci` for authentication. If you rewrite only the service package image, Crossplane still resolves the family dependency from `ghcr.io`. Mirror both packages under a shared prefix and rewrite that shared prefix instead.
+
+For example, if you mirror OCI packages to `iad.ocir.io/<tenancy-namespace>/<repository-prefix>/<package-name>` and preserve the upstream package names and tags, use:
+
+```bash
+cat <<EOF | kubectl apply -f -
+apiVersion: pkg.crossplane.io/v1beta1
+kind: ImageConfig
+metadata:
+  name: rewrite-oci-packages-to-ocir
+spec:
+  matchImages:
+    - prefix: ghcr.io/oracle
+  rewriteImage:
+    prefix: iad.ocir.io/<tenancy-namespace>/<repository-prefix>
+---
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: oracle-provider-oci-compute
+spec:
+  package: ghcr.io/oracle/provider-oci-compute:<version>
+EOF
+```
+
+If you need to rewrite a specific OCI package image path or tag as well, add a second `ImageConfig` with a longer matching prefix for that exact package reference. Crossplane selects the longest matching prefix, so the specific rule overrides the broad OCI rule for that package while the broad rule still rewrites dependencies such as `provider-family-oci`.
+
+```bash
+cat <<EOF | kubectl apply -f -
+apiVersion: pkg.crossplane.io/v1beta1
+kind: ImageConfig
+metadata:
+  name: rewrite-oci-packages-to-ocir
+spec:
+  matchImages:
+    - prefix: ghcr.io/oracle
+  rewriteImage:
+    prefix: iad.ocir.io/<tenancy-namespace>/<repository-prefix>
+---
+apiVersion: pkg.crossplane.io/v1beta1
+kind: ImageConfig
+metadata:
+  name: rewrite-oci-compute-image-and-tag
+spec:
+  matchImages:
+    - prefix: ghcr.io/oracle/provider-oci-compute:v0.2.0-test
+  rewriteImage:
+    prefix: iad.ocir.io/<tenancy-namespace>/<repository-prefix>/provider-oci-compute:v0.2.0-ocir
+---
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: oracle-provider-oci-compute
+spec:
+  package: ghcr.io/oracle/provider-oci-compute:v0.2.0-test
+EOF
+```
+
+If the mirrored family package also uses a different tag, add another specific `ImageConfig` for `ghcr.io/oracle/provider-family-oci:<version>`.
+
+If you mirror only selected OCI packages, ensure `provider-family-oci` is mirrored alongside each OCI service package or install the family provider separately from a reachable registry before installing the service sub-package.
+
 ## Configure family provider for OCI
 
 The official provider-family requires credentials to create and manage OCI resources. Choose one of the following authentication methods:

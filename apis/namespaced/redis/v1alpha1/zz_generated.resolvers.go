@@ -25,7 +25,7 @@ func (mg *OciCacheConfigSet) ResolveReferences( // ResolveReferences of this Oci
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *OciCacheConfigSet) ResolveReferences( // ResolveReferences of this Oci
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -77,7 +77,7 @@ func (mg *OciCacheConfigSetlistAssociatedOciCacheCluster) ResolveReferences(ctx 
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("redis.oci.upbound.io", "v1alpha1", "OciCacheConfigSet", "OciCacheConfigSetList")
+		m, l, err = apisresolver.GetManagedResource("redis.oci.m.upbound.io", "v1alpha1", "OciCacheConfigSet", "OciCacheConfigSetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -97,7 +97,7 @@ func (mg *OciCacheConfigSetlistAssociatedOciCacheCluster) ResolveReferences(ctx 
 	mg.Spec.ForProvider.OciCacheConfigSetID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.OciCacheConfigSetIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("redis.oci.upbound.io", "v1alpha1", "OciCacheConfigSet", "OciCacheConfigSetList")
+		m, l, err = apisresolver.GetManagedResource("redis.oci.m.upbound.io", "v1alpha1", "OciCacheConfigSet", "OciCacheConfigSetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -129,7 +129,7 @@ func (mg *OciCacheUser) ResolveReferences(ctx context.Context, c client.Reader) 
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -149,7 +149,7 @@ func (mg *OciCacheUser) ResolveReferences(ctx context.Context, c client.Reader) 
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -181,7 +181,7 @@ func (mg *OciCacheUserGetRedisCluster) ResolveReferences(ctx context.Context, c 
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -201,7 +201,7 @@ func (mg *OciCacheUserGetRedisCluster) ResolveReferences(ctx context.Context, c 
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("redis.oci.upbound.io", "v1alpha1", "OciCacheUser", "OciCacheUserList")
+		m, l, err = apisresolver.GetManagedResource("redis.oci.m.upbound.io", "v1alpha1", "OciCacheUser", "OciCacheUserList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -221,7 +221,7 @@ func (mg *OciCacheUserGetRedisCluster) ResolveReferences(ctx context.Context, c 
 	mg.Spec.ForProvider.OciCacheUserID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.OciCacheUserIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -241,7 +241,7 @@ func (mg *OciCacheUserGetRedisCluster) ResolveReferences(ctx context.Context, c 
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("redis.oci.upbound.io", "v1alpha1", "OciCacheUser", "OciCacheUserList")
+		m, l, err = apisresolver.GetManagedResource("redis.oci.m.upbound.io", "v1alpha1", "OciCacheUser", "OciCacheUserList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -273,7 +273,7 @@ func (mg *RedisCluster) ResolveReferences(ctx context.Context, c client.Reader) 
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -293,7 +293,7 @@ func (mg *RedisCluster) ResolveReferences(ctx context.Context, c client.Reader) 
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("redis.oci.upbound.io", "v1alpha1", "OciCacheConfigSet", "OciCacheConfigSetList")
+		m, l, err = apisresolver.GetManagedResource("redis.oci.m.upbound.io", "v1alpha1", "OciCacheConfigSet", "OciCacheConfigSetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -313,7 +313,7 @@ func (mg *RedisCluster) ResolveReferences(ctx context.Context, c client.Reader) 
 	mg.Spec.ForProvider.OciCacheConfigSetID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.OciCacheConfigSetIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+		m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -333,7 +333,7 @@ func (mg *RedisCluster) ResolveReferences(ctx context.Context, c client.Reader) 
 	mg.Spec.ForProvider.SubnetID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.SubnetIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -353,7 +353,7 @@ func (mg *RedisCluster) ResolveReferences(ctx context.Context, c client.Reader) 
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("redis.oci.upbound.io", "v1alpha1", "OciCacheConfigSet", "OciCacheConfigSetList")
+		m, l, err = apisresolver.GetManagedResource("redis.oci.m.upbound.io", "v1alpha1", "OciCacheConfigSet", "OciCacheConfigSetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -373,7 +373,7 @@ func (mg *RedisCluster) ResolveReferences(ctx context.Context, c client.Reader) 
 	mg.Spec.InitProvider.OciCacheConfigSetID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.OciCacheConfigSetIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+		m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -406,7 +406,7 @@ func (mg *RedisClusterAttachOciCacheUser) ResolveReferences(ctx context.Context,
 	var mrsp reference.MultiNamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("redis.oci.upbound.io", "v1alpha1", "OciCacheUser", "OciCacheUserList")
+		m, l, err = apisresolver.GetManagedResource("redis.oci.m.upbound.io", "v1alpha1", "OciCacheUser", "OciCacheUserList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -426,7 +426,7 @@ func (mg *RedisClusterAttachOciCacheUser) ResolveReferences(ctx context.Context,
 	mg.Spec.ForProvider.OciCacheUsers = reference.ToPtrValues(mrsp.ResolvedValues)
 	mg.Spec.ForProvider.OciCacheUsersRefs = mrsp.ResolvedReferences
 	{
-		m, l, err = apisresolver.GetManagedResource("redis.oci.upbound.io", "v1alpha1", "RedisCluster", "RedisClusterList")
+		m, l, err = apisresolver.GetManagedResource("redis.oci.m.upbound.io", "v1alpha1", "RedisCluster", "RedisClusterList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -446,7 +446,7 @@ func (mg *RedisClusterAttachOciCacheUser) ResolveReferences(ctx context.Context,
 	mg.Spec.ForProvider.RedisClusterID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.RedisClusterIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("redis.oci.upbound.io", "v1alpha1", "OciCacheUser", "OciCacheUserList")
+		m, l, err = apisresolver.GetManagedResource("redis.oci.m.upbound.io", "v1alpha1", "OciCacheUser", "OciCacheUserList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -466,7 +466,7 @@ func (mg *RedisClusterAttachOciCacheUser) ResolveReferences(ctx context.Context,
 	mg.Spec.InitProvider.OciCacheUsers = reference.ToPtrValues(mrsp.ResolvedValues)
 	mg.Spec.InitProvider.OciCacheUsersRefs = mrsp.ResolvedReferences
 	{
-		m, l, err = apisresolver.GetManagedResource("redis.oci.upbound.io", "v1alpha1", "RedisCluster", "RedisClusterList")
+		m, l, err = apisresolver.GetManagedResource("redis.oci.m.upbound.io", "v1alpha1", "RedisCluster", "RedisClusterList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -498,7 +498,7 @@ func (mg *RedisClusterCreateIdentityToken) ResolveReferences(ctx context.Context
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("redis.oci.upbound.io", "v1alpha1", "RedisCluster", "RedisClusterList")
+		m, l, err = apisresolver.GetManagedResource("redis.oci.m.upbound.io", "v1alpha1", "RedisCluster", "RedisClusterList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -518,7 +518,7 @@ func (mg *RedisClusterCreateIdentityToken) ResolveReferences(ctx context.Context
 	mg.Spec.ForProvider.RedisClusterID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.RedisClusterIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("redis.oci.upbound.io", "v1alpha1", "RedisCluster", "RedisClusterList")
+		m, l, err = apisresolver.GetManagedResource("redis.oci.m.upbound.io", "v1alpha1", "RedisCluster", "RedisClusterList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -551,7 +551,7 @@ func (mg *RedisClusterDetachOciCacheUser) ResolveReferences(ctx context.Context,
 	var mrsp reference.MultiNamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("redis.oci.upbound.io", "v1alpha1", "OciCacheUser", "OciCacheUserList")
+		m, l, err = apisresolver.GetManagedResource("redis.oci.m.upbound.io", "v1alpha1", "OciCacheUser", "OciCacheUserList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -571,7 +571,7 @@ func (mg *RedisClusterDetachOciCacheUser) ResolveReferences(ctx context.Context,
 	mg.Spec.ForProvider.OciCacheUsers = reference.ToPtrValues(mrsp.ResolvedValues)
 	mg.Spec.ForProvider.OciCacheUsersRefs = mrsp.ResolvedReferences
 	{
-		m, l, err = apisresolver.GetManagedResource("redis.oci.upbound.io", "v1alpha1", "RedisCluster", "RedisClusterList")
+		m, l, err = apisresolver.GetManagedResource("redis.oci.m.upbound.io", "v1alpha1", "RedisCluster", "RedisClusterList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -591,7 +591,7 @@ func (mg *RedisClusterDetachOciCacheUser) ResolveReferences(ctx context.Context,
 	mg.Spec.ForProvider.RedisClusterID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.RedisClusterIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("redis.oci.upbound.io", "v1alpha1", "OciCacheUser", "OciCacheUserList")
+		m, l, err = apisresolver.GetManagedResource("redis.oci.m.upbound.io", "v1alpha1", "OciCacheUser", "OciCacheUserList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -611,7 +611,7 @@ func (mg *RedisClusterDetachOciCacheUser) ResolveReferences(ctx context.Context,
 	mg.Spec.InitProvider.OciCacheUsers = reference.ToPtrValues(mrsp.ResolvedValues)
 	mg.Spec.InitProvider.OciCacheUsersRefs = mrsp.ResolvedReferences
 	{
-		m, l, err = apisresolver.GetManagedResource("redis.oci.upbound.io", "v1alpha1", "RedisCluster", "RedisClusterList")
+		m, l, err = apisresolver.GetManagedResource("redis.oci.m.upbound.io", "v1alpha1", "RedisCluster", "RedisClusterList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -643,7 +643,7 @@ func (mg *RedisClusterGetOciCacheUser) ResolveReferences(ctx context.Context, c 
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -663,7 +663,7 @@ func (mg *RedisClusterGetOciCacheUser) ResolveReferences(ctx context.Context, c 
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("redis.oci.upbound.io", "v1alpha1", "RedisCluster", "RedisClusterList")
+		m, l, err = apisresolver.GetManagedResource("redis.oci.m.upbound.io", "v1alpha1", "RedisCluster", "RedisClusterList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -683,7 +683,7 @@ func (mg *RedisClusterGetOciCacheUser) ResolveReferences(ctx context.Context, c 
 	mg.Spec.ForProvider.RedisClusterID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.RedisClusterIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -703,7 +703,7 @@ func (mg *RedisClusterGetOciCacheUser) ResolveReferences(ctx context.Context, c 
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("redis.oci.upbound.io", "v1alpha1", "RedisCluster", "RedisClusterList")
+		m, l, err = apisresolver.GetManagedResource("redis.oci.m.upbound.io", "v1alpha1", "RedisCluster", "RedisClusterList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

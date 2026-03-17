@@ -25,7 +25,7 @@ func (mg *AnnouncementSubscription) ResolveReferences( // ResolveReferences of t
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *AnnouncementSubscription) ResolveReferences( // ResolveReferences of t
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("ons.oci.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
+		m, l, err = apisresolver.GetManagedResource("ons.oci.m.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -65,7 +65,7 @@ func (mg *AnnouncementSubscription) ResolveReferences( // ResolveReferences of t
 	mg.Spec.ForProvider.OnsTopicID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.OnsTopicIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -85,7 +85,7 @@ func (mg *AnnouncementSubscription) ResolveReferences( // ResolveReferences of t
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("ons.oci.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
+		m, l, err = apisresolver.GetManagedResource("ons.oci.m.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -117,7 +117,7 @@ func (mg *AnnouncementSubscriptionsActionsChangeCompartment) ResolveReferences(c
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("announcementsservice.oci.upbound.io", "v1alpha1", "AnnouncementSubscription", "AnnouncementSubscriptionList")
+		m, l, err = apisresolver.GetManagedResource("announcementsservice.oci.m.upbound.io", "v1alpha1", "AnnouncementSubscription", "AnnouncementSubscriptionList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -137,7 +137,7 @@ func (mg *AnnouncementSubscriptionsActionsChangeCompartment) ResolveReferences(c
 	mg.Spec.ForProvider.AnnouncementSubscriptionID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.AnnouncementSubscriptionIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -157,7 +157,7 @@ func (mg *AnnouncementSubscriptionsActionsChangeCompartment) ResolveReferences(c
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("announcementsservice.oci.upbound.io", "v1alpha1", "AnnouncementSubscription", "AnnouncementSubscriptionList")
+		m, l, err = apisresolver.GetManagedResource("announcementsservice.oci.m.upbound.io", "v1alpha1", "AnnouncementSubscription", "AnnouncementSubscriptionList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -177,7 +177,7 @@ func (mg *AnnouncementSubscriptionsActionsChangeCompartment) ResolveReferences(c
 	mg.Spec.InitProvider.AnnouncementSubscriptionID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.AnnouncementSubscriptionIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -209,7 +209,7 @@ func (mg *AnnouncementSubscriptionsFilterGroup) ResolveReferences(ctx context.Co
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("announcementsservice.oci.upbound.io", "v1alpha1", "AnnouncementSubscription", "AnnouncementSubscriptionList")
+		m, l, err = apisresolver.GetManagedResource("announcementsservice.oci.m.upbound.io", "v1alpha1", "AnnouncementSubscription", "AnnouncementSubscriptionList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -229,7 +229,7 @@ func (mg *AnnouncementSubscriptionsFilterGroup) ResolveReferences(ctx context.Co
 	mg.Spec.ForProvider.AnnouncementSubscriptionID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.AnnouncementSubscriptionIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("announcementsservice.oci.upbound.io", "v1alpha1", "AnnouncementSubscription", "AnnouncementSubscriptionList")
+		m, l, err = apisresolver.GetManagedResource("announcementsservice.oci.m.upbound.io", "v1alpha1", "AnnouncementSubscription", "AnnouncementSubscriptionList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

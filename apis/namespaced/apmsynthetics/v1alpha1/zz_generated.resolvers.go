@@ -25,7 +25,7 @@ func (mg *DedicatedVantagePoint) ResolveReferences( // ResolveReferences of this
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("apm.oci.upbound.io", "v1alpha1", "ApmDomain", "ApmDomainList")
+		m, l, err = apisresolver.GetManagedResource("apm.oci.m.upbound.io", "v1alpha1", "ApmDomain", "ApmDomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -47,7 +47,7 @@ func (mg *DedicatedVantagePoint) ResolveReferences( // ResolveReferences of this
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.DvpStackDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+			m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -68,7 +68,7 @@ func (mg *DedicatedVantagePoint) ResolveReferences( // ResolveReferences of this
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("apm.oci.upbound.io", "v1alpha1", "ApmDomain", "ApmDomainList")
+		m, l, err = apisresolver.GetManagedResource("apm.oci.m.upbound.io", "v1alpha1", "ApmDomain", "ApmDomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -89,7 +89,7 @@ func (mg *DedicatedVantagePoint) ResolveReferences( // ResolveReferences of this
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.DvpStackDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+			m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -126,7 +126,7 @@ func (mg *Monitor) ResolveReferences(ctx context.Context, c client.Reader) error
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Configuration[i3].DatabaseAuthenticationDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.Configuration[i3].DatabaseAuthenticationDetails[i4].Password); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("vault.oci.upbound.io", "v1alpha1", "Secret", "SecretList")
+					m, l, err = apisresolver.GetManagedResource("vault.oci.m.upbound.io", "v1alpha1", "Secret", "SecretList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -152,7 +152,7 @@ func (mg *Monitor) ResolveReferences(ctx context.Context, c client.Reader) error
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Configuration[i3].FtpBasicAuthenticationDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.Configuration[i3].FtpBasicAuthenticationDetails[i4].Password); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("vault.oci.upbound.io", "v1alpha1", "Secret", "SecretList")
+					m, l, err = apisresolver.GetManagedResource("vault.oci.m.upbound.io", "v1alpha1", "Secret", "SecretList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -177,7 +177,7 @@ func (mg *Monitor) ResolveReferences(ctx context.Context, c client.Reader) error
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Configuration); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Configuration[i3].ReqAuthenticationDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "User", "UserList")
+				m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -199,7 +199,7 @@ func (mg *Monitor) ResolveReferences(ctx context.Context, c client.Reader) error
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("apmsynthetics.oci.upbound.io", "v1alpha1", "Script", "ScriptList")
+		m, l, err = apisresolver.GetManagedResource("apmsynthetics.oci.m.upbound.io", "v1alpha1", "Script", "ScriptList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -222,7 +222,7 @@ func (mg *Monitor) ResolveReferences(ctx context.Context, c client.Reader) error
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Configuration[i3].DatabaseAuthenticationDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.Configuration[i3].DatabaseAuthenticationDetails[i4].Password); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("vault.oci.upbound.io", "v1alpha1", "Secret", "SecretList")
+					m, l, err = apisresolver.GetManagedResource("vault.oci.m.upbound.io", "v1alpha1", "Secret", "SecretList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -248,7 +248,7 @@ func (mg *Monitor) ResolveReferences(ctx context.Context, c client.Reader) error
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Configuration[i3].FtpBasicAuthenticationDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.Configuration[i3].FtpBasicAuthenticationDetails[i4].Password); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("vault.oci.upbound.io", "v1alpha1", "Secret", "SecretList")
+					m, l, err = apisresolver.GetManagedResource("vault.oci.m.upbound.io", "v1alpha1", "Secret", "SecretList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -273,7 +273,7 @@ func (mg *Monitor) ResolveReferences(ctx context.Context, c client.Reader) error
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Configuration); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Configuration[i3].ReqAuthenticationDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "User", "UserList")
+				m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -295,7 +295,7 @@ func (mg *Monitor) ResolveReferences(ctx context.Context, c client.Reader) error
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("apmsynthetics.oci.upbound.io", "v1alpha1", "Script", "ScriptList")
+		m, l, err = apisresolver.GetManagedResource("apmsynthetics.oci.m.upbound.io", "v1alpha1", "Script", "ScriptList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -326,7 +326,7 @@ func (mg *OnPremiseVantagePoint) ResolveReferences(ctx context.Context, c client
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("apm.oci.upbound.io", "v1alpha1", "ApmDomain", "ApmDomainList")
+		m, l, err = apisresolver.GetManagedResource("apm.oci.m.upbound.io", "v1alpha1", "ApmDomain", "ApmDomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -346,7 +346,7 @@ func (mg *OnPremiseVantagePoint) ResolveReferences(ctx context.Context, c client
 	mg.Spec.ForProvider.ApmDomainID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ApmDomainIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("apm.oci.upbound.io", "v1alpha1", "ApmDomain", "ApmDomainList")
+		m, l, err = apisresolver.GetManagedResource("apm.oci.m.upbound.io", "v1alpha1", "ApmDomain", "ApmDomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -378,7 +378,7 @@ func (mg *OnPremiseVantagePointWorker) ResolveReferences(ctx context.Context, c 
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("apm.oci.upbound.io", "v1alpha1", "ApmDomain", "ApmDomainList")
+		m, l, err = apisresolver.GetManagedResource("apm.oci.m.upbound.io", "v1alpha1", "ApmDomain", "ApmDomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -398,7 +398,7 @@ func (mg *OnPremiseVantagePointWorker) ResolveReferences(ctx context.Context, c 
 	mg.Spec.ForProvider.ApmDomainID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ApmDomainIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("apmsynthetics.oci.upbound.io", "v1alpha1", "OnPremiseVantagePoint", "OnPremiseVantagePointList")
+		m, l, err = apisresolver.GetManagedResource("apmsynthetics.oci.m.upbound.io", "v1alpha1", "OnPremiseVantagePoint", "OnPremiseVantagePointList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -418,7 +418,7 @@ func (mg *OnPremiseVantagePointWorker) ResolveReferences(ctx context.Context, c 
 	mg.Spec.ForProvider.OnPremiseVantagePointID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.OnPremiseVantagePointIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("apm.oci.upbound.io", "v1alpha1", "ApmDomain", "ApmDomainList")
+		m, l, err = apisresolver.GetManagedResource("apm.oci.m.upbound.io", "v1alpha1", "ApmDomain", "ApmDomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -438,7 +438,7 @@ func (mg *OnPremiseVantagePointWorker) ResolveReferences(ctx context.Context, c 
 	mg.Spec.InitProvider.ApmDomainID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.ApmDomainIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("apmsynthetics.oci.upbound.io", "v1alpha1", "OnPremiseVantagePoint", "OnPremiseVantagePointList")
+		m, l, err = apisresolver.GetManagedResource("apmsynthetics.oci.m.upbound.io", "v1alpha1", "OnPremiseVantagePoint", "OnPremiseVantagePointList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

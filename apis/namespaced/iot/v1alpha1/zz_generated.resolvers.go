@@ -25,7 +25,7 @@ func (mg *DigitalTwinAdapter) ResolveReferences( // ResolveReferences of this Di
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "DigitalTwinModel", "DigitalTwinModelList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "DigitalTwinModel", "DigitalTwinModelList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *DigitalTwinAdapter) ResolveReferences( // ResolveReferences of this Di
 	mg.Spec.ForProvider.DigitalTwinModelID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.DigitalTwinModelIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -65,7 +65,7 @@ func (mg *DigitalTwinAdapter) ResolveReferences( // ResolveReferences of this Di
 	mg.Spec.ForProvider.IotDomainID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.IotDomainIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "DigitalTwinModel", "DigitalTwinModelList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "DigitalTwinModel", "DigitalTwinModelList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -85,7 +85,7 @@ func (mg *DigitalTwinAdapter) ResolveReferences( // ResolveReferences of this Di
 	mg.Spec.InitProvider.DigitalTwinModelID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.DigitalTwinModelIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -117,7 +117,7 @@ func (mg *DigitalTwinInstance) ResolveReferences(ctx context.Context, c client.R
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "DigitalTwinAdapter", "DigitalTwinAdapterList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "DigitalTwinAdapter", "DigitalTwinAdapterList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -137,7 +137,7 @@ func (mg *DigitalTwinInstance) ResolveReferences(ctx context.Context, c client.R
 	mg.Spec.ForProvider.DigitalTwinAdapterID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.DigitalTwinAdapterIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "DigitalTwinModel", "DigitalTwinModelList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "DigitalTwinModel", "DigitalTwinModelList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -157,7 +157,7 @@ func (mg *DigitalTwinInstance) ResolveReferences(ctx context.Context, c client.R
 	mg.Spec.ForProvider.DigitalTwinModelID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.DigitalTwinModelIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -177,7 +177,7 @@ func (mg *DigitalTwinInstance) ResolveReferences(ctx context.Context, c client.R
 	mg.Spec.ForProvider.IotDomainID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.IotDomainIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "DigitalTwinAdapter", "DigitalTwinAdapterList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "DigitalTwinAdapter", "DigitalTwinAdapterList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -197,7 +197,7 @@ func (mg *DigitalTwinInstance) ResolveReferences(ctx context.Context, c client.R
 	mg.Spec.InitProvider.DigitalTwinAdapterID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.DigitalTwinAdapterIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "DigitalTwinModel", "DigitalTwinModelList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "DigitalTwinModel", "DigitalTwinModelList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -217,7 +217,7 @@ func (mg *DigitalTwinInstance) ResolveReferences(ctx context.Context, c client.R
 	mg.Spec.InitProvider.DigitalTwinModelID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.DigitalTwinModelIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -249,7 +249,7 @@ func (mg *DigitalTwinInstanceInvokeRawCommand) ResolveReferences(ctx context.Con
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "DigitalTwinInstance", "DigitalTwinInstanceList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "DigitalTwinInstance", "DigitalTwinInstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -269,7 +269,7 @@ func (mg *DigitalTwinInstanceInvokeRawCommand) ResolveReferences(ctx context.Con
 	mg.Spec.ForProvider.DigitalTwinInstanceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.DigitalTwinInstanceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "DigitalTwinInstance", "DigitalTwinInstanceList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "DigitalTwinInstance", "DigitalTwinInstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -301,7 +301,7 @@ func (mg *DigitalTwinModel) ResolveReferences(ctx context.Context, c client.Read
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -321,7 +321,7 @@ func (mg *DigitalTwinModel) ResolveReferences(ctx context.Context, c client.Read
 	mg.Spec.ForProvider.IotDomainID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.IotDomainIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -353,7 +353,7 @@ func (mg *DigitalTwinRelationship) ResolveReferences(ctx context.Context, c clie
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -373,7 +373,7 @@ func (mg *DigitalTwinRelationship) ResolveReferences(ctx context.Context, c clie
 	mg.Spec.ForProvider.IotDomainID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.IotDomainIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "DigitalTwinInstance", "DigitalTwinInstanceList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "DigitalTwinInstance", "DigitalTwinInstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -393,7 +393,7 @@ func (mg *DigitalTwinRelationship) ResolveReferences(ctx context.Context, c clie
 	mg.Spec.ForProvider.SourceDigitalTwinInstanceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.SourceDigitalTwinInstanceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "DigitalTwinInstance", "DigitalTwinInstanceList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "DigitalTwinInstance", "DigitalTwinInstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -413,7 +413,7 @@ func (mg *DigitalTwinRelationship) ResolveReferences(ctx context.Context, c clie
 	mg.Spec.ForProvider.TargetDigitalTwinInstanceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.TargetDigitalTwinInstanceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -433,7 +433,7 @@ func (mg *DigitalTwinRelationship) ResolveReferences(ctx context.Context, c clie
 	mg.Spec.InitProvider.IotDomainID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.IotDomainIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "DigitalTwinInstance", "DigitalTwinInstanceList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "DigitalTwinInstance", "DigitalTwinInstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -453,7 +453,7 @@ func (mg *DigitalTwinRelationship) ResolveReferences(ctx context.Context, c clie
 	mg.Spec.InitProvider.SourceDigitalTwinInstanceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.SourceDigitalTwinInstanceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "DigitalTwinInstance", "DigitalTwinInstanceList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "DigitalTwinInstance", "DigitalTwinInstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -485,7 +485,7 @@ func (mg *IotDomain) ResolveReferences(ctx context.Context, c client.Reader) err
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -505,7 +505,7 @@ func (mg *IotDomain) ResolveReferences(ctx context.Context, c client.Reader) err
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "IotDomainGroup", "IotDomainGroupList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "IotDomainGroup", "IotDomainGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -525,7 +525,7 @@ func (mg *IotDomain) ResolveReferences(ctx context.Context, c client.Reader) err
 	mg.Spec.ForProvider.IotDomainGroupID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.IotDomainGroupIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -545,7 +545,7 @@ func (mg *IotDomain) ResolveReferences(ctx context.Context, c client.Reader) err
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "IotDomainGroup", "IotDomainGroupList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "IotDomainGroup", "IotDomainGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -577,7 +577,7 @@ func (mg *IotDomainChangeDataRetentionPeriod) ResolveReferences(ctx context.Cont
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -597,7 +597,7 @@ func (mg *IotDomainChangeDataRetentionPeriod) ResolveReferences(ctx context.Cont
 	mg.Spec.ForProvider.IotDomainID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.IotDomainIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -629,7 +629,7 @@ func (mg *IotDomainConfigureDataAccess) ResolveReferences(ctx context.Context, c
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -649,7 +649,7 @@ func (mg *IotDomainConfigureDataAccess) ResolveReferences(ctx context.Context, c
 	mg.Spec.ForProvider.IotDomainID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.IotDomainIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "IotDomain", "IotDomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -681,7 +681,7 @@ func (mg *IotDomainGroup) ResolveReferences(ctx context.Context, c client.Reader
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -701,7 +701,7 @@ func (mg *IotDomainGroup) ResolveReferences(ctx context.Context, c client.Reader
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -733,7 +733,7 @@ func (mg *IotDomainGroupConfigureDataAccess) ResolveReferences(ctx context.Conte
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "IotDomainGroup", "IotDomainGroupList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "IotDomainGroup", "IotDomainGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -753,7 +753,7 @@ func (mg *IotDomainGroupConfigureDataAccess) ResolveReferences(ctx context.Conte
 	mg.Spec.ForProvider.IotDomainGroupID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.IotDomainGroupIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("iot.oci.upbound.io", "v1alpha1", "IotDomainGroup", "IotDomainGroupList")
+		m, l, err = apisresolver.GetManagedResource("iot.oci.m.upbound.io", "v1alpha1", "IotDomainGroup", "IotDomainGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

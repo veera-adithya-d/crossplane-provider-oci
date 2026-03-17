@@ -25,7 +25,7 @@ func (mg *Config) ResolveReferences( // ResolveReferences of this Config.
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("apm.oci.upbound.io", "v1alpha1", "ApmDomain", "ApmDomainList")
+		m, l, err = apisresolver.GetManagedResource("apm.oci.m.upbound.io", "v1alpha1", "ApmDomain", "ApmDomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *Config) ResolveReferences( // ResolveReferences of this Config.
 	mg.Spec.ForProvider.ApmDomainID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ApmDomainIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("managementagent.oci.upbound.io", "v1alpha1", "ManagementAgent", "ManagementAgentList")
+		m, l, err = apisresolver.GetManagedResource("managementagent.oci.m.upbound.io", "v1alpha1", "ManagementAgent", "ManagementAgentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -65,7 +65,7 @@ func (mg *Config) ResolveReferences( // ResolveReferences of this Config.
 	mg.Spec.ForProvider.ManagementAgentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagementAgentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("apm.oci.upbound.io", "v1alpha1", "ApmDomain", "ApmDomainList")
+		m, l, err = apisresolver.GetManagedResource("apm.oci.m.upbound.io", "v1alpha1", "ApmDomain", "ApmDomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -85,7 +85,7 @@ func (mg *Config) ResolveReferences( // ResolveReferences of this Config.
 	mg.Spec.InitProvider.ApmDomainID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.ApmDomainIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("managementagent.oci.upbound.io", "v1alpha1", "ManagementAgent", "ManagementAgentList")
+		m, l, err = apisresolver.GetManagedResource("managementagent.oci.m.upbound.io", "v1alpha1", "ManagementAgent", "ManagementAgentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

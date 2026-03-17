@@ -25,7 +25,7 @@ func (mg *Backend) ResolveReferences( // ResolveReferences of this Backend.
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.upbound.io", "v1alpha1", "BackendSet", "BackendSetList")
+		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.m.upbound.io", "v1alpha1", "BackendSet", "BackendSetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *Backend) ResolveReferences( // ResolveReferences of this Backend.
 	mg.Spec.ForProvider.BackendSetName = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.BackendSetNameRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
+		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.m.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -65,7 +65,7 @@ func (mg *Backend) ResolveReferences( // ResolveReferences of this Backend.
 	mg.Spec.ForProvider.NetworkLoadBalancerID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.NetworkLoadBalancerIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("cloudguard.oci.upbound.io", "v1alpha1", "Target", "TargetList")
+		m, l, err = apisresolver.GetManagedResource("cloudguard.oci.m.upbound.io", "v1alpha1", "Target", "TargetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -85,7 +85,7 @@ func (mg *Backend) ResolveReferences( // ResolveReferences of this Backend.
 	mg.Spec.ForProvider.TargetID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.TargetIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.upbound.io", "v1alpha1", "BackendSet", "BackendSetList")
+		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.m.upbound.io", "v1alpha1", "BackendSet", "BackendSetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -105,7 +105,7 @@ func (mg *Backend) ResolveReferences( // ResolveReferences of this Backend.
 	mg.Spec.InitProvider.BackendSetName = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.BackendSetNameRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
+		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.m.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -125,7 +125,7 @@ func (mg *Backend) ResolveReferences( // ResolveReferences of this Backend.
 	mg.Spec.InitProvider.NetworkLoadBalancerID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.NetworkLoadBalancerIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("cloudguard.oci.upbound.io", "v1alpha1", "Target", "TargetList")
+		m, l, err = apisresolver.GetManagedResource("cloudguard.oci.m.upbound.io", "v1alpha1", "Target", "TargetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -160,7 +160,7 @@ func (mg *BackendSet) ResolveReferences(ctx context.Context, c client.Reader) er
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.HealthChecker); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.HealthChecker[i3].DNS); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Domain", "DomainList")
+				m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Domain", "DomainList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -182,7 +182,7 @@ func (mg *BackendSet) ResolveReferences(ctx context.Context, c client.Reader) er
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
+		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.m.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -204,7 +204,7 @@ func (mg *BackendSet) ResolveReferences(ctx context.Context, c client.Reader) er
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.HealthChecker); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.HealthChecker[i3].DNS); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Domain", "DomainList")
+				m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Domain", "DomainList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -226,7 +226,7 @@ func (mg *BackendSet) ResolveReferences(ctx context.Context, c client.Reader) er
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
+		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.m.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -257,7 +257,7 @@ func (mg *Listener) ResolveReferences(ctx context.Context, c client.Reader) erro
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.upbound.io", "v1alpha1", "BackendSet", "BackendSetList")
+		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.m.upbound.io", "v1alpha1", "BackendSet", "BackendSetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -277,7 +277,7 @@ func (mg *Listener) ResolveReferences(ctx context.Context, c client.Reader) erro
 	mg.Spec.ForProvider.DefaultBackendSetName = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.DefaultBackendSetNameRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
+		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.m.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -297,7 +297,7 @@ func (mg *Listener) ResolveReferences(ctx context.Context, c client.Reader) erro
 	mg.Spec.ForProvider.NetworkLoadBalancerID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.NetworkLoadBalancerIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.upbound.io", "v1alpha1", "BackendSet", "BackendSetList")
+		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.m.upbound.io", "v1alpha1", "BackendSet", "BackendSetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -317,7 +317,7 @@ func (mg *Listener) ResolveReferences(ctx context.Context, c client.Reader) erro
 	mg.Spec.InitProvider.DefaultBackendSetName = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.DefaultBackendSetNameRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
+		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.m.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -349,7 +349,7 @@ func (mg *NetworkLoadBalancer) ResolveReferences(ctx context.Context, c client.R
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -369,7 +369,7 @@ func (mg *NetworkLoadBalancer) ResolveReferences(ctx context.Context, c client.R
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+		m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -389,7 +389,7 @@ func (mg *NetworkLoadBalancer) ResolveReferences(ctx context.Context, c client.R
 	mg.Spec.ForProvider.SubnetID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.SubnetIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -409,7 +409,7 @@ func (mg *NetworkLoadBalancer) ResolveReferences(ctx context.Context, c client.R
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+		m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -443,7 +443,7 @@ func (mg *NetworkLoadBalancersBackendSetsUnified) ResolveReferences(ctx context.
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Backends); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("cloudguard.oci.upbound.io", "v1alpha1", "Target", "TargetList")
+			m, l, err = apisresolver.GetManagedResource("cloudguard.oci.m.upbound.io", "v1alpha1", "Target", "TargetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -466,7 +466,7 @@ func (mg *NetworkLoadBalancersBackendSetsUnified) ResolveReferences(ctx context.
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.HealthChecker); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.HealthChecker[i3].DNS); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Domain", "DomainList")
+				m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Domain", "DomainList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -488,7 +488,7 @@ func (mg *NetworkLoadBalancersBackendSetsUnified) ResolveReferences(ctx context.
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
+		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.m.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -509,7 +509,7 @@ func (mg *NetworkLoadBalancersBackendSetsUnified) ResolveReferences(ctx context.
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Backends); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("cloudguard.oci.upbound.io", "v1alpha1", "Target", "TargetList")
+			m, l, err = apisresolver.GetManagedResource("cloudguard.oci.m.upbound.io", "v1alpha1", "Target", "TargetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -532,7 +532,7 @@ func (mg *NetworkLoadBalancersBackendSetsUnified) ResolveReferences(ctx context.
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.HealthChecker); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.HealthChecker[i3].DNS); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Domain", "DomainList")
+				m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Domain", "DomainList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -554,7 +554,7 @@ func (mg *NetworkLoadBalancersBackendSetsUnified) ResolveReferences(ctx context.
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
+		m, l, err = apisresolver.GetManagedResource("networkloadbalancer.oci.m.upbound.io", "v1alpha1", "NetworkLoadBalancer", "NetworkLoadBalancerList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

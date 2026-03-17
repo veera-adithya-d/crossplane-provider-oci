@@ -25,7 +25,7 @@ func (mg *AnalyticsInstance) ResolveReferences( // ResolveReferences of this Ana
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *AnalyticsInstance) ResolveReferences( // ResolveReferences of this Ana
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Domain", "DomainList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Domain", "DomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -65,7 +65,7 @@ func (mg *AnalyticsInstance) ResolveReferences( // ResolveReferences of this Ana
 	mg.Spec.ForProvider.DomainID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.DomainIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+		m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -87,7 +87,7 @@ func (mg *AnalyticsInstance) ResolveReferences( // ResolveReferences of this Ana
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.NetworkEndpointDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -109,7 +109,7 @@ func (mg *AnalyticsInstance) ResolveReferences( // ResolveReferences of this Ana
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.NetworkEndpointDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Vcn", "VcnList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Vcn", "VcnList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -130,7 +130,7 @@ func (mg *AnalyticsInstance) ResolveReferences( // ResolveReferences of this Ana
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -149,7 +149,7 @@ func (mg *AnalyticsInstance) ResolveReferences( // ResolveReferences of this Ana
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Domain", "DomainList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Domain", "DomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -169,7 +169,7 @@ func (mg *AnalyticsInstance) ResolveReferences( // ResolveReferences of this Ana
 	mg.Spec.InitProvider.DomainID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.DomainIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+		m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -191,7 +191,7 @@ func (mg *AnalyticsInstance) ResolveReferences( // ResolveReferences of this Ana
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.NetworkEndpointDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -213,7 +213,7 @@ func (mg *AnalyticsInstance) ResolveReferences( // ResolveReferences of this Ana
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.NetworkEndpointDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Vcn", "VcnList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Vcn", "VcnList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -246,7 +246,7 @@ func (mg *AnalyticsInstancePrivateAccessChannel) ResolveReferences(ctx context.C
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("analytics.oci.upbound.io", "v1alpha1", "AnalyticsInstance", "AnalyticsInstanceList")
+		m, l, err = apisresolver.GetManagedResource("analytics.oci.m.upbound.io", "v1alpha1", "AnalyticsInstance", "AnalyticsInstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -266,7 +266,7 @@ func (mg *AnalyticsInstancePrivateAccessChannel) ResolveReferences(ctx context.C
 	mg.Spec.ForProvider.AnalyticsInstanceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.AnalyticsInstanceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+		m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -286,7 +286,7 @@ func (mg *AnalyticsInstancePrivateAccessChannel) ResolveReferences(ctx context.C
 	mg.Spec.ForProvider.SubnetID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.SubnetIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Vcn", "VcnList")
+		m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Vcn", "VcnList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -306,7 +306,7 @@ func (mg *AnalyticsInstancePrivateAccessChannel) ResolveReferences(ctx context.C
 	mg.Spec.ForProvider.VcnID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.VcnIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("analytics.oci.upbound.io", "v1alpha1", "AnalyticsInstance", "AnalyticsInstanceList")
+		m, l, err = apisresolver.GetManagedResource("analytics.oci.m.upbound.io", "v1alpha1", "AnalyticsInstance", "AnalyticsInstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -326,7 +326,7 @@ func (mg *AnalyticsInstancePrivateAccessChannel) ResolveReferences(ctx context.C
 	mg.Spec.InitProvider.AnalyticsInstanceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.AnalyticsInstanceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+		m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -346,7 +346,7 @@ func (mg *AnalyticsInstancePrivateAccessChannel) ResolveReferences(ctx context.C
 	mg.Spec.InitProvider.SubnetID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.SubnetIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Vcn", "VcnList")
+		m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Vcn", "VcnList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -378,7 +378,7 @@ func (mg *AnalyticsInstanceVanityUrl) ResolveReferences(ctx context.Context, c c
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("analytics.oci.upbound.io", "v1alpha1", "AnalyticsInstance", "AnalyticsInstanceList")
+		m, l, err = apisresolver.GetManagedResource("analytics.oci.m.upbound.io", "v1alpha1", "AnalyticsInstance", "AnalyticsInstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -398,7 +398,7 @@ func (mg *AnalyticsInstanceVanityUrl) ResolveReferences(ctx context.Context, c c
 	mg.Spec.ForProvider.AnalyticsInstanceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.AnalyticsInstanceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("analytics.oci.upbound.io", "v1alpha1", "AnalyticsInstance", "AnalyticsInstanceList")
+		m, l, err = apisresolver.GetManagedResource("analytics.oci.m.upbound.io", "v1alpha1", "AnalyticsInstance", "AnalyticsInstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

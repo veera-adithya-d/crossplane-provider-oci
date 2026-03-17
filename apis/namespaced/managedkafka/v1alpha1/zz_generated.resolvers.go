@@ -25,7 +25,7 @@ func (mg *KafkaCluster) ResolveReferences( // ResolveReferences of this KafkaClu
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("apmconfig.oci.upbound.io", "v1alpha1", "Config", "ConfigList")
+		m, l, err = apisresolver.GetManagedResource("apmconfig.oci.m.upbound.io", "v1alpha1", "Config", "ConfigList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *KafkaCluster) ResolveReferences( // ResolveReferences of this KafkaClu
 	mg.Spec.ForProvider.ClusterConfigID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ClusterConfigIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -65,7 +65,7 @@ func (mg *KafkaCluster) ResolveReferences( // ResolveReferences of this KafkaClu
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("apmconfig.oci.upbound.io", "v1alpha1", "Config", "ConfigList")
+		m, l, err = apisresolver.GetManagedResource("apmconfig.oci.m.upbound.io", "v1alpha1", "Config", "ConfigList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -85,7 +85,7 @@ func (mg *KafkaCluster) ResolveReferences( // ResolveReferences of this KafkaClu
 	mg.Spec.InitProvider.ClusterConfigID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.ClusterConfigIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -117,7 +117,7 @@ func (mg *KafkaClusterConfig) ResolveReferences(ctx context.Context, c client.Re
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -139,7 +139,7 @@ func (mg *KafkaClusterConfig) ResolveReferences(ctx context.Context, c client.Re
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.LatestConfig); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("apmconfig.oci.upbound.io", "v1alpha1", "Config", "ConfigList")
+			m, l, err = apisresolver.GetManagedResource("apmconfig.oci.m.upbound.io", "v1alpha1", "Config", "ConfigList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -160,7 +160,7 @@ func (mg *KafkaClusterConfig) ResolveReferences(ctx context.Context, c client.Re
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -181,7 +181,7 @@ func (mg *KafkaClusterConfig) ResolveReferences(ctx context.Context, c client.Re
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.LatestConfig); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("apmconfig.oci.upbound.io", "v1alpha1", "Config", "ConfigList")
+			m, l, err = apisresolver.GetManagedResource("apmconfig.oci.m.upbound.io", "v1alpha1", "Config", "ConfigList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -214,7 +214,7 @@ func (mg *KafkaClusterSuperusersManagement) ResolveReferences(ctx context.Contex
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -234,7 +234,7 @@ func (mg *KafkaClusterSuperusersManagement) ResolveReferences(ctx context.Contex
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("managedkafka.oci.upbound.io", "v1alpha1", "KafkaCluster", "KafkaClusterList")
+		m, l, err = apisresolver.GetManagedResource("managedkafka.oci.m.upbound.io", "v1alpha1", "KafkaCluster", "KafkaClusterList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -254,7 +254,7 @@ func (mg *KafkaClusterSuperusersManagement) ResolveReferences(ctx context.Contex
 	mg.Spec.ForProvider.KafkaClusterID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.KafkaClusterIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("vault.oci.upbound.io", "v1alpha1", "Secret", "SecretList")
+		m, l, err = apisresolver.GetManagedResource("vault.oci.m.upbound.io", "v1alpha1", "Secret", "SecretList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -274,7 +274,7 @@ func (mg *KafkaClusterSuperusersManagement) ResolveReferences(ctx context.Contex
 	mg.Spec.ForProvider.SecretID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.SecretIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -294,7 +294,7 @@ func (mg *KafkaClusterSuperusersManagement) ResolveReferences(ctx context.Contex
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("managedkafka.oci.upbound.io", "v1alpha1", "KafkaCluster", "KafkaClusterList")
+		m, l, err = apisresolver.GetManagedResource("managedkafka.oci.m.upbound.io", "v1alpha1", "KafkaCluster", "KafkaClusterList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -314,7 +314,7 @@ func (mg *KafkaClusterSuperusersManagement) ResolveReferences(ctx context.Contex
 	mg.Spec.InitProvider.KafkaClusterID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.KafkaClusterIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("vault.oci.upbound.io", "v1alpha1", "Secret", "SecretList")
+		m, l, err = apisresolver.GetManagedResource("vault.oci.m.upbound.io", "v1alpha1", "Secret", "SecretList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

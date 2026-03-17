@@ -25,7 +25,7 @@ func (mg *MultiCloudResourceDiscovery) ResolveReferences( // ResolveReferences o
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *MultiCloudResourceDiscovery) ResolveReferences( // ResolveReferences o
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -77,7 +77,7 @@ func (mg *OracleDbAwsIdentityConnector) ResolveReferences(ctx context.Context, c
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -97,7 +97,7 @@ func (mg *OracleDbAwsIdentityConnector) ResolveReferences(ctx context.Context, c
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -129,7 +129,7 @@ func (mg *OracleDbAwsKey) ResolveReferences(ctx context.Context, c client.Reader
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -149,7 +149,7 @@ func (mg *OracleDbAwsKey) ResolveReferences(ctx context.Context, c client.Reader
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -181,7 +181,7 @@ func (mg *OracleDbAzureBlobContainer) ResolveReferences(ctx context.Context, c c
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -201,7 +201,7 @@ func (mg *OracleDbAzureBlobContainer) ResolveReferences(ctx context.Context, c c
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -233,7 +233,7 @@ func (mg *OracleDbAzureBlobMount) ResolveReferences(ctx context.Context, c clien
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -253,7 +253,7 @@ func (mg *OracleDbAzureBlobMount) ResolveReferences(ctx context.Context, c clien
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("dbmulticloud.oci.upbound.io", "v1alpha1", "OracleDbAzureBlobContainer", "OracleDbAzureBlobContainerList")
+		m, l, err = apisresolver.GetManagedResource("dbmulticloud.oci.m.upbound.io", "v1alpha1", "OracleDbAzureBlobContainer", "OracleDbAzureBlobContainerList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -273,7 +273,7 @@ func (mg *OracleDbAzureBlobMount) ResolveReferences(ctx context.Context, c clien
 	mg.Spec.ForProvider.OracleDBAzureBlobContainerID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.OracleDBAzureBlobContainerIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("dbmulticloud.oci.upbound.io", "v1alpha1", "OracleDbAzureConnector", "OracleDbAzureConnectorList")
+		m, l, err = apisresolver.GetManagedResource("dbmulticloud.oci.m.upbound.io", "v1alpha1", "OracleDbAzureConnector", "OracleDbAzureConnectorList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -293,7 +293,7 @@ func (mg *OracleDbAzureBlobMount) ResolveReferences(ctx context.Context, c clien
 	mg.Spec.ForProvider.OracleDBAzureConnectorID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.OracleDBAzureConnectorIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -313,7 +313,7 @@ func (mg *OracleDbAzureBlobMount) ResolveReferences(ctx context.Context, c clien
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("dbmulticloud.oci.upbound.io", "v1alpha1", "OracleDbAzureBlobContainer", "OracleDbAzureBlobContainerList")
+		m, l, err = apisresolver.GetManagedResource("dbmulticloud.oci.m.upbound.io", "v1alpha1", "OracleDbAzureBlobContainer", "OracleDbAzureBlobContainerList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -333,7 +333,7 @@ func (mg *OracleDbAzureBlobMount) ResolveReferences(ctx context.Context, c clien
 	mg.Spec.InitProvider.OracleDBAzureBlobContainerID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.OracleDBAzureBlobContainerIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("dbmulticloud.oci.upbound.io", "v1alpha1", "OracleDbAzureConnector", "OracleDbAzureConnectorList")
+		m, l, err = apisresolver.GetManagedResource("dbmulticloud.oci.m.upbound.io", "v1alpha1", "OracleDbAzureConnector", "OracleDbAzureConnectorList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -365,7 +365,7 @@ func (mg *OracleDbAzureConnector) ResolveReferences(ctx context.Context, c clien
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -385,7 +385,7 @@ func (mg *OracleDbAzureConnector) ResolveReferences(ctx context.Context, c clien
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -417,7 +417,7 @@ func (mg *OracleDbAzureVault) ResolveReferences(ctx context.Context, c client.Re
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Vault", "VaultList")
+		m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Vault", "VaultList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -437,7 +437,7 @@ func (mg *OracleDbAzureVault) ResolveReferences(ctx context.Context, c client.Re
 	mg.Spec.ForProvider.AzureVaultID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.AzureVaultIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -457,7 +457,7 @@ func (mg *OracleDbAzureVault) ResolveReferences(ctx context.Context, c client.Re
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Vault", "VaultList")
+		m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Vault", "VaultList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -477,7 +477,7 @@ func (mg *OracleDbAzureVault) ResolveReferences(ctx context.Context, c client.Re
 	mg.Spec.InitProvider.AzureVaultID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.AzureVaultIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -509,7 +509,7 @@ func (mg *OracleDbAzureVaultAssociation) ResolveReferences(ctx context.Context, 
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -529,7 +529,7 @@ func (mg *OracleDbAzureVaultAssociation) ResolveReferences(ctx context.Context, 
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("dbmulticloud.oci.upbound.io", "v1alpha1", "OracleDbAzureConnector", "OracleDbAzureConnectorList")
+		m, l, err = apisresolver.GetManagedResource("dbmulticloud.oci.m.upbound.io", "v1alpha1", "OracleDbAzureConnector", "OracleDbAzureConnectorList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -549,7 +549,7 @@ func (mg *OracleDbAzureVaultAssociation) ResolveReferences(ctx context.Context, 
 	mg.Spec.ForProvider.OracleDBAzureConnectorID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.OracleDBAzureConnectorIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("dbmulticloud.oci.upbound.io", "v1alpha1", "OracleDbAzureVault", "OracleDbAzureVaultList")
+		m, l, err = apisresolver.GetManagedResource("dbmulticloud.oci.m.upbound.io", "v1alpha1", "OracleDbAzureVault", "OracleDbAzureVaultList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -569,7 +569,7 @@ func (mg *OracleDbAzureVaultAssociation) ResolveReferences(ctx context.Context, 
 	mg.Spec.ForProvider.OracleDBAzureVaultID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.OracleDBAzureVaultIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -589,7 +589,7 @@ func (mg *OracleDbAzureVaultAssociation) ResolveReferences(ctx context.Context, 
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("dbmulticloud.oci.upbound.io", "v1alpha1", "OracleDbAzureConnector", "OracleDbAzureConnectorList")
+		m, l, err = apisresolver.GetManagedResource("dbmulticloud.oci.m.upbound.io", "v1alpha1", "OracleDbAzureConnector", "OracleDbAzureConnectorList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -609,7 +609,7 @@ func (mg *OracleDbAzureVaultAssociation) ResolveReferences(ctx context.Context, 
 	mg.Spec.InitProvider.OracleDBAzureConnectorID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.OracleDBAzureConnectorIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("dbmulticloud.oci.upbound.io", "v1alpha1", "OracleDbAzureVault", "OracleDbAzureVaultList")
+		m, l, err = apisresolver.GetManagedResource("dbmulticloud.oci.m.upbound.io", "v1alpha1", "OracleDbAzureVault", "OracleDbAzureVaultList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -641,7 +641,7 @@ func (mg *OracleDbGcpIdentityConnector) ResolveReferences(ctx context.Context, c
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -661,7 +661,7 @@ func (mg *OracleDbGcpIdentityConnector) ResolveReferences(ctx context.Context, c
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.upbound.io", "v1alpha1", "Agent", "AgentList")
+		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.m.upbound.io", "v1alpha1", "Agent", "AgentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -681,7 +681,7 @@ func (mg *OracleDbGcpIdentityConnector) ResolveReferences(ctx context.Context, c
 	mg.Spec.ForProvider.GCPResourceServiceAgentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.GCPResourceServiceAgentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("dataflow.oci.upbound.io", "v1alpha1", "Pool", "PoolList")
+		m, l, err = apisresolver.GetManagedResource("dataflow.oci.m.upbound.io", "v1alpha1", "Pool", "PoolList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -701,7 +701,7 @@ func (mg *OracleDbGcpIdentityConnector) ResolveReferences(ctx context.Context, c
 	mg.Spec.ForProvider.GCPWorkloadIdentityPoolID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.GCPWorkloadIdentityPoolIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "IdentityProvider", "IdentityProviderList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "IdentityProvider", "IdentityProviderList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -721,7 +721,7 @@ func (mg *OracleDbGcpIdentityConnector) ResolveReferences(ctx context.Context, c
 	mg.Spec.ForProvider.GCPWorkloadIdentityProviderID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.GCPWorkloadIdentityProviderIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("aidocument.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("aidocument.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -741,7 +741,7 @@ func (mg *OracleDbGcpIdentityConnector) ResolveReferences(ctx context.Context, c
 	mg.Spec.ForProvider.ProjectID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ProjectIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -761,7 +761,7 @@ func (mg *OracleDbGcpIdentityConnector) ResolveReferences(ctx context.Context, c
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.upbound.io", "v1alpha1", "Agent", "AgentList")
+		m, l, err = apisresolver.GetManagedResource("cloudbridge.oci.m.upbound.io", "v1alpha1", "Agent", "AgentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -781,7 +781,7 @@ func (mg *OracleDbGcpIdentityConnector) ResolveReferences(ctx context.Context, c
 	mg.Spec.InitProvider.GCPResourceServiceAgentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.GCPResourceServiceAgentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("dataflow.oci.upbound.io", "v1alpha1", "Pool", "PoolList")
+		m, l, err = apisresolver.GetManagedResource("dataflow.oci.m.upbound.io", "v1alpha1", "Pool", "PoolList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -801,7 +801,7 @@ func (mg *OracleDbGcpIdentityConnector) ResolveReferences(ctx context.Context, c
 	mg.Spec.InitProvider.GCPWorkloadIdentityPoolID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.GCPWorkloadIdentityPoolIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "IdentityProvider", "IdentityProviderList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "IdentityProvider", "IdentityProviderList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -821,7 +821,7 @@ func (mg *OracleDbGcpIdentityConnector) ResolveReferences(ctx context.Context, c
 	mg.Spec.InitProvider.GCPWorkloadIdentityProviderID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.GCPWorkloadIdentityProviderIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("aidocument.oci.upbound.io", "v1alpha1", "Project", "ProjectList")
+		m, l, err = apisresolver.GetManagedResource("aidocument.oci.m.upbound.io", "v1alpha1", "Project", "ProjectList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -853,7 +853,7 @@ func (mg *OracleDbGcpKeyRing) ResolveReferences(ctx context.Context, c client.Re
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -873,7 +873,7 @@ func (mg *OracleDbGcpKeyRing) ResolveReferences(ctx context.Context, c client.Re
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

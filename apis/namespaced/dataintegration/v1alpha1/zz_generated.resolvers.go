@@ -25,7 +25,7 @@ func (mg *Workspace) ResolveReferences( // ResolveReferences of this Workspace.
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *Workspace) ResolveReferences( // ResolveReferences of this Workspace.
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -65,7 +65,7 @@ func (mg *Workspace) ResolveReferences( // ResolveReferences of this Workspace.
 	mg.Spec.ForProvider.EndpointCompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.EndpointCompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -85,7 +85,7 @@ func (mg *Workspace) ResolveReferences( // ResolveReferences of this Workspace.
 	mg.Spec.ForProvider.RegistryCompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.RegistryCompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+		m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -105,7 +105,7 @@ func (mg *Workspace) ResolveReferences( // ResolveReferences of this Workspace.
 	mg.Spec.ForProvider.SubnetID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.SubnetIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Vcn", "VcnList")
+		m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Vcn", "VcnList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -125,7 +125,7 @@ func (mg *Workspace) ResolveReferences( // ResolveReferences of this Workspace.
 	mg.Spec.ForProvider.VcnID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.VcnIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -145,7 +145,7 @@ func (mg *Workspace) ResolveReferences( // ResolveReferences of this Workspace.
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -165,7 +165,7 @@ func (mg *Workspace) ResolveReferences( // ResolveReferences of this Workspace.
 	mg.Spec.InitProvider.EndpointCompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.EndpointCompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -185,7 +185,7 @@ func (mg *Workspace) ResolveReferences( // ResolveReferences of this Workspace.
 	mg.Spec.InitProvider.RegistryCompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.RegistryCompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+		m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -205,7 +205,7 @@ func (mg *Workspace) ResolveReferences( // ResolveReferences of this Workspace.
 	mg.Spec.InitProvider.SubnetID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.SubnetIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Vcn", "VcnList")
+		m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Vcn", "VcnList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -239,7 +239,7 @@ func (mg *WorkspaceApplication) ResolveReferences(ctx context.Context, c client.
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.SourceApplicationInfo); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("dataintegration.oci.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
+			m, l, err = apisresolver.GetManagedResource("dataintegration.oci.m.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -260,7 +260,7 @@ func (mg *WorkspaceApplication) ResolveReferences(ctx context.Context, c client.
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
+		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.m.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -281,7 +281,7 @@ func (mg *WorkspaceApplication) ResolveReferences(ctx context.Context, c client.
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.SourceApplicationInfo); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("dataintegration.oci.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
+			m, l, err = apisresolver.GetManagedResource("dataintegration.oci.m.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -302,7 +302,7 @@ func (mg *WorkspaceApplication) ResolveReferences(ctx context.Context, c client.
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
+		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.m.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -333,7 +333,7 @@ func (mg *WorkspaceApplicationPatch) ResolveReferences(ctx context.Context, c cl
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
+		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.m.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -353,7 +353,7 @@ func (mg *WorkspaceApplicationPatch) ResolveReferences(ctx context.Context, c cl
 	mg.Spec.ForProvider.WorkspaceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.WorkspaceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
+		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.m.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -385,7 +385,7 @@ func (mg *WorkspaceApplicationSchedule) ResolveReferences(ctx context.Context, c
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
+		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.m.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -405,7 +405,7 @@ func (mg *WorkspaceApplicationSchedule) ResolveReferences(ctx context.Context, c
 	mg.Spec.ForProvider.WorkspaceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.WorkspaceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
+		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.m.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -437,7 +437,7 @@ func (mg *WorkspaceApplicationTaskSchedule) ResolveReferences(ctx context.Contex
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
+		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.m.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -457,7 +457,7 @@ func (mg *WorkspaceApplicationTaskSchedule) ResolveReferences(ctx context.Contex
 	mg.Spec.ForProvider.WorkspaceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.WorkspaceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
+		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.m.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -489,7 +489,7 @@ func (mg *WorkspaceExportRequest) ResolveReferences(ctx context.Context, c clien
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
+		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.m.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -509,7 +509,7 @@ func (mg *WorkspaceExportRequest) ResolveReferences(ctx context.Context, c clien
 	mg.Spec.ForProvider.WorkspaceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.WorkspaceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
+		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.m.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -541,7 +541,7 @@ func (mg *WorkspaceFolder) ResolveReferences(ctx context.Context, c client.Reade
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
+		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.m.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -561,7 +561,7 @@ func (mg *WorkspaceFolder) ResolveReferences(ctx context.Context, c client.Reade
 	mg.Spec.ForProvider.WorkspaceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.WorkspaceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
+		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.m.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -593,7 +593,7 @@ func (mg *WorkspaceImportRequest) ResolveReferences(ctx context.Context, c clien
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
+		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.m.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -613,7 +613,7 @@ func (mg *WorkspaceImportRequest) ResolveReferences(ctx context.Context, c clien
 	mg.Spec.ForProvider.WorkspaceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.WorkspaceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
+		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.m.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -645,7 +645,7 @@ func (mg *WorkspaceProject) ResolveReferences(ctx context.Context, c client.Read
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
+		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.m.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -665,7 +665,7 @@ func (mg *WorkspaceProject) ResolveReferences(ctx context.Context, c client.Read
 	mg.Spec.ForProvider.WorkspaceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.WorkspaceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
+		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.m.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -697,7 +697,7 @@ func (mg *WorkspaceTask) ResolveReferences(ctx context.Context, c client.Reader)
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
+		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.m.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -717,7 +717,7 @@ func (mg *WorkspaceTask) ResolveReferences(ctx context.Context, c client.Reader)
 	mg.Spec.ForProvider.WorkspaceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.WorkspaceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
+		m, l, err = apisresolver.GetManagedResource("dataintegration.oci.m.upbound.io", "v1alpha1", "Workspace", "WorkspaceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

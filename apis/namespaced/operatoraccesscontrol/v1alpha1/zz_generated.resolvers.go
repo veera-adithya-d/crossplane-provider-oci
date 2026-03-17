@@ -25,7 +25,7 @@ func (mg *OperatorControl) ResolveReferences( // ResolveReferences of this Opera
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *OperatorControl) ResolveReferences( // ResolveReferences of this Opera
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("operatoraccesscontrol.oci.upbound.io", "v1alpha1", "OperatorControl", "OperatorControlList")
+		m, l, err = apisresolver.GetManagedResource("operatoraccesscontrol.oci.m.upbound.io", "v1alpha1", "OperatorControl", "OperatorControlList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -65,7 +65,7 @@ func (mg *OperatorControl) ResolveReferences( // ResolveReferences of this Opera
 	mg.Spec.ForProvider.OperatorControlName = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.OperatorControlNameRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -85,7 +85,7 @@ func (mg *OperatorControl) ResolveReferences( // ResolveReferences of this Opera
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("operatoraccesscontrol.oci.upbound.io", "v1alpha1", "OperatorControl", "OperatorControlList")
+		m, l, err = apisresolver.GetManagedResource("operatoraccesscontrol.oci.m.upbound.io", "v1alpha1", "OperatorControl", "OperatorControlList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -117,7 +117,7 @@ func (mg *OperatorControlAssignment) ResolveReferences(ctx context.Context, c cl
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -137,7 +137,7 @@ func (mg *OperatorControlAssignment) ResolveReferences(ctx context.Context, c cl
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("operatoraccesscontrol.oci.upbound.io", "v1alpha1", "OperatorControl", "OperatorControlList")
+		m, l, err = apisresolver.GetManagedResource("operatoraccesscontrol.oci.m.upbound.io", "v1alpha1", "OperatorControl", "OperatorControlList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -157,7 +157,7 @@ func (mg *OperatorControlAssignment) ResolveReferences(ctx context.Context, c cl
 	mg.Spec.ForProvider.OperatorControlID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.OperatorControlIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -177,7 +177,7 @@ func (mg *OperatorControlAssignment) ResolveReferences(ctx context.Context, c cl
 	mg.Spec.ForProvider.ResourceCompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ResourceCompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -197,7 +197,7 @@ func (mg *OperatorControlAssignment) ResolveReferences(ctx context.Context, c cl
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("operatoraccesscontrol.oci.upbound.io", "v1alpha1", "OperatorControl", "OperatorControlList")
+		m, l, err = apisresolver.GetManagedResource("operatoraccesscontrol.oci.m.upbound.io", "v1alpha1", "OperatorControl", "OperatorControlList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -217,7 +217,7 @@ func (mg *OperatorControlAssignment) ResolveReferences(ctx context.Context, c cl
 	mg.Spec.InitProvider.OperatorControlID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.OperatorControlIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

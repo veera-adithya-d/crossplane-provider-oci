@@ -25,7 +25,7 @@ func (mg *DesktopPool) ResolveReferences( // ResolveReferences of this DesktopPo
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -47,7 +47,7 @@ func (mg *DesktopPool) ResolveReferences( // ResolveReferences of this DesktopPo
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Image); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("compute.oci.upbound.io", "v1alpha1", "Image", "ImageList")
+			m, l, err = apisresolver.GetManagedResource("compute.oci.m.upbound.io", "v1alpha1", "Image", "ImageList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -69,7 +69,7 @@ func (mg *DesktopPool) ResolveReferences( // ResolveReferences of this DesktopPo
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.NetworkConfiguration); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -91,7 +91,7 @@ func (mg *DesktopPool) ResolveReferences( // ResolveReferences of this DesktopPo
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.NetworkConfiguration); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Vcn", "VcnList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Vcn", "VcnList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -113,7 +113,7 @@ func (mg *DesktopPool) ResolveReferences( // ResolveReferences of this DesktopPo
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.PrivateAccessDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -134,7 +134,7 @@ func (mg *DesktopPool) ResolveReferences( // ResolveReferences of this DesktopPo
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -155,7 +155,7 @@ func (mg *DesktopPool) ResolveReferences( // ResolveReferences of this DesktopPo
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Image); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("compute.oci.upbound.io", "v1alpha1", "Image", "ImageList")
+			m, l, err = apisresolver.GetManagedResource("compute.oci.m.upbound.io", "v1alpha1", "Image", "ImageList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -177,7 +177,7 @@ func (mg *DesktopPool) ResolveReferences( // ResolveReferences of this DesktopPo
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.NetworkConfiguration); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -199,7 +199,7 @@ func (mg *DesktopPool) ResolveReferences( // ResolveReferences of this DesktopPo
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.NetworkConfiguration); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Vcn", "VcnList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Vcn", "VcnList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -221,7 +221,7 @@ func (mg *DesktopPool) ResolveReferences( // ResolveReferences of this DesktopPo
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.PrivateAccessDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}

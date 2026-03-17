@@ -25,7 +25,7 @@ func (mg *InternalOccmDemandSignal) ResolveReferences( // ResolveReferences of t
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("capacitymanagement.oci.upbound.io", "v1alpha1", "OccmDemandSignal", "OccmDemandSignalList")
+		m, l, err = apisresolver.GetManagedResource("capacitymanagement.oci.m.upbound.io", "v1alpha1", "OccmDemandSignal", "OccmDemandSignalList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *InternalOccmDemandSignal) ResolveReferences( // ResolveReferences of t
 	mg.Spec.ForProvider.OccmDemandSignalID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.OccmDemandSignalIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("capacitymanagement.oci.upbound.io", "v1alpha1", "OccmDemandSignal", "OccmDemandSignalList")
+		m, l, err = apisresolver.GetManagedResource("capacitymanagement.oci.m.upbound.io", "v1alpha1", "OccmDemandSignal", "OccmDemandSignalList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -77,7 +77,7 @@ func (mg *InternalOccmDemandSignalDelivery) ResolveReferences(ctx context.Contex
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -97,7 +97,7 @@ func (mg *InternalOccmDemandSignalDelivery) ResolveReferences(ctx context.Contex
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("capacitymanagement.oci.upbound.io", "v1alpha1", "OccCustomerGroup", "OccCustomerGroupList")
+		m, l, err = apisresolver.GetManagedResource("capacitymanagement.oci.m.upbound.io", "v1alpha1", "OccCustomerGroup", "OccCustomerGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -117,7 +117,7 @@ func (mg *InternalOccmDemandSignalDelivery) ResolveReferences(ctx context.Contex
 	mg.Spec.ForProvider.OccCustomerGroupID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.OccCustomerGroupIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -137,7 +137,7 @@ func (mg *InternalOccmDemandSignalDelivery) ResolveReferences(ctx context.Contex
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("capacitymanagement.oci.upbound.io", "v1alpha1", "OccCustomerGroup", "OccCustomerGroupList")
+		m, l, err = apisresolver.GetManagedResource("capacitymanagement.oci.m.upbound.io", "v1alpha1", "OccCustomerGroup", "OccCustomerGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -169,7 +169,7 @@ func (mg *OccAvailabilityCatalog) ResolveReferences(ctx context.Context, c clien
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -189,7 +189,7 @@ func (mg *OccAvailabilityCatalog) ResolveReferences(ctx context.Context, c clien
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("capacitymanagement.oci.upbound.io", "v1alpha1", "OccCustomerGroup", "OccCustomerGroupList")
+		m, l, err = apisresolver.GetManagedResource("capacitymanagement.oci.m.upbound.io", "v1alpha1", "OccCustomerGroup", "OccCustomerGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -209,7 +209,7 @@ func (mg *OccAvailabilityCatalog) ResolveReferences(ctx context.Context, c clien
 	mg.Spec.ForProvider.OccCustomerGroupID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.OccCustomerGroupIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -229,7 +229,7 @@ func (mg *OccAvailabilityCatalog) ResolveReferences(ctx context.Context, c clien
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("capacitymanagement.oci.upbound.io", "v1alpha1", "OccCustomerGroup", "OccCustomerGroupList")
+		m, l, err = apisresolver.GetManagedResource("capacitymanagement.oci.m.upbound.io", "v1alpha1", "OccCustomerGroup", "OccCustomerGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -261,7 +261,7 @@ func (mg *OccCapacityRequest) ResolveReferences(ctx context.Context, c client.Re
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -281,7 +281,7 @@ func (mg *OccCapacityRequest) ResolveReferences(ctx context.Context, c client.Re
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("capacitymanagement.oci.upbound.io", "v1alpha1", "OccAvailabilityCatalog", "OccAvailabilityCatalogList")
+		m, l, err = apisresolver.GetManagedResource("capacitymanagement.oci.m.upbound.io", "v1alpha1", "OccAvailabilityCatalog", "OccAvailabilityCatalogList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -301,7 +301,7 @@ func (mg *OccCapacityRequest) ResolveReferences(ctx context.Context, c client.Re
 	mg.Spec.ForProvider.OccAvailabilityCatalogID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.OccAvailabilityCatalogIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -321,7 +321,7 @@ func (mg *OccCapacityRequest) ResolveReferences(ctx context.Context, c client.Re
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("capacitymanagement.oci.upbound.io", "v1alpha1", "OccAvailabilityCatalog", "OccAvailabilityCatalogList")
+		m, l, err = apisresolver.GetManagedResource("capacitymanagement.oci.m.upbound.io", "v1alpha1", "OccAvailabilityCatalog", "OccAvailabilityCatalogList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -353,7 +353,7 @@ func (mg *OccCustomerGroup) ResolveReferences(ctx context.Context, c client.Read
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -373,7 +373,7 @@ func (mg *OccCustomerGroup) ResolveReferences(ctx context.Context, c client.Read
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -405,7 +405,7 @@ func (mg *OccCustomerGroupOccCustomer) ResolveReferences(ctx context.Context, c 
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("capacitymanagement.oci.upbound.io", "v1alpha1", "OccCustomerGroup", "OccCustomerGroupList")
+		m, l, err = apisresolver.GetManagedResource("capacitymanagement.oci.m.upbound.io", "v1alpha1", "OccCustomerGroup", "OccCustomerGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -425,7 +425,7 @@ func (mg *OccCustomerGroupOccCustomer) ResolveReferences(ctx context.Context, c 
 	mg.Spec.ForProvider.OccCustomerGroupID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.OccCustomerGroupIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("capacitymanagement.oci.upbound.io", "v1alpha1", "OccCustomerGroup", "OccCustomerGroupList")
+		m, l, err = apisresolver.GetManagedResource("capacitymanagement.oci.m.upbound.io", "v1alpha1", "OccCustomerGroup", "OccCustomerGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -457,7 +457,7 @@ func (mg *OccmDemandSignal) ResolveReferences(ctx context.Context, c client.Read
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -477,7 +477,7 @@ func (mg *OccmDemandSignal) ResolveReferences(ctx context.Context, c client.Read
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -509,7 +509,7 @@ func (mg *OccmDemandSignalItem) ResolveReferences(ctx context.Context, c client.
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -529,7 +529,7 @@ func (mg *OccmDemandSignalItem) ResolveReferences(ctx context.Context, c client.
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -549,7 +549,7 @@ func (mg *OccmDemandSignalItem) ResolveReferences(ctx context.Context, c client.
 	mg.Spec.ForProvider.TargetCompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.TargetCompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -569,7 +569,7 @@ func (mg *OccmDemandSignalItem) ResolveReferences(ctx context.Context, c client.
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

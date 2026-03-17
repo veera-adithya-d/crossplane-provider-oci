@@ -25,7 +25,7 @@ func (mg *AutoScalingConfiguration) ResolveReferences( // ResolveReferences of t
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -49,7 +49,7 @@ func (mg *AutoScalingConfiguration) ResolveReferences( // ResolveReferences of t
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Policies[i3].Rules); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.Policies[i3].Rules[i4].Metric); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+					m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -72,7 +72,7 @@ func (mg *AutoScalingConfiguration) ResolveReferences( // ResolveReferences of t
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -95,7 +95,7 @@ func (mg *AutoScalingConfiguration) ResolveReferences( // ResolveReferences of t
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Policies[i3].Rules); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.Policies[i3].Rules[i4].Metric); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+					m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}

@@ -7,6 +7,7 @@ package clients
 import (
 	"context"
 	"encoding/json"
+	"strings"
 
 	xpv1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
 	"github.com/crossplane/crossplane-runtime/v2/pkg/meta"
@@ -79,13 +80,22 @@ func resolveProviderConfig(ctx context.Context, kube client.Client, mg resource.
 	case resource.LegacyManaged:
 		return resolveLegacyProviderConfig(ctx, kube, managed)
 	case resource.ModernManaged:
-		if managed.GetObjectKind().GroupVersionKind().Group == namespacedv1beta1.Group {
+		if isNamespacedModernManaged(managed) {
 			return resolveNamespacedProviderConfig(ctx, kube, managed)
 		}
 		return resolveClusterProviderConfigForModernMR(ctx, kube, managed)
 	default:
 		return nil, errors.New(errUnsupportedManaged)
 	}
+}
+
+func isNamespacedModernManaged(mg resource.ModernManaged) bool {
+	if mg.GetNamespace() != "" {
+		return true
+	}
+
+	group := mg.GetObjectKind().GroupVersionKind().Group
+	return group == namespacedv1beta1.Group || strings.HasSuffix(group, "."+namespacedv1beta1.Group)
 }
 
 func resolveLegacyProviderConfig(ctx context.Context, kube client.Client, mg resource.LegacyManaged) (*namespacedv1beta1.ProviderConfigSpec, error) {
@@ -168,8 +178,11 @@ func resolveNamespacedProviderConfig(ctx context.Context, kube client.Client, mg
 		return nil, errors.New(errUnsupportedProviderCfgKind)
 	}
 
-	// Namespace is ignored for cluster-scoped ClusterProviderConfig.
-	if err := kube.Get(ctx, types.NamespacedName{Name: configRef.Name, Namespace: mg.GetNamespace()}, pcObj); err != nil {
+	key := types.NamespacedName{Name: configRef.Name}
+	if kind == namespacedv1beta1.ProviderConfigKind {
+		key.Namespace = mg.GetNamespace()
+	}
+	if err := kube.Get(ctx, key, pcObj); err != nil {
 		return nil, errors.Wrap(err, errGetProviderConfig)
 	}
 

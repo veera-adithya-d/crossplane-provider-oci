@@ -25,7 +25,7 @@ func (mg *SecurityAttribute) ResolveReferences( // ResolveReferences of this Sec
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("securityattribute.oci.upbound.io", "v1alpha1", "SecurityAttributeNamespace", "SecurityAttributeNamespaceList")
+		m, l, err = apisresolver.GetManagedResource("securityattribute.oci.m.upbound.io", "v1alpha1", "SecurityAttributeNamespace", "SecurityAttributeNamespaceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *SecurityAttribute) ResolveReferences( // ResolveReferences of this Sec
 	mg.Spec.ForProvider.SecurityAttributeNamespaceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.SecurityAttributeNamespaceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("securityattribute.oci.upbound.io", "v1alpha1", "SecurityAttributeNamespace", "SecurityAttributeNamespaceList")
+		m, l, err = apisresolver.GetManagedResource("securityattribute.oci.m.upbound.io", "v1alpha1", "SecurityAttributeNamespace", "SecurityAttributeNamespaceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -77,7 +77,7 @@ func (mg *SecurityAttributeNamespace) ResolveReferences(ctx context.Context, c c
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -97,7 +97,7 @@ func (mg *SecurityAttributeNamespace) ResolveReferences(ctx context.Context, c c
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

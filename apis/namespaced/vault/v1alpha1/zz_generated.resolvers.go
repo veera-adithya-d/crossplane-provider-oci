@@ -25,7 +25,7 @@ func (mg *Secret) ResolveReferences( // ResolveReferences of this Secret.
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *Secret) ResolveReferences( // ResolveReferences of this Secret.
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+		m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -68,7 +68,7 @@ func (mg *Secret) ResolveReferences( // ResolveReferences of this Secret.
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.ReplicationConfig); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.ReplicationConfig[i3].ReplicationTargets); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+				m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -92,7 +92,7 @@ func (mg *Secret) ResolveReferences( // ResolveReferences of this Secret.
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.ReplicationConfig); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.ReplicationConfig[i3].ReplicationTargets); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Vault", "VaultList")
+				m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Vault", "VaultList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -116,7 +116,7 @@ func (mg *Secret) ResolveReferences( // ResolveReferences of this Secret.
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.RotationConfig); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.RotationConfig[i3].TargetSystemDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("functions.oci.upbound.io", "v1alpha1", "Function", "FunctionList")
+				m, l, err = apisresolver.GetManagedResource("functions.oci.m.upbound.io", "v1alpha1", "Function", "FunctionList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -138,7 +138,7 @@ func (mg *Secret) ResolveReferences( // ResolveReferences of this Secret.
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("vault.oci.upbound.io", "v1alpha1", "Secret", "SecretList")
+		m, l, err = apisresolver.GetManagedResource("vault.oci.m.upbound.io", "v1alpha1", "Secret", "SecretList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -157,7 +157,7 @@ func (mg *Secret) ResolveReferences( // ResolveReferences of this Secret.
 	mg.Spec.ForProvider.SecretName = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.SecretNameRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Vault", "VaultList")
+		m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Vault", "VaultList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -177,7 +177,7 @@ func (mg *Secret) ResolveReferences( // ResolveReferences of this Secret.
 	mg.Spec.ForProvider.VaultID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.VaultIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -197,7 +197,7 @@ func (mg *Secret) ResolveReferences( // ResolveReferences of this Secret.
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+		m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -220,7 +220,7 @@ func (mg *Secret) ResolveReferences( // ResolveReferences of this Secret.
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.ReplicationConfig); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.ReplicationConfig[i3].ReplicationTargets); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+				m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -244,7 +244,7 @@ func (mg *Secret) ResolveReferences( // ResolveReferences of this Secret.
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.ReplicationConfig); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.ReplicationConfig[i3].ReplicationTargets); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Vault", "VaultList")
+				m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Vault", "VaultList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -268,7 +268,7 @@ func (mg *Secret) ResolveReferences( // ResolveReferences of this Secret.
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.RotationConfig); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.RotationConfig[i3].TargetSystemDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("functions.oci.upbound.io", "v1alpha1", "Function", "FunctionList")
+				m, l, err = apisresolver.GetManagedResource("functions.oci.m.upbound.io", "v1alpha1", "Function", "FunctionList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -290,7 +290,7 @@ func (mg *Secret) ResolveReferences( // ResolveReferences of this Secret.
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("vault.oci.upbound.io", "v1alpha1", "Secret", "SecretList")
+		m, l, err = apisresolver.GetManagedResource("vault.oci.m.upbound.io", "v1alpha1", "Secret", "SecretList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -309,7 +309,7 @@ func (mg *Secret) ResolveReferences( // ResolveReferences of this Secret.
 	mg.Spec.InitProvider.SecretName = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.SecretNameRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Vault", "VaultList")
+		m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Vault", "VaultList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

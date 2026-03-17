@@ -25,7 +25,7 @@ func (mg *MediaAsset) ResolveReferences( // ResolveReferences of this MediaAsset
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *MediaAsset) ResolveReferences( // ResolveReferences of this MediaAsset
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.upbound.io", "v1alpha1", "MediaAsset", "MediaAssetList")
+		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.m.upbound.io", "v1alpha1", "MediaAsset", "MediaAssetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -65,7 +65,7 @@ func (mg *MediaAsset) ResolveReferences( // ResolveReferences of this MediaAsset
 	mg.Spec.ForProvider.MasterMediaAssetID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.MasterMediaAssetIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.upbound.io", "v1alpha1", "MediaWorkflowJob", "MediaWorkflowJobList")
+		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.m.upbound.io", "v1alpha1", "MediaWorkflowJob", "MediaWorkflowJobList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -85,7 +85,7 @@ func (mg *MediaAsset) ResolveReferences( // ResolveReferences of this MediaAsset
 	mg.Spec.ForProvider.MediaWorkflowJobID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.MediaWorkflowJobIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.upbound.io", "v1alpha1", "MediaAsset", "MediaAssetList")
+		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.m.upbound.io", "v1alpha1", "MediaAsset", "MediaAssetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -105,7 +105,7 @@ func (mg *MediaAsset) ResolveReferences( // ResolveReferences of this MediaAsset
 	mg.Spec.ForProvider.ParentMediaAssetID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ParentMediaAssetIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.upbound.io", "v1alpha1", "MediaWorkflow", "MediaWorkflowList")
+		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.m.upbound.io", "v1alpha1", "MediaWorkflow", "MediaWorkflowList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -125,7 +125,7 @@ func (mg *MediaAsset) ResolveReferences( // ResolveReferences of this MediaAsset
 	mg.Spec.ForProvider.SourceMediaWorkflowID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.SourceMediaWorkflowIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -145,7 +145,7 @@ func (mg *MediaAsset) ResolveReferences( // ResolveReferences of this MediaAsset
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.upbound.io", "v1alpha1", "MediaAsset", "MediaAssetList")
+		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.m.upbound.io", "v1alpha1", "MediaAsset", "MediaAssetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -165,7 +165,7 @@ func (mg *MediaAsset) ResolveReferences( // ResolveReferences of this MediaAsset
 	mg.Spec.InitProvider.MasterMediaAssetID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.MasterMediaAssetIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.upbound.io", "v1alpha1", "MediaWorkflowJob", "MediaWorkflowJobList")
+		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.m.upbound.io", "v1alpha1", "MediaWorkflowJob", "MediaWorkflowJobList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -185,7 +185,7 @@ func (mg *MediaAsset) ResolveReferences( // ResolveReferences of this MediaAsset
 	mg.Spec.InitProvider.MediaWorkflowJobID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.MediaWorkflowJobIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.upbound.io", "v1alpha1", "MediaAsset", "MediaAssetList")
+		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.m.upbound.io", "v1alpha1", "MediaAsset", "MediaAssetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -205,7 +205,7 @@ func (mg *MediaAsset) ResolveReferences( // ResolveReferences of this MediaAsset
 	mg.Spec.InitProvider.ParentMediaAssetID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.ParentMediaAssetIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.upbound.io", "v1alpha1", "MediaWorkflow", "MediaWorkflowList")
+		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.m.upbound.io", "v1alpha1", "MediaWorkflow", "MediaWorkflowList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -237,7 +237,7 @@ func (mg *MediaWorkflow) ResolveReferences(ctx context.Context, c client.Reader)
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -257,7 +257,7 @@ func (mg *MediaWorkflow) ResolveReferences(ctx context.Context, c client.Reader)
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -289,7 +289,7 @@ func (mg *MediaWorkflowConfiguration) ResolveReferences(ctx context.Context, c c
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -309,7 +309,7 @@ func (mg *MediaWorkflowConfiguration) ResolveReferences(ctx context.Context, c c
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -341,7 +341,7 @@ func (mg *MediaWorkflowJob) ResolveReferences(ctx context.Context, c client.Read
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -361,7 +361,7 @@ func (mg *MediaWorkflowJob) ResolveReferences(ctx context.Context, c client.Read
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.upbound.io", "v1alpha1", "MediaWorkflow", "MediaWorkflowList")
+		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.m.upbound.io", "v1alpha1", "MediaWorkflow", "MediaWorkflowList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -381,7 +381,7 @@ func (mg *MediaWorkflowJob) ResolveReferences(ctx context.Context, c client.Read
 	mg.Spec.ForProvider.MediaWorkflowID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.MediaWorkflowIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.upbound.io", "v1alpha1", "MediaWorkflow", "MediaWorkflowList")
+		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.m.upbound.io", "v1alpha1", "MediaWorkflow", "MediaWorkflowList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -401,7 +401,7 @@ func (mg *MediaWorkflowJob) ResolveReferences(ctx context.Context, c client.Read
 	mg.Spec.ForProvider.MediaWorkflowName = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.MediaWorkflowNameRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -421,7 +421,7 @@ func (mg *MediaWorkflowJob) ResolveReferences(ctx context.Context, c client.Read
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.upbound.io", "v1alpha1", "MediaWorkflow", "MediaWorkflowList")
+		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.m.upbound.io", "v1alpha1", "MediaWorkflow", "MediaWorkflowList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -441,7 +441,7 @@ func (mg *MediaWorkflowJob) ResolveReferences(ctx context.Context, c client.Read
 	mg.Spec.InitProvider.MediaWorkflowID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.MediaWorkflowIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.upbound.io", "v1alpha1", "MediaWorkflow", "MediaWorkflowList")
+		m, l, err = apisresolver.GetManagedResource("mediaservices.oci.m.upbound.io", "v1alpha1", "MediaWorkflow", "MediaWorkflowList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -473,7 +473,7 @@ func (mg *StreamCdnConfig) ResolveReferences(ctx context.Context, c client.Reade
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("mysql.oci.upbound.io", "v1alpha1", "MysqlChannel", "MysqlChannelList")
+		m, l, err = apisresolver.GetManagedResource("mysql.oci.m.upbound.io", "v1alpha1", "MysqlChannel", "MysqlChannelList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -493,7 +493,7 @@ func (mg *StreamCdnConfig) ResolveReferences(ctx context.Context, c client.Reade
 	mg.Spec.ForProvider.DistributionChannelID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.DistributionChannelIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("mysql.oci.upbound.io", "v1alpha1", "MysqlChannel", "MysqlChannelList")
+		m, l, err = apisresolver.GetManagedResource("mysql.oci.m.upbound.io", "v1alpha1", "MysqlChannel", "MysqlChannelList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -525,7 +525,7 @@ func (mg *StreamDistributionChannel) ResolveReferences(ctx context.Context, c cl
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -545,7 +545,7 @@ func (mg *StreamDistributionChannel) ResolveReferences(ctx context.Context, c cl
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -577,7 +577,7 @@ func (mg *StreamPackagingConfig) ResolveReferences(ctx context.Context, c client
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("mysql.oci.upbound.io", "v1alpha1", "MysqlChannel", "MysqlChannelList")
+		m, l, err = apisresolver.GetManagedResource("mysql.oci.m.upbound.io", "v1alpha1", "MysqlChannel", "MysqlChannelList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -599,7 +599,7 @@ func (mg *StreamPackagingConfig) ResolveReferences(ctx context.Context, c client
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Encryption); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+			m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -620,7 +620,7 @@ func (mg *StreamPackagingConfig) ResolveReferences(ctx context.Context, c client
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("mysql.oci.upbound.io", "v1alpha1", "MysqlChannel", "MysqlChannelList")
+		m, l, err = apisresolver.GetManagedResource("mysql.oci.m.upbound.io", "v1alpha1", "MysqlChannel", "MysqlChannelList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -641,7 +641,7 @@ func (mg *StreamPackagingConfig) ResolveReferences(ctx context.Context, c client
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Encryption); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+			m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}

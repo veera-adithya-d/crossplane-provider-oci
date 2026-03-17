@@ -25,7 +25,7 @@ func (mg *FusionEnvironment) ResolveReferences( // ResolveReferences of this Fus
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *FusionEnvironment) ResolveReferences( // ResolveReferences of this Fus
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.upbound.io", "v1alpha1", "FusionEnvironmentFamily", "FusionEnvironmentFamilyList")
+		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.m.upbound.io", "v1alpha1", "FusionEnvironmentFamily", "FusionEnvironmentFamilyList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -65,7 +65,7 @@ func (mg *FusionEnvironment) ResolveReferences( // ResolveReferences of this Fus
 	mg.Spec.ForProvider.FusionEnvironmentFamilyID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.FusionEnvironmentFamilyIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+		m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -85,7 +85,7 @@ func (mg *FusionEnvironment) ResolveReferences( // ResolveReferences of this Fus
 	mg.Spec.ForProvider.KMSKeyID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.KMSKeyIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -105,7 +105,7 @@ func (mg *FusionEnvironment) ResolveReferences( // ResolveReferences of this Fus
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.upbound.io", "v1alpha1", "FusionEnvironmentFamily", "FusionEnvironmentFamilyList")
+		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.m.upbound.io", "v1alpha1", "FusionEnvironmentFamily", "FusionEnvironmentFamilyList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -125,7 +125,7 @@ func (mg *FusionEnvironment) ResolveReferences( // ResolveReferences of this Fus
 	mg.Spec.InitProvider.FusionEnvironmentFamilyID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.FusionEnvironmentFamilyIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+		m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -157,7 +157,7 @@ func (mg *FusionEnvironmentAdminUser) ResolveReferences(ctx context.Context, c c
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.upbound.io", "v1alpha1", "FusionEnvironment", "FusionEnvironmentList")
+		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.m.upbound.io", "v1alpha1", "FusionEnvironment", "FusionEnvironmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -177,7 +177,7 @@ func (mg *FusionEnvironmentAdminUser) ResolveReferences(ctx context.Context, c c
 	mg.Spec.ForProvider.FusionEnvironmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.FusionEnvironmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.upbound.io", "v1alpha1", "FusionEnvironment", "FusionEnvironmentList")
+		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.m.upbound.io", "v1alpha1", "FusionEnvironment", "FusionEnvironmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -209,7 +209,7 @@ func (mg *FusionEnvironmentDataMaskingActivity) ResolveReferences(ctx context.Co
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.upbound.io", "v1alpha1", "FusionEnvironment", "FusionEnvironmentList")
+		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.m.upbound.io", "v1alpha1", "FusionEnvironment", "FusionEnvironmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -229,7 +229,7 @@ func (mg *FusionEnvironmentDataMaskingActivity) ResolveReferences(ctx context.Co
 	mg.Spec.ForProvider.FusionEnvironmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.FusionEnvironmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.upbound.io", "v1alpha1", "FusionEnvironment", "FusionEnvironmentList")
+		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.m.upbound.io", "v1alpha1", "FusionEnvironment", "FusionEnvironmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -261,7 +261,7 @@ func (mg *FusionEnvironmentFamily) ResolveReferences(ctx context.Context, c clie
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -281,7 +281,7 @@ func (mg *FusionEnvironmentFamily) ResolveReferences(ctx context.Context, c clie
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -313,7 +313,7 @@ func (mg *FusionEnvironmentRefreshActivity) ResolveReferences(ctx context.Contex
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.upbound.io", "v1alpha1", "FusionEnvironment", "FusionEnvironmentList")
+		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.m.upbound.io", "v1alpha1", "FusionEnvironment", "FusionEnvironmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -333,7 +333,7 @@ func (mg *FusionEnvironmentRefreshActivity) ResolveReferences(ctx context.Contex
 	mg.Spec.ForProvider.FusionEnvironmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.FusionEnvironmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.upbound.io", "v1alpha1", "FusionEnvironment", "FusionEnvironmentList")
+		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.m.upbound.io", "v1alpha1", "FusionEnvironment", "FusionEnvironmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -353,7 +353,7 @@ func (mg *FusionEnvironmentRefreshActivity) ResolveReferences(ctx context.Contex
 	mg.Spec.ForProvider.SourceFusionEnvironmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.SourceFusionEnvironmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.upbound.io", "v1alpha1", "FusionEnvironment", "FusionEnvironmentList")
+		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.m.upbound.io", "v1alpha1", "FusionEnvironment", "FusionEnvironmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -373,7 +373,7 @@ func (mg *FusionEnvironmentRefreshActivity) ResolveReferences(ctx context.Contex
 	mg.Spec.InitProvider.FusionEnvironmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.FusionEnvironmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.upbound.io", "v1alpha1", "FusionEnvironment", "FusionEnvironmentList")
+		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.m.upbound.io", "v1alpha1", "FusionEnvironment", "FusionEnvironmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -405,7 +405,7 @@ func (mg *FusionEnvironmentServiceAttachment) ResolveReferences(ctx context.Cont
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.upbound.io", "v1alpha1", "FusionEnvironment", "FusionEnvironmentList")
+		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.m.upbound.io", "v1alpha1", "FusionEnvironment", "FusionEnvironmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -425,7 +425,7 @@ func (mg *FusionEnvironmentServiceAttachment) ResolveReferences(ctx context.Cont
 	mg.Spec.ForProvider.FusionEnvironmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.FusionEnvironmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("compute.oci.upbound.io", "v1alpha1", "Instance", "InstanceList")
+		m, l, err = apisresolver.GetManagedResource("compute.oci.m.upbound.io", "v1alpha1", "Instance", "InstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -445,7 +445,7 @@ func (mg *FusionEnvironmentServiceAttachment) ResolveReferences(ctx context.Cont
 	mg.Spec.ForProvider.ServiceInstanceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ServiceInstanceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.upbound.io", "v1alpha1", "FusionEnvironment", "FusionEnvironmentList")
+		m, l, err = apisresolver.GetManagedResource("fusionapps.oci.m.upbound.io", "v1alpha1", "FusionEnvironment", "FusionEnvironmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -465,7 +465,7 @@ func (mg *FusionEnvironmentServiceAttachment) ResolveReferences(ctx context.Cont
 	mg.Spec.InitProvider.FusionEnvironmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.FusionEnvironmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("compute.oci.upbound.io", "v1alpha1", "Instance", "InstanceList")
+		m, l, err = apisresolver.GetManagedResource("compute.oci.m.upbound.io", "v1alpha1", "Instance", "InstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

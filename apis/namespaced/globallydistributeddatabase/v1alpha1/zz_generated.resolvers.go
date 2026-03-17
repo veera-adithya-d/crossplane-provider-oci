@@ -25,7 +25,7 @@ func (mg *PrivateEndpoint) ResolveReferences( // ResolveReferences of this Priva
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *PrivateEndpoint) ResolveReferences( // ResolveReferences of this Priva
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+		m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -65,7 +65,7 @@ func (mg *PrivateEndpoint) ResolveReferences( // ResolveReferences of this Priva
 	mg.Spec.ForProvider.SubnetID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.SubnetIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -85,7 +85,7 @@ func (mg *PrivateEndpoint) ResolveReferences( // ResolveReferences of this Priva
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+		m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -119,7 +119,7 @@ func (mg *ShardedDatabase) ResolveReferences(ctx context.Context, c client.Reade
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.CatalogDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("database.oci.upbound.io", "v1alpha1", "CloudAutonomousVmCluster", "CloudAutonomousVmClusterList")
+			m, l, err = apisresolver.GetManagedResource("database.oci.m.upbound.io", "v1alpha1", "CloudAutonomousVmCluster", "CloudAutonomousVmClusterList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -142,7 +142,7 @@ func (mg *ShardedDatabase) ResolveReferences(ctx context.Context, c client.Reade
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.CatalogDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.CatalogDetails[i3].EncryptionKeyDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+				m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -166,7 +166,7 @@ func (mg *ShardedDatabase) ResolveReferences(ctx context.Context, c client.Reade
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.CatalogDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.CatalogDetails[i3].EncryptionKeyDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "KeyVersion", "KeyVersionList")
+				m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "KeyVersion", "KeyVersionList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -190,7 +190,7 @@ func (mg *ShardedDatabase) ResolveReferences(ctx context.Context, c client.Reade
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.CatalogDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.CatalogDetails[i3].EncryptionKeyDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Vault", "VaultList")
+				m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Vault", "VaultList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -213,7 +213,7 @@ func (mg *ShardedDatabase) ResolveReferences(ctx context.Context, c client.Reade
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.CatalogDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("database.oci.upbound.io", "v1alpha1", "CloudAutonomousVmCluster", "CloudAutonomousVmClusterList")
+			m, l, err = apisresolver.GetManagedResource("database.oci.m.upbound.io", "v1alpha1", "CloudAutonomousVmCluster", "CloudAutonomousVmClusterList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -234,7 +234,7 @@ func (mg *ShardedDatabase) ResolveReferences(ctx context.Context, c client.Reade
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -255,7 +255,7 @@ func (mg *ShardedDatabase) ResolveReferences(ctx context.Context, c client.Reade
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.ShardDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("database.oci.upbound.io", "v1alpha1", "CloudAutonomousVmCluster", "CloudAutonomousVmClusterList")
+			m, l, err = apisresolver.GetManagedResource("database.oci.m.upbound.io", "v1alpha1", "CloudAutonomousVmCluster", "CloudAutonomousVmClusterList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -278,7 +278,7 @@ func (mg *ShardedDatabase) ResolveReferences(ctx context.Context, c client.Reade
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.ShardDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.ShardDetails[i3].EncryptionKeyDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+				m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -302,7 +302,7 @@ func (mg *ShardedDatabase) ResolveReferences(ctx context.Context, c client.Reade
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.ShardDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.ShardDetails[i3].EncryptionKeyDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "KeyVersion", "KeyVersionList")
+				m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "KeyVersion", "KeyVersionList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -326,7 +326,7 @@ func (mg *ShardedDatabase) ResolveReferences(ctx context.Context, c client.Reade
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.ShardDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.ShardDetails[i3].EncryptionKeyDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Vault", "VaultList")
+				m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Vault", "VaultList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -349,7 +349,7 @@ func (mg *ShardedDatabase) ResolveReferences(ctx context.Context, c client.Reade
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.ShardDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("database.oci.upbound.io", "v1alpha1", "CloudAutonomousVmCluster", "CloudAutonomousVmClusterList")
+			m, l, err = apisresolver.GetManagedResource("database.oci.m.upbound.io", "v1alpha1", "CloudAutonomousVmCluster", "CloudAutonomousVmClusterList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -371,7 +371,7 @@ func (mg *ShardedDatabase) ResolveReferences(ctx context.Context, c client.Reade
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.CatalogDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("database.oci.upbound.io", "v1alpha1", "CloudAutonomousVmCluster", "CloudAutonomousVmClusterList")
+			m, l, err = apisresolver.GetManagedResource("database.oci.m.upbound.io", "v1alpha1", "CloudAutonomousVmCluster", "CloudAutonomousVmClusterList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -394,7 +394,7 @@ func (mg *ShardedDatabase) ResolveReferences(ctx context.Context, c client.Reade
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.CatalogDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.CatalogDetails[i3].EncryptionKeyDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+				m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -418,7 +418,7 @@ func (mg *ShardedDatabase) ResolveReferences(ctx context.Context, c client.Reade
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.CatalogDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.CatalogDetails[i3].EncryptionKeyDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "KeyVersion", "KeyVersionList")
+				m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "KeyVersion", "KeyVersionList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -442,7 +442,7 @@ func (mg *ShardedDatabase) ResolveReferences(ctx context.Context, c client.Reade
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.CatalogDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.CatalogDetails[i3].EncryptionKeyDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Vault", "VaultList")
+				m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Vault", "VaultList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -465,7 +465,7 @@ func (mg *ShardedDatabase) ResolveReferences(ctx context.Context, c client.Reade
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.CatalogDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("database.oci.upbound.io", "v1alpha1", "CloudAutonomousVmCluster", "CloudAutonomousVmClusterList")
+			m, l, err = apisresolver.GetManagedResource("database.oci.m.upbound.io", "v1alpha1", "CloudAutonomousVmCluster", "CloudAutonomousVmClusterList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -486,7 +486,7 @@ func (mg *ShardedDatabase) ResolveReferences(ctx context.Context, c client.Reade
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -507,7 +507,7 @@ func (mg *ShardedDatabase) ResolveReferences(ctx context.Context, c client.Reade
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.ShardDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("database.oci.upbound.io", "v1alpha1", "CloudAutonomousVmCluster", "CloudAutonomousVmClusterList")
+			m, l, err = apisresolver.GetManagedResource("database.oci.m.upbound.io", "v1alpha1", "CloudAutonomousVmCluster", "CloudAutonomousVmClusterList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -530,7 +530,7 @@ func (mg *ShardedDatabase) ResolveReferences(ctx context.Context, c client.Reade
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.ShardDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.ShardDetails[i3].EncryptionKeyDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+				m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -554,7 +554,7 @@ func (mg *ShardedDatabase) ResolveReferences(ctx context.Context, c client.Reade
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.ShardDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.ShardDetails[i3].EncryptionKeyDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "KeyVersion", "KeyVersionList")
+				m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "KeyVersion", "KeyVersionList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -578,7 +578,7 @@ func (mg *ShardedDatabase) ResolveReferences(ctx context.Context, c client.Reade
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.ShardDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.ShardDetails[i3].EncryptionKeyDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Vault", "VaultList")
+				m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Vault", "VaultList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -601,7 +601,7 @@ func (mg *ShardedDatabase) ResolveReferences(ctx context.Context, c client.Reade
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.ShardDetails); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("database.oci.upbound.io", "v1alpha1", "CloudAutonomousVmCluster", "CloudAutonomousVmClusterList")
+			m, l, err = apisresolver.GetManagedResource("database.oci.m.upbound.io", "v1alpha1", "CloudAutonomousVmCluster", "CloudAutonomousVmClusterList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}

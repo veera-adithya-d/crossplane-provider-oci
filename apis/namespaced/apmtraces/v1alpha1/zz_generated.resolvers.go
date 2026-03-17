@@ -25,7 +25,7 @@ func (mg *ScheduledQuery) ResolveReferences( // ResolveReferences of this Schedu
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("apm.oci.upbound.io", "v1alpha1", "ApmDomain", "ApmDomainList")
+		m, l, err = apisresolver.GetManagedResource("apm.oci.m.upbound.io", "v1alpha1", "ApmDomain", "ApmDomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *ScheduledQuery) ResolveReferences( // ResolveReferences of this Schedu
 	mg.Spec.ForProvider.ApmDomainID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ApmDomainIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("apmtraces.oci.upbound.io", "v1alpha1", "ScheduledQuery", "ScheduledQueryList")
+		m, l, err = apisresolver.GetManagedResource("apmtraces.oci.m.upbound.io", "v1alpha1", "ScheduledQuery", "ScheduledQueryList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -68,7 +68,7 @@ func (mg *ScheduledQuery) ResolveReferences( // ResolveReferences of this Schedu
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.ScheduledQueryProcessingConfiguration); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.ScheduledQueryProcessingConfiguration[i3].Streaming); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+				m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -90,7 +90,7 @@ func (mg *ScheduledQuery) ResolveReferences( // ResolveReferences of this Schedu
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("apm.oci.upbound.io", "v1alpha1", "ApmDomain", "ApmDomainList")
+		m, l, err = apisresolver.GetManagedResource("apm.oci.m.upbound.io", "v1alpha1", "ApmDomain", "ApmDomainList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -109,7 +109,7 @@ func (mg *ScheduledQuery) ResolveReferences( // ResolveReferences of this Schedu
 	mg.Spec.InitProvider.ApmDomainID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.ApmDomainIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("apmtraces.oci.upbound.io", "v1alpha1", "ScheduledQuery", "ScheduledQueryList")
+		m, l, err = apisresolver.GetManagedResource("apmtraces.oci.m.upbound.io", "v1alpha1", "ScheduledQuery", "ScheduledQueryList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -132,7 +132,7 @@ func (mg *ScheduledQuery) ResolveReferences( // ResolveReferences of this Schedu
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.ScheduledQueryProcessingConfiguration); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.ScheduledQueryProcessingConfiguration[i3].Streaming); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+				m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}

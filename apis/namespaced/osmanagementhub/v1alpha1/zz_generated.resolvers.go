@@ -25,7 +25,7 @@ func (mg *Event) ResolveReferences( // ResolveReferences of this Event.
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *Event) ResolveReferences( // ResolveReferences of this Event.
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Event", "EventList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Event", "EventList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -65,7 +65,7 @@ func (mg *Event) ResolveReferences( // ResolveReferences of this Event.
 	mg.Spec.ForProvider.EventID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.EventIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -85,7 +85,7 @@ func (mg *Event) ResolveReferences( // ResolveReferences of this Event.
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Event", "EventList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Event", "EventList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -117,7 +117,7 @@ func (mg *LifecycleEnvironment) ResolveReferences(ctx context.Context, c client.
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -137,7 +137,7 @@ func (mg *LifecycleEnvironment) ResolveReferences(ctx context.Context, c client.
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -169,7 +169,7 @@ func (mg *LifecycleStagePromoteSoftwareSourceManagement) ResolveReferences(ctx c
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -189,7 +189,7 @@ func (mg *LifecycleStagePromoteSoftwareSourceManagement) ResolveReferences(ctx c
 	mg.Spec.ForProvider.SoftwareSourceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.SoftwareSourceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -221,7 +221,7 @@ func (mg *ManagedInstance) ResolveReferences(ctx context.Context, c client.Reade
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -241,7 +241,7 @@ func (mg *ManagedInstance) ResolveReferences(ctx context.Context, c client.Reade
 	mg.Spec.ForProvider.ManagedInstanceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagedInstanceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("ons.oci.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
+		m, l, err = apisresolver.GetManagedResource("ons.oci.m.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -261,7 +261,7 @@ func (mg *ManagedInstance) ResolveReferences(ctx context.Context, c client.Reade
 	mg.Spec.ForProvider.NotificationTopicID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.NotificationTopicIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -281,7 +281,7 @@ func (mg *ManagedInstance) ResolveReferences(ctx context.Context, c client.Reade
 	mg.Spec.ForProvider.PrimaryManagementStationID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.PrimaryManagementStationIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -301,7 +301,7 @@ func (mg *ManagedInstance) ResolveReferences(ctx context.Context, c client.Reade
 	mg.Spec.ForProvider.SecondaryManagementStationID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.SecondaryManagementStationIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -321,7 +321,7 @@ func (mg *ManagedInstance) ResolveReferences(ctx context.Context, c client.Reade
 	mg.Spec.InitProvider.ManagedInstanceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.ManagedInstanceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("ons.oci.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
+		m, l, err = apisresolver.GetManagedResource("ons.oci.m.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -341,7 +341,7 @@ func (mg *ManagedInstance) ResolveReferences(ctx context.Context, c client.Reade
 	mg.Spec.InitProvider.NotificationTopicID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.NotificationTopicIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -361,7 +361,7 @@ func (mg *ManagedInstance) ResolveReferences(ctx context.Context, c client.Reade
 	mg.Spec.InitProvider.PrimaryManagementStationID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.PrimaryManagementStationIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -393,7 +393,7 @@ func (mg *ManagedInstanceAttachProfileManagement) ResolveReferences(ctx context.
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -413,7 +413,7 @@ func (mg *ManagedInstanceAttachProfileManagement) ResolveReferences(ctx context.
 	mg.Spec.ForProvider.ManagedInstanceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagedInstanceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Profile", "ProfileList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Profile", "ProfileList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -433,7 +433,7 @@ func (mg *ManagedInstanceAttachProfileManagement) ResolveReferences(ctx context.
 	mg.Spec.ForProvider.ProfileID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ProfileIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -453,7 +453,7 @@ func (mg *ManagedInstanceAttachProfileManagement) ResolveReferences(ctx context.
 	mg.Spec.InitProvider.ManagedInstanceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.ManagedInstanceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Profile", "ProfileList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Profile", "ProfileList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -485,7 +485,7 @@ func (mg *ManagedInstanceDetachProfileManagement) ResolveReferences(ctx context.
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -505,7 +505,7 @@ func (mg *ManagedInstanceDetachProfileManagement) ResolveReferences(ctx context.
 	mg.Spec.ForProvider.ManagedInstanceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagedInstanceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -537,7 +537,7 @@ func (mg *ManagedInstanceGroup) ResolveReferences(ctx context.Context, c client.
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -557,7 +557,7 @@ func (mg *ManagedInstanceGroup) ResolveReferences(ctx context.Context, c client.
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("ons.oci.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
+		m, l, err = apisresolver.GetManagedResource("ons.oci.m.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -577,7 +577,7 @@ func (mg *ManagedInstanceGroup) ResolveReferences(ctx context.Context, c client.
 	mg.Spec.ForProvider.NotificationTopicID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.NotificationTopicIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -597,7 +597,7 @@ func (mg *ManagedInstanceGroup) ResolveReferences(ctx context.Context, c client.
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("ons.oci.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
+		m, l, err = apisresolver.GetManagedResource("ons.oci.m.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -629,7 +629,7 @@ func (mg *ManagedInstanceGroupAttachManagedInstancesManagement) ResolveReference
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -649,7 +649,7 @@ func (mg *ManagedInstanceGroupAttachManagedInstancesManagement) ResolveReference
 	mg.Spec.ForProvider.ManagedInstanceGroupID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagedInstanceGroupIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -681,7 +681,7 @@ func (mg *ManagedInstanceGroupAttachSoftwareSourcesManagement) ResolveReferences
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -701,7 +701,7 @@ func (mg *ManagedInstanceGroupAttachSoftwareSourcesManagement) ResolveReferences
 	mg.Spec.ForProvider.ManagedInstanceGroupID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagedInstanceGroupIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -733,7 +733,7 @@ func (mg *ManagedInstanceGroupDetachManagedInstancesManagement) ResolveReference
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -753,7 +753,7 @@ func (mg *ManagedInstanceGroupDetachManagedInstancesManagement) ResolveReference
 	mg.Spec.ForProvider.ManagedInstanceGroupID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagedInstanceGroupIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -785,7 +785,7 @@ func (mg *ManagedInstanceGroupDetachSoftwareSourcesManagement) ResolveReferences
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -805,7 +805,7 @@ func (mg *ManagedInstanceGroupDetachSoftwareSourcesManagement) ResolveReferences
 	mg.Spec.ForProvider.ManagedInstanceGroupID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagedInstanceGroupIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -837,7 +837,7 @@ func (mg *ManagedInstanceGroupInstallPackagesManagement) ResolveReferences(ctx c
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -857,7 +857,7 @@ func (mg *ManagedInstanceGroupInstallPackagesManagement) ResolveReferences(ctx c
 	mg.Spec.ForProvider.ManagedInstanceGroupID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagedInstanceGroupIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -889,7 +889,7 @@ func (mg *ManagedInstanceGroupInstallWindowsUpdatesManagement) ResolveReferences
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -909,7 +909,7 @@ func (mg *ManagedInstanceGroupInstallWindowsUpdatesManagement) ResolveReferences
 	mg.Spec.ForProvider.ManagedInstanceGroupID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagedInstanceGroupIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -943,7 +943,7 @@ func (mg *ManagedInstanceGroupManageModuleStreamsManagement) ResolveReferences(c
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Disable); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -965,7 +965,7 @@ func (mg *ManagedInstanceGroupManageModuleStreamsManagement) ResolveReferences(c
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Disable); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+			m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -987,7 +987,7 @@ func (mg *ManagedInstanceGroupManageModuleStreamsManagement) ResolveReferences(c
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Enable); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1009,7 +1009,7 @@ func (mg *ManagedInstanceGroupManageModuleStreamsManagement) ResolveReferences(c
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Enable); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+			m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1031,7 +1031,7 @@ func (mg *ManagedInstanceGroupManageModuleStreamsManagement) ResolveReferences(c
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Install); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Profile", "ProfileList")
+			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Profile", "ProfileList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1053,7 +1053,7 @@ func (mg *ManagedInstanceGroupManageModuleStreamsManagement) ResolveReferences(c
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Install); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1075,7 +1075,7 @@ func (mg *ManagedInstanceGroupManageModuleStreamsManagement) ResolveReferences(c
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Install); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+			m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1096,7 +1096,7 @@ func (mg *ManagedInstanceGroupManageModuleStreamsManagement) ResolveReferences(c
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1117,7 +1117,7 @@ func (mg *ManagedInstanceGroupManageModuleStreamsManagement) ResolveReferences(c
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Remove); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Profile", "ProfileList")
+			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Profile", "ProfileList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1139,7 +1139,7 @@ func (mg *ManagedInstanceGroupManageModuleStreamsManagement) ResolveReferences(c
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Remove); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1161,7 +1161,7 @@ func (mg *ManagedInstanceGroupManageModuleStreamsManagement) ResolveReferences(c
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Remove); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+			m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1183,7 +1183,7 @@ func (mg *ManagedInstanceGroupManageModuleStreamsManagement) ResolveReferences(c
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Disable); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1205,7 +1205,7 @@ func (mg *ManagedInstanceGroupManageModuleStreamsManagement) ResolveReferences(c
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Disable); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+			m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1227,7 +1227,7 @@ func (mg *ManagedInstanceGroupManageModuleStreamsManagement) ResolveReferences(c
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Enable); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1249,7 +1249,7 @@ func (mg *ManagedInstanceGroupManageModuleStreamsManagement) ResolveReferences(c
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Enable); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+			m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1271,7 +1271,7 @@ func (mg *ManagedInstanceGroupManageModuleStreamsManagement) ResolveReferences(c
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Install); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Profile", "ProfileList")
+			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Profile", "ProfileList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1293,7 +1293,7 @@ func (mg *ManagedInstanceGroupManageModuleStreamsManagement) ResolveReferences(c
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Install); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1315,7 +1315,7 @@ func (mg *ManagedInstanceGroupManageModuleStreamsManagement) ResolveReferences(c
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Install); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+			m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1336,7 +1336,7 @@ func (mg *ManagedInstanceGroupManageModuleStreamsManagement) ResolveReferences(c
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1357,7 +1357,7 @@ func (mg *ManagedInstanceGroupManageModuleStreamsManagement) ResolveReferences(c
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Remove); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Profile", "ProfileList")
+			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Profile", "ProfileList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1379,7 +1379,7 @@ func (mg *ManagedInstanceGroupManageModuleStreamsManagement) ResolveReferences(c
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Remove); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1401,7 +1401,7 @@ func (mg *ManagedInstanceGroupManageModuleStreamsManagement) ResolveReferences(c
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Remove); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+			m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1434,7 +1434,7 @@ func (mg *ManagedInstanceGroupRebootManagement) ResolveReferences(ctx context.Co
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1454,7 +1454,7 @@ func (mg *ManagedInstanceGroupRebootManagement) ResolveReferences(ctx context.Co
 	mg.Spec.ForProvider.ManagedInstanceGroupID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagedInstanceGroupIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1486,7 +1486,7 @@ func (mg *ManagedInstanceGroupRemovePackagesManagement) ResolveReferences(ctx co
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1506,7 +1506,7 @@ func (mg *ManagedInstanceGroupRemovePackagesManagement) ResolveReferences(ctx co
 	mg.Spec.ForProvider.ManagedInstanceGroupID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagedInstanceGroupIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1538,7 +1538,7 @@ func (mg *ManagedInstanceGroupUpdateAllPackagesManagement) ResolveReferences(ctx
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1558,7 +1558,7 @@ func (mg *ManagedInstanceGroupUpdateAllPackagesManagement) ResolveReferences(ctx
 	mg.Spec.ForProvider.ManagedInstanceGroupID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagedInstanceGroupIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1590,7 +1590,7 @@ func (mg *ManagedInstanceInstallWindowsUpdatesManagement) ResolveReferences(ctx 
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1610,7 +1610,7 @@ func (mg *ManagedInstanceInstallWindowsUpdatesManagement) ResolveReferences(ctx 
 	mg.Spec.ForProvider.ManagedInstanceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagedInstanceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1642,7 +1642,7 @@ func (mg *ManagedInstanceRebootManagement) ResolveReferences(ctx context.Context
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1662,7 +1662,7 @@ func (mg *ManagedInstanceRebootManagement) ResolveReferences(ctx context.Context
 	mg.Spec.ForProvider.ManagedInstanceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagedInstanceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1694,7 +1694,7 @@ func (mg *ManagedInstanceUpdatePackagesManagement) ResolveReferences(ctx context
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1714,7 +1714,7 @@ func (mg *ManagedInstanceUpdatePackagesManagement) ResolveReferences(ctx context
 	mg.Spec.ForProvider.ManagedInstanceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagedInstanceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstance", "ManagedInstanceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1746,7 +1746,7 @@ func (mg *ManagementStation) ResolveReferences(ctx context.Context, c client.Rea
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1766,7 +1766,7 @@ func (mg *ManagementStation) ResolveReferences(ctx context.Context, c client.Rea
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1798,7 +1798,7 @@ func (mg *ManagementStationAssociateManagedInstancesManagement) ResolveReference
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1818,7 +1818,7 @@ func (mg *ManagementStationAssociateManagedInstancesManagement) ResolveReference
 	mg.Spec.ForProvider.ManagementStationID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagementStationIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1850,7 +1850,7 @@ func (mg *ManagementStationMirrorSynchronizeManagement) ResolveReferences(ctx co
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1870,7 +1870,7 @@ func (mg *ManagementStationMirrorSynchronizeManagement) ResolveReferences(ctx co
 	mg.Spec.ForProvider.ManagementStationID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagementStationIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1902,7 +1902,7 @@ func (mg *ManagementStationRefreshManagement) ResolveReferences(ctx context.Cont
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1922,7 +1922,7 @@ func (mg *ManagementStationRefreshManagement) ResolveReferences(ctx context.Cont
 	mg.Spec.ForProvider.ManagementStationID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagementStationIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1954,7 +1954,7 @@ func (mg *ManagementStationSynchronizeMirrorsManagement) ResolveReferences(ctx c
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1974,7 +1974,7 @@ func (mg *ManagementStationSynchronizeMirrorsManagement) ResolveReferences(ctx c
 	mg.Spec.ForProvider.ManagementStationID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagementStationIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2006,7 +2006,7 @@ func (mg *Profile) ResolveReferences(ctx context.Context, c client.Reader) error
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2026,7 +2026,7 @@ func (mg *Profile) ResolveReferences(ctx context.Context, c client.Reader) error
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2046,7 +2046,7 @@ func (mg *Profile) ResolveReferences(ctx context.Context, c client.Reader) error
 	mg.Spec.ForProvider.ManagedInstanceGroupID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagedInstanceGroupIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2066,7 +2066,7 @@ func (mg *Profile) ResolveReferences(ctx context.Context, c client.Reader) error
 	mg.Spec.ForProvider.ManagementStationID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagementStationIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2086,7 +2086,7 @@ func (mg *Profile) ResolveReferences(ctx context.Context, c client.Reader) error
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2106,7 +2106,7 @@ func (mg *Profile) ResolveReferences(ctx context.Context, c client.Reader) error
 	mg.Spec.InitProvider.ManagedInstanceGroupID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.ManagedInstanceGroupIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2138,7 +2138,7 @@ func (mg *ProfileAttachLifecycleStageManagement) ResolveReferences(ctx context.C
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Profile", "ProfileList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Profile", "ProfileList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2158,7 +2158,7 @@ func (mg *ProfileAttachLifecycleStageManagement) ResolveReferences(ctx context.C
 	mg.Spec.ForProvider.ProfileID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ProfileIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Profile", "ProfileList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Profile", "ProfileList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2190,7 +2190,7 @@ func (mg *ProfileAttachManagedInstanceGroupManagement) ResolveReferences(ctx con
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2210,7 +2210,7 @@ func (mg *ProfileAttachManagedInstanceGroupManagement) ResolveReferences(ctx con
 	mg.Spec.ForProvider.ManagedInstanceGroupID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagedInstanceGroupIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Profile", "ProfileList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Profile", "ProfileList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2230,7 +2230,7 @@ func (mg *ProfileAttachManagedInstanceGroupManagement) ResolveReferences(ctx con
 	mg.Spec.ForProvider.ProfileID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ProfileIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagedInstanceGroup", "ManagedInstanceGroupList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2250,7 +2250,7 @@ func (mg *ProfileAttachManagedInstanceGroupManagement) ResolveReferences(ctx con
 	mg.Spec.InitProvider.ManagedInstanceGroupID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.ManagedInstanceGroupIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Profile", "ProfileList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Profile", "ProfileList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2282,7 +2282,7 @@ func (mg *ProfileAttachManagementStationManagement) ResolveReferences(ctx contex
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2302,7 +2302,7 @@ func (mg *ProfileAttachManagementStationManagement) ResolveReferences(ctx contex
 	mg.Spec.ForProvider.ManagementStationID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ManagementStationIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Profile", "ProfileList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Profile", "ProfileList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2322,7 +2322,7 @@ func (mg *ProfileAttachManagementStationManagement) ResolveReferences(ctx contex
 	mg.Spec.ForProvider.ProfileID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ProfileIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "ManagementStation", "ManagementStationList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2342,7 +2342,7 @@ func (mg *ProfileAttachManagementStationManagement) ResolveReferences(ctx contex
 	mg.Spec.InitProvider.ManagementStationID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.ManagementStationIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Profile", "ProfileList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Profile", "ProfileList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2374,7 +2374,7 @@ func (mg *ProfileAttachSoftwareSourcesManagement) ResolveReferences(ctx context.
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Profile", "ProfileList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Profile", "ProfileList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2394,7 +2394,7 @@ func (mg *ProfileAttachSoftwareSourcesManagement) ResolveReferences(ctx context.
 	mg.Spec.ForProvider.ProfileID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ProfileIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Profile", "ProfileList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Profile", "ProfileList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2426,7 +2426,7 @@ func (mg *ProfileDetachSoftwareSourcesManagement) ResolveReferences(ctx context.
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Profile", "ProfileList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Profile", "ProfileList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2446,7 +2446,7 @@ func (mg *ProfileDetachSoftwareSourcesManagement) ResolveReferences(ctx context.
 	mg.Spec.ForProvider.ProfileID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.ProfileIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Profile", "ProfileList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Profile", "ProfileList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2478,7 +2478,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2502,7 +2502,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Operations[i3].ManageModuleStreamsDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.Operations[i3].ManageModuleStreamsDetails[i4].Disable); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -2528,7 +2528,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Operations[i3].ManageModuleStreamsDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.Operations[i3].ManageModuleStreamsDetails[i4].Disable); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+					m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -2554,7 +2554,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Operations[i3].ManageModuleStreamsDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.Operations[i3].ManageModuleStreamsDetails[i4].Enable); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -2580,7 +2580,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Operations[i3].ManageModuleStreamsDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.Operations[i3].ManageModuleStreamsDetails[i4].Enable); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+					m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -2606,7 +2606,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Operations[i3].ManageModuleStreamsDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.Operations[i3].ManageModuleStreamsDetails[i4].Install); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Profile", "ProfileList")
+					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Profile", "ProfileList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -2632,7 +2632,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Operations[i3].ManageModuleStreamsDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.Operations[i3].ManageModuleStreamsDetails[i4].Install); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -2658,7 +2658,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Operations[i3].ManageModuleStreamsDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.Operations[i3].ManageModuleStreamsDetails[i4].Install); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+					m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -2684,7 +2684,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Operations[i3].ManageModuleStreamsDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.Operations[i3].ManageModuleStreamsDetails[i4].Remove); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Profile", "ProfileList")
+					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Profile", "ProfileList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -2710,7 +2710,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Operations[i3].ManageModuleStreamsDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.Operations[i3].ManageModuleStreamsDetails[i4].Remove); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -2736,7 +2736,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Operations[i3].ManageModuleStreamsDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.ForProvider.Operations[i3].ManageModuleStreamsDetails[i4].Remove); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+					m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -2761,7 +2761,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Operations); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Operations[i3].SwitchModuleStreamsDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+				m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -2785,7 +2785,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Operations); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Operations[i3].SwitchModuleStreamsDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+				m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -2807,7 +2807,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -2830,7 +2830,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Operations[i3].ManageModuleStreamsDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.Operations[i3].ManageModuleStreamsDetails[i4].Disable); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -2856,7 +2856,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Operations[i3].ManageModuleStreamsDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.Operations[i3].ManageModuleStreamsDetails[i4].Disable); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+					m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -2882,7 +2882,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Operations[i3].ManageModuleStreamsDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.Operations[i3].ManageModuleStreamsDetails[i4].Enable); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -2908,7 +2908,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Operations[i3].ManageModuleStreamsDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.Operations[i3].ManageModuleStreamsDetails[i4].Enable); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+					m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -2934,7 +2934,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Operations[i3].ManageModuleStreamsDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.Operations[i3].ManageModuleStreamsDetails[i4].Install); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Profile", "ProfileList")
+					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Profile", "ProfileList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -2960,7 +2960,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Operations[i3].ManageModuleStreamsDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.Operations[i3].ManageModuleStreamsDetails[i4].Install); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -2986,7 +2986,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Operations[i3].ManageModuleStreamsDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.Operations[i3].ManageModuleStreamsDetails[i4].Install); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+					m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -3012,7 +3012,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Operations[i3].ManageModuleStreamsDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.Operations[i3].ManageModuleStreamsDetails[i4].Remove); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Profile", "ProfileList")
+					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Profile", "ProfileList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -3038,7 +3038,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Operations[i3].ManageModuleStreamsDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.Operations[i3].ManageModuleStreamsDetails[i4].Remove); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+					m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -3064,7 +3064,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Operations[i3].ManageModuleStreamsDetails); i4++ {
 			for i5 := 0; i5 < len(mg.Spec.InitProvider.Operations[i3].ManageModuleStreamsDetails[i4].Remove); i5++ {
 				{
-					m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+					m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 					if err != nil {
 						return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 					}
@@ -3089,7 +3089,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Operations); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Operations[i3].SwitchModuleStreamsDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+				m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -3113,7 +3113,7 @@ func (mg *ScheduledJob) ResolveReferences(ctx context.Context, c client.Reader) 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Operations); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Operations[i3].SwitchModuleStreamsDetails); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+				m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -3147,7 +3147,7 @@ func (mg *SoftwareSource) ResolveReferences(ctx context.Context, c client.Reader
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3170,7 +3170,7 @@ func (mg *SoftwareSource) ResolveReferences(ctx context.Context, c client.Reader
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.CustomSoftwareSourceFilter); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.CustomSoftwareSourceFilter[i3].ModuleStreamProfileFilters); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Profile", "ProfileList")
+				m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Profile", "ProfileList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -3194,7 +3194,7 @@ func (mg *SoftwareSource) ResolveReferences(ctx context.Context, c client.Reader
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.CustomSoftwareSourceFilter); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.CustomSoftwareSourceFilter[i3].ModuleStreamProfileFilters); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+				m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -3216,7 +3216,7 @@ func (mg *SoftwareSource) ResolveReferences(ctx context.Context, c client.Reader
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3235,7 +3235,7 @@ func (mg *SoftwareSource) ResolveReferences(ctx context.Context, c client.Reader
 	mg.Spec.ForProvider.OriginSoftwareSourceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.OriginSoftwareSourceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3258,7 +3258,7 @@ func (mg *SoftwareSource) ResolveReferences(ctx context.Context, c client.Reader
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.CustomSoftwareSourceFilter); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.CustomSoftwareSourceFilter[i3].ModuleStreamProfileFilters); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "Profile", "ProfileList")
+				m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "Profile", "ProfileList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -3282,7 +3282,7 @@ func (mg *SoftwareSource) ResolveReferences(ctx context.Context, c client.Reader
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.CustomSoftwareSourceFilter); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.CustomSoftwareSourceFilter[i3].ModuleStreamProfileFilters); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+				m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -3304,7 +3304,7 @@ func (mg *SoftwareSource) ResolveReferences(ctx context.Context, c client.Reader
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3335,7 +3335,7 @@ func (mg *SoftwareSourceAddPackagesManagement) ResolveReferences(ctx context.Con
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3355,7 +3355,7 @@ func (mg *SoftwareSourceAddPackagesManagement) ResolveReferences(ctx context.Con
 	mg.Spec.ForProvider.SoftwareSourceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.SoftwareSourceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3389,7 +3389,7 @@ func (mg *SoftwareSourceChangeAvailabilityManagement) ResolveReferences(ctx cont
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.SoftwareSourceAvailabilities); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3411,7 +3411,7 @@ func (mg *SoftwareSourceChangeAvailabilityManagement) ResolveReferences(ctx cont
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.SoftwareSourceAvailabilities); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+			m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -3444,7 +3444,7 @@ func (mg *SoftwareSourceGenerateMetadataManagement) ResolveReferences(ctx contex
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3464,7 +3464,7 @@ func (mg *SoftwareSourceGenerateMetadataManagement) ResolveReferences(ctx contex
 	mg.Spec.ForProvider.SoftwareSourceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.SoftwareSourceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3496,7 +3496,7 @@ func (mg *SoftwareSourceManifest) ResolveReferences(ctx context.Context, c clien
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3516,7 +3516,7 @@ func (mg *SoftwareSourceManifest) ResolveReferences(ctx context.Context, c clien
 	mg.Spec.ForProvider.SoftwareSourceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.SoftwareSourceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3548,7 +3548,7 @@ func (mg *SoftwareSourceRemovePackagesManagement) ResolveReferences(ctx context.
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3568,7 +3568,7 @@ func (mg *SoftwareSourceRemovePackagesManagement) ResolveReferences(ctx context.
 	mg.Spec.ForProvider.SoftwareSourceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.SoftwareSourceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3600,7 +3600,7 @@ func (mg *SoftwareSourceReplacePackagesManagement) ResolveReferences(ctx context
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -3620,7 +3620,7 @@ func (mg *SoftwareSourceReplacePackagesManagement) ResolveReferences(ctx context
 	mg.Spec.ForProvider.SoftwareSourceID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.SoftwareSourceIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
+		m, l, err = apisresolver.GetManagedResource("osmanagementhub.oci.m.upbound.io", "v1alpha1", "SoftwareSource", "SoftwareSourceList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

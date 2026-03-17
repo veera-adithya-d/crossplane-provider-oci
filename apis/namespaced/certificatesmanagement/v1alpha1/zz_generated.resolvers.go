@@ -25,7 +25,7 @@ func (mg *CaBundle) ResolveReferences( // ResolveReferences of this CaBundle.
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *CaBundle) ResolveReferences( // ResolveReferences of this CaBundle.
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -79,7 +79,7 @@ func (mg *Certificate) ResolveReferences(ctx context.Context, c client.Reader) e
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.CertificateConfig); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("certificatesmanagement.oci.upbound.io", "v1alpha1", "CertificateAuthority", "CertificateAuthorityList")
+			m, l, err = apisresolver.GetManagedResource("certificatesmanagement.oci.m.upbound.io", "v1alpha1", "CertificateAuthority", "CertificateAuthorityList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -102,7 +102,7 @@ func (mg *Certificate) ResolveReferences(ctx context.Context, c client.Reader) e
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.CertificateConfig); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.CertificateConfig[i3].Subject); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "User", "UserList")
+				m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -124,7 +124,7 @@ func (mg *Certificate) ResolveReferences(ctx context.Context, c client.Reader) e
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -145,7 +145,7 @@ func (mg *Certificate) ResolveReferences(ctx context.Context, c client.Reader) e
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.CertificateConfig); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("certificatesmanagement.oci.upbound.io", "v1alpha1", "CertificateAuthority", "CertificateAuthorityList")
+			m, l, err = apisresolver.GetManagedResource("certificatesmanagement.oci.m.upbound.io", "v1alpha1", "CertificateAuthority", "CertificateAuthorityList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -168,7 +168,7 @@ func (mg *Certificate) ResolveReferences(ctx context.Context, c client.Reader) e
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.CertificateConfig); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.CertificateConfig[i3].Subject); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "User", "UserList")
+				m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -190,7 +190,7 @@ func (mg *Certificate) ResolveReferences(ctx context.Context, c client.Reader) e
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -223,7 +223,7 @@ func (mg *CertificateAuthority) ResolveReferences(ctx context.Context, c client.
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.CertificateAuthorityConfig); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("certificatesmanagement.oci.upbound.io", "v1alpha1", "CertificateAuthority", "CertificateAuthorityList")
+			m, l, err = apisresolver.GetManagedResource("certificatesmanagement.oci.m.upbound.io", "v1alpha1", "CertificateAuthority", "CertificateAuthorityList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -246,7 +246,7 @@ func (mg *CertificateAuthority) ResolveReferences(ctx context.Context, c client.
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.CertificateAuthorityConfig); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.CertificateAuthorityConfig[i3].Subject); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "User", "UserList")
+				m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -270,7 +270,7 @@ func (mg *CertificateAuthority) ResolveReferences(ctx context.Context, c client.
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.CertificateRevocationListDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.CertificateRevocationListDetails[i3].ObjectStorageConfig); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("objectstorage.oci.upbound.io", "v1alpha1", "Bucket", "BucketList")
+				m, l, err = apisresolver.GetManagedResource("objectstorage.oci.m.upbound.io", "v1alpha1", "Bucket", "BucketList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -292,7 +292,7 @@ func (mg *CertificateAuthority) ResolveReferences(ctx context.Context, c client.
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -311,7 +311,7 @@ func (mg *CertificateAuthority) ResolveReferences(ctx context.Context, c client.
 	mg.Spec.ForProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+		m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -333,7 +333,7 @@ func (mg *CertificateAuthority) ResolveReferences(ctx context.Context, c client.
 
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.CertificateAuthorityConfig); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("certificatesmanagement.oci.upbound.io", "v1alpha1", "CertificateAuthority", "CertificateAuthorityList")
+			m, l, err = apisresolver.GetManagedResource("certificatesmanagement.oci.m.upbound.io", "v1alpha1", "CertificateAuthority", "CertificateAuthorityList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -356,7 +356,7 @@ func (mg *CertificateAuthority) ResolveReferences(ctx context.Context, c client.
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.CertificateAuthorityConfig); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.CertificateAuthorityConfig[i3].Subject); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "User", "UserList")
+				m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -380,7 +380,7 @@ func (mg *CertificateAuthority) ResolveReferences(ctx context.Context, c client.
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.CertificateRevocationListDetails); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.CertificateRevocationListDetails[i3].ObjectStorageConfig); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("objectstorage.oci.upbound.io", "v1alpha1", "Bucket", "BucketList")
+				m, l, err = apisresolver.GetManagedResource("objectstorage.oci.m.upbound.io", "v1alpha1", "Bucket", "BucketList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -402,7 +402,7 @@ func (mg *CertificateAuthority) ResolveReferences(ctx context.Context, c client.
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -421,7 +421,7 @@ func (mg *CertificateAuthority) ResolveReferences(ctx context.Context, c client.
 	mg.Spec.InitProvider.CompartmentID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.CompartmentIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+		m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

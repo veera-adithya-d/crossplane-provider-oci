@@ -28,7 +28,7 @@ func (mg *Rule) ResolveReferences( // ResolveReferences of this Rule.
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Actions); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Actions[i3].Actions); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("functions.oci.upbound.io", "v1alpha1", "Function", "FunctionList")
+				m, l, err = apisresolver.GetManagedResource("functions.oci.m.upbound.io", "v1alpha1", "Function", "FunctionList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -52,7 +52,7 @@ func (mg *Rule) ResolveReferences( // ResolveReferences of this Rule.
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Actions); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Actions[i3].Actions); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+				m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -76,7 +76,7 @@ func (mg *Rule) ResolveReferences( // ResolveReferences of this Rule.
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Actions); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Actions[i3].Actions); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("ons.oci.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
+				m, l, err = apisresolver.GetManagedResource("ons.oci.m.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -98,7 +98,7 @@ func (mg *Rule) ResolveReferences( // ResolveReferences of this Rule.
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -120,7 +120,7 @@ func (mg *Rule) ResolveReferences( // ResolveReferences of this Rule.
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Actions); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Actions[i3].Actions); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("functions.oci.upbound.io", "v1alpha1", "Function", "FunctionList")
+				m, l, err = apisresolver.GetManagedResource("functions.oci.m.upbound.io", "v1alpha1", "Function", "FunctionList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -144,7 +144,7 @@ func (mg *Rule) ResolveReferences( // ResolveReferences of this Rule.
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Actions); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Actions[i3].Actions); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("streaming.oci.upbound.io", "v1alpha1", "Stream", "StreamList")
+				m, l, err = apisresolver.GetManagedResource("streaming.oci.m.upbound.io", "v1alpha1", "Stream", "StreamList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -168,7 +168,7 @@ func (mg *Rule) ResolveReferences( // ResolveReferences of this Rule.
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Actions); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Actions[i3].Actions); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("ons.oci.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
+				m, l, err = apisresolver.GetManagedResource("ons.oci.m.upbound.io", "v1alpha1", "NotificationTopic", "NotificationTopicList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -190,7 +190,7 @@ func (mg *Rule) ResolveReferences( // ResolveReferences of this Rule.
 		}
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}

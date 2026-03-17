@@ -27,7 +27,7 @@ func (mg *Stack) ResolveReferences( // ResolveReferences of this Stack.
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Adb); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -48,7 +48,7 @@ func (mg *Stack) ResolveReferences( // ResolveReferences of this Stack.
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -70,7 +70,7 @@ func (mg *Stack) ResolveReferences( // ResolveReferences of this Stack.
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Dataflow); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Dataflow[i3].Connections); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+				m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -93,7 +93,7 @@ func (mg *Stack) ResolveReferences( // ResolveReferences of this Stack.
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Dataflow); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("dataflow.oci.upbound.io", "v1alpha1", "PrivateEndpoint", "PrivateEndpointList")
+			m, l, err = apisresolver.GetManagedResource("dataflow.oci.m.upbound.io", "v1alpha1", "PrivateEndpoint", "PrivateEndpointList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -116,7 +116,7 @@ func (mg *Stack) ResolveReferences( // ResolveReferences of this Stack.
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Ggcs); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Ggcs[i3].Connections); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("goldengate.oci.upbound.io", "v1alpha1", "Connection", "ConnectionList")
+				m, l, err = apisresolver.GetManagedResource("goldengate.oci.m.upbound.io", "v1alpha1", "Connection", "ConnectionList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -140,7 +140,7 @@ func (mg *Stack) ResolveReferences( // ResolveReferences of this Stack.
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Ggcs); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.ForProvider.Ggcs[i3].Connections); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("goldengate.oci.upbound.io", "v1alpha1", "Connection", "ConnectionList")
+				m, l, err = apisresolver.GetManagedResource("goldengate.oci.m.upbound.io", "v1alpha1", "Connection", "ConnectionList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -163,7 +163,7 @@ func (mg *Stack) ResolveReferences( // ResolveReferences of this Stack.
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Ggcs); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -185,7 +185,7 @@ func (mg *Stack) ResolveReferences( // ResolveReferences of this Stack.
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Ggcs); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -207,7 +207,7 @@ func (mg *Stack) ResolveReferences( // ResolveReferences of this Stack.
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Adb); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -228,7 +228,7 @@ func (mg *Stack) ResolveReferences( // ResolveReferences of this Stack.
 
 	}
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Compartment", "CompartmentList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -250,7 +250,7 @@ func (mg *Stack) ResolveReferences( // ResolveReferences of this Stack.
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Dataflow); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Dataflow[i3].Connections); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+				m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -273,7 +273,7 @@ func (mg *Stack) ResolveReferences( // ResolveReferences of this Stack.
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Dataflow); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("dataflow.oci.upbound.io", "v1alpha1", "PrivateEndpoint", "PrivateEndpointList")
+			m, l, err = apisresolver.GetManagedResource("dataflow.oci.m.upbound.io", "v1alpha1", "PrivateEndpoint", "PrivateEndpointList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -296,7 +296,7 @@ func (mg *Stack) ResolveReferences( // ResolveReferences of this Stack.
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Ggcs); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Ggcs[i3].Connections); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("goldengate.oci.upbound.io", "v1alpha1", "Connection", "ConnectionList")
+				m, l, err = apisresolver.GetManagedResource("goldengate.oci.m.upbound.io", "v1alpha1", "Connection", "ConnectionList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -320,7 +320,7 @@ func (mg *Stack) ResolveReferences( // ResolveReferences of this Stack.
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Ggcs); i3++ {
 		for i4 := 0; i4 < len(mg.Spec.InitProvider.Ggcs[i3].Connections); i4++ {
 			{
-				m, l, err = apisresolver.GetManagedResource("goldengate.oci.upbound.io", "v1alpha1", "Connection", "ConnectionList")
+				m, l, err = apisresolver.GetManagedResource("goldengate.oci.m.upbound.io", "v1alpha1", "Connection", "ConnectionList")
 				if err != nil {
 					return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 				}
@@ -343,7 +343,7 @@ func (mg *Stack) ResolveReferences( // ResolveReferences of this Stack.
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Ggcs); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -365,7 +365,7 @@ func (mg *Stack) ResolveReferences( // ResolveReferences of this Stack.
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Ggcs); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("networking.oci.upbound.io", "v1alpha1", "Subnet", "SubnetList")
+			m, l, err = apisresolver.GetManagedResource("networking.oci.m.upbound.io", "v1alpha1", "Subnet", "SubnetList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}

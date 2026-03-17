@@ -25,7 +25,7 @@ func (mg *AccountRecoverySetting) ResolveReferences( // ResolveReferences of thi
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "AccountRecoverySetting", "AccountRecoverySettingList")
+		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "AccountRecoverySetting", "AccountRecoverySettingList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -45,7 +45,7 @@ func (mg *AccountRecoverySetting) ResolveReferences( // ResolveReferences of thi
 	mg.Spec.ForProvider.AccountRecoverySettingID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.AccountRecoverySettingIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "AccountRecoverySetting", "AccountRecoverySettingList")
+		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "AccountRecoverySetting", "AccountRecoverySettingList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -79,7 +79,7 @@ func (mg *ApiKey) ResolveReferences(ctx context.Context, c client.Reader) error 
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -101,7 +101,7 @@ func (mg *ApiKey) ResolveReferences(ctx context.Context, c client.Reader) error 
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -123,7 +123,7 @@ func (mg *ApiKey) ResolveReferences(ctx context.Context, c client.Reader) error 
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -145,7 +145,7 @@ func (mg *ApiKey) ResolveReferences(ctx context.Context, c client.Reader) error 
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -180,7 +180,7 @@ func (mg *AppRole) ResolveReferences(ctx context.Context, c client.Reader) error
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.App); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "App", "AppList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "App", "AppList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -202,7 +202,7 @@ func (mg *AppRole) ResolveReferences(ctx context.Context, c client.Reader) error
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.App); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "App", "AppList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "App", "AppList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -237,7 +237,7 @@ func (mg *AuthToken) ResolveReferences(ctx context.Context, c client.Reader) err
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -259,7 +259,7 @@ func (mg *AuthToken) ResolveReferences(ctx context.Context, c client.Reader) err
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -281,7 +281,7 @@ func (mg *AuthToken) ResolveReferences(ctx context.Context, c client.Reader) err
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -303,7 +303,7 @@ func (mg *AuthToken) ResolveReferences(ctx context.Context, c client.Reader) err
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -336,7 +336,7 @@ func (mg *AuthenticationFactorSetting) ResolveReferences(ctx context.Context, c 
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "AuthenticationFactorSetting", "AuthenticationFactorSettingList")
+		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "AuthenticationFactorSetting", "AuthenticationFactorSettingList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -356,7 +356,7 @@ func (mg *AuthenticationFactorSetting) ResolveReferences(ctx context.Context, c 
 	mg.Spec.ForProvider.AuthenticationFactorSettingID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.AuthenticationFactorSettingIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "AuthenticationFactorSetting", "AuthenticationFactorSettingList")
+		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "AuthenticationFactorSetting", "AuthenticationFactorSettingList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -388,7 +388,7 @@ func (mg *CloudGateMapping) ResolveReferences(ctx context.Context, c client.Read
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Policy", "PolicyList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Policy", "PolicyList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -408,7 +408,7 @@ func (mg *CloudGateMapping) ResolveReferences(ctx context.Context, c client.Read
 	mg.Spec.ForProvider.PolicyName = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.PolicyNameRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identity.oci.upbound.io", "v1alpha1", "Policy", "PolicyList")
+		m, l, err = apisresolver.GetManagedResource("identity.oci.m.upbound.io", "v1alpha1", "Policy", "PolicyList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -442,7 +442,7 @@ func (mg *CustomerSecretKey) ResolveReferences(ctx context.Context, c client.Rea
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -464,7 +464,7 @@ func (mg *CustomerSecretKey) ResolveReferences(ctx context.Context, c client.Rea
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -486,7 +486,7 @@ func (mg *CustomerSecretKey) ResolveReferences(ctx context.Context, c client.Rea
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -508,7 +508,7 @@ func (mg *CustomerSecretKey) ResolveReferences(ctx context.Context, c client.Rea
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -543,7 +543,7 @@ func (mg *IdentityPropagationTrust) ResolveReferences(ctx context.Context, c cli
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.ImpersonationServiceUsers); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -565,7 +565,7 @@ func (mg *IdentityPropagationTrust) ResolveReferences(ctx context.Context, c cli
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.ImpersonationServiceUsers); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -600,7 +600,7 @@ func (mg *IdentityProvider) ResolveReferences(ctx context.Context, c client.Read
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.UrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+			m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -622,7 +622,7 @@ func (mg *IdentityProvider) ResolveReferences(ctx context.Context, c client.Read
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.UrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+			m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -655,7 +655,7 @@ func (mg *IdentitySetting) ResolveReferences(ctx context.Context, c client.Reade
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "IdentitySetting", "IdentitySettingList")
+		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "IdentitySetting", "IdentitySettingList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -675,7 +675,7 @@ func (mg *IdentitySetting) ResolveReferences(ctx context.Context, c client.Reade
 	mg.Spec.ForProvider.IdentitySettingID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.IdentitySettingIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "IdentitySetting", "IdentitySettingList")
+		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "IdentitySetting", "IdentitySettingList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -707,7 +707,7 @@ func (mg *KmsiSetting) ResolveReferences(ctx context.Context, c client.Reader) e
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "KmsiSetting", "KmsiSettingList")
+		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "KmsiSetting", "KmsiSettingList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -727,7 +727,7 @@ func (mg *KmsiSetting) ResolveReferences(ctx context.Context, c client.Reader) e
 	mg.Spec.ForProvider.KmsiSettingID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.KmsiSettingIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "KmsiSetting", "KmsiSettingList")
+		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "KmsiSetting", "KmsiSettingList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -761,7 +761,7 @@ func (mg *MyRequest) ResolveReferences(ctx context.Context, c client.Reader) err
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Requesting); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "Group", "GroupList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "Group", "GroupList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -783,7 +783,7 @@ func (mg *MyRequest) ResolveReferences(ctx context.Context, c client.Reader) err
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Requesting); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "Group", "GroupList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "Group", "GroupList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -816,7 +816,7 @@ func (mg *NotificationSetting) ResolveReferences(ctx context.Context, c client.R
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "NotificationSetting", "NotificationSettingList")
+		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "NotificationSetting", "NotificationSettingList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -836,7 +836,7 @@ func (mg *NotificationSetting) ResolveReferences(ctx context.Context, c client.R
 	mg.Spec.ForProvider.NotificationSettingID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.NotificationSettingIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "NotificationSetting", "NotificationSettingList")
+		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "NotificationSetting", "NotificationSettingList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -870,7 +870,7 @@ func (mg *Oauth2clientCredential) ResolveReferences(ctx context.Context, c clien
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -892,7 +892,7 @@ func (mg *Oauth2clientCredential) ResolveReferences(ctx context.Context, c clien
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -914,7 +914,7 @@ func (mg *Oauth2clientCredential) ResolveReferences(ctx context.Context, c clien
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -936,7 +936,7 @@ func (mg *Oauth2clientCredential) ResolveReferences(ctx context.Context, c clien
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -969,7 +969,7 @@ func (mg *OauthPartnerCertificate) ResolveReferences(ctx context.Context, c clie
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("database.oci.upbound.io", "v1alpha1", "KeyStore", "KeyStoreList")
+		m, l, err = apisresolver.GetManagedResource("database.oci.m.upbound.io", "v1alpha1", "KeyStore", "KeyStoreList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -989,7 +989,7 @@ func (mg *OauthPartnerCertificate) ResolveReferences(ctx context.Context, c clie
 	mg.Spec.ForProvider.KeyStoreID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.KeyStoreIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("database.oci.upbound.io", "v1alpha1", "KeyStore", "KeyStoreList")
+		m, l, err = apisresolver.GetManagedResource("database.oci.m.upbound.io", "v1alpha1", "KeyStore", "KeyStoreList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1009,7 +1009,7 @@ func (mg *OauthPartnerCertificate) ResolveReferences(ctx context.Context, c clie
 	mg.Spec.ForProvider.KeyStoreName = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.KeyStoreNameRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("database.oci.upbound.io", "v1alpha1", "KeyStore", "KeyStoreList")
+		m, l, err = apisresolver.GetManagedResource("database.oci.m.upbound.io", "v1alpha1", "KeyStore", "KeyStoreList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1029,7 +1029,7 @@ func (mg *OauthPartnerCertificate) ResolveReferences(ctx context.Context, c clie
 	mg.Spec.InitProvider.KeyStoreID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.InitProvider.KeyStoreIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("database.oci.upbound.io", "v1alpha1", "KeyStore", "KeyStoreList")
+		m, l, err = apisresolver.GetManagedResource("database.oci.m.upbound.io", "v1alpha1", "KeyStore", "KeyStoreList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1063,7 +1063,7 @@ func (mg *PasswordPolicy) ResolveReferences(ctx context.Context, c client.Reader
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.Groups); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "Group", "GroupList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "Group", "GroupList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1085,7 +1085,7 @@ func (mg *PasswordPolicy) ResolveReferences(ctx context.Context, c client.Reader
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.Groups); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "Group", "GroupList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "Group", "GroupList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1118,7 +1118,7 @@ func (mg *SecurityQuestionSetting) ResolveReferences(ctx context.Context, c clie
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "SecurityQuestionSetting", "SecurityQuestionSettingList")
+		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "SecurityQuestionSetting", "SecurityQuestionSettingList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1138,7 +1138,7 @@ func (mg *SecurityQuestionSetting) ResolveReferences(ctx context.Context, c clie
 	mg.Spec.ForProvider.SecurityQuestionSettingID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.SecurityQuestionSettingIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "SecurityQuestionSetting", "SecurityQuestionSettingList")
+		m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "SecurityQuestionSetting", "SecurityQuestionSettingList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1172,7 +1172,7 @@ func (mg *SmtpCredential) ResolveReferences(ctx context.Context, c client.Reader
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1194,7 +1194,7 @@ func (mg *SmtpCredential) ResolveReferences(ctx context.Context, c client.Reader
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1216,7 +1216,7 @@ func (mg *SmtpCredential) ResolveReferences(ctx context.Context, c client.Reader
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1238,7 +1238,7 @@ func (mg *SmtpCredential) ResolveReferences(ctx context.Context, c client.Reader
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1271,7 +1271,7 @@ func (mg *SocialIdentityProvider) ResolveReferences(ctx context.Context, c clien
 	var rsp reference.NamespacedResolutionResponse
 	var err error
 	{
-		m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+		m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1291,7 +1291,7 @@ func (mg *SocialIdentityProvider) ResolveReferences(ctx context.Context, c clien
 	mg.Spec.ForProvider.AppleKeyID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.AppleKeyIDRef = rsp.ResolvedReference
 	{
-		m, l, err = apisresolver.GetManagedResource("kms.oci.upbound.io", "v1alpha1", "Key", "KeyList")
+		m, l, err = apisresolver.GetManagedResource("kms.oci.m.upbound.io", "v1alpha1", "Key", "KeyList")
 		if err != nil {
 			return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 		}
@@ -1325,7 +1325,7 @@ func (mg *UserDbCredential) ResolveReferences(ctx context.Context, c client.Read
 
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1347,7 +1347,7 @@ func (mg *UserDbCredential) ResolveReferences(ctx context.Context, c client.Read
 	}
 	for i3 := 0; i3 < len(mg.Spec.ForProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1369,7 +1369,7 @@ func (mg *UserDbCredential) ResolveReferences(ctx context.Context, c client.Read
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
@@ -1391,7 +1391,7 @@ func (mg *UserDbCredential) ResolveReferences(ctx context.Context, c client.Read
 	}
 	for i3 := 0; i3 < len(mg.Spec.InitProvider.User); i3++ {
 		{
-			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.upbound.io", "v1alpha1", "User", "UserList")
+			m, l, err = apisresolver.GetManagedResource("identitydomains.oci.m.upbound.io", "v1alpha1", "User", "UserList")
 			if err != nil {
 				return errors.Wrap(err, "failed to get the reference target managed resource and its list for reference resolution")
 			}
