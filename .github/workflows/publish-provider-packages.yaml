@@ -29,6 +29,10 @@ on:
         description: "Number of smaller provider packages to build and push with each build job"
         default: '30'
         required: true
+
+permissions:
+  contents: read
+
 env:
   # Common versions
   DOCKER_BUILDX_VERSION: 'v0.20.1'
@@ -68,6 +72,9 @@ jobs:
 
     needs: index
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Setup QEMU
         uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
