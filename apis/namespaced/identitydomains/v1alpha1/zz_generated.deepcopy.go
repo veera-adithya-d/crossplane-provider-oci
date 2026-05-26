@@ -3080,11 +3080,6 @@ func (in *AppObservation) DeepCopyInto(out *AppObservation) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.ClientSecret != nil {
-		in, out := &in.ClientSecret, &out.ClientSecret
-		*out = new(string)
-		**out = **in
-	}
 	if in.ClientType != nil {
 		in, out := &in.ClientType, &out.ClientType
 		*out = new(string)
@@ -3173,11 +3168,6 @@ func (in *AppObservation) DeepCopyInto(out *AppObservation) {
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
-	}
-	if in.HashedClientSecret != nil {
-		in, out := &in.HashedClientSecret, &out.HashedClientSecret
-		*out = new(string)
-		**out = **in
 	}
 	if in.HomePageURL != nil {
 		in, out := &in.HomePageURL, &out.HomePageURL
@@ -16764,11 +16754,6 @@ func (in *CustomerSecretKeyObservation) DeepCopyInto(out *CustomerSecretKeyObser
 				**out = **in
 			}
 		}
-	}
-	if in.SecretKey != nil {
-		in, out := &in.SecretKey, &out.SecretKey
-		*out = new(string)
-		**out = **in
 	}
 	if in.Status != nil {
 		in, out := &in.Status, &out.Status
@@ -37639,11 +37624,6 @@ func (in *MyUserDbCredentialObservation) DeepCopyInto(out *MyUserDbCredentialObs
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
-	if in.MixedDBPassword != nil {
-		in, out := &in.MixedDBPassword, &out.MixedDBPassword
-		*out = new(string)
-		**out = **in
-	}
 	if in.MixedSalt != nil {
 		in, out := &in.MixedSalt, &out.MixedSalt
 		*out = new(string)
@@ -40311,11 +40291,6 @@ func (in *Oauth2clientCredentialObservation) DeepCopyInto(out *Oauth2clientCrede
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
-	}
-	if in.Secret != nil {
-		in, out := &in.Secret, &out.Secret
-		*out = new(string)
-		**out = **in
 	}
 	if in.Status != nil {
 		in, out := &in.Status, &out.Status
@@ -52358,11 +52333,6 @@ func (in *SmtpCredentialObservation) DeepCopyInto(out *SmtpCredentialObservation
 		*out = new(string)
 		**out = **in
 	}
-	if in.Password != nil {
-		in, out := &in.Password, &out.Password
-		*out = new(string)
-		**out = **in
-	}
 	if in.ResourceTypeSchemaVersion != nil {
 		in, out := &in.ResourceTypeSchemaVersion, &out.ResourceTypeSchemaVersion
 		*out = new(string)
@@ -62531,11 +62501,6 @@ func (in *UserDbCredentialObservation) DeepCopyInto(out *UserDbCredentialObserva
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
-	}
-	if in.MixedDBPassword != nil {
-		in, out := &in.MixedDBPassword, &out.MixedDBPassword
-		*out = new(string)
-		**out = **in
 	}
 	if in.MixedSalt != nil {
 		in, out := &in.MixedSalt, &out.MixedSalt

@@ -6216,11 +6216,6 @@ func (in *SddcObservation) DeepCopyInto(out *SddcObservation) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.HcxInitialPassword != nil {
-		in, out := &in.HcxInitialPassword, &out.HcxInitialPassword
-		*out = new(string)
-		**out = **in
-	}
 	if in.HcxMode != nil {
 		in, out := &in.HcxMode, &out.HcxMode
 		*out = new(string)
@@ -6327,11 +6322,6 @@ func (in *SddcObservation) DeepCopyInto(out *SddcObservation) {
 	}
 	if in.NsxManagerFqdn != nil {
 		in, out := &in.NsxManagerFqdn, &out.NsxManagerFqdn
-		*out = new(string)
-		**out = **in
-	}
-	if in.NsxManagerInitialPassword != nil {
-		in, out := &in.NsxManagerInitialPassword, &out.NsxManagerInitialPassword
 		*out = new(string)
 		**out = **in
 	}
@@ -6448,11 +6438,6 @@ func (in *SddcObservation) DeepCopyInto(out *SddcObservation) {
 	}
 	if in.VcenterFqdn != nil {
 		in, out := &in.VcenterFqdn, &out.VcenterFqdn
-		*out = new(string)
-		**out = **in
-	}
-	if in.VcenterInitialPassword != nil {
-		in, out := &in.VcenterInitialPassword, &out.VcenterInitialPassword
 		*out = new(string)
 		**out = **in
 	}
