@@ -242,7 +242,6 @@ jobs:
   publish-services:
     if: ${{ needs.index.outputs.has_services == 'true' }}
     strategy:
-      max-parallel: 4
       matrix:
         index: ${{ fromJSON(needs.index.outputs.indices) }}
 
