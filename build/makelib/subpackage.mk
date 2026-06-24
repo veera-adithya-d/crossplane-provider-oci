@@ -14,6 +14,7 @@ endif
 BUILD_ONLY ?= false
 STORE_PACKAGES ?= ""
 XPKG_CLEANUP_EXAMPLES_VERSION ?= v0.12.1
+FAMILY_BASE_IMAGE ?= $(BUILD_REGISTRY)/$(PROJECT_NAME)
 
 # Default sub-packages for batch processing
 # Override with: make publish-subpackages SUBPACKAGES_FOR_BATCH="config,networking,containerengine"
@@ -90,7 +91,7 @@ batch-process: $(UP) kustomize-crds
 	done; \
 	mkdir -p "$(XPKG_OUTPUT_DIR)/$(PLATFORM)" && \
 	$(UP) xpkg batch --smaller-providers "$(SUBPACKAGES_FOR_BATCH)" \
-		--family-base-image $(BUILD_REGISTRY)/$(PROJECT_NAME) \
+		--family-base-image $(FAMILY_BASE_IMAGE) \
 		--platform $(BATCH_PLATFORMS) \
 		--provider-name $(PROJECT_NAME) \
 		--family-package-url-format $(XPKG_REG_ORGS)/%s:$(VERSION) \
@@ -145,4 +146,21 @@ publish-subpackages: kustomize-crds
 	done; \
 	$(MAKE) batch-process SUBPACKAGES_FOR_BATCH="$(SUBPACKAGES_FOR_BATCH)" BUILD_ONLY=false BATCH_PLATFORMS="$(BATCH_PLATFORMS)"
 
-.PHONY: batch-process build-subpackages publish-subpackages build.family.image
+# Build and push service sub-packages using an already published family provider image.
+# Usage: make publish-service-subpackages SUBPACKAGES_FOR_BATCH="networking,containerengine" FAMILY_BASE_IMAGE=ghcr.io/org/provider-family-oci:v1.0.0
+publish-service-subpackages:
+	@case ",$(SUBPACKAGES_FOR_BATCH)," in \
+		*,config,*) \
+			echo "Error: publish-service-subpackages does not accept config in SUBPACKAGES_FOR_BATCH."; \
+			exit 1; \
+			;; \
+	esac
+	@if [ "$(FAMILY_BASE_IMAGE)" = "$(BUILD_REGISTRY)/$(PROJECT_NAME)" ]; then \
+		echo "Error: FAMILY_BASE_IMAGE must reference the pulled provider-family-oci image."; \
+		exit 1; \
+	fi
+	@PLATFORMS_FOR_BUILD=$$(echo "$(BATCH_PLATFORMS)" | tr ',' ' '); \
+	$(MAKE) build PLATFORMS="$$PLATFORMS_FOR_BUILD" SUBPACKAGES="$(SUBPACKAGES_FOR_BATCH)"; \
+	$(MAKE) batch-process SUBPACKAGES_FOR_BATCH="$(SUBPACKAGES_FOR_BATCH)" BUILD_ONLY=false BATCH_PLATFORMS="$(BATCH_PLATFORMS)" FAMILY_BASE_IMAGE="$(FAMILY_BASE_IMAGE)"
+
+.PHONY: batch-process build-subpackages publish-subpackages publish-service-subpackages build.family.image

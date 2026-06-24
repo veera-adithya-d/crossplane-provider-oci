@@ -29,6 +29,11 @@ on:
         description: "Number of smaller provider packages to build and push with each build job"
         default: '10'
         required: true
+      cleanup-disk:
+        type: boolean
+        description: "Whether to clean runner disk space before publishing"
+        default: true
+        required: false
 
 permissions:
   contents: read
@@ -46,6 +51,7 @@ jobs:
     outputs:
       indices: ${{ steps.calc.outputs.indices }}
       subpackages: ${{ steps.calc.outputs.subpackages }}
+      has_services: ${{ steps.calc.outputs.has_services }}
     steps:
       - name: Validate workflow inputs
         env:
@@ -92,13 +98,19 @@ jobs:
 
           if [ "$INPUT_SUBPACKAGES" = "all" ]; then
             SERVICES_LIST=$(find examples-generated/cluster -mindepth 1 -maxdepth 1 -type d 2>/dev/null | xargs -n1 basename | tr '\n' ',' | sed 's/,$//' || echo "")
-            if [ -n "$SERVICES_LIST" ]; then
-              SUBPACKAGES="config,$SERVICES_LIST"
-            else
-              SUBPACKAGES="config"
-            fi
+            SUBPACKAGES="$SERVICES_LIST"
           else
-            SUBPACKAGES="$INPUT_SUBPACKAGES"
+            SUBPACKAGES=$(python3 - <<'PY'
+          import os
+
+          subpackages = [
+              pkg
+              for pkg in os.environ["INPUT_SUBPACKAGES"].split(",")
+              if pkg and pkg != "config"
+          ]
+          print(",".join(subpackages))
+          PY
+          )
           fi
           export SUBPACKAGES
           INDICES=$(python3 - <<'PY'
@@ -112,28 +124,152 @@ jobs:
           )
           echo "indices=$INDICES" >> "$GITHUB_OUTPUT"
           echo "subpackages=$SUBPACKAGES" >> "$GITHUB_OUTPUT"
+          if [ -n "$SUBPACKAGES" ]; then
+            echo "has_services=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_services=false" >> "$GITHUB_OUTPUT"
+          fi
 
-  publish-artifacts:
-    strategy:
-      max-parallel: 4
-      matrix:
-        index: ${{ fromJSON(needs.index.outputs.indices) }}
-
+  publish-family:
     needs: index
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
+    outputs:
+      version: ${{ steps.version.outputs.version }}
     steps:
-      - name: Free disk space
+      - name: Cleanup Disk
+        uses: jlumbroso/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be # v1.3.1
+        if: ${{ inputs.cleanup-disk }}
+        with:
+          android: true
+          dotnet: true
+          haskell: true
+          tool-cache: true
+          large-packages: false
+          swap-storage: false
+
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
+        with:
+          platforms: all
+
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@885d1462b80bc1c1c7f0b00334ad271f09369c55 # v2
+        with:
+          version: ${{ env.DOCKER_BUILDX_VERSION }}
+          install: true
+
+      - name: Login to GHCR using PAT
+        uses: docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567 # v3.3.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
+        with:
+          submodules: true
+
+      - name: Fetch History
+        run: git fetch --prune --unshallow
+
+      - name: Setup Go
+        uses: actions/setup-go@6edd4406fa81c3da01a34fa6f6343087c207a568 # v3
+        with:
+          go-version: ${{ inputs.go-version }}
+
+      - name: Find the Go Build Cache
+        id: go_cache
+        run: |
+          echo "cache=$(make go.cachedir)" >> $GITHUB_OUTPUT && \
+          echo "mod_cache=$(make go.mod.cachedir)" >> $GITHUB_OUTPUT
+
+      - name: Cache the Go Build Cache
+        uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # v4
+        with:
+          path: ${{ steps.go_cache.outputs.cache }}
+          key: ${{ runner.os }}-build-publish-artifacts-${{ hashFiles('**/go.sum') }}
+          restore-keys: ${{ runner.os }}-build-publish-artifacts-
+
+      - name: Cache Go Dependencies
+        uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # v4
+        with:
+          path: ${{ steps.go_cache.outputs.mod_cache }}
+          key: ${{ runner.os }}-pkg-${{ hashFiles('**/go.sum') }}
+          restore-keys: ${{ runner.os }}-pkg-
+
+      - name: Vendor Dependencies
+        run: make vendor vendor.check
+
+      - name: Determine Version
+        id: version
+        env:
+          INPUT_VERSION: ${{ inputs.version }}
         run: |
           set -euo pipefail
-          echo "Disk usage before cleanup:"
+
+          if [ -n "$INPUT_VERSION" ]; then
+            version="$INPUT_VERSION"
+          else
+            version=$(make -s build.vars | sed -n 's/^VERSION=//p')
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Install goimports
+        run: go install golang.org/x/tools/cmd/goimports@latest
+
+      - name: Check Generated Diff
+        run: make check-diff
+
+      - name: Publish Family Provider
+        env:
+          INPUT_VERSION: ${{ steps.version.outputs.version }}
+          INPUT_PLATFORM: ${{ inputs.platform }}
+          REGISTRY_ORG: ${{ env.CROSSPLANE_REGORG }}
+          # We're using docker buildx, which doesn't actually load the images it
+          # builds by default. Specifying --load does so.
+          BUILD_ARGS: "--load"
+        run: |
+          set -euo pipefail
+
+          batch_platforms=$(tr ' ' ',' <<<"$INPUT_PLATFORM")
           df -h
-          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /usr/local/.ghcup /opt/hostedtoolcache/CodeQL || true
-          docker system prune -af || true
-          echo "Disk usage after cleanup:"
-          df -h
+          make \
+            CONCURRENCY=5 \
+            SUBPACKAGES_FOR_BATCH="config" \
+            XPKG_REG_ORGS="$REGISTRY_ORG" \
+            VERSION="$INPUT_VERSION" \
+            BATCH_PLATFORMS="$batch_platforms" \
+            publish-subpackages
+
+  publish-services:
+    if: ${{ needs.index.outputs.has_services == 'true' }}
+    strategy:
+      max-parallel: 4
+      matrix:
+        index: ${{ fromJSON(needs.index.outputs.indices) }}
+
+    needs:
+      - index
+      - publish-family
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Cleanup Disk
+        uses: jlumbroso/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be # v1.3.1
+        if: ${{ inputs.cleanup-disk }}
+        with:
+          android: true
+          dotnet: true
+          haskell: true
+          tool-cache: true
+          large-packages: false
+          swap-storage: false
 
       - name: Setup QEMU
         uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
@@ -205,30 +341,33 @@ jobs:
           size = int(os.environ["INPUT_SIZE"])
           start_idx = int(os.environ["MATRIX_INDEX"]) * size
           batch = all_packages[start_idx:start_idx + size]
-          if "config" not in batch:
-              batch = ["config"] + batch
+          if "config" in batch:
+              raise SystemExit("service batch must not include config")
           print(",".join(batch))
           PY
           )
           echo "packages_batch=$PACKAGES_BATCH" >> "$GITHUB_OUTPUT"
 
-      - name: Generate Artifacts
-        id: generate_artifacts
+      - name: Pull Family Provider
+        id: family
         env:
-          PACKAGES_BATCH: ${{ steps.packages.outputs.packages_batch }}
+          REGISTRY_ORG: ${{ env.CROSSPLANE_REGORG }}
+          VERSION: ${{ needs.publish-family.outputs.version }}
         run: |
           set -euo pipefail
-          echo "Generating artifacts for: $PACKAGES_BATCH"
-          go install golang.org/x/tools/cmd/goimports@latest
-          make generate
-          df -h
 
-      - name: Publish Artifacts
+          family_base_image="$REGISTRY_ORG/provider-family-oci:$VERSION"
+          docker pull "$family_base_image"
+          docker image inspect "$family_base_image"
+          echo "family_base_image=$family_base_image" >> "$GITHUB_OUTPUT"
+
+      - name: Publish Service Artifacts
         env:
           PACKAGES_BATCH: ${{ steps.packages.outputs.packages_batch }}
-          INPUT_VERSION: ${{ inputs.version }}
+          INPUT_VERSION: ${{ needs.publish-family.outputs.version }}
           INPUT_PLATFORM: ${{ inputs.platform }}
           REGISTRY_ORG: ${{ env.CROSSPLANE_REGORG }}
+          FAMILY_BASE_IMAGE: ${{ steps.family.outputs.family_base_image }}
           # We're using docker buildx, which doesn't actually load the images it
           # builds by default. Specifying --load does so.
           BUILD_ARGS: "--load"
@@ -240,7 +379,8 @@ jobs:
           make \
             CONCURRENCY=5 \
             SUBPACKAGES_FOR_BATCH="$PACKAGES_BATCH" \
+            FAMILY_BASE_IMAGE="$FAMILY_BASE_IMAGE" \
             XPKG_REG_ORGS="$REGISTRY_ORG" \
             VERSION="$INPUT_VERSION" \
             BATCH_PLATFORMS="$batch_platforms" \
-            publish-subpackages
+            publish-service-subpackages

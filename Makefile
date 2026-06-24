@@ -407,6 +407,9 @@ Batch Processing:
                           Example: make build-subpackages SUBPACKAGES_FOR_BATCH="config,networking" BATCH_PLATFORMS=linux_amd64
     publish-subpackages   Build and push sub-packages to registry
                           Example: make publish-subpackages SUBPACKAGES_FOR_BATCH="config,networking" BATCH_PLATFORMS=linux_amd64
+    publish-service-subpackages
+                          Build and push service sub-packages using an already published family provider image
+                          Example: make publish-service-subpackages SUBPACKAGES_FOR_BATCH="networking" FAMILY_BASE_IMAGE=ghcr.io/org/provider-family-oci:v1.0.0 BATCH_PLATFORMS=linux_amd64
 
 endef
 # The reason CROSSPLANE_MAKE_HELP is used instead of CROSSPLANE_HELP is because the crossplane
