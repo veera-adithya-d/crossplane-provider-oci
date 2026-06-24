@@ -15,6 +15,7 @@ BUILD_ONLY ?= false
 STORE_PACKAGES ?= ""
 XPKG_CLEANUP_EXAMPLES_VERSION ?= v0.12.1
 FAMILY_BASE_IMAGE ?= $(BUILD_REGISTRY)/$(PROJECT_NAME)
+SKIP_GO_CACHE_CLEAN ?= false
 
 # Default sub-packages for batch processing
 # Override with: make publish-subpackages SUBPACKAGES_FOR_BATCH="config,networking,containerengine"
@@ -137,7 +138,7 @@ build-subpackages:
 publish-subpackages: kustomize-crds
 	@PLATFORMS_FOR_BUILD=$$(echo "$(BATCH_PLATFORMS)" | tr ',' ' '); \
 	$(MAKE) build PLATFORMS="$$PLATFORMS_FOR_BUILD" SUBPACKAGES="$(SUBPACKAGES_FOR_BATCH)"; \
-	$(GO) clean -cache -testcache || true; \
+	if [ "$(SKIP_GO_CACHE_CLEAN)" != "true" ]; then $(GO) clean -cache -testcache || true; fi; \
 	docker buildx prune -af || true; \
 	for platform in $$PLATFORMS_FOR_BUILD; do \
 		docker buildx prune -af || true; \
